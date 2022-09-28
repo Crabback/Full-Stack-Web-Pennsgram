@@ -7,6 +7,7 @@ Figma UI: https://www.figma.com/team_invite/redeem/Ek0gt7O4czvCKmym15rQBk
 
 RESTful API on Swaggerhub: https://app.swaggerhub.com/apis/offersoverflow/Pennsgram/1.0.0
 
-Progress:
+
+# Progress:
 
 HW1: Architecture Design (Completed)
