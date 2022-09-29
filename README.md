@@ -16,5 +16,10 @@ HW2: Implementation (View) & UI Testing.
 
        PDF instruction: https://static.us.edusercontent.com/files/4b4xtthdOb9R50f31q9THOFb
        due date: Oct 19 at 11:59 pm on Gradescope
-    
+       
+       Sprint 1: Translate your wireframes into static react components. Create and validate your CSS files. At the end of the sprint, you should have all                  your react components (for hw2) ready.
+
+       Sprint 2: Make the components interactive by adding states (redux) and events handlers and start UI testing. You should be able to register, login,                  and create a post at the end of this sprint with all the information only stored locally.
+
+       Sprint 3: Implement backend communication by implementing the endpoints listed in your SwaggerHub document. Mock the backend to get preconfigured                    responses and complete UI testing.
 
