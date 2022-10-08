@@ -9,6 +9,4 @@ export function Header() {
         <div className="header_elements">Login</div>
         <div className="header_elements">Sign up</div>
     </div>);
-
-    
   }

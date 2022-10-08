@@ -1,13 +1,21 @@
 .header {
   display:flex;
-  flex-direction: row;
-  align-items: right;
   justify-content: right;
 	padding:2px;
 }
 
 .header_elements {
   margin-left: 8px;
+}
+
+.footer {
+  display:flex;
+  justify-content: left;
+	padding:2px;
+}
+
+.footer_elements {
+  margin-right: 8px;
 }
 
 .App {
