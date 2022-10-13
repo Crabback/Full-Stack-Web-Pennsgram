@@ -4,7 +4,7 @@ import {Header} from "../components/Header";
 import {Footer} from "../components/Footer";
 import {Button} from "../components/Button";
 
-export function homePage() {
+function HomePage() {
     return (
     <div className="home">
       <div className="top_half_page">
@@ -33,3 +33,4 @@ export function homePage() {
       </div>
     </div>)
   }
+export default HomePage

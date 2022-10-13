@@ -1,10 +1,12 @@
 import "./Styles.css";
 import React from 'react';
-import {homePage} from "./pages/homePage";
+import HomePage from "./pages/HomePage";
+import UserPage from "./pages/User";
 
 export default function App() {
   return (
-    <homePage />
+    <UserPage />
+
   );
 }
 
