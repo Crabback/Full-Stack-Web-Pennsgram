@@ -4,14 +4,46 @@
 	padding:2px;
 }
 
+.split {
+  height: 100%;
+  width: 50%;
+  position: absolute;
+  z-index: 1;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Control the left side */
+.left {
+  left: 0;
+  background: #faf5d9;
+}
+
+/* Control the right side */
+.right {
+  right: 0;
+  background: #faf5d9;
+}
+
+/* If you want the content centered horizontally and vertically */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
 .header_elements {
   margin-left: 8px;
+  font-size: 10px;
 }
 
 .footer {
   display:flex;
   justify-content: left;
 	padding:2px;
+  font-size: 10px;
 }
 
 .footer_elements {
@@ -24,6 +56,11 @@
 }
 
 .top_half_page {
+  font-family: sans-serif;
+  background: #faf5d9;
+}
+
+.register {
   font-family: sans-serif;
   background: #faf5d9;
 }
@@ -63,8 +100,7 @@
   -webkit-box-shadow: 0px 3px 3px #666666;
   -moz-box-shadow: 0px 3px 3px #666666;
   box-shadow: 0px 3px 3px #666666;
-  font-family: Courier New;
-  color: #ffffff;
+  color: #000000;
   font-size: 8px;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
