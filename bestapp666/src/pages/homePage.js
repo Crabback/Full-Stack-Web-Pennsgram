@@ -9,7 +9,7 @@ function HomePage() {
     <div className="home">
       <div className="top_half_page">
         <div className="right">
-          <Header />
+          <Header page="home"/>
           <p>Brief About the platform</p>
         </div>
         <div className="logos">
