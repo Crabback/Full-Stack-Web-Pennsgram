@@ -9,10 +9,16 @@ const Layout = () => {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/User">UserPage</Link>
+            <Link to="/user">UserPage</Link>
           </li>
           <li>
-            <Link to="/Register">Register</Link>
+            <Link to="/register">Register</Link>
+          </li>
+          <li>
+            <Link to="/browse">BrowsePage</Link>
+          </li>
+          <li>
+            <Link to="/login">Login</Link>
           </li>
         </ul>
       </nav>
@@ -23,9 +29,9 @@ const Layout = () => {
             <div className="header_elements">Login</div>
             <div className="header_elements">Sign up</div>
       </div>
-      <div className="logos">
+      {/* <div className="logos">
           <img src={require("../images/pennsgram_logo.png")} alt="logo" width="234" height="66"></img>
-        </div>
+        </div> */}
       <Outlet />
     </>
   )
