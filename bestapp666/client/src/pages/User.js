@@ -5,8 +5,6 @@ import { Footer } from "../components/Footer";
 import { SearchBar } from "../components/SearchBar";
 import MyPhoto from "../images/user_pic1.png";
 import ReactRoundedImage from "react-rounded-image";
-import SendIcon from '@mui/icons-material/Send';
-import Button from '@mui/material/Button';
 import PlusSign from '../images/plus-sign.png';
 import Post from "../components/Post"
 import Apple from "../images/apple-post.png"
