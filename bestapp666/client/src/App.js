@@ -8,7 +8,7 @@ import HomePage from "./pages/HomePage";
 import UserPage from "./pages/User";
 import LoginPage from "./pages/LoginPage";
 import BrowsePage from "./pages/BrowsePage";
-
+import FeedPage  from "./pages/FeedPage/FeedPage";
 import NoPage from "./pages/NoPage";
 
 export default function App() {
@@ -21,6 +21,7 @@ export default function App() {
           <Route path="register" element={<RegisterPage />} />
           <Route path="browse" element={<BrowsePage />} />
           <Route path="login" element={<LoginPage />} />
+          <Route path="feed" element={<FeedPage />} />
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>

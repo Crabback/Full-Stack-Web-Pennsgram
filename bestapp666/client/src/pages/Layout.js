@@ -21,6 +21,9 @@ const Layout = () => {
             <li>
                 <Link to="/login">Login</Link>
             </li>
+            <li>
+                <Link to="/feed">FeedPage</Link>
+            </li>
             </ul>
         </nav>
         <div className="header" >
