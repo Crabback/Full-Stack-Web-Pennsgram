@@ -10,6 +10,7 @@ import LoginPage from "./pages/LoginPage";
 import BrowsePage from "./pages/BrowsePage";
 import FeedPage  from "./pages/FeedPage/FeedPage";
 import NoPage from "./pages/NoPage";
+import UserPageNew from "./pages/UserPage/UserPageNew"
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path="user" element={<UserPage follow="Follow"/>} />
+          <Route path="userNew" element={<UserPageNew/>} />
           <Route path="register" element={<RegisterPage />} />
           <Route path="browse" element={<BrowsePage />} />
           <Route path="login" element={<LoginPage />} />

@@ -2,12 +2,12 @@
 import axios from 'axios';
 
 //mockAPI URL 
-// const rootURL ='https://633a4b96471b8c39556b9649.mockapi.io/api/v1/Student';
+// const rootURL = "";
 //JSON-server URL
-const rootURL ='http://localhost:8000/students';
-// Sends a Get request to the /student endpoint
-// returns all the students in the DB
-export const getStudents = async () =>{
+const rootURL ='http://localhost:8080/Users';
+// Sends a Get request to the /Users endpoint
+// returns all the users in the DB
+export const getUsers = async () =>{
     try{
             const response = await axios.get(`${rootURL}`);
             return response.data;
@@ -20,12 +20,18 @@ export const getStudents = async () =>{
     }
 }
 
-// Takes the id of a student as input
-// and sends a Get request to the /student:id endpoint
-// returns the attributes of the student
-export const getStudent = async (studentID) =>{
-    try{
-            const response = await axios.get(`${rootURL}/${studentID}`);
+// Takes the id of a user as input
+// and sends a Get request to the /user:id endpoint
+// returns the attributes of the user
+export const getUser = async (username) =>{
+    try{    
+            const response = await axios.get(`${rootURL}?username=${username}`);
+            //get the fetched data's username
+            let fetchedUsername;
+            response.data.forEach(element => {
+                fetchedUsername = element.username;
+            });
+            console.log(`successfully getUser by username: object with username: ${fetchedUsername}`);
             return response.data;
     }
     catch(err){
@@ -34,16 +40,16 @@ export const getStudent = async (studentID) =>{
 }
 
 
-// Takes a student (without the id) as input
-// and sends a POST request to the /student endpoint
-// returns the attributes of the student with the id
-export const createStudent = async (studentObject) =>{
-    try{
+// Takes a user (without the id) as input
+// and sends a POST request to the /user endpoint
+// returns the attributes of the user with the id
+export const createNewUser = async (userObject) =>{
+    try{    
             const response = await axios.post(`${rootURL}`,
-            `name=${studentObject.name}&major=${studentObject.major}&email=${studentObject.email}`);
-            console.log(`name=${studentObject.name}&major=${studentObject.major}&email=${studentObject.email}`);
+            `username=${userObject.username}&password=${userObject.password}&followings=${userObject.followings}&posts=${userObject.posts}`);
+            console.log(`username=${userObject.username}&password=${userObject.password}&followings=${userObject.followings}&posts=${userObject.posts}`);
             return response.data; 
-            // return the data with the id of the student
+            // return the data with the id of the user
     }
     catch(err){
         console.error(err);

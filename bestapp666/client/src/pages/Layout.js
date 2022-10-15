@@ -24,6 +24,9 @@ const Layout = () => {
             <Nav.Link href="/user">UserPage</Nav.Link>
           </Nav.Item>
           <Nav.Item as="li">
+            <Nav.Link href="/userNew">UserPageNew</Nav.Link>
+          </Nav.Item>
+          <Nav.Item as="li">
             <Nav.Link href="/register">SignupPage</Nav.Link>
           </Nav.Item>
           <Nav.Item as="li">
