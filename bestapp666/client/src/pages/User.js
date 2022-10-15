@@ -25,26 +25,7 @@ function UserPage(props) {
 
   return (
     <div className="top_half_page">
-      <div className="sticky-sm-top">
-        <img
-          src={require("../images/pennsgram_logo.png")}
-          alt="logo"
-          width="234"
-          height="66"
-        ></img>
-      </div>
-      <div className="right">
-        <Header page="user" />
-        <SearchBar />
-        <ReactRoundedImage
-          image={MyPhoto}
-          roundedColor="#321124"
-          imageWidth="100"
-          imageHeight="100"
-          roundedSize="2"
-          borderRadius="100"
-        />
-      </div>
+
       <div className="for-other-user">
         <button className="btn" onClick={addFollow}>
           {" "}
