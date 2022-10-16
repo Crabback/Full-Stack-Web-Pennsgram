@@ -5,65 +5,78 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { Navigate } from "react-router-dom";
+import Nav from 'react-bootstrap/Nav';
+
 
 function HomePage() {
     return (
     <div >
       <div className="top_half_page">
-        <div className="right">
-          <p>Brief About the platform</p>
-        </div>
-        <div className="logos">
-        </div>
-        <div className="right">
-          <Button variant="primary" type="submit">
-            Start Your Journey
-          </Button>
-        </div>
-      </div>
-      <div className="bot_half_page">
-        <p>Some moments from our users</p>
-        <div className="pics">
+        <Row>
+          <Col sm={7}></Col>
+
+          <Col>
+          <Row><p>Brief About the platform</p></Row>
+          <Row><p>Pennsgram is a platform where you can upload pictures and follow friends</p></Row>
           <Row>
           <Col>
-            <Card style={{ width: '12rem' }}>
-              <Card.Img variant="top" src={require("../images/amaz-post.png")} />
-              <Card.Body>
-                <Card.Title>User 1</Card.Title>
-                <Card.Text>
-                  Got my offer from Amazon today!
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col>
-          <Card style={{ width: '12rem' }}>
-              <Card.Img variant="top" src={require("../images/apple-post.png")} />
-              <Card.Body>
-                <Card.Title>User 1</Card.Title>
-                <Card.Text>
-                  Got my offer from Apple today!
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col>
-          <Card style={{ width: '12rem' }}>
-              <Card.Img variant="top" src={require("../images/meta-post.png")} />
-              <Card.Body>
-                <Card.Title>User 1</Card.Title>
-                <Card.Text>
-                  Got my offer from Meta today!
-                </Card.Text>
-              </Card.Body>
-            </Card>
+          <Button variant="primary" type="submit">
+            <Nav.Link href="/register">Start Your Journey</Nav.Link>
+          </Button>
           </Col>
           </Row>
-        </div>
-        <div className="bottom">
-          <Footer />
-        </div>
+          </Col>
+        </Row>
       </div>
-    </div>)
+
+      <div className="bot_half_page">
+        <Row>
+        Some moments from our users
+        </Row>
+        <Row></Row>
+
+          <Row>
+            <Col>
+              <Card style={{ width: '12rem' }}>
+                <Card.Img variant="top" src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSArC7oN3AWH3h8qHv5PYNoOrnKXdBMPph9JQ&usqp=CAU"} />
+                <Card.Body>
+                  <Card.Title>User 1</Card.Title>
+                  <Card.Text>
+                    Happy Pig!
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+            
+            <Col>
+            <Card style={{ width: '12rem' }}>
+                <Card.Img variant="top" src={"https://i.pinimg.com/736x/36/cd/ab/36cdabd55c158426997719b6f2fe00ad.jpg"} />
+                <Card.Body>
+                  <Card.Title>User 2</Card.Title>
+                  <Card.Text>
+                    Look at the dog!
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+
+            <Col>
+            <Card style={{ width: '12rem' }}>
+                <Card.Img variant="top" src={"https://bestfriends.org/sites/default/files/styles/five_col_rect_960x960_/public/feature-card/SampsonJessicaJess9655_square.jpg?itok=SE0pg8sC"} />
+                <Card.Body>
+                  <Card.Title>User 3</Card.Title>
+                  <Card.Text>
+                    Look at the pig!
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Col>
+
+          </Row>
+        </div>
+        
+        <Footer />
+      </div>)
   }
 export default HomePage

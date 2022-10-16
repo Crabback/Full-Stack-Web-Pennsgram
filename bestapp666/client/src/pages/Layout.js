@@ -46,69 +46,66 @@ const Layout = () => {
     <div className="top_half_page">
     <Navbar>
         <Container>
+          <Col sm={6}>
           <Navbar.Brand href="#home">
-          <img src={require("../images/pennsgram_logo.png")} alt="logo" width="234" height="66"></img>
+          <img src={require("../images/pennsgram_logo.png")} alt="logo" width="351" height="99"></img>
           </Navbar.Brand>
+          </Col>
           <header>
-          <Container>
+          <Col>
               <Row xs='auto'>
-                <Col>
+              </Row>
+              <Row>
+                <Nav className="justify-content-end" activeKey="/">
+                <Nav.Item>
                   <ReactRoundedImage
                     image={MyPhoto}
                     roundedColor="#321124"
-                    imageWidth="20"
-                    imageHeight="20"
+                    imageWidth="35"
+                    imageHeight="35"
                     roundedSize="2"
-                    borderRadius="10"
+                    borderRadius="20"
                   />
-                </Col>
-                <Col><strong> UserName</strong></Col>
+                </Nav.Item>
+                <Nav.Item><Nav.Link href="/user">Username</Nav.Link></Nav.Item>
+                  <Nav.Item>
+                    <Nav.Link href="/register">Sign up</Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Nav.Link href="/login">Login</Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Nav.Link eventKey="link-2">About</Nav.Link>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <Nav.Link eventKey="disabled" disabled>
+                      Contact Us
+                    </Nav.Link>
+                  </Nav.Item>
+                </Nav>
               </Row>
-          </Container>
+
+              <Row className="align-items-center">
+                <Col sm={4}></Col>
+                <Col xs='auto' className="my-1">
+                  <InputGroup className="mb-1">
+                    <Form.Control
+                      placeholder="search username"
+                      aria-label="user's username"
+                      aria-describedby="basic-addon2"
+                    />
+                    <Button variant="secondary" id="button-addon2">
+                      search
+                    </Button>
+                  </InputGroup>
+                </Col>
+              </Row>
+
+          </Col>
           </header>
         </Container>
       </Navbar>
     </div>
-
-    <div className="top_half_page">
-      <Nav className="justify-content-end" activeKey="/">
-        <Nav.Item>
-          <Nav.Link href="/register">Sign Up</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link href="/login">Login</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link eventKey="link-2">about</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link eventKey="disabled" disabled>
-            contact us
-          </Nav.Link>
-        </Nav.Item>
-    
-      </Nav>
-      </div>
-
-      {/* the search bar */}
-      <div className="top_half_page">
-        <Row className="align-items-center">
-          <Col xm='auto'></Col>
-          <Col xs='auto' className="my-1">
-            <InputGroup className="mb-1">
-              <Form.Control
-                placeholder="username"
-                aria-label="user's username"
-                aria-describedby="basic-addon2"
-              />
-              <Button variant="secondary" id="button-addon2">
-                search
-              </Button>
-            </InputGroup>
-          </Col>
-          <Col xs='auto'></Col>
-        </Row>
-      </div>
 
       {/* <div className="logos">
           <img src={require("../images/pennsgram_logo.png")} alt="logo" width="234" height="66"></img>

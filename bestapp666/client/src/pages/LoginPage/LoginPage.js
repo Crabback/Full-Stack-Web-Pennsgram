@@ -6,7 +6,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { getUser } from "../../api/mock_api";
-
+import Nav from 'react-bootstrap/Nav';
 import { useState, useEffect } from 'react';
 import { Navigate } from "react-router-dom";
 
@@ -58,9 +58,6 @@ function LoginForm(props){
     <Form.Group className="mb-3" controlId="formBasicEmail">
       <Form.Label>Username</Form.Label>
       <Form.Control name="username" onChange={handleOnChange} placeholder="Enter username (eg. dog)" />
-      <Form.Text className="text-muted">
-        We'll never share your username with anyone else.
-      </Form.Text>
     </Form.Group>
 
     <Form.Group className="mb-3" controlId="formBasicPassword">

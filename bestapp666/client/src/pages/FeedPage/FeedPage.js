@@ -26,7 +26,6 @@ function Card_customed(props){
             <ButtonGroup aria-label="like,comment,message">
                 <Button variant="light">Like</Button>
                 <Button variant="light">Comment</Button>
-                <Button variant="light">Message</Button>
             </ButtonGroup>
           </Card.Body>
         </Card>

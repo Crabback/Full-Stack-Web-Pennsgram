@@ -3,12 +3,17 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import {Footer} from "../components/Footer";
+import Nav from 'react-bootstrap/Nav';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
 
 function RegisterPage() {
     return (
     <div className='home'>
-        <div className="split left">
-            <div className="centered">
+        <Row>
+        <Col sm={1}></Col>
+        <Col sm={5}>
             <Form>
                 <Form.Group className="mb-3" controlId="formBasicFirstName">
                     <Form.Label>First Name</Form.Label>
@@ -31,7 +36,7 @@ function RegisterPage() {
 
                 <Form.Group className="mb-3" controlId="formBasicDOB">
                     <Form.Label>Date of Birth</Form.Label>
-                    <Form.Control type="DOB" placeholder="Date of Birth" />
+                    <Form.Control type="date" placeholder="Date of Birth" />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -49,25 +54,29 @@ function RegisterPage() {
                     <Form.Control type="password" placeholder="Password" />
                 </Form.Group>
 
+                <Form.Group className="mb-3" controlId="formBasicConfirmPassword">
+                    <Form.Label>Confirm Password</Form.Label>
+                    <Form.Control type="password" placeholder="Confirm Password" />
+                </Form.Group>
+
                 <Button variant="primary" type="submit">
-                    Submit
+                    <Nav.Link href="/login">Submit</Nav.Link>
                 </Button>
             </Form>
-            </div>
-        </div>
-
-        <div className="split right">
-            <div className="centered">
+        </Col>
+        <Col sm={1}></Col>
+        <Col sm={5}>
             <Form>
                 <Form.Group className="mb-3">
-                    <img src={require("../images/emptypic.png")} alt="user pic 1" width="200" height="200"></img>
+                    <img src={require("../images/emptypic.png")} alt="user pic 1" width="250" height="250"></img>
                 </Form.Group>
-                <Button variant="primary" type="submit">
-                    Upload Your Profile Picture
-                </Button>
+                <Form.Group controlId="formFile" className="mb-3">
+                    <Form.Label>Upload Profile Picture</Form.Label>
+                    <Form.Control type="file" />
+                </Form.Group>
             </Form>
-            </div>
-        </div>
+        </Col>
+        </Row>
         <Footer />
     </div>
     );

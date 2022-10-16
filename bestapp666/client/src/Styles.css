@@ -43,6 +43,7 @@
   display:flex;
   justify-content: left;
 	padding:2px;
+  padding-top:40px;
   font-size: 10px;
 }
 
@@ -74,6 +75,11 @@
   background: #faf5d9;
 }
 
+
+.panel {
+  background: #ffd900;
+}
+
 .right {
   text-align: right;
   padding-top: 0.5rem;
@@ -92,7 +98,6 @@
 
 .bot_half_page {
   font-family: sans-serif;
-  text-align: right;
   padding-top: 3rem;
 }
 

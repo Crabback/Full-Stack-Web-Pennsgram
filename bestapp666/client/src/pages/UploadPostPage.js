@@ -11,15 +11,16 @@ function UploadPostPage() {
     return (
     <div className="home">
       <Row>
-      <Col></Col>
+      <Col sm={1}></Col>
       <Col>
       <Form>
           <Form.Group className="mb-3">
               <img src={require("../images/emptypic.png")} alt="user pic 1" width="400" height="400"></img>
           </Form.Group>
-          <Button variant="primary" type="submit">
-              Upload Media
-          </Button>
+          <Form.Group controlId="formFile" className="mb-3">
+            <Form.Label>Upload Media</Form.Label>
+            <Form.Control type="file" />
+          </Form.Group>
       </Form>
       </Col>
       <Col>
@@ -30,7 +31,7 @@ function UploadPostPage() {
           rows={3}/>
         </Form.Group>
       </Col>
-      <Col></Col>
+      <Col sm={1}></Col>
       </Row>
     </div>)
   }
