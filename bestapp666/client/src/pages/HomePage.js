@@ -14,7 +14,7 @@ function HomePage() {
     <div >
       <div className="top_half_page">
         <Row>
-          <Col sm={7}></Col>
+          <Col sm={1}></Col>
 
           <Col>
           <Row><p>Brief About the platform</p></Row>
@@ -32,9 +32,8 @@ function HomePage() {
 
       <div className="bot_half_page">
         <Row>
-        Some moments from our users
+        <h4> Some moments from our users </h4>
         </Row>
-        <Row></Row>
 
           <Row>
             <Col>
