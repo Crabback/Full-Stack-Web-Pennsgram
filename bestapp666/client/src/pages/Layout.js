@@ -17,6 +17,7 @@ const Layout = () => {
     
     {/* the pages Nav for development use */}
     <div>
+    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Nav defaultActiveKey="/" as="ul">
           <Nav.Item as="li">
             <Nav.Link href="/">Home</Nav.Link>
@@ -40,6 +41,7 @@ const Layout = () => {
             <Nav.Link href="/feed">FeedPage</Nav.Link>
           </Nav.Item>
         </Nav>
+      </Navbar>
     </div>
 
     {/* the logo "brand" bar */}
