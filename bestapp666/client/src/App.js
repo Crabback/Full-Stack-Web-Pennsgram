@@ -6,7 +6,7 @@ import Layout from "./pages/Layout"
 import RegisterPage from "./pages/RegisterPage";
 import HomePage from "./pages/HomePage";
 import UserPage from "./pages/User";
-import LoginPage from "./pages/LoginPage";
+import LoginPage from "./pages/LoginPage/LoginPage";
 import BrowsePage from "./pages/BrowsePage";
 import FeedPage  from "./pages/FeedPage/FeedPage";
 import NoPage from "./pages/NoPage";
