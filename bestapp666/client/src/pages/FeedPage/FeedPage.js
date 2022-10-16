@@ -24,9 +24,9 @@ function Card_customed(props){
               {props.post.description}
             </Card.Text>
             <ButtonGroup aria-label="like,comment,message">
-                <Button variant="light">🥰</Button>
-                <Button variant="light">💬</Button>
-                <Button variant="light">✉️</Button>
+                <Button variant="light">Like</Button>
+                <Button variant="light">Comment</Button>
+                <Button variant="light">Message</Button>
             </ButtonGroup>
           </Card.Body>
         </Card>
@@ -58,7 +58,7 @@ export default function FeedPage() {
     };
 
   return (
-    <>
+    <div className='home'>
     
     <Stack gap={2} className="col-md-6 mx-auto">
         
@@ -67,7 +67,7 @@ export default function FeedPage() {
     ))}
     </Stack>
     
-    </>
+    </div>
   );
 }
 

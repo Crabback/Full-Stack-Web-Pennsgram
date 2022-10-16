@@ -31,7 +31,7 @@ const Layout = () => {
             <Nav.Link href="/register">SignupPage</Nav.Link>
           </Nav.Item>
           <Nav.Item as="li">
-            <Nav.Link href="/browse">BrowsePage</Nav.Link>
+            <Nav.Link href="/upload">UploadPostPage</Nav.Link>
           </Nav.Item>
           <Nav.Item as="li">
             <Nav.Link href="/login">LoginPage</Nav.Link>
@@ -47,7 +47,7 @@ const Layout = () => {
     <Navbar>
         <Container>
           <Navbar.Brand href="#home">
-          <img src={require("../images/pennsgram_logo.png")} alt="logo" width="468" height="132"></img>
+          <img src={require("../images/pennsgram_logo.png")} alt="logo" width="234" height="66"></img>
           </Navbar.Brand>
           <header>
           <Container>
@@ -56,14 +56,12 @@ const Layout = () => {
                   <ReactRoundedImage
                     image={MyPhoto}
                     roundedColor="#321124"
-                    imageWidth="100"
-                    imageHeight="100"
+                    imageWidth="20"
+                    imageHeight="20"
                     roundedSize="2"
-                    borderRadius="100"
+                    borderRadius="10"
                   />
                 </Col>
-              </Row>
-              <Row>
                 <Col><strong> UserName</strong></Col>
               </Row>
           </Container>

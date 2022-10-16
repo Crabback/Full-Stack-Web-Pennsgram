@@ -11,6 +11,8 @@ import Apple from "../images/apple-post.png"
 import Amaz from "../images/amaz-post.png"
 import Meta from "../images/meta-post.png"
 import Ms from "../images/ms-post.png"
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 function UserPage(props) {
   const [isFollowing, setIsFollowing] = useState(false);
@@ -31,10 +33,22 @@ function UserPage(props) {
           {" "}
           {isFollowing ? "Following" : "Follow"}
         </button>
-        <div>User Name</div>
-        <div>Some Description</div>
-        <div>Following</div>
-        <div>Followers</div>
+        <Row>
+          <Col>
+          <div>Following</div>
+          </Col>
+          <Col>
+          <div>Followers</div>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+          <div>User Name</div>
+          </Col>
+          <Col>
+          <div>Some Description</div>
+          </Col>
+        </Row>
 
       </div>
     <div className="bot_half_page">

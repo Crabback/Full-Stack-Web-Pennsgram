@@ -85,10 +85,11 @@ function LoginPage() {
 
   if(!authenticated){
     return (
+      <div className="home">
       <Container>
         <Row md>
       
-          <Col><label><h5>Please input your username to login. eg: dog/trump/..refer to json file for available usernames</h5></label></Col>
+          <Col><label><p>Please input your username to login. eg: dog/trump/..refer to json file for available usernames</p></label></Col>
         </Row>
         <Row md>
           <Col></Col>
@@ -103,6 +104,7 @@ function LoginPage() {
           </Col>
         </Row>
       </Container>
+      </div>
     )
   }else{
     return <Navigate replace to="/feed" />;
