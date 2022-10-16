@@ -60,7 +60,7 @@ function Layout(){
             <Nav.Link href="/user">UserPage</Nav.Link>
           </Nav.Item>
           <Nav.Item as="li">
-            <Nav.Link href="/userNew">UserPageNew</Nav.Link>
+            <Nav.Link href="/userNew">OtherUser</Nav.Link>
           </Nav.Item>
           <Nav.Item as="li">
             <Nav.Link href="/register">SignupPage</Nav.Link>
