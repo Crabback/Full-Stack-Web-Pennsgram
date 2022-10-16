@@ -6,17 +6,20 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { getUser } from "../../api/mock_api";
-import Nav from 'react-bootstrap/Nav';
+
 import { useState, useEffect } from 'react';
 import { Navigate } from "react-router-dom";
 
 import { useSelector, useDispatch } from 'react-redux'
-import {addLoginUser, logoutAction} from './currentUserSlice'
+import {addLoginUser, logoutAction, selectCurrentUser} from './currentUserSlice'
 
 
 //the compoent of a LoginForm which keep track of login username
 function LoginForm(props){
   // local state
+  const stateCurrentUser = useSelector(selectCurrentUser);
+  const dispatch = useDispatch();
+
   const [newInput, setInput] = useState({ username: '', password: '' });
 
   const handleOnChange = (e) => {
@@ -37,17 +40,28 @@ function LoginForm(props){
   const handleLogin = async (e) => {
     e.preventDefault();
     // send GET request to fetch the Student by username
-    const student = await getUser(newInput.username);
-    if(student.length == 0){
+    const userRoster = await getUser(newInput.username);
+    //get the user object
+    let user;
+    userRoster.forEach(element => {
+      user = element;
+    });
+
+    if(user == undefined){
       //login failed, due to wrong username cannot fetch data
       alert("Login failed due to unknown username!\n Please try one of these: tiger/trump/pig/dog/curry/ayesha/obama")
     }else{
       //login success!
-        alert("Login Success! logged in as: \n\n" + JSON.stringify(student)); 
-        console.log("Execute the code after clicking okay button of the alert window");
-        props.updateAuthen(true);
+
         // then update state
         // store.dispatch(loginAs(student)); // dispatch action add student to store
+        console.log(`before dispatch: ${stateCurrentUser.username}`);
+        dispatch(addLoginUser(user));
+
+        alert("Login Success! logged in as: \n\n" + JSON.stringify(userRoster)); 
+        console.log("Execute the code after clicking okay button of the alert window");
+        props.updateAuthen(true);
+        
     }
     
   };

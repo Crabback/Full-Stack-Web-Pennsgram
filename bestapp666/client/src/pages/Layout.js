@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Outlet, Link } from "react-router-dom";
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
@@ -10,8 +10,42 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import ReactRoundedImage from "react-rounded-image";
 import MyPhoto from "../images/user_pic1.png";
+import { Navigate, useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from 'react-redux'
+import {addLoginUser, logoutAction, selectCurrentUser} from './LoginPage/currentUserSlice'
 
-const Layout = () => {
+
+//component unit
+function LoginLink() {
+  const stateCurrentUser = useSelector(selectCurrentUser);
+  const username = stateCurrentUser.username;
+  const handleLinkOnClick= (e) => {
+    console.log(stateCurrentUser.username);
+  };
+
+  if(stateCurrentUser.username == "NOT_A_USER"){
+    return (<Nav.Link href="/login">{"Login"}</Nav.Link>);
+  }else{
+    return (<Nav.Link onClick={handleLinkOnClick} href="/login">Logout</Nav.Link>);
+  }
+  
+}
+
+function Layout(){
+
+  //get the current user's attributes
+  const stateCurrentUser = useSelector(selectCurrentUser);
+  const userid = stateCurrentUser.id;
+  const username = stateCurrentUser.username;
+  const avatar = stateCurrentUser.avatar;
+
+  //the below section handle the re-routing of clicking the username button
+  const [clickProfile, setClickProfile] = useState(false);
+
+  const routeChange = () =>{
+    setClickProfile(true);
+  }
+
   return (
     <>
     
@@ -61,7 +95,7 @@ const Layout = () => {
                 <Nav className="justify-content-end" activeKey="/">
                 <Nav.Item>
                   <ReactRoundedImage
-                    image={MyPhoto}
+                    image={avatar}
                     roundedColor="#321124"
                     imageWidth="35"
                     imageHeight="35"
@@ -74,7 +108,8 @@ const Layout = () => {
                     <Nav.Link href="/register">Sign up</Nav.Link>
                   </Nav.Item>
                   <Nav.Item>
-                    <Nav.Link href="/login">Login</Nav.Link>
+                    {/* handle login to logout */}
+                    <LoginLink />
                   </Nav.Item>
                   <Nav.Item>
                     <Nav.Link eventKey="link-2">About</Nav.Link>
