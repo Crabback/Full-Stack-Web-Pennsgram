@@ -1,5 +1,5 @@
 import "../Styles.css";
-import React from 'react';
+import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import {Footer} from "../components/Footer";
@@ -9,6 +9,12 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 
 function RegisterPage() {
+    const [profilePic, setProfilePic] = useState(require("../images/emptypic.png"));
+    
+    function handleChange(e) {
+        setProfilePic(URL.createObjectURL(e.target.files[0]));
+    }
+    
     return (
     <div className='home'>
         <Row>
@@ -68,11 +74,11 @@ function RegisterPage() {
         <Col sm={5}>
             <Form>
                 <Form.Group className="mb-3">
-                    <img src={require("../images/emptypic.png")} alt="user pic 1" width="250" height="250"></img>
+                    <img src={profilePic} alt="user pic 1" width="250" height="250"></img>
                 </Form.Group>
                 <Form.Group controlId="formFile" className="mb-3">
                     <Form.Label>Upload Profile Picture</Form.Label>
-                    <Form.Control type="file" />
+                    <Form.Control type="file" onChange={handleChange}/>
                 </Form.Group>
             </Form>
         </Col>

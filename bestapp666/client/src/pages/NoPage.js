@@ -1,7 +1,14 @@
 import React from 'react';
+import Alert from 'react-bootstrap/Alert';
 
-const NoPage = () => {
-    return <h1>404 not found</h1>;
+function NoPage(){
+    return (
+    <Alert variant="danger" >
+      <Alert.Heading>404. Page Not Found. </Alert.Heading>
+      <p>
+        Change this and that and try again. 
+      </p>
+  </Alert>)
   };
   
   export default NoPage;

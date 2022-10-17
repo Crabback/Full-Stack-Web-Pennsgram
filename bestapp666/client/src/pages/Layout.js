@@ -63,7 +63,7 @@ function Layout(){
             <Nav.Link href="/userNew">OtherUser</Nav.Link>
           </Nav.Item>
           <Nav.Item as="li">
-            <Nav.Link href="/register">SignPage</Nav.Link>
+            <Nav.Link href="/register">SignUpPage</Nav.Link>
           </Nav.Item>
           <Nav.Item as="li">
             <Nav.Link href="/upload">UploadPostPage</Nav.Link>
@@ -144,9 +144,6 @@ function Layout(){
       </Navbar>
     </div>
 
-      {/* <div className="logos">
-          <img src={require("../images/pennsgram_logo.png")} alt="logo" width="234" height="66"></img>
-        </div> */}
       <Outlet />
     </>
   )
