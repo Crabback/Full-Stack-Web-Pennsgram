@@ -13,57 +13,91 @@ import Meta from "../images/meta-post.png"
 import Ms from "../images/ms-post.png"
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Card from 'react-bootstrap/Card';
+import Container from 'react-bootstrap/Container';
+import Button from 'react-bootstrap/Button';
+import Nav from 'react-bootstrap/Nav';
+import { PropaneSharp } from "@mui/icons-material";
 
-function UserPage(props) {
-  const [isFollowing, setIsFollowing] = useState(false);
 
-  const addFollow = () => {
-    if (isFollowing) {
-      setIsFollowing(false);
-    } else {
-      setIsFollowing(true);
-    }
-  };
+//define a inside components
+function Card_customed(props){
+    //props is a post fed from a following user
+
+    return (
+        
+        <Card bg = "light" style={{ width: '20rem'}}>
+          <Card.Img variant="bottom" rounded="true" src={props.post.image} />
+          <Card.Body>
+            <Card.Text>
+              {props.post.description}
+            </Card.Text>
+          </Card.Body>
+        </Card>
+        )
+}
+
+
+export default function UserPage(props) {
+
+    const [isFollowing, setIsFollowing] = useState(false);
+
+    const addFollow = () => {
+      if (isFollowing) {
+        setIsFollowing(false);
+      } else {
+        setIsFollowing(true);
+      }
+    };
+    const feedPost1 = {author:"UserFollowing 1", 
+    description:"Got an offer from Meta!",
+    image: Meta
+    };
+
+    const feedPost2 = {author:"UserFollowing 2", 
+    description:"Got an offer from MS!",
+    image: Ms
+    };
+
+    const feedPost3 = {author:"UserFollowing 3", 
+    description:"Got an offer from Amazon!",
+    image: Amaz
+    };
+
+    const feedPost4 = {author:"UserFollowing 4", 
+    description:"Got an offer from Apple!",
+    image: Apple
+    };
+
+    const posts =  [feedPost1, feedPost2, feedPost3, feedPost4].map((post) => (
+        <Card_customed post={post}/>
+    ))
+
+        const postNewPost =  (
+            <Button>
+            <Nav.Link href="/upload">New Post</Nav.Link>
+            </Button>
+        )
+
 
   return (
-    <div className="top_half_page">
+      
+    <div className='home'>
+    
+    <Container>
+        <Col sm={{span : 4, offset: 11}}>{postNewPost} </Col>
 
-      <div className="for-other-user">
-        <button className="btn" onClick={addFollow}>
-          {" "}
-          {isFollowing ? "Following" : "Follow"}
-        </button>
-        <Row>
-          <Col>
-          <div>Following</div>
-          </Col>
-          <Col>
-          <div>Followers</div>
-          </Col>
-        </Row>
-        <Row>
-          <Col>
-          <div>User Name</div>
-          </Col>
-          <Col>
-          <div>Some Description</div>
-          </Col>
-        </Row>
+        <Col sm={15}>
+            <Row>
+                {posts}
+            </Row>
 
-      </div>
-    <div className="bot_half_page">
-        <div>
-        <button className="btn">new post</button>
-        </div>
-        <div className="posts">
-            <Post image={Apple} description="Got an offer from Apple! "/>
-            <Post image={Amaz} description="Got an offer from Amazon!"/>
-            <Post image={Ms} description="Got an offer from Microsoft!"/>
-            <Post image={Meta} description="Got an offer from Meta!"/>
+        </Col>
 
-        </div>
-    </div>
+    </Container>
+    
+    
+
     </div>
   );
 }
-export default UserPage;
