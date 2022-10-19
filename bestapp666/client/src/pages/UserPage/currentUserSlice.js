@@ -20,7 +20,7 @@ export const currentUserSlice = createSlice({
       return action.payload //you must return payload to receive the 
     },
     logoutAction: state => {
-      state = {
+      return state = {
         id: -1,
         username: 'NOT_A_USER',
         password: '',

@@ -15,16 +15,18 @@ import {addLoginUser, logoutAction, selectCurrentUser} from './UserPage/currentU
 
 //component unit
 function LoginLink() {
+  const dispatch = useDispatch();
   const stateCurrentUser = useSelector(selectCurrentUser);
   const username = stateCurrentUser.username;
   const handleLinkOnClick= (e) => {
-    console.log(stateCurrentUser.username);
+    dispatch(logoutAction());
+    console.log("currentuser " + stateCurrentUser.username + " has logged out: ");
   };
 
   if(stateCurrentUser.username == "NOT_A_USER"){
     return (<NavLink to="/login" className='headers'>{"Login"}</NavLink>);
   }else{
-    return (<NavLink onClick={handleLinkOnClick} to="/login" className='headers'>Logout</NavLink>);
+    return (<Nav.Link onClick={handleLinkOnClick} to="/login" className='headers'>Logout</Nav.Link>);
   }
   
 }
