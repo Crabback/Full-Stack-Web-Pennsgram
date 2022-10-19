@@ -15,7 +15,7 @@ HW1: Architecture Design (Completed)
 HW2: Implementation (View) & UI Testing. 
 
 PDF instruction: https://static.us.edusercontent.com/files/4b4xtthdOb9R50f31q9THOFb
-due date: Oct 19 at 11:59 pm on Gradescope
+due date: Oct 21 at 11:59 pm on Gradescope
        
        Sprint 1: Translate your wireframes into static react components. 
               Create and validate your CSS files. At the end of the sprint, 
