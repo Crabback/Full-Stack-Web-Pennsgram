@@ -1,12 +1,10 @@
 import "../../Styles.css";
 import React, { useState } from "react";
-import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import { SearchBar } from "../../components/SearchBar";
 import MyPhoto from "../../images/user_pic1.png";
 import ReactRoundedImage from "react-rounded-image";
 import PlusSign from '../../images/plus-sign.png';
-import Post from "../../components/Post"
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
@@ -125,7 +123,9 @@ export default function UserPage(props) {
 
     </Container>
     
-    
+    <div style={{paddingLeft: "2rem"}}>
+        <Footer />
+        </div>
 
     </div>
   );

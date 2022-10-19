@@ -36,9 +36,14 @@ function UploadPostPage() {
           placeholder="Description about the picture/video." 
           rows={3}/>
         </Form.Group>
-        <Button variant="primary" type="submit">
-          <NavLink to="/user" className="button_text">Upload</NavLink>
-        </Button>
+
+       
+          <NavLink to="/user" className="button_text">
+            <Button variant="primary" type="submit">
+              Upload
+            </Button>
+          </NavLink>
+
       </Col>
       <Col sm={1}></Col>
       </Row>

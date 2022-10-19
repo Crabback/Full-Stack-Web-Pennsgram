@@ -102,7 +102,7 @@ function Layout(){
                     <LoginLink />
                   </Nav.Item>
                   <Nav.Item>
-                    <NavLink eventKey="link-2" className='headers'>About</NavLink>
+                    <NavLink to="" className='headers'>About</NavLink>
                   </Nav.Item>
                   <Nav.Item>
                     <NavLink eventKey="disabled" className='headers' disabled>
