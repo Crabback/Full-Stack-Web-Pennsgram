@@ -13,12 +13,12 @@ function Card_customed(props){
     //props is a post fed from a following user
 
     return (
-        
         <Card bg = "light" style={{ width: '28rem'}}>
-          <Card.Title>
-            {props.post.author}
-            </Card.Title>
+          <Button variant="primary">{props.post.author}</Button>
           <Card.Img variant="bottom" rounded="true" src={props.post.image} />
+          <Card.Subtitle className="text-muted" style={{paddingTop: "1rem"}}> 
+            {props.post.date}
+          </Card.Subtitle>
           <Card.Body>
             <Card.Text>
               {props.post.description}
@@ -38,26 +38,30 @@ function Card_customed(props){
 export default function FeedPage() {
     const feedPost1 = {author:"UserFollowing 1", 
     description:"Some description about the tiger.",
+    date: "10/22/2022",
     image: tigerUrl
     };
 
     const feedPost2 = {author:"UserFollowing 2", 
     description:"Some description about the cat.",
+    date: "10/18/2022",
     image: catUrl
     };
 
     const feedPost3 = {author:"UserFollowing 3", 
     description:"Some description about the dog.",
+    date: "10/16/2022",
     image: dogUrl
     };
 
     const feedPost4 = {author:"UserFollowing 4", 
     description:"Some description about the pig.",
+    date: "10/12/2022",
     image: pigUrl
     };
 
   return (
-    <div className='home'>
+    <div className='background'>
     
     <Stack gap={2} className="col-md-6 mx-auto">
         

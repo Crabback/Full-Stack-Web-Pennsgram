@@ -10,7 +10,7 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import ReactRoundedImage from "react-rounded-image";
 import { useSelector, useDispatch } from 'react-redux'
-import {addLoginUser, logoutAction, selectCurrentUser} from './LoginPage/currentUserSlice'
+import {addLoginUser, logoutAction, selectCurrentUser} from './UserPage/currentUserSlice'
 
 
 //component unit
@@ -22,9 +22,9 @@ function LoginLink() {
   };
 
   if(stateCurrentUser.username == "NOT_A_USER"){
-    return (<NavLink href="/login" className='headers'>{"Login"}</NavLink>);
+    return (<NavLink to="/login" className='headers'>{"Login"}</NavLink>);
   }else{
-    return (<NavLink onClick={handleLinkOnClick} href="/login" className='headers'>Logout</NavLink>);
+    return (<NavLink onClick={handleLinkOnClick} to="/login" className='headers'>Logout</NavLink>);
   }
   
 }

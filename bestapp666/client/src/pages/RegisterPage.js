@@ -3,10 +3,9 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import {Footer} from "../components/Footer";
-import Nav from 'react-bootstrap/Nav';
+import { NavLink } from "react-router-dom";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Container from 'react-bootstrap/Container';
 
 function RegisterPage() {
     const [profilePic, setProfilePic] = useState(require("../images/emptypic.png"));
@@ -16,7 +15,7 @@ function RegisterPage() {
     }
     
     return (
-    <div className='home'>
+    <div className='background'>
         <Row>
         <Col sm={1}></Col>
         <Col sm={5}>
@@ -65,9 +64,13 @@ function RegisterPage() {
                     <Form.Control type="password" placeholder="Confirm Password" />
                 </Form.Group>
 
-                <Button variant="primary" type="submit">
-                    <Nav.Link href="/login">Submit</Nav.Link>
-                </Button>
+                
+                <NavLink to="/login">
+                    <Button variant="primary" type="submit">
+                        Submit
+                    </Button>
+                </NavLink>
+            
             </Form>
         </Col>
         <Col sm={1}></Col>
@@ -76,14 +79,16 @@ function RegisterPage() {
                 <Form.Group className="mb-3">
                     <img src={profilePic} alt="user pic 1" width="250" height="250"></img>
                 </Form.Group>
-                <Form.Group controlId="formFile" className="mb-3">
+                <Form.Group controlId="formFile" className="mb-3" style={{paddingRight: "26rem"}}>
                     <Form.Label>Upload Profile Picture</Form.Label>
                     <Form.Control type="file" onChange={handleChange}/>
                 </Form.Group>
             </Form>
         </Col>
         </Row>
+        <div style={{paddingLeft: "2rem"}}>
         <Footer />
+        </div>
     </div>
     );
 }

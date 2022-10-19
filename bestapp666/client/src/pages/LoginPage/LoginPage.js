@@ -10,7 +10,7 @@ import { getUser } from "../../api/mock_api";
 import { useState, useEffect } from 'react';
 import { Navigate } from "react-router-dom";
 import { useSelector, useDispatch, Provider} from 'react-redux'
-import {addLoginUser, logoutAction, selectCurrentUser} from './currentUserSlice'
+import {addLoginUser, logoutAction, selectCurrentUser} from '../UserPage/currentUserSlice'
 
 
 //the compoent of a LoginForm which keep track of login username
@@ -95,7 +95,7 @@ function LoginPage() {
 
   if(!authenticated){
     return (
-      <div className="home">
+      <div className="background">
       <Container>
         <Row md>
       
@@ -107,13 +107,11 @@ function LoginPage() {
           <Col></Col>
         </Row>
         <Row ms>
-          <Col>
-              <div className="bot_half_page">
-                  <Footer />
-              </div>
-          </Col>
         </Row>
       </Container>
+      <div style={{paddingLeft: "2rem", paddingTop: "5rem"}}>
+        <Footer />
+        </div>
       </div>
     )
   }else{

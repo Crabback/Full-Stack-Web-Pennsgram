@@ -98,6 +98,14 @@
   padding-top: 0.5rem;
 }
 
+.home_img {
+  width: 18rem;
+  height: 18rem;
+  position: relative;
+  object-fit: cover;
+  overflow: hidden;
+}
+
 .logos {
   font-family: sans-serif;
   padding-top: 0.5rem;
@@ -109,7 +117,6 @@
 }
 
 .btn {
-  background: #e8be56;
   background-image: -webkit-linear-gradient(top, #e8be56, #be9c45);
   background-image: -moz-linear-gradient(top, #e8be56, #be9c45);
   background-image: -ms-linear-gradient(top, #e8be56, #be9c45);
@@ -128,11 +135,11 @@
 }
 
 .btn:hover {
-  background: #3cb0fd;
-  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  background: #937937;
+  background-image: -webkit-linear-gradient(top, #ba9f5b, #937937);
+  background-image: -moz-linear-gradient(top, #ba9f5b, #937937);
+  background-image: -ms-linear-gradient(top, #ba9f5b, #937937);
+  background-image: -o-linear-gradient(top, #ba9f5b, #937937);
+  background-image: linear-gradient(to bottom, #ba9f5b, #937937);
   text-decoration: none;
 }

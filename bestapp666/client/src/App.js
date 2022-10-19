@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./pages/Layout"
 import RegisterPage from "./pages/RegisterPage";
 import HomePage from "./pages/HomePage";
-import UserPage from "./pages/User";
+import UserPage from "./pages/UserPage/User";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import UploadPostPage from "./pages/UploadPostPage";
 import FeedPage  from "./pages/FeedPage/FeedPage";

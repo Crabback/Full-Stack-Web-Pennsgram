@@ -2,7 +2,7 @@ import "../Styles.css";
 import React, { useState } from 'react';
 import {Footer} from "../components/Footer";
 import {SearchBar} from "../components/SearchBar";
-import Nav from 'react-bootstrap/Nav';
+import { NavLink } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
@@ -15,15 +15,15 @@ function UploadPostPage() {
     setMedia(URL.createObjectURL(e.target.files[0]));
   }
     return (
-    <div className="home">
+    <div className="background">
       <Row>
       <Col sm={1}></Col>
-      <Col>
+      <Col sm={5}>
       <Form>
           <Form.Group className="mb-3">
               <img src={media} alt="user pic 1" width="400" height="400"></img>
           </Form.Group>
-          <Form.Group controlId="formFile" className="mb-3">
+          <Form.Group controlId="formFile" className="mb-3" style={{paddingRight: "13rem"}}>
             <Form.Label>Upload Media</Form.Label>
             <Form.Control type="file" onChange={handleChange}/>
           </Form.Group>
@@ -37,11 +37,14 @@ function UploadPostPage() {
           rows={3}/>
         </Form.Group>
         <Button variant="primary" type="submit">
-          <Nav.Link href="/user">Upload</Nav.Link>
+          <NavLink to="/user" className="button_text">Upload</NavLink>
         </Button>
       </Col>
       <Col sm={1}></Col>
       </Row>
+      <div style={{paddingLeft: "2rem", paddingTop: "5rem"}}>
+        <Footer />
+        </div>
     </div>)
   }
 export default UploadPostPage
