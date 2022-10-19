@@ -10,7 +10,6 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import UploadPostPage from "./pages/UploadPostPage";
 import FeedPage  from "./pages/FeedPage/FeedPage";
 import NoPage from "./pages/NoPage";
-import UserPageNew from "./pages/UserPage/UserPageNew"
 
 export default function App() {
   return (

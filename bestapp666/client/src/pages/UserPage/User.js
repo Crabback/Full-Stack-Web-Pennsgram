@@ -100,7 +100,7 @@ export default function UserPage(props) {
         justifyContent: 'center',
         paddingTop: "1rem"
       }}>
-    <p className="fw-bold"> Username </p>
+    <p className="fw-bold" data-testid="username"> Username </p>
     </div>
     <div style={{
         display: 'flex',
