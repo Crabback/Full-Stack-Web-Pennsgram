@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, NavLink } from "react-router-dom";
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -9,8 +9,6 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import ReactRoundedImage from "react-rounded-image";
-import MyPhoto from "../images/user_pic1.png";
-import { Navigate, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux'
 import {addLoginUser, logoutAction, selectCurrentUser} from './LoginPage/currentUserSlice'
 
@@ -24,9 +22,9 @@ function LoginLink() {
   };
 
   if(stateCurrentUser.username == "NOT_A_USER"){
-    return (<Nav.Link href="/login">{"Login"}</Nav.Link>);
+    return (<NavLink href="/login" className='headers'>{"Login"}</NavLink>);
   }else{
-    return (<Nav.Link onClick={handleLinkOnClick} href="/login">Logout</Nav.Link>);
+    return (<NavLink onClick={handleLinkOnClick} href="/login" className='headers'>Logout</NavLink>);
   }
   
 }
@@ -51,97 +49,91 @@ function Layout(){
     
     {/* the pages Nav for development use */}
     <div>
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar>
         <Nav defaultActiveKey="/" as="ul">
           <Nav.Item as="li">
-            <Nav.Link href="/">Home</Nav.Link>
+            <NavLink to="/" className='headers2'>Home</NavLink>
           </Nav.Item>
           <Nav.Item as="li">
-            <Nav.Link href="/user">UserPage</Nav.Link>
+            <NavLink to="/user" className='headers2'>UserPage</NavLink>
           </Nav.Item>
           <Nav.Item as="li">
-            <Nav.Link href="/userNew">OtherUser</Nav.Link>
+            <NavLink to="/register" className='headers2'>RegisterPage</NavLink>
           </Nav.Item>
           <Nav.Item as="li">
-            <Nav.Link href="/register">SignUpPage</Nav.Link>
+            <NavLink to="/upload" className='headers2'>UploadPostPage</NavLink>
           </Nav.Item>
           <Nav.Item as="li">
-            <Nav.Link href="/upload">UploadPostPage</Nav.Link>
+            <NavLink to="/login" className='headers2'>LoginPage</NavLink>
           </Nav.Item>
           <Nav.Item as="li">
-            <Nav.Link href="/login">LoginPage</Nav.Link>
-          </Nav.Item>
-          <Nav.Item as="li">
-            <Nav.Link href="/feed">FeedPage</Nav.Link>
+            <NavLink to="/feed" className='headers2'>FeedPage</NavLink>
           </Nav.Item>
         </Nav>
       </Navbar>
     </div>
 
     {/* the logo "brand" bar */}
-    <div className="top_half_page">
-    <Navbar>
+    <div className="background">
+    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
           <Col sm={6}>
-          <Navbar.Brand href="#home">
-          <img src={require("../images/pennsgram_logo.png")} alt="logo" width="351" height="99"></img>
-          </Navbar.Brand>
           </Col>
-          <header>
           <Col>
-              <Row xs='auto'>
-              </Row>
-              <Row>
                 <Nav className="justify-content-end" activeKey="/">
-                <Nav.Item>
-                  <ReactRoundedImage
-                    image={avatar}
-                    roundedColor="#321124"
-                    imageWidth="35"
-                    imageHeight="35"
-                    roundedSize="2"
-                    borderRadius="20"
-                  />
-                </Nav.Item>
-                <Nav.Item><Nav.Link href="/user">Username</Nav.Link></Nav.Item>
                   <Nav.Item>
-                    <Nav.Link href="/register">Sign up</Nav.Link>
+                    <ReactRoundedImage
+                      image={avatar}
+                      roundedColor="#ffffff"
+                      imageWidth="35"
+                      imageHeight="35"
+                      roundedSize="2"
+                      borderRadius="20"
+                    />
+                  </Nav.Item>
+                  <Nav.Item>
+                    <NavLink to='/user' className='headers'>Username</NavLink>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <NavLink to="/register" className='headers'>Sign up</NavLink>
                   </Nav.Item>
                   <Nav.Item>
                     {/* handle login to logout */}
                     <LoginLink />
                   </Nav.Item>
                   <Nav.Item>
-                    <Nav.Link eventKey="link-2">About</Nav.Link>
+                    <NavLink eventKey="link-2" className='headers'>About</NavLink>
                   </Nav.Item>
                   <Nav.Item>
-                    <Nav.Link eventKey="disabled" disabled>
+                    <NavLink eventKey="disabled" className='headers' disabled>
                       Contact Us
-                    </Nav.Link>
+                    </NavLink>
                   </Nav.Item>
                 </Nav>
-              </Row>
-
-              <Row className="align-items-center">
-                <Col sm={4}></Col>
-                <Col xs='auto' className="my-1">
-                  <InputGroup className="mb-1">
-                    <Form.Control
-                      placeholder="search username"
-                      aria-label="user's username"
-                      aria-describedby="basic-addon2"
-                    />
-                    <Button variant="secondary" id="button-addon2">
-                      search
-                    </Button>
-                  </InputGroup>
-                </Col>
-              </Row>
-
           </Col>
-          </header>
         </Container>
       </Navbar>
+
+      <Row>
+        <Col sm={8}>
+          <Navbar.Brand style={{paddingLeft: "rem"}}>
+            <img src={require("../images/pennsgram_logo.png")} alt="logo" width="527" height="149"></img>
+          </Navbar.Brand>
+        </Col>
+        <Col >
+          <InputGroup className="mb-1" style={{paddingTop: "2rem", paddingRight: "11rem"}}>
+            <Form.Control
+              placeholder="search username"
+              aria-label="user's username"
+              aria-describedby="basic-addon2"
+            />
+            <Button variant="secondary" id="button-addon2">
+              search
+            </Button>
+          </InputGroup>
+        </Col>
+      </Row>
+      <Row style={{paddingTop: "5rem", paddingLeft: "rem"}}></Row>
     </div>
 
       <Outlet />

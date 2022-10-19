@@ -44,7 +44,7 @@
   justify-content: left;
 	padding:2px;
   padding-top:40px;
-  font-size: 10px;
+  font-size: 15px;
 }
 
 .search {
@@ -53,11 +53,11 @@
   padding: 5px;
   border: none;
   border-radius: 10px;
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .footer_elements {
-  margin-right: 8px;
+  margin-right: 2rem;
 }
 
 .App {
@@ -65,12 +65,19 @@
   font-size: 8px;
 }
 
-.top_half_page {
-  font-family: sans-serif;
-  background: #faf5d9;
+.headers{
+  text-decoration: none;
+  color: #ffffff;
+  padding-left: 0.8rem;
+  vertical-align: sub;
 }
 
-.home {
+.headers2{
+  text-decoration: none;
+  padding-left: 1rem;
+}
+
+.background {
   font-family: sans-serif;
   background: #faf5d9;
 }

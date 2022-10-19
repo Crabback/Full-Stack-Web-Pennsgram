@@ -12,28 +12,25 @@ import Nav from 'react-bootstrap/Nav';
 function HomePage() {
     return (
     <div >
-      <div className="top_half_page">
+      <div className="background" style={{paddingLeft: "2rem"}}>
         <Row>
-          <Col sm={1}></Col>
-
+          <Col sm = {9}>
+            <Row><h2 className="fw-bold">Brief About the platform</h2></Row>
+            <Row><p style={{paddingTop: "1rem", paddingBottom: "5rem"}}>Pennsgram is a platform where you can upload pictures and follow friends.</p></Row>
+          </Col>
           <Col>
-          <Row><p>Brief About the platform</p></Row>
-          <Row><p>Pennsgram is a platform where you can upload pictures and follow friends</p></Row>
-          <Row>
-          <Col>
-          <Button variant="primary" type="submit">
-            <Nav.Link href="/register">Start Your Journey</Nav.Link>
-          </Button>
+            <Button variant="primary" type="submit" style={{paddingTop: "1rem", paddingBottom: "1rem"}}>
+              <Nav.Link href="/register">Start Your Journey</Nav.Link>
+            </Button>
           </Col>
           </Row>
-          </Col>
-        </Row>
       </div>
 
-      <div className="bot_half_page">
-        <Row>
-        <h4> Some moments from our users </h4>
+      <div className="bot_half_page" style={{paddingLeft: "2rem"}}>
+        <Row style={{paddingBottom: "2rem"}}>
+          <h3 className="fw-bold">Some moments from our users</h3>
         </Row>
+
 
           <Row>
             <Col>

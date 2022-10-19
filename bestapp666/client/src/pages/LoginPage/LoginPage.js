@@ -9,8 +9,7 @@ import { getUser } from "../../api/mock_api";
 
 import { useState, useEffect } from 'react';
 import { Navigate } from "react-router-dom";
-
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector, useDispatch, Provider} from 'react-redux'
 import {addLoginUser, logoutAction, selectCurrentUser} from './currentUserSlice'
 
 

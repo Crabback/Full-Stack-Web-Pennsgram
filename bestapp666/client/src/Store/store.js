@@ -7,6 +7,6 @@ import currentUserReducer from '../pages/LoginPage/currentUserSlice'
 export default configureStore({
   reducer: {
     currentUser: currentUserReducer,
-
+    
   }
 })

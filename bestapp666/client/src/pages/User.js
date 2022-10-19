@@ -7,17 +7,12 @@ import MyPhoto from "../images/user_pic1.png";
 import ReactRoundedImage from "react-rounded-image";
 import PlusSign from '../images/plus-sign.png';
 import Post from "../components/Post"
-import Apple from "../images/apple-post.png"
-import Amaz from "../images/amaz-post.png"
-import Meta from "../images/meta-post.png"
-import Ms from "../images/ms-post.png"
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import Nav from 'react-bootstrap/Nav';
-import { PropaneSharp } from "@mui/icons-material";
 
 
 //define a inside components
@@ -41,6 +36,7 @@ function Card_customed(props){
 export default function UserPage(props) {
 
     const [isFollowing, setIsFollowing] = useState(false);
+    const [isSelf, setIsSelf] = useState(true);
 
     const addFollow = () => {
       if (isFollowing) {
@@ -51,22 +47,22 @@ export default function UserPage(props) {
     };
     const feedPost1 = {author:"UserFollowing 1", 
     description:"Got an offer from Meta!",
-    image: Meta
+    image: require("../images/meta-post.png")
     };
 
     const feedPost2 = {author:"UserFollowing 2", 
     description:"Got an offer from MS!",
-    image: Ms
+    image: require("../images/ms-post.png")
     };
 
     const feedPost3 = {author:"UserFollowing 3", 
     description:"Got an offer from Amazon!",
-    image: Amaz
+    image: require("../images/amaz-post.png")
     };
 
     const feedPost4 = {author:"UserFollowing 4", 
     description:"Got an offer from Apple!",
-    image: Apple
+    image: require("../images/apple-post.png")
     };
 
     const posts =  [feedPost1, feedPost2, feedPost3, feedPost4].map((post) => (
