@@ -42,22 +42,19 @@ export default function UserPage() {
     // declare and initialize the the user object for this page
     const stateCurrentUser = useSelector(selectCurrentUser);
     const [thisUser, setThisUser] = useState(stateCurrentUser);
-    const self = "self";
-    
+
     useEffect(() => {
-      if(self != "true"){
-        fetchData();
-      }
 
       async function fetchData() {
+        //verification username exist or not
         const userRoster = await getUser(username);
         //get the user object
         let user;
         userRoster.forEach(element => {user = element;});
         setThisUser(user);
       }
-
-    }, [self]); //adding empty dependency making sure useEffect only run once after each render
+      fetchData();
+    }, [username]); //adding empty dependency making sure useEffect only run once after each render
 
     console.log("outside: !: " + thisUser.username);
     //follows
@@ -70,7 +67,7 @@ export default function UserPage() {
     };
 
     var buttonContent = "";
-    if (self == "true"){
+    if (username==stateCurrentUser.username){
       buttonContent = "post"
     }else{
       buttonContent = "follow"
