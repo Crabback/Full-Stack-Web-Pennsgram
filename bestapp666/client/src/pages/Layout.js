@@ -10,6 +10,7 @@ import Form from 'react-bootstrap/Form';
 import ReactRoundedImage from "react-rounded-image";
 import { useSelector, useDispatch } from 'react-redux'
 import {addLoginUser, logoutAction, selectCurrentUser} from './UserPage/currentUserSlice'
+import { SearchBar } from "../components/SearchBar";
 
 
 //component unit
@@ -39,13 +40,6 @@ function Layout(){
   const stateCurrentUser = useSelector(selectCurrentUser);
   const username = stateCurrentUser.username;
   const avatar = stateCurrentUser.avatar;
-  const navigate = useNavigate();
-  var searchForUsername = 'dog';
-
-  const handleSearch = (e) =>{
-    e.preventDefault();
-    navigate('/user/' + searchForUsername);
-  }
 
   return (
     <>
@@ -130,18 +124,7 @@ function Layout(){
           </NavLink>
         </Col>
         <Col >
-
-        <Form className="d-flex" onSubmit={handleSearch} style={{paddingTop: "2rem", paddingRight:"20%"}}>
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-              onChange={e => searchForUsername = e.target.value }
-            />
-            <Button type='submit'>Search</Button>
-        </Form>
-
+        <SearchBar />
         </Col>
       </Row>
       <Row style={{paddingTop: "5rem", paddingLeft: "rem"}}></Row>
