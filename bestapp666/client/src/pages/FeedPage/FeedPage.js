@@ -1,20 +1,48 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Card from 'react-bootstrap/Card';
 import Stack from 'react-bootstrap/Stack';
 import Container from 'react-bootstrap/Container';
+import Navbar from 'react-bootstrap/Navbar';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import ReactRoundedImage from "react-rounded-image";
+import { Outlet, NavLink, useNavigate } from "react-router-dom";
+import { useSelector, useDispatch, Provider} from 'react-redux'
+import {addLoginUser, logoutAction, selectCurrentUser} from '../UserPage/currentUserSlice'
+import { getUsersAsList } from "../../api/mock_api";
+import { Nav } from 'react-bootstrap';
 
 //define a inside components
 function Card_customed(props){
     //props is a post fed from a following user
-
+    const avatar = pigUrl;
     return (
         <Card bg = "light" style={{ width: '28rem'}}>
-          <Button variant="primary">{props.post.author}</Button>
+          <Navbar bg="dark" variant="dark">
+              <Container>
+                <Nav bg="dark" className="justify-content-end" activeKey="/">
+                  <Nav.Item>
+                    <NavLink to={'/user/'+props.post.author}>
+                                <ReactRoundedImage
+                                  image={props.post.avatar}
+                                  roundedColor="#ffffff"
+                                  imageWidth="35"
+                                  imageHeight="35"
+                                  roundedSize="2"
+                                  borderRadius="20"
+                                />
+                    </NavLink>
+                  </Nav.Item>
+                  <Nav.Item>
+                    <NavLink to={'/user/'+props.post.author} className='headers'><strong>{props.post.author}</strong></NavLink>
+                  </Nav.Item>
+                </Nav>
+              </Container>
+              </Navbar>
+
           <Card.Img variant="bottom" rounded="true" src={props.post.image} />
           <Card.Subtitle className="text-muted" style={{paddingTop: "1rem"}}> 
             {props.post.date}
@@ -36,6 +64,25 @@ function Card_customed(props){
 
 
 export default function FeedPage() {
+  // get followings of the current user
+    const stateCurrentUser = useSelector(selectCurrentUser);
+    let followingsUsernames = stateCurrentUser.followings;
+    const [followingsObjects, setFollowings] = useState([]);
+
+    useEffect(() => {
+      async function fetchData() {
+        const userObjects = await getUsersAsList(followingsUsernames);
+        setFollowings(userObjects);
+      }
+      try{
+        fetchData();
+      }
+      catch(err){
+          console.error(err);
+      }
+      
+    }, []); //adding empty dependency making sure useEffect only run once after each render
+
     const feedPost1 = {author:"UserFollowing 1", 
     description:"Some description about the tiger.",
     date: "10/22/2022",
@@ -59,15 +106,25 @@ export default function FeedPage() {
     date: "10/12/2022",
     image: pigUrl
     };
+  
+  const followingsLatestPost = followingsObjects.map((o)=>{
+    //return the largest(most recent) ID
+    const postObject = o.posts.sort(function(a, b){return b.id - a.id})[0];
+    //adding one more avatar field for this post
+    postObject.avatar = o.avatar;
+    return postObject;
+  })
+
+  const card = ((followingsObjects.length==0) ?[feedPost1, feedPost2,feedPost3,feedPost4]:followingsLatestPost).map((p) => (
+    <Card_customed post={p}/>
+  ))
 
   return (
     <div className='background'>
     
     <Stack gap={2} className="col-md-6 mx-auto">
         
-        {[feedPost1, feedPost2, feedPost3, feedPost4].map((post) => (
-        <Card_customed post={post}/>
-    ))}
+        {card}
     </Stack>
     
     </div>

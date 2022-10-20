@@ -51,12 +51,24 @@ export default function UserPage() {
         //get the user object
         let user;
         userRoster.forEach(element => {user = element;});
-        setThisUser(user);
+        if(user == undefined){
+          //login failed, due to wrong username cannot fetch data
+          alert("User Not Found.")
+        }else{
+          setThisUser(user);
+        }
       }
-      fetchData();
-    }, [username]); //adding empty dependency making sure useEffect only run once after each render
 
-    console.log("outside: !: " + thisUser.username);
+      try{
+        fetchData();
+      }
+      catch(err){
+          console.error(err);
+      }
+      
+    }, [username]); //adding dependency making sure useEffect only run once after each render
+
+
     //follows
     const addFollow = () => {
       if (isFollowing) {

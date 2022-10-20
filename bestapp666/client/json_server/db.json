@@ -41,7 +41,7 @@
 	"avatar":"https://images.wagwalkingweb.com/media/daily_wag/name_guides/cartoon-dog-names/featured_dog/snoopy.jpg?auto=compress&fit=max",
       "posts" : [ 
 		{"id":1 , "author":"dog", "description":"me and my owner.", "image":"https://i.pinimg.com/736x/36/cd/ab/36cdabd55c158426997719b6f2fe00ad.jpg"}, 
-		{"id":2 , "author":"dog", "description":"The film I am in with my 100 friends", "image":"https://static.wikia.nocookie.net/disney/images/a/aa/DalmatianPuppies.jpg/revision/latest/scale-to-width-down/1000?cb=20220122164636"}
+		{"id":2 , "author":"dog", "description":"The film I am in with my 100 friends", "image":"http://images.randomhouse.com/cover/9780736431828?&alt=sir.jpg"}
 		]
     },
     {

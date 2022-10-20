@@ -117,7 +117,7 @@ function LoginPage() {
       </div>
     )
   }else{
-    return <Navigate replace to={'/user/'+stateCurrentUser.username} />;
+    return <Navigate replace to={'/feed'} />;
   }
     
 }

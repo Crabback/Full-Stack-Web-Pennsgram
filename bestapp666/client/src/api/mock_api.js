@@ -20,7 +20,7 @@ export const getUsers = async () =>{
     }
 }
 
-// Takes the id of a user as input
+// Takes the username of a user as input
 // and sends a Get request to the /user:id endpoint
 // returns the attributes of the user
 export const getUser = async (username) =>{
@@ -33,6 +33,27 @@ export const getUser = async (username) =>{
             });
             console.log(`successfully getUser by username: object with username: ${fetchedUsername}`);
             return response.data;
+    }
+    catch(err){
+        console.error(err);
+    }
+}
+
+// Takes the list of usernames as input
+// and sends a Get request to the /user:id endpoint
+// returns a list of user objects
+export const getUsersAsList = async (usernames) =>{
+    try{    
+            const userObjects = [];
+            const roster = await getUsers(); 
+            roster.forEach((element) => {
+                if(usernames.includes(element.username)){
+                    userObjects.push(element);
+                }
+            })
+            userObjects.forEach((o)=>{console.log(o.username);})
+
+            return userObjects;
     }
     catch(err){
         console.error(err);
