@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./pages/Layout"
 import RegisterPage from "./pages/RegisterPage";
 import HomePage from "./pages/HomePage";
-import UserPage from "./pages/UserPage/User";
+import User from "./pages/UserPage/User";
 import UserList from "./pages/UserList";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import UploadPostPage from "./pages/UploadPostPage";
@@ -18,8 +18,9 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
-          <Route path="user" element={<UserPage who="self"/>} />
-          <Route path="username" element={<UserPage who="username"/>} />
+          <Route path="user">
+            <Route path=":who" element={<User />}/>
+          </Route>
           <Route path="followerlist" element={<UserList list="follower"/>} />
           <Route path="followinglist" element={<UserList/>} />
           <Route path="register" element={<RegisterPage />} />

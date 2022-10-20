@@ -1,16 +1,14 @@
 import "../../Styles.css";
 import React, { useState } from "react";
 import { Footer } from "../../components/Footer";
-import { SearchBar } from "../../components/SearchBar";
 import MyPhoto from "../../images/user_pic1.png";
 import ReactRoundedImage from "react-rounded-image";
-import PlusSign from '../../images/plus-sign.png';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import {addLoginUser, logoutAction, selectCurrentUser} from './currentUserSlice'
 import { useSelector, useDispatch } from 'react-redux'
 
@@ -34,8 +32,9 @@ function Card_customed(props){
 }
 
 
-export default function UserPage(props) {
+export default function UserPage() {
     var buttonContent = "";
+    let { who } = useParams();
     const [isFollowing, setIsFollowing] = useState(false);
     const [isSelf, setIsSelf] = useState(true);
     const [profilePic, setProfilePic] = useState(require("../../images/noUserProfile.jpeg"));
@@ -49,7 +48,7 @@ export default function UserPage(props) {
       }
     };
 
-    if (props.who == "self"){
+    if (who == "self"){
       buttonContent = "post"
     }else{
       buttonContent = "follow"

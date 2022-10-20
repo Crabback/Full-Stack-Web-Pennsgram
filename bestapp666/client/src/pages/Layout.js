@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Outlet, NavLink } from "react-router-dom";
+import { Outlet, NavLink, useNavigate } from "react-router-dom";
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -7,12 +7,10 @@ import Col from 'react-bootstrap/Col';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import InputGroup from 'react-bootstrap/InputGroup';
 import ReactRoundedImage from "react-rounded-image";
 import { useSelector, useDispatch } from 'react-redux'
 import {addLoginUser, logoutAction, selectCurrentUser} from './UserPage/currentUserSlice'
-import {searchUser, selectOtherUser} from './UserPage/otherUserSlice'
-import { getUser } from "../api/mock_api";
+
 
 //component unit
 function LoginLink() {
@@ -35,13 +33,19 @@ function LoginLink() {
 }
 
 
-
 function Layout(){
 
   //get the current user's attributes
   const stateCurrentUser = useSelector(selectCurrentUser);
   const username = stateCurrentUser.username;
   const avatar = stateCurrentUser.avatar;
+  const navigate = useNavigate();
+  var searchForUsername = 'dog';
+
+  const handleSearch = (e) =>{
+    e.preventDefault();
+    navigate('/user/' + searchForUsername);
+  }
 
   return (
     <>
@@ -62,7 +66,7 @@ function Layout(){
             <NavLink to="/user" className='headers2'>UserPage</NavLink>
           </Nav.Item>
           <Nav.Item as="li">
-            <NavLink to="/userlist" className='headers2'>UserList (Followers/Following)</NavLink>
+            <NavLink to="/followerlist" className='headers2'>UserList (Followers/Following)</NavLink>
           </Nav.Item>
           <Nav.Item as="li">
             <NavLink to="/upload" className='headers2'>UploadPostPage</NavLink>
@@ -126,19 +130,18 @@ function Layout(){
           </NavLink>
         </Col>
         <Col >
-          <InputGroup className="mb-1" style={{paddingTop: "2rem", paddingRight: "11rem"}}>
-            <Form.Control
-              placeholder="search username"
-              aria-label="user's username"
-              aria-describedby="basic-addon2"
-            />
-            <NavLink to="username">
-            <Button variant="secondary" id="button-addon2">
-              search
-            </Button>
-            </NavLink>
 
-          </InputGroup>
+        <Form className="d-flex" onSubmit={handleSearch} style={{paddingTop: "2rem", paddingRight:"20%"}}>
+            <Form.Control
+              type="search"
+              placeholder="Search"
+              className="me-2"
+              aria-label="Search"
+              onChange={e => searchForUsername = e.target.value }
+            />
+            <Button type='submit'>Search</Button>
+        </Form>
+
         </Col>
       </Row>
       <Row style={{paddingTop: "5rem", paddingLeft: "rem"}}></Row>
