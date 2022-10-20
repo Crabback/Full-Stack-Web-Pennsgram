@@ -62,9 +62,9 @@ function RegisterPage() {
         }else{
             const newUser = {};//imolement}
             try{
-                await createNewUser(newUser);
+                createNewUser(newUser);
             }catch(err){
-                console.log("register adding newUser failed: "err);
+                console.log("register adding newUser failed: ", err);
             }
             
         }
