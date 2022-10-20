@@ -6,6 +6,7 @@ import {Footer} from "../components/Footer";
 import { NavLink } from "react-router-dom";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { createNewUser } from "./../api/mock_api";
 
 function RegisterPage() {
     const [profilePic, setProfilePic] = useState(require("../images/emptypic.png"));
@@ -56,6 +57,17 @@ function RegisterPage() {
         e.preventDefault();
         //1. the info: username, password
             //verify the password match or not
+        if(infoInput.password != infoInput.passwordConfirm){
+            alert("Password unmatched!");
+        }else{
+            const newUser = {};//imolement}
+            try{
+                await createNewUser(newUser);
+            }catch(err){
+                console.log("register adding newUser failed: "err);
+            }
+            
+        }
         //2. the profilePic
         
     }
