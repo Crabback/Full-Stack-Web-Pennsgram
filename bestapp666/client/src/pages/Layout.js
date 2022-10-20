@@ -20,29 +20,11 @@ function LoginLink() {
   const stateCurrentUser = useSelector(selectCurrentUser);
   const username = stateCurrentUser.username;
 
-  const stateOtherUser = useSelector(selectOtherUser);
-  const otherUsername = stateOtherUser.username;
-
   const [newInput, setInput] = useState({ username: '', password: '' });
 
   const handleLinkOnClick= (e) => {
     dispatch(logoutAction());
     console.log("currentuser " + stateCurrentUser.username + " has logged out: ");
-  };
-
-  const handleSearch = async (e) => {
-    e.preventDefault();
-    const userRoster = await getUser(newInput.username);
-    let user;
-    userRoster.forEach(element => {
-      user = element;
-    });
-  
-    if(user == undefined){
-      alert("User not found!")
-    }else{
-        console.log(`before dispatch: ${stateOtherUser.username}`);
-    }
   };
 
   if(stateCurrentUser.username == "NOT_A_USER"){
@@ -51,35 +33,6 @@ function LoginLink() {
     return (<NavLink onClick={handleLinkOnClick} to="/login" className='headers'>Logout</NavLink>);
   }
 }
-
-
-
-
-function searchBar() {
-  const dispatch = useDispatch();
-  const stateOtherUser = useSelector(selectOtherUser);
-  const otherUsername = stateOtherUser.username;
-
-  const [newInput, setInput] = useState({ username: '', password: '' });
-
-  const handleSearch = async (e) => {
-    e.preventDefault();
-    const userRoster = await getUser(newInput.username);
-    let user;
-    userRoster.forEach(element => {
-      user = element;
-    });
-
-    if(user == undefined){
-      alert("User not found!")
-    }else{
-        console.log(`before dispatch: ${stateOtherUser.username}`);
-    }
-  };
-
-  return (<NavLink to="/user?username" className='headers'>{"Login"}</NavLink>);
-}
-
 
 
 

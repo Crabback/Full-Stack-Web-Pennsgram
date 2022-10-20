@@ -11,6 +11,8 @@ import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import { NavLink } from "react-router-dom";
+import {addLoginUser, logoutAction, selectCurrentUser} from './currentUserSlice'
+import { useSelector, useDispatch } from 'react-redux'
 
 
 
@@ -34,14 +36,10 @@ function Card_customed(props){
 
 export default function UserPage(props) {
     var buttonContent = "";
-    if (props.who == "self"){
-      buttonContent = "post"
-    }else{
-      buttonContent = "follow"
-      
-    }
     const [isFollowing, setIsFollowing] = useState(false);
     const [isSelf, setIsSelf] = useState(true);
+    const [profilePic, setProfilePic] = useState(require("../../images/noUserProfile.jpeg"));
+    const [username, setUsername] = useState("NOT_A_USER");
 
     const addFollow = () => {
       if (isFollowing) {
@@ -50,6 +48,14 @@ export default function UserPage(props) {
         setIsFollowing(true);
       }
     };
+
+    if (props.who == "self"){
+      buttonContent = "post"
+    }else{
+      buttonContent = "follow"
+    }
+
+
     const feedPost1 = {author:"UserFollowing 1", 
     description:"Got an offer from Meta!",
     image: require("../../images/meta-post.png")
@@ -91,7 +97,7 @@ export default function UserPage(props) {
         justifyContent: 'center',
       }}>
     <ReactRoundedImage
-      image={require("../../images/noUserProfile.jpeg")}
+      image={profilePic}
       roundedColor="white"
       imageWidth="150"
       imageHeight="150"
@@ -104,7 +110,7 @@ export default function UserPage(props) {
         justifyContent: 'center',
         paddingTop: "1rem"
       }}>
-    <p className="fw-bold" data-testid="username"> Username </p>
+    <p className="fw-bold" data-testid="username"> {username} </p>
     </div>
     <div style={{
         display: 'flex',
