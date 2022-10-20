@@ -124,14 +124,16 @@ function Layout(){
           <Col>
                 <Nav className="justify-content-end" activeKey="/">
                   <Nav.Item>
-                    <ReactRoundedImage
-                      image={avatar}
-                      roundedColor="#ffffff"
-                      imageWidth="35"
-                      imageHeight="35"
-                      roundedSize="2"
-                      borderRadius="20"
-                    />
+                    <NavLink to='/user'>
+                      <ReactRoundedImage
+                        image={avatar}
+                        roundedColor="#ffffff"
+                        imageWidth="35"
+                        imageHeight="35"
+                        roundedSize="2"
+                        borderRadius="20"
+                      />
+                    </NavLink>
                   </Nav.Item>
                   <Nav.Item>
                     <NavLink to='/user' className='headers'>{username}</NavLink>
@@ -158,9 +160,11 @@ function Layout(){
 
       <Row>
         <Col sm={8}>
-          <Navbar.Brand style={{paddingLeft: "rem"}}>
-            <img src={require("../images/pennsgram_logo.png")} alt="logo" width="527" height="149"></img>
-          </Navbar.Brand>
+          <NavLink to="">
+            <Navbar.Brand style={{paddingLeft: "rem"}}>
+              <img src={require("../images/pennsgram_logo.png")} alt="logo" width="527" height="149"></img>
+            </Navbar.Brand>
+          </NavLink>
         </Col>
         <Col >
           <InputGroup className="mb-1" style={{paddingTop: "2rem", paddingRight: "11rem"}}>

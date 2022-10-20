@@ -19,7 +19,7 @@ export default function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path="user" element={<UserPage who="self"/>} />
-          <Route path="user?${username}" element={<UserPage who="${username}"/>} />
+          <Route path="username" element={<UserPage who="username"/>} />
           <Route path="followerlist" element={<UserList list="follower"/>} />
           <Route path="followinglist" element={<UserList/>} />
           <Route path="register" element={<RegisterPage />} />

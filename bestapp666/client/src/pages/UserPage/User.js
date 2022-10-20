@@ -33,7 +33,12 @@ function Card_customed(props){
 
 
 export default function UserPage(props) {
-
+    var buttonContent = "";
+    if (props.who == "self"){
+      buttonContent = "post"
+    }else{
+      buttonContent = "follow"
+    }
     const [isFollowing, setIsFollowing] = useState(false);
     const [isSelf, setIsSelf] = useState(true);
 
@@ -71,7 +76,7 @@ export default function UserPage(props) {
         const postNewPost =  (
             <NavLink to="/upload"> 
               <Button>
-                +
+                {buttonContent}
               </Button>
             </NavLink>
         )

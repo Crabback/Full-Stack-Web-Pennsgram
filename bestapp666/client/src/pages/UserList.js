@@ -7,7 +7,7 @@ import {Footer} from "../components/Footer";
 
 
 function UserList(props){
-    var header = ""
+    var header = "";
     if (props.list == "follower") {
      header = "Your followers";
     } else {
