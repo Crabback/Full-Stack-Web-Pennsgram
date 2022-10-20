@@ -26,7 +26,7 @@ function LoginLink() {
   if(stateCurrentUser.username == "NOT_A_USER"){
     return (<NavLink to="/login" className='headers'>{"Login"}</NavLink>);
   }else{
-    return (<Nav.Link onClick={handleLinkOnClick} to="/login" className='headers'>Logout</Nav.Link>);
+    return (<NavLink onClick={handleLinkOnClick} to="/login" className='headers'>Logout</NavLink>);
   }
   
 }

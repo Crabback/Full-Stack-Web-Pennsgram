@@ -78,7 +78,7 @@ function LoginForm(props){
       <Form.Control name="password" onChange={handleOnChange} placeholder="Password" />
     </Form.Group>
     <Form.Group className="mb-3" controlId="formBasicCheckbox">
-      <Form.Check type="checkbox" label="Remain login next time" />
+      {/* <Form.Check type="checkbox" label="Remain login next time" /> */}
     </Form.Group>
     <Button variant="primary" type="submit">
       Login
@@ -99,7 +99,7 @@ function LoginPage() {
       <Container>
         <Row md>
       
-          <Col><label><p>Please input your username to login. eg: dog/trump/..refer to json file for available usernames</p></label></Col>
+          <Col><label></label></Col>
         </Row>
         <Row md>
           <Col></Col>
