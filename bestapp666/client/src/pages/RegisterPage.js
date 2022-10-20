@@ -79,7 +79,7 @@ function RegisterPage() {
                 <Form.Group className="mb-3">
                     <img src={profilePic} alt="user pic 1" width="250" height="250"></img>
                 </Form.Group>
-                <Form.Group controlId="formFile" className="mb-3" style={{paddingRight: "26rem"}}>
+                <Form.Group controlId="formFile" className="mb-3" style={{paddingRight: "50%"}}>
                     <Form.Label>Upload Profile Picture</Form.Label>
                     <Form.Control type="file" onChange={handleChange}/>
                 </Form.Group>

@@ -23,7 +23,7 @@ function UploadPostPage() {
           <Form.Group className="mb-3">
               <img src={media} alt="user pic 1" width="400" height="400"></img>
           </Form.Group>
-          <Form.Group controlId="formFile" className="mb-3" style={{paddingRight: "13rem"}}>
+          <Form.Group controlId="formFile" className="mb-3" style={{paddingRight: "30%"}}>
             <Form.Label>Upload Media</Form.Label>
             <Form.Control type="file" onChange={handleChange}/>
           </Form.Group>
@@ -49,7 +49,7 @@ function UploadPostPage() {
       </Row>
       <div style={{paddingLeft: "2rem", paddingTop: "5rem"}}>
         <Footer />
-        </div>
+      </div>
     </div>)
   }
 export default UploadPostPage

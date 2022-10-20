@@ -35,6 +35,7 @@ function LoginForm(props){
       }));
     }
   };
+
   //here login means fetch the user by username from the mock api
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -115,7 +116,7 @@ function LoginPage() {
       </div>
     )
   }else{
-    return <Navigate replace to="/feed" />;
+    return <Navigate replace to="/user" />;
   }
     
 }

@@ -6,9 +6,10 @@ import Layout from "./pages/Layout"
 import RegisterPage from "./pages/RegisterPage";
 import HomePage from "./pages/HomePage";
 import UserPage from "./pages/UserPage/User";
+import UserList from "./pages/UserList";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import UploadPostPage from "./pages/UploadPostPage";
-import FeedPage  from "./pages/FeedPage/FeedPage";
+import FeedPage from "./pages/FeedPage/FeedPage";
 import NoPage from "./pages/NoPage";
 
 export default function App() {
@@ -17,8 +18,10 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
-          <Route path="home" element={<HomePage />}/>
-          <Route path="user" element={<UserPage follow="Follow"/>} />
+          <Route path="user" element={<UserPage who="self"/>} />
+          <Route path="user?${username}" element={<UserPage who="${username}"/>} />
+          <Route path="followerlist" element={<UserList list="follower"/>} />
+          <Route path="followinglist" element={<UserList/>} />
           <Route path="register" element={<RegisterPage />} />
           <Route path="upload" element={<UploadPostPage />} />
           <Route path="login" element={<LoginPage />} />

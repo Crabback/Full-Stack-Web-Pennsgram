@@ -11,16 +11,38 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import ReactRoundedImage from "react-rounded-image";
 import { useSelector, useDispatch } from 'react-redux'
 import {addLoginUser, logoutAction, selectCurrentUser} from './UserPage/currentUserSlice'
-
+import {searchUser, selectOtherUser} from './UserPage/otherUserSlice'
+import { getUser } from "../api/mock_api";
 
 //component unit
 function LoginLink() {
   const dispatch = useDispatch();
   const stateCurrentUser = useSelector(selectCurrentUser);
   const username = stateCurrentUser.username;
+
+  const stateOtherUser = useSelector(selectOtherUser);
+  const otherUsername = stateOtherUser.username;
+
+  const [newInput, setInput] = useState({ username: '', password: '' });
+
   const handleLinkOnClick= (e) => {
     dispatch(logoutAction());
     console.log("currentuser " + stateCurrentUser.username + " has logged out: ");
+  };
+
+  const handleSearch = async (e) => {
+    e.preventDefault();
+    const userRoster = await getUser(newInput.username);
+    let user;
+    userRoster.forEach(element => {
+      user = element;
+    });
+
+    if(user == undefined){
+      alert("User not found!")
+    }else{
+        console.log(`before dispatch: ${stateOtherUser.username}`);
+    }
   };
 
   if(stateCurrentUser.username == "NOT_A_USER"){
@@ -28,27 +50,42 @@ function LoginLink() {
   }else{
     return (<NavLink onClick={handleLinkOnClick} to="/login" className='headers'>Logout</NavLink>);
   }
-  
+}
+
+function searchBar() {
+  const dispatch = useDispatch();
+  const stateOtherUser = useSelector(selectOtherUser);
+  const otherUsername = stateOtherUser.username;
+
+  const [newInput, setInput] = useState({ username: '', password: '' });
+
+  const handleSearch = async (e) => {
+    e.preventDefault();
+    const userRoster = await getUser(newInput.username);
+    let user;
+    userRoster.forEach(element => {
+      user = element;
+    });
+
+    if(user == undefined){
+      alert("User not found!")
+    }else{
+        console.log(`before dispatch: ${stateOtherUser.username}`);
+    }
+  };
+
+  return (<NavLink to="/user?username" className='headers'>{"Login"}</NavLink>);
 }
 
 function Layout(){
 
   //get the current user's attributes
   const stateCurrentUser = useSelector(selectCurrentUser);
-  const userid = stateCurrentUser.id;
   const username = stateCurrentUser.username;
   const avatar = stateCurrentUser.avatar;
 
-  //the below section handle the re-routing of clicking the username button
-  const [clickProfile, setClickProfile] = useState(false);
-
-  const routeChange = () =>{
-    setClickProfile(true);
-  }
-
   return (
     <>
-    
     {/* the pages Nav for development use */}
     <div>
     <Navbar>
@@ -57,16 +94,19 @@ function Layout(){
             <NavLink to="/" className='headers2'>Home</NavLink>
           </Nav.Item>
           <Nav.Item as="li">
-            <NavLink to="/user" className='headers2'>UserPage</NavLink>
-          </Nav.Item>
-          <Nav.Item as="li">
             <NavLink to="/register" className='headers2'>RegisterPage</NavLink>
           </Nav.Item>
           <Nav.Item as="li">
-            <NavLink to="/upload" className='headers2'>UploadPostPage</NavLink>
+            <NavLink to="/login" className='headers2'>LoginPage</NavLink>
           </Nav.Item>
           <Nav.Item as="li">
-            <NavLink to="/login" className='headers2'>LoginPage</NavLink>
+            <NavLink to="/user" className='headers2'>UserPage</NavLink>
+          </Nav.Item>
+          <Nav.Item as="li">
+            <NavLink to="/userlist" className='headers2'>UserList (Followers/Following)</NavLink>
+          </Nav.Item>
+          <Nav.Item as="li">
+            <NavLink to="/upload" className='headers2'>UploadPostPage</NavLink>
           </Nav.Item>
           <Nav.Item as="li">
             <NavLink to="/feed" className='headers2'>FeedPage</NavLink>
@@ -94,7 +134,7 @@ function Layout(){
                     />
                   </Nav.Item>
                   <Nav.Item>
-                    <NavLink to='/user' className='headers'>Username</NavLink>
+                    <NavLink to='/user' className='headers'>{username}</NavLink>
                   </Nav.Item>
                   <Nav.Item>
                     <NavLink to="/register" className='headers'>Sign up</NavLink>

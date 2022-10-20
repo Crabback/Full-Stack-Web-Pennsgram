@@ -16,7 +16,6 @@ export const currentUserSlice = createSlice({
       // doesn't actually mutate the state because it uses the immer library,
       // which detects changes to a "draft state" and produces a brand new
       // immutable state based off those changes
-
       return action.payload //you must return payload to receive the 
     },
     logoutAction: state => {

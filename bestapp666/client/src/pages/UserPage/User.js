@@ -106,8 +106,12 @@ export default function UserPage(props) {
         justifyContent: 'center',
       }}>
       <Row>
-      <Col>100 Following</Col>
-      <Col>68 Followers</Col>
+      <Col>
+      <NavLink to="/followinglist" style={{ textDecoration: "none"}}> 100 Following </NavLink>
+      </Col>
+      <Col>
+      <NavLink to="/followerlist" style={{ textDecoration: "none"}}> 88 Followers </NavLink>
+      </Col>
       </Row>
     </div>
     <Container>
