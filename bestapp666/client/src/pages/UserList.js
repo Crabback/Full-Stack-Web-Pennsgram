@@ -4,6 +4,8 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
 import { NavLink } from "react-router-dom";
 import {Footer} from "../components/Footer";
+import { useSelector, useDispatch } from 'react-redux'
+import {addLoginUser, logoutAction, selectCurrentUser} from './UserPage/currentUserSlice'
 
 
 function UserList(props){
@@ -13,6 +15,7 @@ function UserList(props){
     } else {
      header =  "You are following";
     }
+    const stateCurrentUser = useSelector(selectCurrentUser);
 
     return(
     <div className="background">
@@ -31,7 +34,7 @@ function UserList(props){
         Porta ac consectetur ac
         </ListGroup.Item>
     </ListGroup>
-    <NavLink to="/user" className="button_text"style={{paddingLeft: "2rem"}}>
+    <NavLink to={"/user/"+stateCurrentUser.username} className="button_text"style={{paddingLeft: "2rem"}}>
         <Button variant="primary">
             Back
         </Button>

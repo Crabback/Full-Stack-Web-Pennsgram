@@ -3,11 +3,14 @@ import React from 'react';
 import { useNavigate } from "react-router-dom";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import {addLoginUser, logoutAction, selectCurrentUser} from '../pages/UserPage/currentUserSlice'
+import { useSelector, useDispatch } from 'react-redux'
 
 export function SearchBar(){
   const navigate = useNavigate();
+  const stateCurrentUser = useSelector(selectCurrentUser);
 
-  var searchForUsername = 'self';
+  var searchForUsername = stateCurrentUser.username;
   const handleSearch = (e) =>{
     e.preventDefault();
     navigate('/user/' + searchForUsername);

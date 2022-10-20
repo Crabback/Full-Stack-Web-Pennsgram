@@ -7,10 +7,13 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import {addLoginUser, logoutAction, selectCurrentUser} from './UserPage/currentUserSlice'
+import { useSelector, useDispatch } from 'react-redux'
 
 function UploadPostPage() {
   const [media, setMedia] = useState(require("../images/emptypic.png"));
-    
+  const stateCurrentUser = useSelector(selectCurrentUser);
+
   function handleChange(e) {
     setMedia(URL.createObjectURL(e.target.files[0]));
   }
@@ -38,7 +41,7 @@ function UploadPostPage() {
         </Form.Group>
 
        
-          <NavLink to="/user" className="button_text">
+          <NavLink to={"/user/"+stateCurrentUser.username} className="button_text">
             <Button variant="primary" type="submit">
               Upload
             </Button>
