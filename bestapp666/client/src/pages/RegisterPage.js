@@ -25,25 +25,60 @@ function RegisterPage() {
         setProfilePic(urlInput);
     }
 
+
+    //handle the temporary inputs in the userInfo form 
+    const [infoInput, setInfoInput] = useState({ username: '', password: '' , passwordConfirm: ''});
+    const handleInfoInput = (e) =>{
+        if (e.target.name === "username") {
+            setInfoInput((state) => ({
+              username: e.target.value,
+              password: state.password,
+              passwordConfirm: state.passwordConfirm
+            }));
+          }
+          if (e.target.name === 'password') {
+            setInfoInput((state) => ({
+              username: state.username,
+              password: e.target.value,
+              passwordConfirm: state.passwordConfirm
+            }));
+          }
+          if (e.target.name === 'passwordConfirm') {
+            setInfoInput((state) => ({
+              username: state.username,
+              password: state.password,
+              passwordConfirm: e.target.value
+            }));
+          }
+    }
+
+    const handleRegister = (e) => {
+        e.preventDefault();
+        //1. the info: username, password
+            //verify the password match or not
+        //2. the profilePic
+        
+    }
+
     return (
     <div className='background'>
         <Row>
         <Col sm={1}></Col>
         <Col sm={5}>
-            <Form>
+            <Form onSubmit={handleRegister}>
                 <Form.Group className="mb-3" controlId="formBasicFirstName">
                     <Form.Label>First Name</Form.Label>
-                    <Form.Control type="firstname" placeholder="First Name" />
+                    <Form.Control name="firstname" onChange={handleInfoInput} placeholder="First Name" />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicLastName">
                     <Form.Label>Last Name</Form.Label>
-                    <Form.Control type="lastname" placeholder="Last Name" />
+                    <Form.Control name="lastname" onChange={handleInfoInput} placeholder="Last Name" />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicGender">
                     <Form.Label>Gender</Form.Label>
-                    <Form.Select>
+                    <Form.Select >
                         <option>Male</option>
                         <option>Female</option>
                         <option>Other</option>
@@ -52,27 +87,27 @@ function RegisterPage() {
 
                 <Form.Group className="mb-3" controlId="formBasicDOB">
                     <Form.Label>Date of Birth</Form.Label>
-                    <Form.Control type="date" placeholder="Date of Birth" />
+                    <Form.Control name="birth" onChange={handleInfoInput} placeholder="Date of Birth" />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" />
+                    <Form.Control name="email" onChange={handleInfoInput} placeholder="Enter email" />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicUsername">
                     <Form.Label>Username</Form.Label>
-                    <Form.Control type="username" placeholder="Username" />
+                    <Form.Control name="username" onChange={handleInfoInput} placeholder="Username" />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password" />
+                    <Form.Control name="password" onChange={handleInfoInput} placeholder="Password" />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicConfirmPassword">
                     <Form.Label>Confirm Password</Form.Label>
-                    <Form.Control type="password" placeholder="Confirm Password" />
+                    <Form.Control name="passwordConfirm" onChange={handleInfoInput} placeholder="Confirm Password" />
                 </Form.Group>
 
                 

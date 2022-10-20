@@ -4,8 +4,8 @@
       "id": 1,
       "username": "tiger",
       "password": "tiger123",
-      "followings": ["pig", "dog"],
-      "followers": ["pig", "dog"],
+      "followings": ["pig", "dog", "obama"],
+      "followers": ["pig", "dog","obama"],
 	"avatar":"https://i.etsystatic.com/11859790/r/il/7c7ded/1275225454/il_1588xN.1275225454_ig9k.jpg",
       "posts" : [ 
 		{"id":1 , "author":"tiger", "description":"This is my selfie on Oct19.", "image":"https://i2-prod.dailyrecord.co.uk/incoming/article2299090.ece/ALTERNATES/s1200d/The-family-pose-for-a-picture-in-their-living-room-with-Tom-the-tiger.jpg"}, 
@@ -29,7 +29,7 @@
       "username": "pig",
       "password": "pig123",
       "followings": ["tiger"],
-      "followers": ["tiger"],
+      "followers": ["tiger", "trump"],
 	"avatar":"https://cdn5.vectorstock.com/i/1000x1000/36/94/simple-cartoon-of-a-cute-pig-vector-18823694.jpg",
       "posts" : [ 
 		{"id":1 , "author":"pig", "description":"This is my selfie as in cartoon.", "image":"https://media.npr.org/assets/img/2019/07/31/peppa-core-landscape_custom-e35134971418876744bd213cd5eb1248012ad704-s1600-c85.webp"}, 
@@ -41,7 +41,7 @@
       "username": "dog",
       "password": "dog123",
       "followings": ["tiger","pig"],
-      "followers": ["tiger","pig"],
+      "followers": ["tiger","pig", "trump","ayesha"],
 	"avatar":"https://images.wagwalkingweb.com/media/daily_wag/name_guides/cartoon-dog-names/featured_dog/snoopy.jpg?auto=compress&fit=max",
       "posts" : [ 
 		{"id":1 , "author":"dog", "description":"me and my owner.", "image":"https://i.pinimg.com/736x/36/cd/ab/36cdabd55c158426997719b6f2fe00ad.jpg"}, 
@@ -65,7 +65,7 @@
       "username": "ayesha",
       "password": "ayesha123",
       "followings": ["curry", "dog"],
-      "followers": ["curry", "dog"],
+      "followers": ["curry"],
 	"avatar":"https://64.media.tumblr.com/f45de30a0418125d8aa69952a3e657f2/tumblr_osolosRBGm1riow3xo1_1280.png",
       "posts" : [ 
 		{"id":1 , "author":"ayesha", "description":"New cooking poster out.", "image":"https://media-cldnry.s-nbcnews.com/image/upload/t_fit-260w,f_auto,q_auto:best/newscms/2020_39/1611642/51duvjjkhjl-5f68f42ca229c.jpg"}, 
