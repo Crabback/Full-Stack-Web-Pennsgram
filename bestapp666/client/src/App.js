@@ -1,7 +1,6 @@
 import "./Styles.css";
 import React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
 import Layout from "./pages/Layout"
 import RegisterPage from "./pages/RegisterPage";
 import HomePage from "./pages/HomePage";
@@ -19,7 +18,7 @@ export default function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path="user">
-            <Route path=":who" element={<User />}/>
+            <Route path=":self/:username" element={<User />}/>
           </Route>
           <Route path="followerlist" element={<UserList list="follower"/>} />
           <Route path="followinglist" element={<UserList/>} />

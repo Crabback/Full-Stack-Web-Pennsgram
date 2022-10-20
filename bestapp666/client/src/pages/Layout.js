@@ -12,7 +12,6 @@ import { useSelector, useDispatch } from 'react-redux'
 import {addLoginUser, logoutAction, selectCurrentUser} from './UserPage/currentUserSlice'
 import { SearchBar } from "../components/SearchBar";
 
-
 //component unit
 function LoginLink() {
   const dispatch = useDispatch();

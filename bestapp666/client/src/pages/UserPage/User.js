@@ -34,11 +34,10 @@ function Card_customed(props){
 
 export default function UserPage() {
     var buttonContent = "";
-    let { who } = useParams();
+    let { self, username } = useParams();
     const [isFollowing, setIsFollowing] = useState(false);
     const [isSelf, setIsSelf] = useState(true);
     const [profilePic, setProfilePic] = useState(require("../../images/noUserProfile.jpeg"));
-    const [username, setUsername] = useState("NOT_A_USER");
 
     const addFollow = () => {
       if (isFollowing) {
@@ -48,7 +47,7 @@ export default function UserPage() {
       }
     };
 
-    if (who == "self"){
+    if (self == "true"){
       buttonContent = "post"
     }else{
       buttonContent = "follow"
