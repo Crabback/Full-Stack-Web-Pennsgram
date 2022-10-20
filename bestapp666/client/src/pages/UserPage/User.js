@@ -1,16 +1,19 @@
 import "../../Styles.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Footer } from "../../components/Footer";
+import { SearchBar } from "../../components/SearchBar";
 import MyPhoto from "../../images/user_pic1.png";
 import ReactRoundedImage from "react-rounded-image";
+import PlusSign from '../../images/plus-sign.png';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, useParams} from "react-router-dom";
 import {addLoginUser, logoutAction, selectCurrentUser} from './currentUserSlice'
 import { useSelector, useDispatch } from 'react-redux'
+import { getUser } from "../../api/mock_api";
 
 
 
@@ -33,12 +36,30 @@ function Card_customed(props){
 
 
 export default function UserPage() {
-    var buttonContent = "";
+
     let { self, username } = useParams();
     const [isFollowing, setIsFollowing] = useState(false);
-    const [isSelf, setIsSelf] = useState(true);
-    const [profilePic, setProfilePic] = useState(require("../../images/noUserProfile.jpeg"));
+    // declare and initialize the the user object for this page
+    const stateCurrentUser = useSelector(selectCurrentUser);
+    const [thisUser, setThisUser] = useState(stateCurrentUser);
 
+    useEffect(() => {
+      if(self != "true"){
+        fetchData();
+      }
+
+      async function fetchData() {
+        const userRoster = await getUser(username);
+        //get the user object
+        let user;
+        userRoster.forEach(element => {user = element;});
+        setThisUser(user);
+      }
+
+    }, [self]); //adding empty dependency making sure useEffect only run once after each render
+
+    console.log("outside: !: " + thisUser.username);
+    //follows
     const addFollow = () => {
       if (isFollowing) {
         setIsFollowing(false);
@@ -47,36 +68,16 @@ export default function UserPage() {
       }
     };
 
+    var buttonContent = "";
     if (self == "true"){
       buttonContent = "post"
     }else{
       buttonContent = "follow"
     }
 
-
-    const feedPost1 = {author:"UserFollowing 1", 
-    description:"Got an offer from Meta!",
-    image: require("../../images/meta-post.png")
-    };
-
-    const feedPost2 = {author:"UserFollowing 2", 
-    description:"Got an offer from MS!",
-    image: require("../../images/ms-post.png")
-    };
-
-    const feedPost3 = {author:"UserFollowing 3", 
-    description:"Got an offer from Amazon!",
-    image: require("../../images/amaz-post.png")
-    };
-
-    const feedPost4 = {author:"UserFollowing 4", 
-    description:"Got an offer from Apple!",
-    image: require("../../images/apple-post.png")
-    };
-
-    const posts =  [feedPost1, feedPost2, feedPost3, feedPost4].map((post) => (
-        <Card_customed post={post}/>
-    ))
+    const posts =  thisUser.posts.map((p) => (
+      <Card_customed post={p}/>
+  ))
 
         const postNewPost =  (
             <NavLink to="/upload"> 
@@ -95,7 +96,7 @@ export default function UserPage() {
         justifyContent: 'center',
       }}>
     <ReactRoundedImage
-      image={profilePic}
+      image={thisUser.avatar}
       roundedColor="white"
       imageWidth="150"
       imageHeight="150"
@@ -108,7 +109,7 @@ export default function UserPage() {
         justifyContent: 'center',
         paddingTop: "1rem"
       }}>
-    <p className="fw-bold" data-testid="username"> {username} </p>
+    <p className="fw-bold" data-testid="username"> {thisUser.username} </p>
     </div>
     <div style={{
         display: 'flex',

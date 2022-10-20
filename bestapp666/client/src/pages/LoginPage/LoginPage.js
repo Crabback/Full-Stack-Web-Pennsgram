@@ -116,7 +116,7 @@ function LoginPage() {
       </div>
     )
   }else{
-    return <Navigate replace to="/user" />;
+    return <Navigate replace to="/user/true/self" />;
   }
     
 }

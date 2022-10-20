@@ -80,7 +80,7 @@ function Layout(){
           <Col>
                 <Nav className="justify-content-end" activeKey="/">
                   <Nav.Item>
-                    <NavLink to='/user'>
+                    <NavLink to='/user/true/self'>
                       <ReactRoundedImage
                         image={avatar}
                         roundedColor="#ffffff"
@@ -92,7 +92,7 @@ function Layout(){
                     </NavLink>
                   </Nav.Item>
                   <Nav.Item>
-                    <NavLink to='/user' className='headers'>{username}</NavLink>
+                    <NavLink to='/user/true/self' className='headers'>{username}</NavLink>
                   </Nav.Item>
                   <Nav.Item>
                     <NavLink to="/register" className='headers'>Sign up</NavLink>
