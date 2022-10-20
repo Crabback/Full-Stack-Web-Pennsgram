@@ -38,6 +38,7 @@ export default function UserPage(props) {
       buttonContent = "post"
     }else{
       buttonContent = "follow"
+      
     }
     const [isFollowing, setIsFollowing] = useState(false);
     const [isSelf, setIsSelf] = useState(true);

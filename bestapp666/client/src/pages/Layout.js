@@ -37,7 +37,7 @@ function LoginLink() {
     userRoster.forEach(element => {
       user = element;
     });
-
+  
     if(user == undefined){
       alert("User not found!")
     }else{
@@ -51,6 +51,9 @@ function LoginLink() {
     return (<NavLink onClick={handleLinkOnClick} to="/login" className='headers'>Logout</NavLink>);
   }
 }
+
+
+
 
 function searchBar() {
   const dispatch = useDispatch();
@@ -76,6 +79,9 @@ function searchBar() {
 
   return (<NavLink to="/user?username" className='headers'>{"Login"}</NavLink>);
 }
+
+
+
 
 function Layout(){
 
@@ -173,9 +179,12 @@ function Layout(){
               aria-label="user's username"
               aria-describedby="basic-addon2"
             />
+            <NavLink to="username">
             <Button variant="secondary" id="button-addon2">
               search
             </Button>
+            </NavLink>
+
           </InputGroup>
         </Col>
       </Row>
