@@ -14,6 +14,17 @@ function RegisterPage() {
         setProfilePic(URL.createObjectURL(e.target.files[0]));
     }
     
+    const [urlInput, setUrlInput] = useState("");
+
+    const handleImageURLInput = (e) => {
+      if (e.target.name === "imageURL") {
+        setUrlInput((state) => (e.target.value));
+      }}
+    const handleUrlUpload = (e) => {
+        e.preventDefault();
+        setProfilePic(urlInput);
+    }
+
     return (
     <div className='background'>
         <Row>
@@ -75,14 +86,19 @@ function RegisterPage() {
         </Col>
         <Col sm={1}></Col>
         <Col sm={5}>
-            <Form>
+            <Form onSubmit={handleUrlUpload}>
                 <Form.Group className="mb-3">
                     <img src={profilePic} alt="user pic 1" width="250" height="250"></img>
                 </Form.Group>
                 <Form.Group controlId="formFile" className="mb-3" style={{paddingRight: "50%"}}>
                     <Form.Label>Upload Profile Picture</Form.Label>
                     <Form.Control type="file" onChange={handleChange}/>
+                    {/* input for uploading url image */}
+                    <Form.Control name="imageURL" onChange={handleImageURLInput} placeholder="Enter online image url" />
                 </Form.Group>
+                <Button variant="primary" type="submit">
+                    Upload avatar
+                 </Button>
             </Form>
         </Col>
         </Row>
