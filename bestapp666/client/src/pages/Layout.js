@@ -1,23 +1,19 @@
 import React, { useState } from 'react';
-import { Outlet, NavLink, useNavigate } from "react-router-dom";
-import Nav from 'react-bootstrap/Nav';
+import { Outlet, NavLink } from "react-router-dom";
+import {NavBar} from "../components/NavBar";
+import { SearchBar } from "../components/SearchBar";
 import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Navbar from 'react-bootstrap/Navbar';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
 import ReactRoundedImage from "react-rounded-image";
 import { useSelector, useDispatch } from 'react-redux'
-import {addLoginUser, logoutAction, selectCurrentUser} from './UserPage/currentUserSlice'
-import { SearchBar } from "../components/SearchBar";
+import {logoutAction, selectCurrentUser} from './UserPage/currentUserSlice'
 
-//component unit
 function LoginLink() {
   const dispatch = useDispatch();
   const stateCurrentUser = useSelector(selectCurrentUser);
-  const username = stateCurrentUser.username;
-
   const [newInput, setInput] = useState({ username: '', password: '' });
 
   const handleLinkOnClick= (e) => {
@@ -35,7 +31,6 @@ function LoginLink() {
 
 function Layout(){
 
-  //get the current user's attributes
   const stateCurrentUser = useSelector(selectCurrentUser);
   const username = stateCurrentUser.username;
   const avatar = stateCurrentUser.avatar;
@@ -43,73 +38,34 @@ function Layout(){
   return (
     <>
     {/* the pages Nav for development use */}
-    <div>
-    <Navbar>
-        <Nav defaultActiveKey="/" as="ul">
-          <Nav.Item as="li">
-            <NavLink to="/" className='headers2'>Home</NavLink>
-          </Nav.Item>
-          <Nav.Item as="li">
-            <NavLink to="/register" className='headers2'>RegisterPage</NavLink>
-          </Nav.Item>
-          <Nav.Item as="li">
-            <NavLink to="/login" className='headers2'>LoginPage</NavLink>
-          </Nav.Item>
-          <Nav.Item as="li">
-            <NavLink to="/user" className='headers2'>UserPage</NavLink>
-          </Nav.Item>
-          <Nav.Item as="li">
-            <NavLink to="/followerlist" className='headers2'>UserList (Followers/Following)</NavLink>
-          </Nav.Item>
-          <Nav.Item as="li">
-            <NavLink to="/upload" className='headers2'>UploadPostPage</NavLink>
-          </Nav.Item>
-          <Nav.Item as="li">
-            <NavLink to="/feed" className='headers2'>FeedPage</NavLink>
-          </Nav.Item>
-        </Nav>
-      </Navbar>
-    </div>
+    <NavBar />
 
-    {/* the logo "brand" bar */}
     <div className="background">
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
-          <Col sm={6}>
-          </Col>
+          <Col sm={6}></Col>
           <Col>
-                <Nav className="justify-content-end" activeKey="/">
-                  <Nav.Item>
-                    <NavLink to={'/user/'+username}>
-                      <ReactRoundedImage
-                        image={avatar}
-                        roundedColor="#ffffff"
-                        imageWidth="35"
-                        imageHeight="35"
-                        roundedSize="2"
-                        borderRadius="20"
-                      />
-                    </NavLink>
-                  </Nav.Item>
-                  <Nav.Item>
-                    <NavLink to={'/user/'+username} className='headers'>{username}</NavLink>
-                  </Nav.Item>
-                  <Nav.Item>
-                    <NavLink to="/register" className='headers'>Sign up</NavLink>
-                  </Nav.Item>
-                  <Nav.Item>
-                    {/* handle login to logout */}
-                    <LoginLink />
-                  </Nav.Item>
-                  <Nav.Item>
-                    <NavLink to="" className='headers'>About</NavLink>
-                  </Nav.Item>
-                  <Nav.Item>
-                    <NavLink eventKey="disabled" className='headers' disabled>
-                      Contact Us
-                    </NavLink>
-                  </Nav.Item>
-                </Nav>
+            <Nav className="justify-content-end" activeKey="/">
+              <Nav.Item>
+                <NavLink to={'/user/'+username}>
+                  <ReactRoundedImage
+                    image={avatar}
+                    roundedColor="#ffffff"
+                    imageWidth="35"
+                    imageHeight="35"
+                    roundedSize="2"
+                    borderRadius="20"
+                  />
+                </NavLink>
+              </Nav.Item>
+              <Nav.Item> <NavLink to={'/user/'+username} className='headers'>{username}</NavLink></Nav.Item>
+              <Nav.Item> <NavLink to={'/feed'} className='headers'>Feed</NavLink></Nav.Item>
+              <Nav.Item> <NavLink to="/register" className='headers'>Sign up</NavLink></Nav.Item>
+              {/* handle login to logout */}
+              <Nav.Item> <LoginLink /> </Nav.Item>
+              <Nav.Item> <NavLink to="" className='headers'>About</NavLink></Nav.Item>
+              <Nav.Item> <NavLink eventKey="disabled" className='headers' disabled> Contact Us </NavLink> </Nav.Item>
+            </Nav>
           </Col>
         </Container>
       </Navbar>
@@ -122,10 +78,9 @@ function Layout(){
             </Navbar.Brand>
           </NavLink>
         </Col>
-        <Col >
-        <SearchBar />
-        </Col>
+        <Col > <SearchBar /> </Col>
       </Row>
+      
       <Row style={{paddingTop: "5rem", paddingLeft: "rem"}}></Row>
     </div>
 

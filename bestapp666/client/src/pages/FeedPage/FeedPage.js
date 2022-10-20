@@ -22,31 +22,32 @@ function Card_customed(props){
     return (
         <Card bg = "light" style={{ width: '28rem'}}>
           <Navbar bg="dark" variant="dark">
-              <Container>
-                <Nav bg="dark" className="justify-content-end" activeKey="/">
-                  <Nav.Item>
-                    <NavLink to={'/user/'+props.post.author}>
-                                <ReactRoundedImage
-                                  image={props.post.avatar}
-                                  roundedColor="#ffffff"
-                                  imageWidth="35"
-                                  imageHeight="35"
-                                  roundedSize="2"
-                                  borderRadius="20"
-                                />
-                    </NavLink>
-                  </Nav.Item>
-                  <Nav.Item>
-                    <NavLink to={'/user/'+props.post.author} className='headers'><strong>{props.post.author}</strong></NavLink>
-                  </Nav.Item>
-                </Nav>
-              </Container>
-              </Navbar>
+            <Container>
+              <Nav bg="dark" className="justify-content-end" activeKey="/">
+                <Nav.Item>
+                  <NavLink to={'/user/'+props.post.author}>
+                    <ReactRoundedImage
+                      image={props.post.avatar}
+                      roundedColor="#ffffff"
+                      imageWidth="35"
+                      imageHeight="35"
+                      roundedSize="2"
+                      borderRadius="20"
+                    />
+                  </NavLink>
+                </Nav.Item>
+                <Nav.Item>
+                  <NavLink to={'/user/'+props.post.author} className='headers'><strong>{props.post.author}</strong></NavLink>
+                </Nav.Item>
+              </Nav>
+            </Container>
+          </Navbar>
 
           <Card.Img variant="bottom" rounded="true" src={props.post.image} />
           <Card.Subtitle className="text-muted" style={{paddingTop: "1rem"}}> 
             {props.post.date}
           </Card.Subtitle>
+
           <Card.Body>
             <Card.Text>
               {props.post.description}
@@ -56,10 +57,10 @@ function Card_customed(props){
                 <Button variant="light">Comment</Button>
             </ButtonGroup>
           </Card.Body>
+
         </Card>
         )
 }
-
 
 
 
