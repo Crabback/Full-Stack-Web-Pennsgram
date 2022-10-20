@@ -10,7 +10,7 @@ export function SearchBar(){
   var searchForUsername = 'self';
   const handleSearch = (e) =>{
     e.preventDefault();
-    navigate('/user/false/' + searchForUsername);
+    navigate('/user/' + searchForUsername);
   }
     return (
       <Form className="d-flex" onSubmit={handleSearch} style={{paddingTop: "2rem", paddingRight:"20%"}}>

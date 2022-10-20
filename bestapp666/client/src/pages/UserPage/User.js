@@ -37,12 +37,13 @@ function Card_customed(props){
 
 export default function UserPage() {
 
-    let { self, username } = useParams();
+    let { username } = useParams();
     const [isFollowing, setIsFollowing] = useState(false);
     // declare and initialize the the user object for this page
     const stateCurrentUser = useSelector(selectCurrentUser);
     const [thisUser, setThisUser] = useState(stateCurrentUser);
-
+    const self = "self";
+    
     useEffect(() => {
       if(self != "true"){
         fetchData();

@@ -92,6 +92,7 @@ function LoginForm(props){
 
 
 function LoginPage() {
+  const stateCurrentUser = useSelector(selectCurrentUser);
   const [authenticated, setAuthen] = useState(false);
 
   if(!authenticated){
@@ -116,7 +117,7 @@ function LoginPage() {
       </div>
     )
   }else{
-    return <Navigate replace to="/user/true/self" />;
+    return <Navigate replace to={'/user/'+stateCurrentUser.username} />;
   }
     
 }
