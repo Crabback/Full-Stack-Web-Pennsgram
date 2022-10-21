@@ -55,16 +55,16 @@ function UploadPostPage() {
         "image": media
       }
       const prePosts = stateCurrentUser.posts;
-      console.log("prePosts: ", prePosts);
       //update the id field
-      let newID = (prePosts.length==0)? 1 : (prePosts.slice(-1).id+1);
+      const ids = (prePosts.length==0) ? [0,-1] : (prePosts.map(object => {
+        return object.id;
+      }));
+      const maxID = Math.max(...ids);
+      let newID = maxID + 1;
       newPost.id = newID;
 
-      //create a new post
-      const updatedPosts = prePosts.concat(newPost);
-      console.log("updatedPosts: ",updatedPosts);
       //call api
-      const updatedUser = await createNewPost(stateCurrentUser.username, updatedPosts);
+      const updatedUser = await createNewPost(stateCurrentUser.username, newPost);
       //dispatch the updated user;
       dispatch(updateCurrentUser(updatedUser));
     }

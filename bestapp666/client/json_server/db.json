@@ -255,14 +255,18 @@
       "followers": [],
       "avatar": "https://img.wattpad.com/8f19b412f2223afe4288ed0904120a48b7a38ce1/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f5650722d38464e2d744a515349673d3d2d3234323931353831302e313434336539633161633764383437652e6a7067",
       "posts": [
-        [
-          {
-            "id": 1,
-            "author": "zanemao",
-            "description": "This is my school.",
-            "image": "https://branding.web-resources.upenn.edu/sites/default/files/styles/card_3x2/public/2022-03/UniversityofPennsylvania_FullLogo_Reverse_RGB_0.jpg?h=31e6bc11&itok=YBQ0Qd7N"
-          }
-        ]
+        {
+          "id": 1,
+          "author": "zanemao",
+          "description": "asdasda",
+          "image": "https://st4.depositphotos.com/14953852/24787/v/600/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg"
+        },
+        {
+          "id": 1,
+          "author": "zanemao",
+          "description": "test2",
+          "image": "https://st4.depositphotos.com/14953852/24787/v/600/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg"
+        }
       ],
       "id": 11
     }
