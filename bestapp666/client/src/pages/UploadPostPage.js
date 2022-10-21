@@ -12,7 +12,7 @@ import { createNewPost } from "./../api/mock_api";
 
 function UploadPostPage() {
   const navigate = useNavigate();
-  const [media, setMedia] = useState(require("../images/emptypic.png"));
+  const [media, setMedia] = useState('https://drive.google.com/uc?export=view&id=1Oqs52qe_Dp91how3nZBZFzLjLUR2ntQ4');
   const stateCurrentUser = useSelector(selectCurrentUser);
   const dispatch = useDispatch();
 

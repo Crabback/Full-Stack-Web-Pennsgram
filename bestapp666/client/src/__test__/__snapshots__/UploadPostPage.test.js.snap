@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Page matches snapshot 1`] = `
+<div
+  className="background"
+>
+  <div
+    className="row"
+  >
+    <div
+      className="col"
+    />
+    <form
+      className=""
+      onSubmit={[Function]}
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="col"
+        >
+          <div
+            className="mb-3"
+          >
+            <img
+              alt="user pic 1"
+              height="400"
+              onError={[Function]}
+              src="https://drive.google.com/uc?export=view&id=1Oqs52qe_Dp91how3nZBZFzLjLUR2ntQ4"
+              width="400"
+            />
+          </div>
+          <div
+            className="mb-3"
+            style={
+              Object {
+                "paddingRight": "30%",
+              }
+            }
+          >
+            <label
+              className="form-label"
+              htmlFor="formFile"
+            >
+              Upload Media
+            </label>
+            <input
+              className="form-control"
+              id="formFile"
+              onChange={[Function]}
+              type="file"
+            />
+            <input
+              className="form-control"
+              id="formFile"
+              name="imageURL"
+              onChange={[Function]}
+              placeholder="Enter online image url"
+            />
+          </div>
+        </div>
+        <div
+          className="col"
+        >
+          <div
+            className="mb-3"
+          >
+            <label
+              className="form-label"
+              htmlFor="formBasicDescription"
+            >
+              Description
+            </label>
+            <textarea
+              className="form-control"
+              id="formBasicDescription"
+              onChange={[Function]}
+              placeholder="Description about the picture/video."
+              rows={3}
+            />
+          </div>
+          <button
+            className="btn btn-primary"
+            disabled={false}
+            type="submit"
+          >
+            Upload
+          </button>
+        </div>
+      </div>
+    </form>
+    <div
+      className="col-sm-1"
+    />
+  </div>
+  <div
+    style={
+      Object {
+        "paddingLeft": "2rem",
+        "paddingTop": "5rem",
+      }
+    }
+  >
+    <div
+      className="footer"
+    >
+      <p
+        className="footer_elements"
+      >
+        Terms And Policies
+      </p>
+      <p
+        className="footer_elements"
+      >
+        All Copy Right Reserved
+      </p>
+    </div>
+  </div>
+</div>
+`;
