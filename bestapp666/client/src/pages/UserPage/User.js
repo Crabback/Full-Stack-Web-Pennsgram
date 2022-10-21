@@ -75,9 +75,9 @@ export default function UserPage() {
       buttonContent = "follow"
     }
 
-    const posts =  thisUser.posts.map((p) => (
+    const posts = ( (thisUser.posts ==[])?  [{"description": "No post","image": ""}] :thisUser.posts).map((p) => (
       <Card_customed post={p}/>
-  ))
+  ));
 
     const postNewPost =  (
       <NavLink to="/upload"> 
