@@ -1,5 +1,5 @@
 # project_design
-Photo&amp;Video-sharing Social Network APP -  UI &amp Frontend; 
+Photo&amp;Video-sharing Social Network APP -  UI & Frontend; 
 
 User Story Point Scale: 1 point = 8 hours/person
 
