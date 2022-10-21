@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import {Footer} from "../components/Footer";
 import {SearchBar} from "../components/SearchBar";
 import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
@@ -11,6 +12,7 @@ import {addLoginUser, logoutAction, selectCurrentUser} from './UserPage/currentU
 import { useSelector, useDispatch } from 'react-redux'
 
 function UploadPostPage() {
+  const navigate = useNavigate();
   const [media, setMedia] = useState(require("../images/emptypic.png"));
   const stateCurrentUser = useSelector(selectCurrentUser);
 
@@ -18,15 +20,51 @@ function UploadPostPage() {
 
   const handleImageURLInput = (e) => {
     if (e.target.name === "imageURL") {
-      setUrlInput((state) => (e.target.value));
+      setMedia((state) => (e.target.value));
     }}
 
-  const handlePostUpload = (e) => {
-    e.preventDefault();
-  };
-    
   function handleChange(e) {
     setMedia(URL.createObjectURL(e.target.files[0]));
+  }
+
+  function addDefaultImgSrc(ev){
+    ev.target.src = "https://st4.depositphotos.com/14953852/24787/v/600/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg";
+    setMedia("https://st4.depositphotos.com/14953852/24787/v/600/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg");
+  }
+  //handle the temporary inputs in the post description 
+  const [descInput, setDescInput] = useState("");
+
+  const handleDescInput = (e) =>{
+    setDescInput( e.target.value);
+  };
+
+  //we only get 3 arguments of a post: 
+  const handlePostUpload = async (e) => {
+    e.preventDefault();
+
+    if(stateCurrentUser.username == "NOT_A_USER"){
+      alert("Please sign up/login to your account in order to make a post.");
+      navigate("/");
+    }else{
+      //create a new post object
+      const newPost = {
+        "id": -1,
+        "author": stateCurrentUser.username,
+        "description": descInput,
+        "image": media
+      }
+      const prePosts = stateCurrentUser.posts;
+      //update the id field
+      let lastPost = prePosts.slice(-1);
+      const lastPostID = lastPost.id;
+      newPost.id = lastPostID + 1;
+      //create a new post
+      updatedPosts = prePosts.push(newPost);
+      //call api
+      await createNewPost();
+
+    }
+    
   }
 
 return (
@@ -38,7 +76,7 @@ return (
     <Row>
   <Col >
       <Form.Group className="mb-3">
-              <img src={media} alt="user pic 1" width="400" height="400"></img>
+          <img onError={addDefaultImgSrc} src={media} alt="user pic 1" width="400" height="400"></img>
       </Form.Group>
       <Form.Group controlId="formFile" className="mb-3" style={{paddingRight: "30%"}}>
         <Form.Label>Upload Media</Form.Label>
@@ -50,17 +88,14 @@ return (
   <Col>
     <Form.Group className="mb-3" controlId="formBasicDescription">
       <Form.Label>Description</Form.Label>
-          <Form.Control as="textarea"
+      <Form.Control as="textarea" onChange={handleDescInput}
       placeholder="Description about the picture/video." 
       rows={3}/>
     </Form.Group>
 
-       
-          <NavLink to={"/user/"+stateCurrentUser.username} className="button_text">
     <Button variant="primary" type="submit">
       Upload
     </Button>
-          </NavLink>
 
   </Col>
   </Row>
