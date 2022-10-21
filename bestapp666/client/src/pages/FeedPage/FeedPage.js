@@ -73,7 +73,13 @@ export default function FeedPage() {
     useEffect(() => {
       async function fetchData() {
         const userObjects = await getUsersAsList(followingsUsernames);
-        setFollowings(userObjects);
+        //remove user who has no post
+        const userObjectsFiltered = userObjects.map((object)=>{
+          if(object.posts.length !=0){
+            return object;
+          }
+        });
+        setFollowings(userObjectsFiltered);
       }
       try{
         fetchData();
