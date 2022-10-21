@@ -83,7 +83,7 @@ export const createNewPost = async (username, postObject) =>{
         user.posts.push(postObject);
         const responsePut = await axios.put(`${rootURL}/${user.id}`, user);
         console.log(`successfully ${username} creates a new post`);
-        return responsePut.data[0]; 
+        return responsePut.data; 
         // return the data with the id of the user
     }
     catch(err){
@@ -103,7 +103,7 @@ export const followUser = async (username1, username2) =>{
         await axios.put(`${rootURL}/${user2.id}`, user2);
         //get the fetched data's username
         console.log(`successfully ${username1} follows ${username2}`);
-        return responseReturn.data[0];
+        return responseReturn.data;
     }
     catch(err){
         console.error(err);
@@ -122,7 +122,7 @@ export const unfollowUser = async (username1, username2) =>{
         await axios.put(`${rootURL}/${user2.id}`, user2);
         //get the fetched data's username
         console.log(`successfully ${username1} unfollows ${username2}`);
-        return responseReturn.data[0];
+        return responseReturn.data;
     }
     catch(err){
         console.error(err);
