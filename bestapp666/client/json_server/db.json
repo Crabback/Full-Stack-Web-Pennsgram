@@ -228,7 +228,20 @@
       "followings": [],
       "followers": [],
       "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/191125_Taylor_Swift_at_the_2019_American_Music_Awards_(cropped).png/440px-191125_Taylor_Swift_at_the_2019_American_Music_Awards_(cropped).png",
-      "posts": [],
+      "posts": [
+        {
+          "id": 1,
+          "author": "taylor",
+          "description": "So excited! Announcing new single and reveals ‘Midnights’ lyrics on New York billboard.",
+          "image": "https://www.nme.com/wp-content/uploads/2022/09/taylor-swift-mtv-vmas-2022-getty-1392x884.jpg"
+        },
+        {
+          "id": 2,
+          "author": "taylor",
+          "description": "Check out my new album \"Midnights\" !",
+          "image": "https://www.gannett-cdn.com/presto/2022/08/29/USAT/89ccfbd6-1bcf-4d95-a526-a1dc564cbded-midnights_taylor_swift_cover_art.jpg?width=1320&height=1320&fit=crop&format=pjpg&auto=webp"
+        }
+      ],
       "id": 10
     },
     {

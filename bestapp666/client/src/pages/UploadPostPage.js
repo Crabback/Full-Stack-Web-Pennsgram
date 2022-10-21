@@ -8,14 +8,15 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import {addLoginUser, logoutAction, selectCurrentUser} from './UserPage/currentUserSlice'
+import {updateCurrentUser, logoutAction, selectCurrentUser} from './UserPage/currentUserSlice'
 import { useSelector, useDispatch } from 'react-redux'
+import { createNewPost } from "./../api/mock_api";
 
 function UploadPostPage() {
   const navigate = useNavigate();
   const [media, setMedia] = useState(require("../images/emptypic.png"));
   const stateCurrentUser = useSelector(selectCurrentUser);
-
+  const dispatch = useDispatch();
   const [urlInput, setUrlInput] = useState("");
 
   const handleImageURLInput = (e) => {
@@ -55,14 +56,18 @@ function UploadPostPage() {
       }
       const prePosts = stateCurrentUser.posts;
       //update the id field
-      let lastPost = prePosts.slice(-1);
-      const lastPostID = lastPost.id;
-      newPost.id = lastPostID + 1;
-      //create a new post
-      updatedPosts = prePosts.push(newPost);
-      //call api
-      await createNewPost();
+      const ids = (prePosts.length==0) ? [0,-1] : (prePosts.map(object => {
+        return object.id;
+      }));
+      const maxID = Math.max(...ids);
+      let newID = maxID + 1;
+      newPost.id = newID;
 
+      //call api
+      const updatedUser = await createNewPost(stateCurrentUser.username, newPost);
+      //dispatch the updated user;
+      dispatch(updateCurrentUser(updatedUser));
+      navigate("/user/" + stateCurrentUser.username);
     }
     
   }

@@ -12,7 +12,7 @@ export const currentUserSlice = createSlice({
     posts: []
   },
   reducers: {
-    addLoginUser: (state, action) => {
+    updateCurrentUser: (state, action) => {
       // Redux Toolkit allows us to write "mutating" logic in reducers. It
       // doesn't actually mutate the state because it uses the immer library,
       // which detects changes to a "draft state" and produces a brand new
@@ -33,7 +33,7 @@ export const currentUserSlice = createSlice({
   }
 })
 
-export const { addLoginUser, logoutAction } = currentUserSlice.actions
+export const { updateCurrentUser, logoutAction } = currentUserSlice.actions
 
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of

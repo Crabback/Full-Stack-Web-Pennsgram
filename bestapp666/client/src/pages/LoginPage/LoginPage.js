@@ -10,7 +10,7 @@ import { getUser } from "../../api/mock_api";
 import { useState, useEffect } from 'react';
 import { Navigate } from "react-router-dom";
 import { useSelector, useDispatch, Provider} from 'react-redux'
-import {addLoginUser, logoutAction, selectCurrentUser} from '../UserPage/currentUserSlice'
+import {updateCurrentUser, logoutAction, selectCurrentUser} from '../UserPage/currentUserSlice'
 
 
 //the compoent of a LoginForm which keep track of login username
@@ -56,7 +56,7 @@ function LoginForm(props){
         // then update state
         // store.dispatch(loginAs(student)); // dispatch action add student to store
         console.log(`before dispatch: ${stateCurrentUser.username}`);
-        dispatch(addLoginUser(user));
+        dispatch(updateCurrentUser(user));
 
         alert("Login Success! logged in as: \n\n" + JSON.stringify(userRoster)); 
         console.log("Execute the code after clicking okay button of the alert window");
