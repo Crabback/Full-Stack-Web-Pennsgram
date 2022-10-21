@@ -67,8 +67,8 @@ export const getUsersAsList = async (usernames) =>{
 export const createNewUser = async (userObject) =>{
     try{    
         const response = await axios.post(`${rootURL}`,
-        `username=${userObject.username}&password=${userObject.password}&followings=${userObject.followings}&posts=${userObject.posts}`);
-        console.log(`username=${userObject.username}&password=${userObject.password}&followings=${userObject.followings}&followers=${userObject.followers}&posts=${userObject.posts}`);
+        `username=${userObject.username}&password=${userObject.password}&followings=${userObject.followings}&followers=${userObject.followers}&avatar=${userObject.avatar}&posts=${userObject.posts}`);
+        console.log(`username=${userObject.username}&password=${userObject.password}&followings=${userObject.followings}&followers=${userObject.followers}&avatar=${userObject.avatar}&posts=${userObject.posts}`);
         return response.data; 
         // return the data with the id of the user
     }

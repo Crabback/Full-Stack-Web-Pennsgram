@@ -3,13 +3,15 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import {Footer} from "../components/Footer";
-import { NavLink } from "react-router-dom";
+import { Navigate, NavLink } from "react-router-dom";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { createNewUser } from "./../api/mock_api";
+import { useNavigate } from "react-router-dom";
 
 function RegisterPage() {
-    const [profilePic, setProfilePic] = useState(require("../images/emptypic.png"));
+    const navigate = useNavigate();
+    const [profilePic, setProfilePic] = useState("https://img.wattpad.com/8f19b412f2223afe4288ed0904120a48b7a38ce1/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f5650722d38464e2d744a515349673d3d2d3234323931353831302e313434336539633161633764383437652e6a7067");
     
     function handleChange(e) {
         setProfilePic(URL.createObjectURL(e.target.files[0]));
@@ -24,6 +26,10 @@ function RegisterPage() {
     const handleUrlUpload = (e) => {
         e.preventDefault();
         setProfilePic(urlInput);
+    };
+    function addDefaultImgSrc(ev){
+        ev.target.src = "https://img.wattpad.com/8f19b412f2223afe4288ed0904120a48b7a38ce1/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f5650722d38464e2d744a515349673d3d2d3234323931353831302e313434336539633161633764383437652e6a7067";
+        setProfilePic("https://img.wattpad.com/8f19b412f2223afe4288ed0904120a48b7a38ce1/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f5650722d38464e2d744a515349673d3d2d3234323931353831302e313434336539633161633764383437652e6a7067");
     }
 
 
@@ -51,26 +57,33 @@ function RegisterPage() {
               passwordConfirm: e.target.value
             }));
           }
-    }
+    };
 
-    const handleRegister = (e) => {
+    const handleRegister = async (e) => {
         e.preventDefault();
         //1. the info: username, password
             //verify the password match or not
         if(infoInput.password != infoInput.passwordConfirm){
             alert("Password unmatched!");
         }else{
-            const newUser = {};//imolement}
+            const newUser = {
+                "username" : infoInput.username, 
+                "password" : infoInput.password, 
+                "followings" : [],
+                "followers" : [],
+                "avatar" : profilePic,
+                "posts" : []
+            };
+            console.log(newUser.avatar);
             try{
-                createNewUser(newUser);
+                createNewUser(newUser);    
             }catch(err){
-                console.log("register adding newUser failed: ", err);
+                alert("register adding newUser failed: " +  err);
             }
-            
+            alert("Register success with username: "+ newUser.username);
+            navigate("/login");
         }
-        //2. the profilePic
-        
-    }
+    };
 
     return (
     <div className='background'>
@@ -122,20 +135,16 @@ function RegisterPage() {
                     <Form.Control name="passwordConfirm" onChange={handleInfoInput} placeholder="Confirm Password" />
                 </Form.Group>
 
-                
-                <NavLink to="/login">
                     <Button variant="primary" type="submit">
                         Submit
                     </Button>
-                </NavLink>
-            
             </Form>
         </Col>
         <Col sm={1}></Col>
         <Col sm={5}>
             <Form onSubmit={handleUrlUpload}>
                 <Form.Group className="mb-3">
-                    <img src={profilePic} alt="user pic 1" width="250" height="250"></img>
+                    <img onError={addDefaultImgSrc} src={profilePic} alt="user pic 1" width="250" height="250"></img>
                 </Form.Group>
                 <Form.Group controlId="formFile" className="mb-3" style={{paddingRight: "50%"}}>
                     <Form.Label>Upload Profile Picture</Form.Label>
