@@ -29,7 +29,8 @@ RESTful API Documentation: https://app.swaggerhub.com/apis-docs/offersoverflow/O
       Step 4 -- testing the mini app:  
                                       0. open the browser in step 2 with url: "http://localhost:3000/"
                                       1. Start playing around this app to your hearts content! 
-                                      2. There are following notice points for each features. (eg. the current registered users in our db.json file
+                                      2. There are following notice points for each features.
+                                                (eg. the current registered users in our db.json file)
 
 **Notice:** The navbar on the top is only for grading and development purposes. will be removed in the final versions.
 
