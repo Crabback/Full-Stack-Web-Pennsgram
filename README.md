@@ -9,6 +9,33 @@ RESTful API on Swaggerhub: https://app.swaggerhub.com/apis/offersoverflow/OfferO
 
 RESTful API Documentation: https://app.swaggerhub.com/apis-docs/offersoverflow/OfferOverflow_Penngram/1.0.0
 
+# HW2 grading instructions:
+git clone:
+cd to client
+npm install --force
+
+frontend (one terminal window)
+cd to client
+npm start
+
+mocking backend (another terminal window)
+cd to json_server
+json-server --watch db.json --port 8080
+
+The navbar on the top is only for grading and development purposes. will be removed in the final versions.
+
+reigster
+login
+- use your account (username/password)
+- or use one of those: dog, pig, curry, obama, elon, trump
+search
+- try one of these usernames:
+follow/unfollow
+try followers/followings
+upload a post
+browse feed
+try update followings and check back feed
+
 # Progress:
 HW1: Architecture Design (Completed)
 
