@@ -10,7 +10,7 @@ RESTful API on Swaggerhub: https://app.swaggerhub.com/apis/offersoverflow/OfferO
 RESTful API Documentation: https://app.swaggerhub.com/apis-docs/offersoverflow/OfferOverflow_Penngram/1.0.0
 
 # HW2 grading instructions:
-git clone:
+git clone:\n
 cd to client
 npm install --force
 
