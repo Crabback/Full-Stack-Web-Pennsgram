@@ -9,43 +9,45 @@ RESTful API on Swaggerhub: https://app.swaggerhub.com/apis/offersoverflow/OfferO
 
 RESTful API Documentation: https://app.swaggerhub.com/apis-docs/offersoverflow/OfferOverflow_Penngram/1.0.0
 
-# HW2 grading instruction command lines:
+# HW2 grading instructions with command lines:
 
       Step 1 -- install react packages: 
-                                      0. open terminal window 1 and run following commands:
-                                      1. "git clone <our repo url>"
-                                      2. "cd .../project---design-hw1-team_offersoverflow/bestapp666/client" 
-                                      3. "npm install --force"
+                                      1. open terminal window 1 and run following commands:
+                                      2. "git clone <our repo url>"
+                                      3. "cd .../project---design-hw1-team_offersoverflow/bestapp666/client" 
+                                      4. "npm install --force"
                                        
-      Step 2 -- start front end app:  
-                                      0. In terminal window 1, run following commands:
-                                      1. "npm start"
+      Step 2 -- start frontend app:  
+                                      1. In terminal window 1, run following commands:
+                                      2. "npm start"
                                       
-      Step 3 -- start mocking back end:  
-                                      0. open another terminal window 2 and run following commands:
-                                      1. "cd .../project---design-hw1-team_offersoverflow/bestapp666/client/json_server" 
-                                      2. "json-server --watch db.json --port 8080"
+      Step 3 -- start mocking backend:  
+                                      1. open another terminal window 2 and run following commands:
+                                      2. "cd .../project---design-hw1-team_offersoverflow/bestapp666/client/json_server" 
+                                      3. "json-server --watch db.json --port 8080"
                                
       Step 4 -- testing the mini app:  
-                                      0. open the browser in step 2 with url: "http://localhost:3000/"
-                                      1. Start playing around this app to your hearts content! 
-                                      2. There are following **notice points** for each features.
+                                      1. open the browser in step 2 with url: "http://localhost:3000/"
+                                      2. Start playing around this app to your hearts content! 
+                                      3. There are following **notice points** for each features.
                                                 (eg. the current registered users in our db.json file)
+      Step 5 -- Try the features: 
+                                      1. homepage
+                                      2. reigster
+                                          - use an online media link for avatar
+                                      3. log in
+                                          - use your registered account (username/password)
+                                          - or use one of those: curry, obama, elon (find the username and passwords in the db.json file)
+                                      4. profile page
+                                          - view your followers/followings 
+                                      5. upload a post (use an online media link)
+                                      6. browse feed to see the most recent posts from each of your followings
+                                      7. search for users
+                                          - try one of these usernames: dog, pig, curry, obama, elon, trump
+                                          - follow/unfollow
+                                      8. try follow/unfollow users and see the updated feed and followers/followings
 
 **Notice:** The navbar on the top is only for grading and development purposes. will be removed in the final versions.
-
-reigster
-login
-- use your account (username/password)
-- or use one of those: dog, pig, curry, obama, elon, trump
-search
-- try one of these usernames: dog, pig, curry, obama, elon, trump
-
-follow/unfollow
-try followers/followings
-upload a post
-browse feed
-try update followings and check back feed
 
 # Progress:
 HW1: Architecture Design (Completed)
