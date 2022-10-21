@@ -71,7 +71,7 @@ export default function UserPage() {
         }
     }, [username]); //adding dependency making sure useEffect only run once after each render
 
-    const posts =  ( (thisUser.posts ==[])?  [{"description": "No post","image": ""}] :thisUser.posts).map((p) => (
+    const posts =  ( (thisUser.posts.length==0)?  [{"description": "This user has no post yet","image": ""}] :thisUser.posts).map((p) => (
       <Card_customed post={p}/>
     ))
 
