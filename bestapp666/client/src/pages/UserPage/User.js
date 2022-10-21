@@ -36,7 +36,6 @@ export default function UserPage() {
     // the user we are browsing (other), default self
     const [thisUser, setThisUser] = useState(stateCurrentUser);
     let { username } = useParams();
-    const [isFollowing, setIsFollowing] = useState(false);
 
     useEffect(() => {
       async function fetchData() {
@@ -54,28 +53,23 @@ export default function UserPage() {
       catch(err){
         console.error(err);}
 
-      if (stateCurrentUser.followings.includes(username)) {
-        setIsFollowing(true);
-      }
     }, [username]); //adding dependency making sure useEffect only run once after each render
 
     const posts =  ( (thisUser.posts ==[])?  [{"description": "No post","image": ""}] :thisUser.posts).map((p) => (
       <Card_customed post={p}/>
     ))
-    
-    function ActionButton(){
-      const [followed, setChecked] = useState(true);
-      const [text, setText] = useState("Following");
 
-      function handleFollow(e) {
-        if (followed){ //unfollow
-          setChecked(false);
-          setText("Follow");
-        }else{ //follow
-          setChecked(true);
-          setText("Following");
-        }
+    function ActionButton(){
+      let text;
+
+      if (stateCurrentUser.followings.includes(username)){
+        text = "Following";
+      }else{
+        text = "Follow";
       }
+      function handleFollow(e) {
+      }
+      
       if (username == stateCurrentUser.username){
         return(
           <NavLink to="/upload"> 
@@ -91,7 +85,7 @@ export default function UserPage() {
             id="toggle-check"
             type="checkbox"
             variant="outline-primary"
-            checked={!followed}
+            checked={!stateCurrentUser.followings.includes(username)}
             onChange={handleFollow}
             >
               {text}
@@ -99,8 +93,6 @@ export default function UserPage() {
           )
       }
     }
-  
-
 
   return (
     <div className='background'>
