@@ -17,13 +17,13 @@ export function SearchBar(){
   }
     return (
       <Form className="d-flex" onSubmit={handleSearch} style={{paddingTop: "2rem", paddingRight:"20%"}}>
-      <Form.Control
-        type="search"
-        placeholder="Search"
-        className="me-2"
-        aria-label="Search"
-        onChange={e => searchForUsername = e.target.value }
-      />
+        <Form.Control
+          type="search"
+          placeholder="Search"
+          className="me-2"
+          aria-label="Search"
+          onChange={e => searchForUsername = e.target.value }
+        />
       <Button type='submit'>Search</Button>
   </Form>
     );

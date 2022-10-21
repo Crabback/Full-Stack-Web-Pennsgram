@@ -9,9 +9,10 @@ import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import { NavLink, useParams} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {addLoginUser, logoutAction, selectCurrentUser} from './currentUserSlice'
 import { useSelector, useDispatch } from 'react-redux'
-import { getUser, followUser } from "../../api/mock_api";
+import { getUser, followUser, unfollowUser} from "../../api/mock_api";
 import ToggleButton from 'react-bootstrap/ToggleButton';
 
 function Card_customed(props){
@@ -32,9 +33,14 @@ export default function UserPage() {
 
     // the logged-in user who is browsing page (self)
     const stateCurrentUser = useSelector(selectCurrentUser);
-    
+  
     // the user we are browsing (other), default self
     const [thisUser, setThisUser] = useState(stateCurrentUser);
+    
+    const [offset, setOffset] = useState(0);
+    const [checked, setChecked] = useState(true);
+    const [text, setText] = useState("Follow");
+    const [isFollowing, setIsFollowing] = useState(true);
     let { username } = useParams();
 
     useEffect(() => {
@@ -51,6 +57,18 @@ export default function UserPage() {
       try{fetchData();}
       catch(err){
         console.error(err);}
+
+        if (stateCurrentUser.followings.includes(username)){
+          setText("Following");
+          setChecked(false);
+          setOffset(0);
+          setIsFollowing(true);
+        }else{
+          setText("Follow");
+          setChecked(true);
+          setOffset(0);
+          setIsFollowing(false);
+        }
     }, [username]); //adding dependency making sure useEffect only run once after each render
 
     const posts =  ( (thisUser.posts ==[])?  [{"description": "No post","image": ""}] :thisUser.posts).map((p) => (
@@ -58,15 +76,26 @@ export default function UserPage() {
     ))
 
     function ActionButton(){
-      let text;
-
-      if (stateCurrentUser.followings.includes(username)){
-        text = "Following";
-      }else{
-        text = "Follow";
-      }
+      // everything except the API call is visual only
       function handleFollow(e) {
-        followUser(stateCurrentUser.username, username);
+        setChecked(e.currentTarget.checked);
+        if (text=="Follow"){
+          setText("Following");
+          if(isFollowing){
+            setOffset(0);
+          }else{
+            setOffset(1);
+          }
+          followUser(stateCurrentUser.username, username);
+        }else{
+          setText("Follow");
+          if(isFollowing){
+            setOffset(-1);
+          }else{
+            setOffset(0);
+          }
+          unfollowUser(stateCurrentUser.username, username);
+        }
       }
       
       if (username == stateCurrentUser.username){
@@ -84,8 +113,8 @@ export default function UserPage() {
             id="toggle-check"
             type="checkbox"
             variant="outline-primary"
-            checked={!stateCurrentUser.followings.includes(username)}
-            onClick={handleFollow}
+            checked={checked}
+            onChange={handleFollow}
             >
               {text}
             </ToggleButton>  
@@ -93,6 +122,7 @@ export default function UserPage() {
       }
     }
 
+    
   return (
     <div className='background'>
       <div style={{display: 'flex', justifyContent: 'center'}}>
@@ -114,7 +144,7 @@ export default function UserPage() {
         <NavLink to={"/followinglist/"+thisUser.username} style={{ textDecoration: "none"}}> {thisUser.followings.length} Following </NavLink>
         </Col>
         <Col>
-        <NavLink to={"/followerlist/"+thisUser.username} style={{ textDecoration: "none"}}> {thisUser.followers.length} Followers </NavLink>
+        <NavLink to={"/followerlist/"+thisUser.username} style={{ textDecoration: "none"}}> {thisUser.followers.length+offset} Followers </NavLink>
         </Col>
         </Row>
       </div>
