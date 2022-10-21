@@ -54,7 +54,7 @@ RESTful API Documentation: https://app.swaggerhub.com/apis-docs/offersoverflow/O
                                           - try to search non-existing usernames
                                           - follow/unfollow users and see the updates
 
-**Notice:** The navbar on the top is only for grading and development purposes. will be removed in the final versions.
+**Notice:** The navbar on the top is only for grading and development purposes, and it will be removed in the final version.
 
 # Progress:
 HW1: Architecture Design (Completed)
