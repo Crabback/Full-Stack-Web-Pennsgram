@@ -76,12 +76,27 @@ export const createNewUser = async (userObject) =>{
     }
 }
 
+export const createNewPost = async (username, postObject) =>{
+    try{    
+        const response = await axios.get(`${rootURL}?username=${username}`);
+        let user = response.data[0];
+        user.posts.push(postObject);
+        await axios.put(`${rootURL}/${user.id}`, user);
+        console.log(`successfully ${username} creates a new post`);
+        return response.data; 
+        // return the data with the id of the user
+    }
+    catch(err){
+        console.error(err);
+    }
+}
+
 export const followUser = async (username1, username2) =>{
     try{    
         const response1 = await axios.get(`${rootURL}?username=${username1}`);
         const response2 = await axios.get(`${rootURL}?username=${username2}`);
-        let user1 = response1.data[0]
-        let user2 = response2.data[0]
+        let user1 = response1.data[0];
+        let user2 = response2.data[0];
         user1.followings.push(username2);
         user2.followers.push(username1);
         await axios.put(`${rootURL}/${user1.id}`, user1);
