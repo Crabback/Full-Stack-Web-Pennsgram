@@ -12,13 +12,10 @@ import { NavLink, useParams} from "react-router-dom";
 import {addLoginUser, logoutAction, selectCurrentUser} from './currentUserSlice'
 import { useSelector, useDispatch } from 'react-redux'
 import { getUser } from "../../api/mock_api";
+import ToggleButton from 'react-bootstrap/ToggleButton';
 
-
-
-//define a inside components
 function Card_customed(props){
-    //props is a post fed from a following user
-
+    //props is a post fed from a following use
     return (
         <Card bg = "light" style={{ width: '20rem'}}>
           <Card.Img variant="bottom" rounded="true" src={props.post.image} />
@@ -30,7 +27,6 @@ function Card_customed(props){
         </Card>
         )
 }
-
 
 export default function UserPage() {
 
@@ -50,42 +46,60 @@ export default function UserPage() {
         if(output == undefined){
           alert("User Not Found.")
         }else{
-          setThisUser(output[0]);}
+          setThisUser(output[0]);
+        }
       }
 
       try{fetchData();}
       catch(err){
-          console.error(err);
+        console.error(err);}
+
+      if (stateCurrentUser.followings.includes(username)) {
+        setIsFollowing(true);
       }
     }, [username]); //adding dependency making sure useEffect only run once after each render
 
-    //follows
-    const addFollow = () => {
-      if (isFollowing) {
-        setIsFollowing(false);
-      } else {
-        setIsFollowing(true);
-      }
-    };
-
-    var buttonContent = "";
-    if (username==stateCurrentUser.username){
-      buttonContent = "post"
-    }else{
-      buttonContent = "follow"
-    }
-
-    const posts = ( (thisUser.posts ==[])?  [{"description": "No post","image": ""}] :thisUser.posts).map((p) => (
+    const posts =  ( (thisUser.posts ==[])?  [{"description": "No post","image": ""}] :thisUser.posts).map((p) => (
       <Card_customed post={p}/>
-  ));
+    ))
+    
+    function ActionButton(){
+      const [followed, setChecked] = useState(true);
+      const [text, setText] = useState("Following");
 
-    const postNewPost =  (
-      <NavLink to="/upload"> 
-        <Button>
-          {buttonContent}
-        </Button>
-      </NavLink>
-    )
+      function handleFollow(e) {
+        if (followed){ //unfollow
+          setChecked(false);
+          setText("Follow");
+        }else{ //follow
+          setChecked(true);
+          setText("Following");
+        }
+      }
+      if (username == stateCurrentUser.username){
+        return(
+          <NavLink to="/upload"> 
+            <Button>
+              New Post
+            </Button>
+          </NavLink>
+          )
+      }else if(stateCurrentUser.username!="NOT_A_USER"){
+          return(
+            <ToggleButton
+            className="mb-2"
+            id="toggle-check"
+            type="checkbox"
+            variant="outline-primary"
+            checked={!followed}
+            onChange={handleFollow}
+            >
+              {text}
+            </ToggleButton>  
+          )
+      }
+    }
+  
 
 
   return (
@@ -116,7 +130,9 @@ export default function UserPage() {
       <Container>
           <Col sm={{span : 4, offset: 11}} style={{
             paddingBottom: '2rem', 
-            paddingTop: '2rem'}}>{postNewPost} </Col>
+            paddingTop: '2rem'}}>
+              <ActionButton />
+          </Col>
           <Col sm={15}>
               <Row> {posts} </Row>
           </Col>
