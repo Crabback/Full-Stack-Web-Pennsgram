@@ -19,15 +19,12 @@ export default function App() {
           <Route index element={<HomePage />} />
           <Route path="user">
             <Route path=":username" element={<User />}/>
-            <Route path="*" element={<NoPage />}/>
           </Route>
           <Route path="followerlist" >
             <Route path=":username" element={<UserList list="follower"/>}/>
-            <Route path="*" element={<NoPage />}/>
           </Route>
           <Route path="followinglist" >
             <Route path=":username" element={<UserList />}/>
-            <Route path="*" element={<NoPage />}/>
           </Route>
           <Route path="register" element={<RegisterPage />} />
           <Route path="upload" element={<UploadPostPage />} />

@@ -40,7 +40,8 @@
         "dog",
         "tiger",
         "curry",
-        "obama"
+        "obama",
+        "zanemao"
       ],
       "followers": [
         "pig",
@@ -125,7 +126,8 @@
       "password": "curry123",
       "followings": [
         "obama",
-        "ayesha"
+        "ayesha",
+        "zanemao"
       ],
       "followers": [
         "obama",
@@ -181,7 +183,9 @@
       "password": "obama123",
       "followings": [
         "curry",
-        "tiger"
+        "tiger",
+        "zanemao",
+        "elon"
       ],
       "followers": [
         "curry",
@@ -207,8 +211,13 @@
     {
       "username": "elon",
       "password": "elon123",
-      "followings": [],
-      "followers": [],
+      "followings": [
+        "zanemao"
+      ],
+      "followers": [
+        "obama",
+        "zanemao"
+      ],
       "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Elon_Musk_Royal_Society_(crop2).jpg/440px-Elon_Musk_Royal_Society_(crop2).jpg",
       "posts": [],
       "id": 8
@@ -247,8 +256,15 @@
     {
       "username": "zanemao",
       "password": "mao123",
-      "followings": [],
-      "followers": [],
+      "followings": [
+        "elon"
+      ],
+      "followers": [
+        "trump",
+        "obama",
+        "elon",
+        "curry"
+      ],
       "avatar": "https://img.wattpad.com/8f19b412f2223afe4288ed0904120a48b7a38ce1/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f5650722d38464e2d744a515349673d3d2d3234323931353831302e313434336539633161633764383437652e6a7067",
       "posts": [],
       "id": 11

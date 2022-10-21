@@ -6,19 +6,16 @@ import Card from 'react-bootstrap/Card';
 import Stack from 'react-bootstrap/Stack';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import ReactRoundedImage from "react-rounded-image";
-import { Outlet, NavLink, useNavigate } from "react-router-dom";
-import { useSelector, useDispatch, Provider} from 'react-redux'
-import {addLoginUser, logoutAction, selectCurrentUser} from '../UserPage/currentUserSlice'
+import { NavLink } from "react-router-dom";
+import { useSelector} from 'react-redux'
+import {selectCurrentUser} from '../UserPage/currentUserSlice'
 import { getUsersAsList } from "../../api/mock_api";
 import { Nav } from 'react-bootstrap';
 
 //define a inside components
-function Card_customed(props){
+function CardCustomed(props){
     //props is a post fed from a following user
-    const avatar = pigUrl;
     return (
         <Card bg = "light" style={{ width: '28rem'}}>
           <Navbar bg="dark" variant="dark">
@@ -75,7 +72,7 @@ export default function FeedPage() {
         const userObjects = await getUsersAsList(followingsUsernames);
         //remove user who has no post
         const userObjectsFiltered = userObjects.filter((object)=>{
-            return object.posts.length !=0;
+            return object.posts.length !==0;
           });
     
         console.log(userObjectsFiltered);
@@ -122,8 +119,8 @@ export default function FeedPage() {
     return postObject;
   })
 
-  const card = ((followingsObjects.length==0) ?[feedPost1, feedPost2,feedPost3,feedPost4]:followingsLatestPost).map((p) => (
-    <Card_customed post={p}/>
+  const card = ((followingsObjects.length===0) ?[feedPost1, feedPost2,feedPost3,feedPost4]:followingsLatestPost).map((p) => (
+    <CardCustomed post={p}/>
   ))
 
   return (

@@ -1,14 +1,12 @@
 import "../Styles.css";
 import React, { useState } from 'react';
 import {Footer} from "../components/Footer";
-import {SearchBar} from "../components/SearchBar";
-import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import {updateCurrentUser, logoutAction, selectCurrentUser} from './UserPage/currentUserSlice'
+import {updateCurrentUser, selectCurrentUser} from './UserPage/currentUserSlice'
 import { useSelector, useDispatch } from 'react-redux'
 import { createNewPost } from "./../api/mock_api";
 
@@ -17,7 +15,6 @@ function UploadPostPage() {
   const [media, setMedia] = useState(require("../images/emptypic.png"));
   const stateCurrentUser = useSelector(selectCurrentUser);
   const dispatch = useDispatch();
-  const [urlInput, setUrlInput] = useState("");
 
   const handleImageURLInput = (e) => {
     if (e.target.name === "imageURL") {
@@ -43,7 +40,7 @@ function UploadPostPage() {
   const handlePostUpload = async (e) => {
     e.preventDefault();
 
-    if(stateCurrentUser.username == "NOT_A_USER"){
+    if(stateCurrentUser.username === "NOT_A_USER"){
       alert("Please sign up/login to your account in order to make a post.");
       navigate("/");
     }else{
@@ -56,7 +53,7 @@ function UploadPostPage() {
       }
       const prePosts = stateCurrentUser.posts;
       //update the id field
-      const ids = (prePosts.length==0) ? [0,-1] : (prePosts.map(object => {
+      const ids = (prePosts.length===0) ? [0,-1] : (prePosts.map(object => {
         return object.id;
       }));
       const maxID = Math.max(...ids);

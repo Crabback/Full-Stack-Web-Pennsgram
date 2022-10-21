@@ -116,12 +116,13 @@ export const unfollowUser = async (username1, username2) =>{
         const response2 = await axios.get(`${rootURL}?username=${username2}`);
         let user1 = response1.data[0]
         let user2 = response2.data[0]
-        user1.followings = user1.followings.filter(n => n != username2);
-        user2.followers = user2.followers.filter(n => n != username1);
-        await axios.put(`${rootURL}/${user1.id}`, user1);
+        user1.followings = user1.followings.filter(n => n !== username2);
+        user2.followers = user2.followers.filter(n => n !== username1);
+        const responseReturn = await axios.put(`${rootURL}/${user1.id}`, user1);
         await axios.put(`${rootURL}/${user2.id}`, user2);
         //get the fetched data's username
         console.log(`successfully ${username1} unfollows ${username2}`);
+        return responseReturn.data[0];
     }
     catch(err){
         console.error(err);

@@ -2,10 +2,10 @@ import "../Styles.css";
 import React, { useState, useEffect } from 'react';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Button from 'react-bootstrap/Button';
-import { NavLink, useParams, useNavigate} from "react-router-dom";
+import { NavLink, useParams} from "react-router-dom";
 import {Footer} from "../components/Footer";
-import { useSelector, useDispatch } from 'react-redux'
-import {addLoginUser, logoutAction, selectCurrentUser} from './UserPage/currentUserSlice'
+import { useSelector } from 'react-redux'
+import {selectCurrentUser} from './UserPage/currentUserSlice'
 import { getUser } from "../api/mock_api";
 
 function UserList(props){
@@ -23,7 +23,7 @@ function UserList(props){
         //verification username exist or not
         let response = await getUser(username);
          //get the user object
-        if(response == undefined){
+        if(response === undefined){
           alert("User Not Found.")
         }else{
           setThisUser(response[0]);}
@@ -36,8 +36,8 @@ function UserList(props){
     }, [username]); //adding dependency making sure useEffect only run once after each render
 
     let userlist;
-    if (props.list == "follower") {
-     header = "Your followers";
+    if (props.list === "follower") {
+     header = "Followers";
       userlist =  thisUser.followers.map((p) => (
       <ListGroup.Item as="li" >
         <NavLink to={"/user/"+p} className="button_text">
@@ -46,7 +46,7 @@ function UserList(props){
       </ListGroup.Item>
     ))
     } else {
-     header =  "You are following";
+     header =  "Following";
     userlist =  thisUser.followings.map((p) => (
       <ListGroup.Item as="li" >
         <NavLink to={"/user/"+p} className="button_text">

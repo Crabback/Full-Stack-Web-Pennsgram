@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Outlet, NavLink } from "react-router-dom";
 import {NavBar} from "../components/NavBar";
 import { SearchBar } from "../components/SearchBar";
@@ -14,14 +14,13 @@ import {logoutAction, selectCurrentUser} from './UserPage/currentUserSlice'
 function LoginLink() {
   const dispatch = useDispatch();
   const stateCurrentUser = useSelector(selectCurrentUser);
-  const [newInput, setInput] = useState({ username: '', password: '' });
 
   const handleLinkOnClick= (e) => {
     dispatch(logoutAction());
     console.log("currentuser " + stateCurrentUser.username + " has logged out: ");
   };
 
-  if(stateCurrentUser.username == "NOT_A_USER"){
+  if(stateCurrentUser.username === "NOT_A_USER"){
     return (<NavLink to="/login" className='headers'>{"Login"}</NavLink>);
   }else{
     return (<NavLink onClick={handleLinkOnClick} to="/login" className='headers'>Logout</NavLink>);

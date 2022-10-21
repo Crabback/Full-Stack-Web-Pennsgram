@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import {Footer} from "../components/Footer";
-import { Navigate, NavLink } from "react-router-dom";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { createNewUser } from "./../api/mock_api";
@@ -63,7 +62,7 @@ function RegisterPage() {
         e.preventDefault();
         //1. the info: username, password
             //verify the password match or not
-        if(infoInput.password != infoInput.passwordConfirm){
+        if(infoInput.password !== infoInput.passwordConfirm){
             alert("Password unmatched!");
         }else{
             const newUser = {

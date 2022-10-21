@@ -1,10 +1,10 @@
 import "../Styles.css";
 import React from 'react';
-import { Outlet, NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { useSelector, useDispatch } from 'react-redux'
-import {addLoginUser, logoutAction, selectCurrentUser} from '../pages/UserPage/currentUserSlice'
+import { useSelector } from 'react-redux'
+import { selectCurrentUser} from '../pages/UserPage/currentUserSlice'
 
 export function NavBar() {
     const stateCurrentUser = useSelector(selectCurrentUser);

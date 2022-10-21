@@ -3,8 +3,8 @@ import React from 'react';
 import { useNavigate } from "react-router-dom";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import {addLoginUser, logoutAction, selectCurrentUser} from '../pages/UserPage/currentUserSlice'
-import { useSelector, useDispatch } from 'react-redux'
+import { selectCurrentUser} from '../pages/UserPage/currentUserSlice'
+import { useSelector } from 'react-redux'
 
 export function SearchBar(){
   const navigate = useNavigate();
