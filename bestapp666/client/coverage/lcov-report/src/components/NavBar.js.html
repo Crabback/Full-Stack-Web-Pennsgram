@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/components/NavBar.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">src/components</a> NavBar.js
+    </h1>
+    <div class='clearfix'>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import "../Styles.css";</span>
+<span class="cstat-no" title="statement not covered" >import React from 'react';</span>
+<span class="cstat-no" title="statement not covered" >import { Outlet, NavLink, useNavigate } from "react-router-dom";</span>
+<span class="cstat-no" title="statement not covered" >import Nav from 'react-bootstrap/Nav';</span>
+<span class="cstat-no" title="statement not covered" >import Navbar from 'react-bootstrap/Navbar';</span>
+<span class="cstat-no" title="statement not covered" >import { useSelector, useDispatch } from 'react-redux'</span>
+<span class="cstat-no" title="statement not covered" >import {addLoginUser, logoutAction, selectCurrentUser} from '../pages/UserPage/currentUserSlice'<span class="cstat-no" title="statement not covered" ></span></span>
+&nbsp;
+export function <span class="fstat-no" title="function not covered" >NavBar(</span>) {
+    const stateCurrentUser = <span class="cstat-no" title="statement not covered" >useSelector(selectCurrentUser);</span>
+<span class="cstat-no" title="statement not covered" >    return (</span>
+    &lt;div&gt;
+    &lt;Navbar&gt;
+        &lt;Nav defaultActiveKey="/" as="ul"&gt;
+            &lt;Nav.Item as="li"&gt;
+            &lt;NavLink to="/" className='headers2'&gt;Home&lt;/NavLink&gt;
+            &lt;/Nav.Item&gt;
+            &lt;Nav.Item as="li"&gt;
+            &lt;NavLink to="/register" className='headers2'&gt;RegisterPage&lt;/NavLink&gt;
+            &lt;/Nav.Item&gt;
+            &lt;Nav.Item as="li"&gt;
+            &lt;NavLink to="/login" className='headers2'&gt;LoginPage&lt;/NavLink&gt;
+            &lt;/Nav.Item&gt;
+            &lt;Nav.Item as="li"&gt;
+            &lt;NavLink to={'/user/'+stateCurrentUser.username} className='headers2'&gt;MyPage&lt;/NavLink&gt;
+            &lt;/Nav.Item&gt;
+            &lt;Nav.Item as="li"&gt;
+            &lt;NavLink to="/user/dog" className='headers2'&gt;OtherUserPage&lt;/NavLink&gt;
+            &lt;/Nav.Item&gt;
+            &lt;Nav.Item as="li"&gt;
+            &lt;NavLink to="/followerlist/trump" className='headers2'&gt;Follower List&lt;/NavLink&gt;
+            &lt;/Nav.Item&gt;
+            &lt;Nav.Item as="li"&gt;
+            &lt;NavLink to="/followinglist/trump" className='headers2'&gt;Following List&lt;/NavLink&gt;
+            &lt;/Nav.Item&gt;
+            &lt;Nav.Item as="li"&gt;
+            &lt;NavLink to="/upload" className='headers2'&gt;UploadPostPage&lt;/NavLink&gt;
+            &lt;/Nav.Item&gt;
+            &lt;Nav.Item as="li"&gt;
+            &lt;NavLink to="/feed" className='headers2'&gt;FeedPage&lt;/NavLink&gt;
+            &lt;/Nav.Item&gt;
+        &lt;/Nav&gt;
+    &lt;/Navbar&gt;
+    &lt;/div&gt;
+&nbsp;
+    )
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Oct 21 2022 02:56:38 GMT-0400 (Eastern Daylight Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

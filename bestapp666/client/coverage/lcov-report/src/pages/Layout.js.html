@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/pages/Layout.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">src/pages</a> Layout.js
+    </h1>
+    <div class='clearfix'>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import React, { useState } from 'react';</span>
+<span class="cstat-no" title="statement not covered" >import { Outlet, NavLink } from "react-router-dom";</span>
+<span class="cstat-no" title="statement not covered" >import {NavBar} from "../components/NavBar";</span>
+<span class="cstat-no" title="statement not covered" >import { SearchBar } from "../components/SearchBar";</span>
+<span class="cstat-no" title="statement not covered" >import Container from 'react-bootstrap/Container';</span>
+<span class="cstat-no" title="statement not covered" >import Nav from 'react-bootstrap/Nav';</span>
+<span class="cstat-no" title="statement not covered" >import Navbar from 'react-bootstrap/Navbar';</span>
+<span class="cstat-no" title="statement not covered" >import Row from 'react-bootstrap/Row';</span>
+<span class="cstat-no" title="statement not covered" >import Col from 'react-bootstrap/Col';</span>
+<span class="cstat-no" title="statement not covered" >import ReactRoundedImage from "react-rounded-image";</span>
+<span class="cstat-no" title="statement not covered" >import { useSelector, useDispatch } from 'react-redux'</span>
+<span class="cstat-no" title="statement not covered" >import {logoutAction, selectCurrentUser} from './UserPage/currentUserSlice'<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span></span>
+&nbsp;
+function <span class="fstat-no" title="function not covered" >LoginLink(</span>) {
+  const dispatch = <span class="cstat-no" title="statement not covered" >useDispatch();</span>
+  const stateCurrentUser = <span class="cstat-no" title="statement not covered" >useSelector(selectCurrentUser);</span>
+  const [newInput<span class="cstat-no" title="statement not covered" >, setInput<span class="cstat-no" title="statement not covered" >] = <span class="cstat-no" title="statement not covered" >useState({ username: '', password: '' })<span class="cstat-no" title="statement not covered" >;</span></span></span></span>
+&nbsp;
+  const handleLinkOnClick= (<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >e)</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    dispatch(logoutAction());</span>
+<span class="cstat-no" title="statement not covered" >    console.log("currentuser " + stateCurrentUser.username + " has logged out: ");</span>
+  };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  if(stateCurrentUser.username == "NOT_A_USER"){</span>
+<span class="cstat-no" title="statement not covered" >    return (&lt;NavLink to="/login" className='headers'&gt;{"Login"}&lt;/NavLink&gt;)</span>;
+  }else{
+<span class="cstat-no" title="statement not covered" >    return (&lt;NavLink onClick={handleLinkOnClick} to="/login" className='headers'&gt;Logout&lt;/NavLink&gt;)</span>;
+  }
+}
+&nbsp;
+&nbsp;
+function <span class="fstat-no" title="function not covered" >Layout(</span>){
+&nbsp;
+  const stateCurrentUser = <span class="cstat-no" title="statement not covered" >useSelector(selectCurrentUser);</span>
+  const username = <span class="cstat-no" title="statement not covered" >stateCurrentUser.username;</span>
+  const avatar = <span class="cstat-no" title="statement not covered" >stateCurrentUser.avatar;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  return (</span>
+    &lt;&gt;
+    {/* the pages Nav for development use */}
+    &lt;NavBar /&gt;
+&nbsp;
+    &lt;div className="background"&gt;
+    &lt;Navbar collapseOnSelect expand="lg" bg="dark" variant="dark"&gt;
+        &lt;Container&gt;
+          &lt;Col sm={6}&gt;&lt;/Col&gt;
+          &lt;Col&gt;
+            &lt;Nav className="justify-content-end" activeKey="/"&gt;
+              &lt;Nav.Item&gt;
+                &lt;NavLink to={'/user/'+username}&gt;
+                  &lt;ReactRoundedImage
+                    image={avatar}
+                    roundedColor="#ffffff"
+                    imageWidth="35"
+                    imageHeight="35"
+                    roundedSize="2"
+                    borderRadius="20"
+                  /&gt;
+                &lt;/NavLink&gt;
+              &lt;/Nav.Item&gt;
+              &lt;Nav.Item&gt; &lt;NavLink to={'/user/'+username} className='headers'&gt;{username}&lt;/NavLink&gt;&lt;/Nav.Item&gt;
+              &lt;Nav.Item&gt; &lt;NavLink to={'/feed'} className='headers'&gt;Feed&lt;/NavLink&gt;&lt;/Nav.Item&gt;
+              &lt;Nav.Item&gt; &lt;NavLink to="/register" className='headers'&gt;Sign up&lt;/NavLink&gt;&lt;/Nav.Item&gt;
+              {/* handle login to logout */}
+              &lt;Nav.Item&gt; &lt;LoginLink /&gt; &lt;/Nav.Item&gt;
+              &lt;Nav.Item&gt; &lt;NavLink to="" className='headers'&gt;About&lt;/NavLink&gt;&lt;/Nav.Item&gt;
+              &lt;Nav.Item&gt; &lt;NavLink eventKey="disabled" className='headers' disabled&gt; Contact Us &lt;/NavLink&gt; &lt;/Nav.Item&gt;
+            &lt;/Nav&gt;
+          &lt;/Col&gt;
+        &lt;/Container&gt;
+      &lt;/Navbar&gt;
+&nbsp;
+      &lt;Row&gt;
+        &lt;Col sm={8}&gt;
+          &lt;NavLink to=""&gt;
+            &lt;Navbar.Brand style={{paddingLeft: "rem"}}&gt;
+              &lt;img src={require("../images/pennsgram_logo.png")} alt="logo" width="527" height="149"&gt;&lt;/img&gt;
+            &lt;/Navbar.Brand&gt;
+          &lt;/NavLink&gt;
+        &lt;/Col&gt;
+        &lt;Col &gt; &lt;SearchBar /&gt; &lt;/Col&gt;
+      &lt;/Row&gt;
+      
+      &lt;Row style={{paddingTop: "5rem", paddingLeft: "rem"}}&gt;&lt;/Row&gt;
+    &lt;/div&gt;
+&nbsp;
+      &lt;Outlet /&gt;
+    &lt;/&gt;
+  )
+};
+&nbsp;
+export default <span class="cstat-no" title="statement not covered" >Layout<span class="cstat-no" title="statement not covered" >;</span></span></pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Oct 21 2022 02:56:38 GMT-0400 (Eastern Daylight Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

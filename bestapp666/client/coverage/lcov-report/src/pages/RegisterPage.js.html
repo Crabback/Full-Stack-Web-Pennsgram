@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/pages/RegisterPage.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">src/pages</a> RegisterPage.js
+    </h1>
+    <div class='clearfix'>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import "../Styles.css";</span>
+<span class="cstat-no" title="statement not covered" >import React, { useState } from 'react';</span>
+<span class="cstat-no" title="statement not covered" >import Button from 'react-bootstrap/Button';</span>
+<span class="cstat-no" title="statement not covered" >import Form from 'react-bootstrap/Form';</span>
+<span class="cstat-no" title="statement not covered" >import {Footer} from "../components/Footer";</span>
+<span class="cstat-no" title="statement not covered" >import { Navigate, NavLink } from "react-router-dom";</span>
+<span class="cstat-no" title="statement not covered" >import Row from 'react-bootstrap/Row';</span>
+<span class="cstat-no" title="statement not covered" >import Col from 'react-bootstrap/Col';</span>
+<span class="cstat-no" title="statement not covered" >import { createNewUser } from "./../api/mock_api";<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span></span>
+import { useNavigate } from "react-router-dom";
+&nbsp;
+function <span class="fstat-no" title="function not covered" >RegisterPage(</span>) {
+    const navigate = <span class="cstat-no" title="statement not covered" >useNavigate();</span>
+    const [profilePic<span class="cstat-no" title="statement not covered" >, setProfilePic<span class="cstat-no" title="statement not covered" >] = <span class="cstat-no" title="statement not covered" >useState("https://img.wattpad.com/8f19b412f2223afe4288ed0904120a48b7a38ce1/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f5650722d38464e2d744a515349673d3d2d3234323931353831302e313434336539633161633764383437652e6a7067")<span class="cstat-no" title="statement not covered" >;</span></span></span></span>
+    
+    function <span class="fstat-no" title="function not covered" >handleChange(</span>e) {
+<span class="cstat-no" title="statement not covered" >        setProfilePic(URL.createObjectURL(e.target.files[0]));</span>
+    }
+    
+    const [urlInput<span class="cstat-no" title="statement not covered" >, setUrlInput<span class="cstat-no" title="statement not covered" >] = <span class="cstat-no" title="statement not covered" >useState("")<span class="cstat-no" title="statement not covered" >;</span></span></span></span>
+&nbsp;
+    const handleImageURLInput = (<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >e)</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      if (e.target.name === "imageURL") {</span>
+<span class="cstat-no" title="statement not covered" >        setUrlInput((<span class="fstat-no" title="function not covered" >state</span>) =&gt; (<span class="cstat-no" title="statement not covered" >e.target.value))</span>;</span>
+      }}
+    const handleUrlUpload = (<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >e)</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        e.preventDefault();</span>
+<span class="cstat-no" title="statement not covered" >        setProfilePic(urlInput);</span>
+    };
+    function <span class="fstat-no" title="function not covered" >addDefaultImgSrc(</span>ev){
+<span class="cstat-no" title="statement not covered" >        ev.target.src = "https://img.wattpad.com/8f19b412f2223afe4288ed0904120a48b7a38ce1/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f5650722d38464e2d744a515349673d3d2d3234323931353831302e313434336539633161633764383437652e6a7067";</span>
+<span class="cstat-no" title="statement not covered" >        setProfilePic("https://img.wattpad.com/8f19b412f2223afe4288ed0904120a48b7a38ce1/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f5650722d38464e2d744a515349673d3d2d3234323931353831302e313434336539633161633764383437652e6a7067");</span>
+    }
+&nbsp;
+&nbsp;
+    //handle the temporary inputs in the userInfo form 
+    const [infoInput<span class="cstat-no" title="statement not covered" >, setInfoInput<span class="cstat-no" title="statement not covered" >] = <span class="cstat-no" title="statement not covered" >useState({ username: '', password: '' , passwordConfirm: ''})<span class="cstat-no" title="statement not covered" >;</span></span></span></span>
+    const handleInfoInput = (<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >e)</span> =&gt;{</span>
+<span class="cstat-no" title="statement not covered" >        if (e.target.name === "username") {</span>
+<span class="cstat-no" title="statement not covered" >            setInfoInput((<span class="fstat-no" title="function not covered" >state</span>) =&gt; (<span class="cstat-no" title="statement not covered" >{</span></span>
+              username: e.target.value,
+              password: state.password,
+              passwordConfirm: state.passwordConfirm
+            }));
+          }
+<span class="cstat-no" title="statement not covered" >          if (e.target.name === 'password') {</span>
+<span class="cstat-no" title="statement not covered" >            setInfoInput((<span class="fstat-no" title="function not covered" >state</span>) =&gt; (<span class="cstat-no" title="statement not covered" >{</span></span>
+              username: state.username,
+              password: e.target.value,
+              passwordConfirm: state.passwordConfirm
+            }));
+          }
+<span class="cstat-no" title="statement not covered" >          if (e.target.name === 'passwordConfirm') {</span>
+<span class="cstat-no" title="statement not covered" >            setInfoInput((<span class="fstat-no" title="function not covered" >state</span>) =&gt; (<span class="cstat-no" title="statement not covered" >{</span></span>
+              username: state.username,
+              password: state.password,
+              passwordConfirm: e.target.value
+            }));
+          }
+    };
+&nbsp;
+    const handleRegister = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >async (</span>e) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        e.preventDefault();</span>
+        //1. the info: username, password
+            //verify the password match or not
+<span class="cstat-no" title="statement not covered" >        if(infoInput.password != infoInput.passwordConfirm){</span>
+<span class="cstat-no" title="statement not covered" >            alert("Password unmatched!");</span>
+        }else{
+            const newUser = <span class="cstat-no" title="statement not covered" >{</span>
+                "username" : infoInput.username, 
+                "password" : infoInput.password, 
+                "followings" : [],
+                "followers" : [],
+                "avatar" : profilePic,
+                "posts" : []
+            };
+<span class="cstat-no" title="statement not covered" >            console.log(newUser.avatar);</span>
+<span class="cstat-no" title="statement not covered" >            try{</span>
+<span class="cstat-no" title="statement not covered" >                createNewUser(newUser);    </span>
+            }catch(err){
+<span class="cstat-no" title="statement not covered" >                alert("register adding newUser failed: " +  err);</span>
+            }
+<span class="cstat-no" title="statement not covered" >            alert("Register success with username: "+ newUser.username);</span>
+<span class="cstat-no" title="statement not covered" >            navigate("/login");</span>
+        }
+    };
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return (</span>
+    &lt;div className='background'&gt;
+        &lt;Row&gt;
+        &lt;Col sm={1}&gt;&lt;/Col&gt;
+        &lt;Col sm={5}&gt;
+            &lt;Form onSubmit={handleRegister}&gt;
+                &lt;Form.Group className="mb-3" controlId="formBasicFirstName"&gt;
+                    &lt;Form.Label&gt;First Name&lt;/Form.Label&gt;
+                    &lt;Form.Control name="firstname" onChange={handleInfoInput} placeholder="First Name" /&gt;
+                &lt;/Form.Group&gt;
+&nbsp;
+                &lt;Form.Group className="mb-3" controlId="formBasicLastName"&gt;
+                    &lt;Form.Label&gt;Last Name&lt;/Form.Label&gt;
+                    &lt;Form.Control name="lastname" onChange={handleInfoInput} placeholder="Last Name" /&gt;
+                &lt;/Form.Group&gt;
+&nbsp;
+                &lt;Form.Group className="mb-3" controlId="formBasicGender"&gt;
+                    &lt;Form.Label&gt;Gender&lt;/Form.Label&gt;
+                    &lt;Form.Select &gt;
+                        &lt;option&gt;Male&lt;/option&gt;
+                        &lt;option&gt;Female&lt;/option&gt;
+                        &lt;option&gt;Other&lt;/option&gt;
+                    &lt;/Form.Select&gt;
+                &lt;/Form.Group&gt;
+&nbsp;
+                &lt;Form.Group className="mb-3" controlId="formBasicDOB"&gt;
+                    &lt;Form.Label&gt;Date of Birth&lt;/Form.Label&gt;
+                    &lt;Form.Control name="birth" onChange={handleInfoInput} placeholder="Date of Birth" /&gt;
+                &lt;/Form.Group&gt;
+&nbsp;
+                &lt;Form.Group className="mb-3" controlId="formBasicEmail"&gt;
+                    &lt;Form.Label&gt;Email address&lt;/Form.Label&gt;
+                    &lt;Form.Control name="email" onChange={handleInfoInput} placeholder="Enter email" /&gt;
+                &lt;/Form.Group&gt;
+&nbsp;
+                &lt;Form.Group className="mb-3" controlId="formBasicUsername"&gt;
+                    &lt;Form.Label&gt;Username&lt;/Form.Label&gt;
+                    &lt;Form.Control name="username" onChange={handleInfoInput} placeholder="Username" /&gt;
+                &lt;/Form.Group&gt;
+&nbsp;
+                &lt;Form.Group className="mb-3" controlId="formBasicPassword"&gt;
+                    &lt;Form.Label&gt;Password&lt;/Form.Label&gt;
+                    &lt;Form.Control name="password" onChange={handleInfoInput} placeholder="Password" /&gt;
+                &lt;/Form.Group&gt;
+&nbsp;
+                &lt;Form.Group className="mb-3" controlId="formBasicConfirmPassword"&gt;
+                    &lt;Form.Label&gt;Confirm Password&lt;/Form.Label&gt;
+                    &lt;Form.Control name="passwordConfirm" onChange={handleInfoInput} placeholder="Confirm Password" /&gt;
+                &lt;/Form.Group&gt;
+&nbsp;
+                    &lt;Button variant="primary" type="submit"&gt;
+                        Submit
+                    &lt;/Button&gt;
+            &lt;/Form&gt;
+        &lt;/Col&gt;
+        &lt;Col sm={1}&gt;&lt;/Col&gt;
+        &lt;Col sm={5}&gt;
+            &lt;Form onSubmit={handleUrlUpload}&gt;
+                &lt;Form.Group className="mb-3"&gt;
+                    &lt;img onError={addDefaultImgSrc} src={profilePic} alt="user pic 1" width="250" height="250"&gt;&lt;/img&gt;
+                &lt;/Form.Group&gt;
+                &lt;Form.Group controlId="formFile" className="mb-3" style={{paddingRight: "50%"}}&gt;
+                    &lt;Form.Label&gt;Upload Profile Picture&lt;/Form.Label&gt;
+                    &lt;Form.Control type="file" onChange={handleChange}/&gt;
+                    {/* input for uploading url image */}
+                    &lt;Form.Control name="imageURL" onChange={handleImageURLInput} placeholder="Enter online image url" /&gt;
+                &lt;/Form.Group&gt;
+                &lt;Button variant="primary" type="submit"&gt;
+                    Upload avatar
+                 &lt;/Button&gt;
+            &lt;/Form&gt;
+        &lt;/Col&gt;
+        &lt;/Row&gt;
+        &lt;div style={{paddingLeft: "2rem"}}&gt;
+        &lt;Footer /&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    );
+}
+&nbsp;
+export default <span class="cstat-no" title="statement not covered" >RegisterPage<span class="cstat-no" title="statement not covered" ></span></span></pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Oct 21 2022 02:56:38 GMT-0400 (Eastern Daylight Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

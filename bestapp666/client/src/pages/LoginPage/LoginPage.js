@@ -68,7 +68,7 @@ function LoginForm(props){
 
 
   return(
-  <Form onSubmit={handleLogin}>
+  <Form id="submitForm" onSubmit={handleLogin}>
     <Form.Group className="mb-3" controlId="formBasicEmail">
       <Form.Label>Username</Form.Label>
       <Form.Control name="username" onChange={handleOnChange} placeholder="Enter username (eg. dog)" />

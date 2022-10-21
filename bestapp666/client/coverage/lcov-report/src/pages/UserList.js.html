@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/pages/UserList.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">All files</a> / <a href="index.html">src/pages</a> UserList.js
+    </h1>
+    <div class='clearfix'>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import "../Styles.css";</span>
+<span class="cstat-no" title="statement not covered" >import React, { useState, useEffect } from 'react';</span>
+<span class="cstat-no" title="statement not covered" >import ListGroup from 'react-bootstrap/ListGroup';</span>
+<span class="cstat-no" title="statement not covered" >import Button from 'react-bootstrap/Button';</span>
+<span class="cstat-no" title="statement not covered" >import { NavLink, useParams, useNavigate} from "react-router-dom";</span>
+<span class="cstat-no" title="statement not covered" >import {Footer} from "../components/Footer";</span>
+<span class="cstat-no" title="statement not covered" >import { useSelector, useDispatch } from 'react-redux'</span>
+<span class="cstat-no" title="statement not covered" >import {addLoginUser, logoutAction, selectCurrentUser} from './UserPage/currentUserSlice'</span>
+<span class="cstat-no" title="statement not covered" >import { getUser } from "../api/mock_api";<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span></span>
+&nbsp;
+function <span class="fstat-no" title="function not covered" >UserList(</span>props){
+    var header = <span class="cstat-no" title="statement not covered" >"";</span>
+&nbsp;
+    // the logged-in user who is browsing page (self)
+    const stateCurrentUser = <span class="cstat-no" title="statement not covered" >useSelector(selectCurrentUser);</span>
+&nbsp;
+    // the user we are browsing (other), default self
+    const [thisUser<span class="cstat-no" title="statement not covered" >, setThisUser<span class="cstat-no" title="statement not covered" >] = <span class="cstat-no" title="statement not covered" >useState(stateCurrentUser)<span class="cstat-no" title="statement not covered" >;</span></span></span></span>
+    let { username<span class="cstat-no" title="statement not covered" > } = <span class="cstat-no" title="statement not covered" >useParams();</span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    useEffect(<span class="fstat-no" title="function not covered" >() =&gt; </span>{</span>
+      async function <span class="fstat-no" title="function not covered" >fetchData(</span>) {
+        //verification username exist or not
+        let response = <span class="cstat-no" title="statement not covered" >await getUser(username);</span>
+         //get the user object
+<span class="cstat-no" title="statement not covered" >        if(response == undefined){</span>
+<span class="cstat-no" title="statement not covered" >          alert("User Not Found.")</span>
+        }else{
+<span class="cstat-no" title="statement not covered" >          setThisUser(response[0]);</span>}
+      }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >      try{<span class="cstat-no" title="statement not covered" >fetchData();</span>}</span>
+      catch(err){
+<span class="cstat-no" title="statement not covered" >          console.error(err);</span>
+      }
+    }, [username]); //adding dependency making sure useEffect only run once after each render
+&nbsp;
+    let userlist;
+<span class="cstat-no" title="statement not covered" >    if (props.list == "follower") {</span>
+<span class="cstat-no" title="statement not covered" >     header = "Your followers";</span>
+<span class="cstat-no" title="statement not covered" >      userlist =  thisUser.followers.map((<span class="fstat-no" title="function not covered" >p)</span> =&gt; (</span>
+<span class="cstat-no" title="statement not covered" >      &lt;ListGroup.Item as="li" &gt;</span>
+        &lt;NavLink to={"/user/"+p} className="button_text"&gt;
+          {p}
+        &lt;/NavLink&gt;
+      &lt;/ListGroup.Item&gt;
+    ))
+    } else {
+<span class="cstat-no" title="statement not covered" >     header =  "You are following";</span>
+<span class="cstat-no" title="statement not covered" >    userlist =  thisUser.followings.map((<span class="fstat-no" title="function not covered" >p)</span> =&gt; (</span>
+<span class="cstat-no" title="statement not covered" >      &lt;ListGroup.Item as="li" &gt;</span>
+        &lt;NavLink to={"/user/"+p} className="button_text"&gt;
+          {p}
+        &lt;/NavLink&gt;
+      &lt;/ListGroup.Item&gt;
+    ))
+    }
+&nbsp;
+    
+<span class="cstat-no" title="statement not covered" >    return(</span>
+    &lt;div className="background"&gt;
+    &lt;h2 style={{paddingLeft: "2rem", paddingBottom: "1rem"}}&gt; {header} &lt;/h2&gt;
+    &lt;ListGroup as="ul" defaultActiveKey="#link1" style={{paddingLeft: "2rem", paddingRight: "70%", paddingBottom: "2rem"}}&gt;
+      {userlist}
+    &lt;/ListGroup&gt;
+    &lt;NavLink to={"/user/"+thisUser.username} className="button_text" style={{paddingLeft: "2rem"}}&gt;
+        &lt;Button variant="primary"&gt;
+            Back
+        &lt;/Button&gt;
+    &lt;/NavLink&gt;
+    &lt;div style={{paddingLeft: "2rem", paddingTop: "1rem"}}&gt;
+        &lt;Footer /&gt;
+    &lt;/div&gt;
+    &lt;/div&gt;
+    )
+}
+&nbsp;
+export default <span class="cstat-no" title="statement not covered" >UserList<span class="cstat-no" title="statement not covered" ></span></span></pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Oct 21 2022 02:56:38 GMT-0400 (Eastern Daylight Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

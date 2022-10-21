@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1666335398773" clover="3.2.0">
+  <project timestamp="1666335398773" name="All files">
+    <metrics statements="446" coveredstatements="0" conditionals="87" coveredconditionals="0" methods="83" coveredmethods="0" elements="616" coveredelements="0" complexity="0" loc="446" ncloc="446" packages="8" files="20" classes="20">
+      <package name="src">
+        <metrics statements="33" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <file name="App.js" path="/Users/yaoqideng_1/5570/project---design-hw1-team_offersoverflow/bestapp666/client/src/App.js">
+          <metrics statements="13" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+          <line num="1" count="0" type="stmt"/>
+          <line num="2" count="0" type="stmt"/>
+          <line num="3" count="0" type="stmt"/>
+          <line num="4" count="0" type="stmt"/>
+          <line num="5" count="0" type="stmt"/>
+          <line num="6" count="0" type="stmt"/>
+          <line num="7" count="0" type="stmt"/>
+          <line num="8" count="0" type="stmt"/>
+          <line num="9" count="0" type="stmt"/>
+          <line num="10" count="0" type="stmt"/>
+          <line num="11" count="0" type="stmt"/>
+          <line num="12" count="0" type="stmt"/>
+          <line num="15" count="0" type="stmt"/>
+        </file>
+        <file name="index.js" path="/Users/yaoqideng_1/5570/project---design-hw1-team_offersoverflow/bestapp666/client/src/index.js">
+          <metrics statements="10" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+          <line num="1" count="0" type="stmt"/>
+          <line num="2" count="0" type="stmt"/>
+          <line num="3" count="0" type="stmt"/>
+          <line num="4" count="0" type="stmt"/>
+          <line num="5" count="0" type="stmt"/>
+          <line num="6" count="0" type="stmt"/>
+          <line num="7" count="0" type="stmt"/>
+          <line num="9" count="0" type="stmt"/>
+          <line num="10" count="0" type="stmt"/>
+          <line num="19" count="0" type="stmt"/>
+        </file>
+        <file name="reportWebVitals.js" path="/Users/yaoqideng_1/5570/project---design-hw1-team_offersoverflow/bestapp666/client/src/reportWebVitals.js">
+          <metrics statements="9" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="3" coveredmethods="0"/>
+          <line num="1" count="0" type="stmt"/>
+          <line num="2" count="0" type="cond" truecount="0" falsecount="4"/>
+          <line num="3" count="0" type="stmt"/>
+          <line num="4" count="0" type="stmt"/>
+          <line num="5" count="0" type="stmt"/>
+          <line num="6" count="0" type="stmt"/>
+          <line num="7" count="0" type="stmt"/>
+          <line num="8" count="0" type="stmt"/>
+          <line num="13" count="0" type="stmt"/>
+        </file>
+        <file name="setupTests.js" path="/Users/yaoqideng_1/5570/project---design-hw1-team_offersoverflow/bestapp666/client/src/setupTests.js">
+          <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+          <line num="5" count="0" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.Store">
+        <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <file name="store.js" path="/Users/yaoqideng_1/5570/project---design-hw1-team_offersoverflow/bestapp666/client/src/Store/store.js">
+          <metrics statements="5" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+          <line num="1" count="0" type="stmt"/>
+          <line num="2" count="0" type="stmt"/>
+          <line num="3" count="0" type="stmt"/>
+          <line num="6" count="0" type="stmt"/>
+          <line num="11" count="0" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.api">
+        <metrics statements="71" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="12" coveredmethods="0"/>
+        <file name="mock_api.js" path="/Users/yaoqideng_1/5570/project---design-hw1-team_offersoverflow/bestapp666/client/src/api/mock_api.js">
+          <metrics statements="71" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="12" coveredmethods="0"/>
+          <line num="2" count="0" type="stmt"/>
+          <line num="7" count="0" type="stmt"/>
+          <line num="10" count="0" type="stmt"/>
+          <line num="11" count="0" type="stmt"/>
+          <line num="12" count="0" type="stmt"/>
+          <line num="13" count="0" type="stmt"/>
+          <line num="18" count="0" type="stmt"/>
+          <line num="25" count="0" type="stmt"/>
+          <line num="26" count="0" type="stmt"/>
+          <line num="27" count="0" type="stmt"/>
+          <line num="28" count="0" type="stmt"/>
+          <line num="31" count="0" type="stmt"/>
+          <line num="32" count="0" type="stmt"/>
+          <line num="34" count="0" type="stmt"/>
+          <line num="35" count="0" type="stmt"/>
+          <line num="38" count="0" type="stmt"/>
+          <line num="44" count="0" type="stmt"/>
+          <line num="45" count="0" type="stmt"/>
+          <line num="46" count="0" type="stmt"/>
+          <line num="47" count="0" type="stmt"/>
+          <line num="48" count="0" type="stmt"/>
+          <line num="49" count="0" type="stmt"/>
+          <line num="50" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="51" count="0" type="stmt"/>
+          <line num="54" count="0" type="stmt"/>
+          <line num="56" count="0" type="stmt"/>
+          <line num="59" count="0" type="stmt"/>
+          <line num="66" count="0" type="stmt"/>
+          <line num="67" count="0" type="stmt"/>
+          <line num="68" count="0" type="stmt"/>
+          <line num="69" count="0" type="stmt"/>
+          <line num="70" count="0" type="stmt"/>
+          <line num="71" count="0" type="stmt"/>
+          <line num="75" count="0" type="stmt"/>
+          <line num="77" count="0" type="stmt"/>
+          <line num="79" count="0" type="stmt"/>
+          <line num="80" count="0" type="stmt"/>
+          <line num="81" count="0" type="stmt"/>
+          <line num="82" count="0" type="stmt"/>
+          <line num="83" count="0" type="stmt"/>
+          <line num="84" count="0" type="stmt"/>
+          <line num="85" count="0" type="stmt"/>
+          <line num="86" count="0" type="stmt"/>
+          <line num="90" count="0" type="stmt"/>
+          <line num="92" count="0" type="stmt"/>
+          <line num="94" count="0" type="stmt"/>
+          <line num="95" count="0" type="stmt"/>
+          <line num="96" count="0" type="stmt"/>
+          <line num="97" count="0" type="stmt"/>
+          <line num="98" count="0" type="stmt"/>
+          <line num="99" count="0" type="stmt"/>
+          <line num="100" count="0" type="stmt"/>
+          <line num="101" count="0" type="stmt"/>
+          <line num="102" count="0" type="stmt"/>
+          <line num="103" count="0" type="stmt"/>
+          <line num="105" count="0" type="stmt"/>
+          <line num="108" count="0" type="stmt"/>
+          <line num="110" count="0" type="stmt"/>
+          <line num="112" count="0" type="stmt"/>
+          <line num="113" count="0" type="stmt"/>
+          <line num="114" count="0" type="stmt"/>
+          <line num="115" count="0" type="stmt"/>
+          <line num="116" count="0" type="stmt"/>
+          <line num="117" count="0" type="stmt"/>
+          <line num="118" count="0" type="stmt"/>
+          <line num="119" count="0" type="stmt"/>
+          <line num="120" count="0" type="stmt"/>
+          <line num="121" count="0" type="stmt"/>
+          <line num="123" count="0" type="stmt"/>
+          <line num="126" count="0" type="stmt"/>
+          <line num="128" count="0" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.components">
+        <metrics statements="27" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="0"/>
+        <file name="Footer.js" path="/Users/yaoqideng_1/5570/project---design-hw1-team_offersoverflow/bestapp666/client/src/components/Footer.js">
+          <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+          <line num="1" count="0" type="stmt"/>
+          <line num="2" count="0" type="stmt"/>
+          <line num="5" count="0" type="stmt"/>
+        </file>
+        <file name="NavBar.js" path="/Users/yaoqideng_1/5570/project---design-hw1-team_offersoverflow/bestapp666/client/src/components/NavBar.js">
+          <metrics statements="9" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+          <line num="1" count="0" type="stmt"/>
+          <line num="2" count="0" type="stmt"/>
+          <line num="3" count="0" type="stmt"/>
+          <line num="4" count="0" type="stmt"/>
+          <line num="5" count="0" type="stmt"/>
+          <line num="6" count="0" type="stmt"/>
+          <line num="7" count="0" type="stmt"/>
+          <line num="10" count="0" type="stmt"/>
+          <line num="11" count="0" type="stmt"/>
+        </file>
+        <file name="SearchBar.js" path="/Users/yaoqideng_1/5570/project---design-hw1-team_offersoverflow/bestapp666/client/src/components/SearchBar.js">
+          <metrics statements="15" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+          <line num="1" count="0" type="stmt"/>
+          <line num="2" count="0" type="stmt"/>
+          <line num="3" count="0" type="stmt"/>
+          <line num="4" count="0" type="stmt"/>
+          <line num="5" count="0" type="stmt"/>
+          <line num="6" count="0" type="stmt"/>
+          <line num="7" count="0" type="stmt"/>
+          <line num="10" count="0" type="stmt"/>
+          <line num="11" count="0" type="stmt"/>
+          <line num="13" count="0" type="stmt"/>
+          <line num="14" count="0" type="stmt"/>
+          <line num="15" count="0" type="stmt"/>
+          <line num="16" count="0" type="stmt"/>
+          <line num="18" count="0" type="stmt"/>
+          <line num="25" count="0" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.pages">
+        <metrics statements="153" coveredstatements="0" conditionals="40" coveredconditionals="0" methods="32" coveredmethods="0"/>
+        <file name="HomePage.js" path="/Users/yaoqideng_1/5570/project---design-hw1-team_offersoverflow/bestapp666/client/src/pages/HomePage.js">
+          <metrics statements="14" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+          <line num="1" count="0" type="stmt"/>
+          <line num="2" count="0" type="stmt"/>
+          <line num="3" count="0" type="stmt"/>
+          <line num="4" count="0" type="stmt"/>
+          <line num="5" count="0" type="stmt"/>
+          <line num="6" count="0" type="stmt"/>
+          <line num="7" count="0" type="stmt"/>
+          <line num="8" count="0" type="stmt"/>
+          <line num="12" count="0" type="stmt"/>
+          <line num="13" count="0" type="stmt"/>
+          <line num="14" count="0" type="stmt"/>
+          <line num="15" count="0" type="stmt"/>
+          <line num="16" count="0" type="stmt"/>
+          <line num="85" count="0" type="stmt"/>
+        </file>
+        <file name="Layout.js" path="/Users/yaoqideng_1/5570/project---design-hw1-team_offersoverflow/bestapp666/client/src/pages/Layout.js">
+          <metrics statements="26" coveredstatements="0" conditionals="7" coveredconditionals="0" methods="4" coveredmethods="0"/>
+          <line num="1" count="0" type="stmt"/>
+          <line num="2" count="0" type="stmt"/>
+          <line num="3" count="0" type="stmt"/>
+          <line num="4" count="0" type="stmt"/>
+          <line num="5" count="0" type="stmt"/>
+          <line num="6" count="0" type="stmt"/>
+          <line num="7" count="0" type="stmt"/>
+          <line num="8" count="0" type="stmt"/>
+          <line num="9" count="0" type="stmt"/>
+          <line num="10" count="0" type="stmt"/>
+          <line num="11" count="0" type="stmt"/>
+          <line num="12" count="0" type="cond" truecount="0" falsecount="5"/>
+          <line num="15" count="0" type="stmt"/>
+          <line num="16" count="0" type="stmt"/>
+          <line num="17" count="0" type="stmt"/>
+          <line num="19" count="0" type="stmt"/>
+          <line num="20" count="0" type="stmt"/>
+          <line num="21" count="0" type="stmt"/>
+          <line num="24" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="25" count="0" type="stmt"/>
+          <line num="27" count="0" type="stmt"/>
+          <line num="34" count="0" type="stmt"/>
+          <line num="35" count="0" type="stmt"/>
+          <line num="36" count="0" type="stmt"/>
+          <line num="38" count="0" type="stmt"/>
+          <line num="92" count="0" type="stmt"/>
+        </file>
+        <file name="NoPage.js" path="/Users/yaoqideng_1/5570/project---design-hw1-team_offersoverflow/bestapp666/client/src/pages/NoPage.js">
+          <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+          <line num="1" count="0" type="stmt"/>
+          <line num="2" count="0" type="stmt"/>
+          <line num="5" count="0" type="stmt"/>
+          <line num="14" count="0" type="stmt"/>
+        </file>
+        <file name="RegisterPage.js" path="/Users/yaoqideng_1/5570/project---design-hw1-team_offersoverflow/bestapp666/client/src/pages/RegisterPage.js">
+          <metrics statements="42" coveredstatements="0" conditionals="15" coveredconditionals="0" methods="12" coveredmethods="0"/>
+          <line num="1" count="0" type="stmt"/>
+          <line num="2" count="0" type="stmt"/>
+          <line num="3" count="0" type="stmt"/>
+          <line num="4" count="0" type="stmt"/>
+          <line num="5" count="0" type="stmt"/>
+          <line num="6" count="0" type="stmt"/>
+          <line num="7" count="0" type="stmt"/>
+          <line num="8" count="0" type="stmt"/>
+          <line num="9" count="0" type="cond" truecount="0" falsecount="5"/>
+          <line num="13" count="0" type="stmt"/>
+          <line num="14" count="0" type="stmt"/>
+          <line num="17" count="0" type="stmt"/>
+          <line num="20" count="0" type="stmt"/>
+          <line num="22" count="0" type="stmt"/>
+          <line num="23" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="24" count="0" type="stmt"/>
+          <line num="26" count="0" type="stmt"/>
+          <line num="27" count="0" type="stmt"/>
+          <line num="28" count="0" type="stmt"/>
+          <line num="31" count="0" type="stmt"/>
+          <line num="32" count="0" type="stmt"/>
+          <line num="37" count="0" type="stmt"/>
+          <line num="38" count="0" type="stmt"/>
+          <line num="39" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="40" count="0" type="stmt"/>
+          <line num="46" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="47" count="0" type="stmt"/>
+          <line num="53" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="54" count="0" type="stmt"/>
+          <line num="62" count="0" type="stmt"/>
+          <line num="63" count="0" type="stmt"/>
+          <line num="66" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="67" count="0" type="stmt"/>
+          <line num="69" count="0" type="stmt"/>
+          <line num="77" count="0" type="stmt"/>
+          <line num="78" count="0" type="stmt"/>
+          <line num="79" count="0" type="stmt"/>
+          <line num="81" count="0" type="stmt"/>
+          <line num="83" count="0" type="stmt"/>
+          <line num="84" count="0" type="stmt"/>
+          <line num="88" count="0" type="stmt"/>
+          <line num="168" count="0" type="stmt"/>
+        </file>
+        <file name="UploadPostPage.js" path="/Users/yaoqideng_1/5570/project---design-hw1-team_offersoverflow/bestapp666/client/src/pages/UploadPostPage.js">
+          <metrics statements="38" coveredstatements="0" conditionals="9" coveredconditionals="0" methods="8" coveredmethods="0"/>
+          <line num="1" count="0" type="stmt"/>
+          <line num="2" count="0" type="stmt"/>
+          <line num="3" count="0" type="stmt"/>
+          <line num="4" count="0" type="stmt"/>
+          <line num="5" count="0" type="stmt"/>
+          <line num="7" count="0" type="stmt"/>
+          <line num="8" count="0" type="stmt"/>
+          <line num="9" count="0" type="stmt"/>
+          <line num="10" count="0" type="stmt"/>
+          <line num="11" count="0" type="stmt"/>
+          <line num="12" count="0" type="cond" truecount="0" falsecount="5"/>
+          <line num="15" count="0" type="stmt"/>
+          <line num="16" count="0" type="stmt"/>
+          <line num="17" count="0" type="stmt"/>
+          <line num="19" count="0" type="stmt"/>
+          <line num="21" count="0" type="stmt"/>
+          <line num="22" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="23" count="0" type="stmt"/>
+          <line num="27" count="0" type="stmt"/>
+          <line num="31" count="0" type="stmt"/>
+          <line num="32" count="0" type="stmt"/>
+          <line num="35" count="0" type="stmt"/>
+          <line num="37" count="0" type="stmt"/>
+          <line num="38" count="0" type="stmt"/>
+          <line num="42" count="0" type="stmt"/>
+          <line num="43" count="0" type="stmt"/>
+          <line num="45" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="46" count="0" type="stmt"/>
+          <line num="47" count="0" type="stmt"/>
+          <line num="50" count="0" type="stmt"/>
+          <line num="56" count="0" type="stmt"/>
+          <line num="58" count="0" type="stmt"/>
+          <line num="59" count="0" type="stmt"/>
+          <line num="60" count="0" type="stmt"/>
+          <line num="62" count="0" type="stmt"/>
+          <line num="64" count="0" type="stmt"/>
+          <line num="70" count="0" type="stmt"/>
+          <line num="110" count="0" type="stmt"/>
+        </file>
+        <file name="UserList.js" path="/Users/yaoqideng_1/5570/project---design-hw1-team_offersoverflow/bestapp666/client/src/pages/UserList.js">
+          <metrics statements="29" coveredstatements="0" conditionals="9" coveredconditionals="0" methods="6" coveredmethods="0"/>
+          <line num="1" count="0" type="stmt"/>
+          <line num="2" count="0" type="stmt"/>
+          <line num="3" count="0" type="stmt"/>
+          <line num="4" count="0" type="stmt"/>
+          <line num="5" count="0" type="stmt"/>
+          <line num="6" count="0" type="stmt"/>
+          <line num="7" count="0" type="stmt"/>
+          <line num="8" count="0" type="stmt"/>
+          <line num="9" count="0" type="cond" truecount="0" falsecount="5"/>
+          <line num="12" count="0" type="stmt"/>
+          <line num="15" count="0" type="stmt"/>
+          <line num="18" count="0" type="stmt"/>
+          <line num="19" count="0" type="stmt"/>
+          <line num="21" count="0" type="stmt"/>
+          <line num="24" count="0" type="stmt"/>
+          <line num="26" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="27" count="0" type="stmt"/>
+          <line num="29" count="0" type="stmt"/>
+          <line num="32" count="0" type="stmt"/>
+          <line num="34" count="0" type="stmt"/>
+          <line num="39" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="40" count="0" type="stmt"/>
+          <line num="41" count="0" type="stmt"/>
+          <line num="42" count="0" type="stmt"/>
+          <line num="49" count="0" type="stmt"/>
+          <line num="50" count="0" type="stmt"/>
+          <line num="51" count="0" type="stmt"/>
+          <line num="60" count="0" type="stmt"/>
+          <line num="78" count="0" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.pages.FeedPage">
+        <metrics statements="45" coveredstatements="0" conditionals="7" coveredconditionals="0" methods="9" coveredmethods="0"/>
+        <file name="FeedPage.js" path="/Users/yaoqideng_1/5570/project---design-hw1-team_offersoverflow/bestapp666/client/src/pages/FeedPage/FeedPage.js">
+          <metrics statements="45" coveredstatements="0" conditionals="7" coveredconditionals="0" methods="9" coveredmethods="0"/>
+          <line num="1" count="0" type="stmt"/>
+          <line num="2" count="0" type="stmt"/>
+          <line num="3" count="0" type="stmt"/>
+          <line num="4" count="0" type="stmt"/>
+          <line num="5" count="0" type="stmt"/>
+          <line num="6" count="0" type="stmt"/>
+          <line num="7" count="0" type="stmt"/>
+          <line num="8" count="0" type="stmt"/>
+          <line num="9" count="0" type="stmt"/>
+          <line num="10" count="0" type="stmt"/>
+          <line num="11" count="0" type="stmt"/>
+          <line num="12" count="0" type="stmt"/>
+          <line num="13" count="0" type="stmt"/>
+          <line num="14" count="0" type="stmt"/>
+          <line num="15" count="0" type="stmt"/>
+          <line num="16" count="0" type="cond" truecount="0" falsecount="5"/>
+          <line num="21" count="0" type="stmt"/>
+          <line num="22" count="0" type="stmt"/>
+          <line num="69" count="0" type="stmt"/>
+          <line num="70" count="0" type="stmt"/>
+          <line num="71" count="0" type="stmt"/>
+          <line num="73" count="0" type="stmt"/>
+          <line num="75" count="0" type="stmt"/>
+          <line num="77" count="0" type="stmt"/>
+          <line num="78" count="0" type="stmt"/>
+          <line num="81" count="0" type="stmt"/>
+          <line num="82" count="0" type="stmt"/>
+          <line num="84" count="0" type="stmt"/>
+          <line num="85" count="0" type="stmt"/>
+          <line num="88" count="0" type="stmt"/>
+          <line num="93" count="0" type="stmt"/>
+          <line num="99" count="0" type="stmt"/>
+          <line num="105" count="0" type="stmt"/>
+          <line num="111" count="0" type="stmt"/>
+          <line num="117" count="0" type="stmt"/>
+          <line num="119" count="0" type="stmt"/>
+          <line num="121" count="0" type="stmt"/>
+          <line num="122" count="0" type="stmt"/>
+          <line num="125" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="126" count="0" type="stmt"/>
+          <line num="129" count="0" type="stmt"/>
+          <line num="142" count="0" type="stmt"/>
+          <line num="143" count="0" type="stmt"/>
+          <line num="144" count="0" type="stmt"/>
+          <line num="145" count="0" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.pages.LoginPage">
+        <metrics statements="38" coveredstatements="0" conditionals="13" coveredconditionals="0" methods="8" coveredmethods="0"/>
+        <file name="LoginPage.js" path="/Users/yaoqideng_1/5570/project---design-hw1-team_offersoverflow/bestapp666/client/src/pages/LoginPage/LoginPage.js">
+          <metrics statements="38" coveredstatements="0" conditionals="13" coveredconditionals="0" methods="8" coveredmethods="0"/>
+          <line num="1" count="0" type="stmt"/>
+          <line num="2" count="0" type="stmt"/>
+          <line num="3" count="0" type="stmt"/>
+          <line num="4" count="0" type="stmt"/>
+          <line num="5" count="0" type="stmt"/>
+          <line num="6" count="0" type="stmt"/>
+          <line num="7" count="0" type="stmt"/>
+          <line num="8" count="0" type="stmt"/>
+          <line num="11" count="0" type="stmt"/>
+          <line num="12" count="0" type="stmt"/>
+          <line num="13" count="0" type="cond" truecount="0" falsecount="5"/>
+          <line num="19" count="0" type="stmt"/>
+          <line num="20" count="0" type="stmt"/>
+          <line num="22" count="0" type="stmt"/>
+          <line num="24" count="0" type="stmt"/>
+          <line num="25" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="26" count="0" type="stmt"/>
+          <line num="31" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="32" count="0" type="stmt"/>
+          <line num="40" count="0" type="stmt"/>
+          <line num="41" count="0" type="stmt"/>
+          <line num="43" count="0" type="stmt"/>
+          <line num="46" count="0" type="stmt"/>
+          <line num="47" count="0" type="stmt"/>
+          <line num="50" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="52" count="0" type="stmt"/>
+          <line num="58" count="0" type="stmt"/>
+          <line num="59" count="0" type="stmt"/>
+          <line num="61" count="0" type="stmt"/>
+          <line num="62" count="0" type="stmt"/>
+          <line num="63" count="0" type="stmt"/>
+          <line num="70" count="0" type="stmt"/>
+          <line num="95" count="0" type="stmt"/>
+          <line num="96" count="0" type="stmt"/>
+          <line num="98" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="99" count="0" type="stmt"/>
+          <line num="120" count="0" type="stmt"/>
+          <line num="124" count="0" type="stmt"/>
+        </file>
+      </package>
+      <package name="src.pages.UserPage">
+        <metrics statements="74" coveredstatements="0" conditionals="21" coveredconditionals="0" methods="13" coveredmethods="0"/>
+        <file name="User.js" path="/Users/yaoqideng_1/5570/project---design-hw1-team_offersoverflow/bestapp666/client/src/pages/UserPage/User.js">
+          <metrics statements="58" coveredstatements="0" conditionals="21" coveredconditionals="0" methods="8" coveredmethods="0"/>
+          <line num="1" count="0" type="stmt"/>
+          <line num="2" count="0" type="stmt"/>
+          <line num="3" count="0" type="stmt"/>
+          <line num="4" count="0" type="stmt"/>
+          <line num="5" count="0" type="stmt"/>
+          <line num="6" count="0" type="stmt"/>
+          <line num="7" count="0" type="stmt"/>
+          <line num="8" count="0" type="stmt"/>
+          <line num="9" count="0" type="stmt"/>
+          <line num="10" count="0" type="stmt"/>
+          <line num="11" count="0" type="stmt"/>
+          <line num="13" count="0" type="stmt"/>
+          <line num="14" count="0" type="stmt"/>
+          <line num="15" count="0" type="stmt"/>
+          <line num="16" count="0" type="cond" truecount="0" falsecount="5"/>
+          <line num="20" count="0" type="stmt"/>
+          <line num="35" count="0" type="stmt"/>
+          <line num="38" count="0" type="stmt"/>
+          <line num="40" count="0" type="stmt"/>
+          <line num="41" count="0" type="stmt"/>
+          <line num="42" count="0" type="stmt"/>
+          <line num="43" count="0" type="stmt"/>
+          <line num="44" count="0" type="stmt"/>
+          <line num="46" count="0" type="stmt"/>
+          <line num="49" count="0" type="stmt"/>
+          <line num="51" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="52" count="0" type="stmt"/>
+          <line num="54" count="0" type="stmt"/>
+          <line num="57" count="0" type="stmt"/>
+          <line num="59" count="0" type="stmt"/>
+          <line num="61" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="62" count="0" type="stmt"/>
+          <line num="63" count="0" type="stmt"/>
+          <line num="64" count="0" type="stmt"/>
+          <line num="65" count="0" type="stmt"/>
+          <line num="67" count="0" type="stmt"/>
+          <line num="68" count="0" type="stmt"/>
+          <line num="69" count="0" type="stmt"/>
+          <line num="70" count="0" type="stmt"/>
+          <line num="74" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="75" count="0" type="stmt"/>
+          <line num="81" count="0" type="stmt"/>
+          <line num="82" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="83" count="0" type="stmt"/>
+          <line num="84" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="85" count="0" type="stmt"/>
+          <line num="87" count="0" type="stmt"/>
+          <line num="89" count="0" type="stmt"/>
+          <line num="91" count="0" type="stmt"/>
+          <line num="92" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="93" count="0" type="stmt"/>
+          <line num="95" count="0" type="stmt"/>
+          <line num="97" count="0" type="stmt"/>
+          <line num="101" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="102" count="0" type="stmt"/>
+          <line num="109" count="0" type="cond" truecount="0" falsecount="2"/>
+          <line num="110" count="0" type="stmt"/>
+          <line num="126" count="0" type="stmt"/>
+        </file>
+        <file name="currentUserSlice.js" path="/Users/yaoqideng_1/5570/project---design-hw1-team_offersoverflow/bestapp666/client/src/pages/UserPage/currentUserSlice.js">
+          <metrics statements="9" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+          <line num="1" count="0" type="stmt"/>
+          <line num="3" count="0" type="stmt"/>
+          <line num="20" count="0" type="stmt"/>
+          <line num="23" count="0" type="stmt"/>
+          <line num="34" count="0" type="stmt"/>
+          <line num="36" count="0" type="stmt"/>
+          <line num="40" count="0" type="stmt"/>
+          <line num="41" count="0" type="stmt"/>
+          <line num="43" count="0" type="stmt"/>
+        </file>
+        <file name="otherUserSlice.js" path="/Users/yaoqideng_1/5570/project---design-hw1-team_offersoverflow/bestapp666/client/src/pages/UserPage/otherUserSlice.js">
+          <metrics statements="7" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+          <line num="1" count="0" type="stmt"/>
+          <line num="3" count="0" type="stmt"/>
+          <line num="15" count="0" type="stmt"/>
+          <line num="18" count="0" type="stmt"/>
+          <line num="20" count="0" type="stmt"/>
+          <line num="21" count="0" type="stmt"/>
+          <line num="23" count="0" type="stmt"/>
+        </file>
+      </package>
+    </metrics>
+  </project>
+</coverage>

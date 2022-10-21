@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/pages/FeedPage/FeedPage.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">All files</a> / <a href="index.html">src/pages/FeedPage</a> FeedPage.js
+    </h1>
+    <div class='clearfix'>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import React, { useState, useEffect } from 'react';</span>
+<span class="cstat-no" title="statement not covered" >import 'bootstrap/dist/css/bootstrap.min.css';</span>
+<span class="cstat-no" title="statement not covered" >import Button from 'react-bootstrap/Button';</span>
+<span class="cstat-no" title="statement not covered" >import ButtonGroup from 'react-bootstrap/ButtonGroup';</span>
+<span class="cstat-no" title="statement not covered" >import Card from 'react-bootstrap/Card';</span>
+<span class="cstat-no" title="statement not covered" >import Stack from 'react-bootstrap/Stack';</span>
+<span class="cstat-no" title="statement not covered" >import Container from 'react-bootstrap/Container';</span>
+<span class="cstat-no" title="statement not covered" >import Navbar from 'react-bootstrap/Navbar';</span>
+<span class="cstat-no" title="statement not covered" >import Row from 'react-bootstrap/Row';</span>
+<span class="cstat-no" title="statement not covered" >import Col from 'react-bootstrap/Col';</span>
+<span class="cstat-no" title="statement not covered" >import ReactRoundedImage from "react-rounded-image";</span>
+<span class="cstat-no" title="statement not covered" >import { Outlet, NavLink, useNavigate } from "react-router-dom";</span>
+<span class="cstat-no" title="statement not covered" >import { useSelector, useDispatch, Provider} from 'react-redux'</span>
+<span class="cstat-no" title="statement not covered" >import {addLoginUser, logoutAction, selectCurrentUser} from '../UserPage/currentUserSlice'</span>
+<span class="cstat-no" title="statement not covered" >import { getUsersAsList } from "../../api/mock_api";</span>
+<span class="cstat-no" title="statement not covered" >import { Nav } from 'react-bootstrap';<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span></span>
+&nbsp;
+//define a inside components
+function <span class="fstat-no" title="function not covered" >Card_customed(</span>props){
+    //props is a post fed from a following user
+    const avatar = <span class="cstat-no" title="statement not covered" >pigUrl;</span>
+<span class="cstat-no" title="statement not covered" >    return (</span>
+        &lt;Card bg = "light" style={{ width: '28rem'}}&gt;
+          &lt;Navbar bg="dark" variant="dark"&gt;
+            &lt;Container&gt;
+              &lt;Nav bg="dark" className="justify-content-end" activeKey="/"&gt;
+                &lt;Nav.Item&gt;
+                  &lt;NavLink to={'/user/'+props.post.author}&gt;
+                    &lt;ReactRoundedImage
+                      image={props.post.avatar}
+                      roundedColor="#ffffff"
+                      imageWidth="35"
+                      imageHeight="35"
+                      roundedSize="2"
+                      borderRadius="20"
+                    /&gt;
+                  &lt;/NavLink&gt;
+                &lt;/Nav.Item&gt;
+                &lt;Nav.Item&gt;
+                  &lt;NavLink to={'/user/'+props.post.author} className='headers'&gt;&lt;strong&gt;{props.post.author}&lt;/strong&gt;&lt;/NavLink&gt;
+                &lt;/Nav.Item&gt;
+              &lt;/Nav&gt;
+            &lt;/Container&gt;
+          &lt;/Navbar&gt;
+&nbsp;
+          &lt;Card.Img variant="bottom" rounded="true" src={props.post.image} /&gt;
+          &lt;Card.Subtitle className="text-muted" style={{paddingTop: "1rem"}}&gt; 
+            {props.post.date}
+          &lt;/Card.Subtitle&gt;
+&nbsp;
+          &lt;Card.Body&gt;
+            &lt;Card.Text&gt;
+              {props.post.description}
+            &lt;/Card.Text&gt;
+            &lt;ButtonGroup aria-label="like,comment,message"&gt;
+                &lt;Button variant="light"&gt;Like&lt;/Button&gt;
+                &lt;Button variant="light"&gt;Comment&lt;/Button&gt;
+            &lt;/ButtonGroup&gt;
+          &lt;/Card.Body&gt;
+&nbsp;
+        &lt;/Card&gt;
+        )
+}
+&nbsp;
+&nbsp;
+&nbsp;
+export default function <span class="fstat-no" title="function not covered" >FeedPage(</span>) {
+  // get followings of the current user
+    const stateCurrentUser = <span class="cstat-no" title="statement not covered" >useSelector(selectCurrentUser);</span>
+    let followingsUsernames = <span class="cstat-no" title="statement not covered" >stateCurrentUser.followings;</span>
+    const [followingsObjects<span class="cstat-no" title="statement not covered" >, setFollowings<span class="cstat-no" title="statement not covered" >] = <span class="cstat-no" title="statement not covered" >useState([])<span class="cstat-no" title="statement not covered" >;</span></span></span></span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    useEffect(<span class="fstat-no" title="function not covered" >() =&gt; </span>{</span>
+      async function <span class="fstat-no" title="function not covered" >fetchData(</span>) {
+        const userObjects = <span class="cstat-no" title="statement not covered" >await getUsersAsList(followingsUsernames);</span>
+        //remove user who has no post
+        const userObjectsFiltered = <span class="cstat-no" title="statement not covered" >userObjects.filter((<span class="fstat-no" title="function not covered" >object</span>)=&gt;{</span>
+<span class="cstat-no" title="statement not covered" >            return object.posts.length !=0;</span>
+          });
+    
+<span class="cstat-no" title="statement not covered" >        console.log(userObjectsFiltered);</span>
+<span class="cstat-no" title="statement not covered" >        setFollowings(userObjectsFiltered);</span>
+      }
+<span class="cstat-no" title="statement not covered" >      try{</span>
+<span class="cstat-no" title="statement not covered" >        fetchData();</span>
+      }
+      catch(err){
+<span class="cstat-no" title="statement not covered" >          console.error(err);</span>
+      }
+      
+    }, []); //adding empty dependency making sure useEffect only run once after each render
+&nbsp;
+    const feedPost1 = <span class="cstat-no" title="statement not covered" >{author:"UserFollowing 1", </span>
+    description:"Some description about the tiger.",
+    date: "10/22/2022",
+    image: tigerUrl
+    };
+&nbsp;
+    const feedPost2 = <span class="cstat-no" title="statement not covered" >{author:"UserFollowing 2", </span>
+    description:"Some description about the cat.",
+    date: "10/18/2022",
+    image: catUrl
+    };
+&nbsp;
+    const feedPost3 = <span class="cstat-no" title="statement not covered" >{author:"UserFollowing 3", </span>
+    description:"Some description about the dog.",
+    date: "10/16/2022",
+    image: dogUrl
+    };
+&nbsp;
+    const feedPost4 = <span class="cstat-no" title="statement not covered" >{author:"UserFollowing 4", </span>
+    description:"Some description about the pig.",
+    date: "10/12/2022",
+    image: pigUrl
+    };
+  
+  const followingsLatestPost = <span class="cstat-no" title="statement not covered" >followingsObjects.map((<span class="fstat-no" title="function not covered" >o)</span>=&gt;{</span>
+    //return the largest(most recent) ID
+    const postObject = <span class="cstat-no" title="statement not covered" >o.posts.sort(<span class="fstat-no" title="function not covered" >function(</span>a, b){<span class="cstat-no" title="statement not covered" >return b.id - a.id}</span>)[0];</span>
+    //adding one more avatar field for this post
+<span class="cstat-no" title="statement not covered" >    postObject.avatar = o.avatar;</span>
+<span class="cstat-no" title="statement not covered" >    return postObject;</span>
+  })
+&nbsp;
+  const card = <span class="cstat-no" title="statement not covered" >((followingsObjects.length==0) ?[feedPost1, feedPost2,feedPost3,feedPost4]:followingsLatestPost).map((<span class="fstat-no" title="function not covered" >p)</span> =&gt; (</span>
+<span class="cstat-no" title="statement not covered" >    &lt;Card_customed post={p}/&gt;</span>
+  ))
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  return (</span>
+    &lt;div className='background'&gt;
+    
+    &lt;Stack gap={2} className="col-md-6 mx-auto"&gt;
+        
+        {card}
+    &lt;/Stack&gt;
+    
+    &lt;/div&gt;
+  );
+}
+&nbsp;
+//images source
+var pigUrl = <span class="cstat-no" title="statement not covered" >"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSArC7oN3AWH3h8qHv5PYNoOrnKXdBMPph9JQ&amp;usqp=CAU";</span>
+var dogUrl = <span class="cstat-no" title="statement not covered" >"https://i.pinimg.com/736x/36/cd/ab/36cdabd55c158426997719b6f2fe00ad.jpg";</span>
+var catUrl = <span class="cstat-no" title="statement not covered" >"https://bestfriends.org/sites/default/files/styles/five_col_rect_960x960_/public/feature-card/SampsonJessicaJess9655_square.jpg?itok=SE0pg8sC";</span>
+var tigerUrl = <span class="cstat-no" title="statement not covered" >"https://i2-prod.dailyrecord.co.uk/incoming/article2299090.ece/ALTERNATES/s1200d/The-family-pose-for-a-picture-in-their-living-room-with-Tom-the-tiger.jpg";</span>
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Oct 21 2022 02:56:38 GMT-0400 (Eastern Daylight Time)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

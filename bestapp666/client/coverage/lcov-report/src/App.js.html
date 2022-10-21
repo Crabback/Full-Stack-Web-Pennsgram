@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/App.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">All files</a> / <a href="index.html">src</a> App.js
+    </h1>
+    <div class='clearfix'>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import "./Styles.css";</span>
+<span class="cstat-no" title="statement not covered" >import React from 'react';</span>
+<span class="cstat-no" title="statement not covered" >import { BrowserRouter, Routes, Route } from "react-router-dom";</span>
+<span class="cstat-no" title="statement not covered" >import Layout from "./pages/Layout"</span>
+<span class="cstat-no" title="statement not covered" >import RegisterPage from "./pages/RegisterPage";</span>
+<span class="cstat-no" title="statement not covered" >import HomePage from "./pages/HomePage";</span>
+<span class="cstat-no" title="statement not covered" >import User from "./pages/UserPage/User";</span>
+<span class="cstat-no" title="statement not covered" >import UserList from "./pages/UserList";</span>
+<span class="cstat-no" title="statement not covered" >import LoginPage from "./pages/LoginPage/LoginPage";</span>
+<span class="cstat-no" title="statement not covered" >import UploadPostPage from "./pages/UploadPostPage";</span>
+<span class="cstat-no" title="statement not covered" >import FeedPage from "./pages/FeedPage/FeedPage";</span>
+<span class="cstat-no" title="statement not covered" >import NoPage from "./pages/NoPage";<span class="cstat-no" title="statement not covered" ></span></span>
+&nbsp;
+export default function <span class="fstat-no" title="function not covered" >App(</span>) {
+<span class="cstat-no" title="statement not covered" >  return (</span>
+    &lt;BrowserRouter&gt;
+      &lt;Routes&gt;
+        &lt;Route path="/" element={&lt;Layout /&gt;}&gt;
+          &lt;Route index element={&lt;HomePage /&gt;} /&gt;
+          &lt;Route path="user"&gt;
+            &lt;Route path=":username" element={&lt;User /&gt;}/&gt;
+            &lt;Route path="*" element={&lt;NoPage /&gt;}/&gt;
+          &lt;/Route&gt;
+          &lt;Route path="followerlist" &gt;
+            &lt;Route path=":username" element={&lt;UserList list="follower"/&gt;}/&gt;
+            &lt;Route path="*" element={&lt;NoPage /&gt;}/&gt;
+          &lt;/Route&gt;
+          &lt;Route path="followinglist" &gt;
+            &lt;Route path=":username" element={&lt;UserList /&gt;}/&gt;
+            &lt;Route path="*" element={&lt;NoPage /&gt;}/&gt;
+          &lt;/Route&gt;
+          &lt;Route path="register" element={&lt;RegisterPage /&gt;} /&gt;
+          &lt;Route path="upload" element={&lt;UploadPostPage /&gt;} /&gt;
+          &lt;Route path="login" element={&lt;LoginPage /&gt;} /&gt;
+          &lt;Route path="feed" element={&lt;FeedPage /&gt;} /&gt;
+          &lt;Route path="*" element={&lt;NoPage /&gt;} /&gt;
+        &lt;/Route&gt;
+      &lt;/Routes&gt;
+    &lt;/BrowserRouter&gt;
+  );
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Oct 21 2022 02:56:38 GMT-0400 (Eastern Daylight Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
