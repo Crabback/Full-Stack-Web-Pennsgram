@@ -73,7 +73,7 @@ function Layout(){
         <Col sm={8}>
           <NavLink to="">
             <Navbar.Brand style={{paddingLeft: "rem"}}>
-              <img src={("../images/pennsgram_logo.png")} alt="logo" width="527" height="149"></img>
+              <img src={"https://drive.google.com/uc?export=view&id=1wU3vI13LOPu1cFP4eDBJXE_wF7pyodLo"} alt="logo" width="527" height="149"></img>
             </Navbar.Brand>
           </NavLink>
         </Col>
