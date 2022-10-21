@@ -31,21 +31,28 @@ RESTful API Documentation: https://app.swaggerhub.com/apis-docs/offersoverflow/O
                                       2. Start playing around this app to your hearts content! 
                                       3. There are following **notice points** for each features.
                                                 (eg. the current registered users in our db.json file)
-      Step 5 -- Try the features: 
-                                      1. homepage
-                                      2. reigster
+      Step 5 -- Try the required features: 
+                                      1. User Reigstration
                                           - use an online media link for avatar
-                                      3. log in
+                                      2. Login/Auth
                                           - use your registered account (username/password)
-                                          - or use one of those: curry, obama, elon (find the username and passwords in the db.json file)
-                                      4. profile page
+                                          - or use one of those: curry, obama, elon (find the usernames and passwords from the db.json file)
+                                          - try non-existing usernames or wrong password
+                                      4. User Profile Page
                                           - view your followers/followings 
-                                      5. upload a post (use an online media link)
-                                      6. browse feed to see the most recent posts from each of your followings
-                                      7. search for users
-                                          - try one of these usernames: dog, pig, curry, obama, elon, trump
-                                          - follow/unfollow
-                                      8. try follow/unfollow users and see the updated feed and followers/followings
+                                          - view your posts
+                                          - upload a post
+                                      5. Create a Post
+                                          - click profile picture or username on the top right dark nav bar.
+                                          - upload a local file or use an online media link, add description
+                                      6. Activity Feed
+                                          - see the most recent posts from each of your followings
+                                          - change your followings and see the updates in feed page
+                                          - click their profile pictures to visit their profile pages
+                                      7. Search/Follow/Unfollow Users
+                                          - try to search one of these usernames: dog, pig, curry, obama, elon, trump
+                                          - try to search non-existing usernames
+                                          - follow/unfollow users and see the updates
 
 **Notice:** The navbar on the top is only for grading and development purposes. will be removed in the final versions.
 
