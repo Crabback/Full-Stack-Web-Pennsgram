@@ -9,11 +9,14 @@ RESTful API on Swaggerhub: https://app.swaggerhub.com/apis/offersoverflow/OfferO
 
 RESTful API Documentation: https://app.swaggerhub.com/apis-docs/offersoverflow/OfferOverflow_Penngram/1.0.0
 
-# HW2 grading instructions:
-git clone:\n
-cd to client
-npm install --force
+# HW2 grading instruction command lines:
 
+       Step 1: git clone <our repo url>
+
+              cd .../project---design-hw1-team_offersoverflow/bestapp666/client 
+
+              npm install --force
+              
 frontend (one terminal window)
 cd to client
 npm start
