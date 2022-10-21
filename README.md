@@ -29,7 +29,7 @@ login
 - use your account (username/password)
 - or use one of those: dog, pig, curry, obama, elon, trump
 search
-- try one of these usernames:
+- try one of these usernames: dog, pig, curry, obama, elon, trump
 follow/unfollow
 try followers/followings
 upload a post
