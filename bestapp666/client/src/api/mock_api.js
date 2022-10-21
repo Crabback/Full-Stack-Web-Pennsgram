@@ -66,11 +66,28 @@ export const getUsersAsList = async (usernames) =>{
 // returns the attributes of the user with the id
 export const createNewUser = async (userObject) =>{
     try{    
-        const response = await axios.post(`${rootURL}`,
-        `username=${userObject.username}&password=${userObject.password}&followings=${userObject.followings}&followers=${userObject.followers}&avatar=${userObject.avatar}&posts=${userObject.posts}`);
+        const response = await axios.post(`${rootURL}`, userObject);
         console.log(`username=${userObject.username}&password=${userObject.password}&followings=${userObject.followings}&followers=${userObject.followers}&avatar=${userObject.avatar}&posts=${userObject.posts}`);
         return response.data; 
         // return the data with the id of the user
+    }
+    catch(err){
+        console.error(err);
+    }
+}
+
+export const followUser = async (username1, username2) =>{
+    try{    
+        const response1 = await axios.get(`${rootURL}?username=${username1}`);
+        const response2 = await axios.get(`${rootURL}?username=${username2}`);
+        let user1 = response1.data[0]
+        let user2 = response2.data[0]
+        user1.followings.push(username2);
+        user2.followers.push(username1);
+        await axios.put(`${rootURL}/${user1.id}`, user1);
+        await axios.put(`${rootURL}/${user2.id}`, user2);
+        //get the fetched data's username
+        console.log(`successfully ${username1} follows ${username2}`);
     }
     catch(err){
         console.error(err);

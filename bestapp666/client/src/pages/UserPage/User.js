@@ -11,7 +11,7 @@ import Button from 'react-bootstrap/Button';
 import { NavLink, useParams} from "react-router-dom";
 import {addLoginUser, logoutAction, selectCurrentUser} from './currentUserSlice'
 import { useSelector, useDispatch } from 'react-redux'
-import { getUser } from "../../api/mock_api";
+import { getUser, followUser } from "../../api/mock_api";
 import ToggleButton from 'react-bootstrap/ToggleButton';
 
 function Card_customed(props){
@@ -48,11 +48,9 @@ export default function UserPage() {
           setThisUser(output[0]);
         }
       }
-
       try{fetchData();}
       catch(err){
         console.error(err);}
-
     }, [username]); //adding dependency making sure useEffect only run once after each render
 
     const posts =  ( (thisUser.posts ==[])?  [{"description": "No post","image": ""}] :thisUser.posts).map((p) => (
@@ -68,6 +66,7 @@ export default function UserPage() {
         text = "Follow";
       }
       function handleFollow(e) {
+        followUser(stateCurrentUser.username, username);
       }
       
       if (username == stateCurrentUser.username){
@@ -86,7 +85,7 @@ export default function UserPage() {
             type="checkbox"
             variant="outline-primary"
             checked={!stateCurrentUser.followings.includes(username)}
-            onChange={handleFollow}
+            onClick={handleFollow}
             >
               {text}
             </ToggleButton>  

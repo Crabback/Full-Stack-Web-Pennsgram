@@ -12,7 +12,8 @@
       "followers": [
         "pig",
         "dog",
-        "obama"
+        "obama",
+        "trump"
       ],
       "avatar": "https://i.etsystatic.com/11859790/r/il/7c7ded/1275225454/il_1588xN.1275225454_ig9k.jpg",
       "posts": [
@@ -36,7 +37,9 @@
       "password": "trump123",
       "followings": [
         "pig",
-        "dog"
+        "dog",
+        "tiger",
+        "zanemao"
       ],
       "followers": [
         "pig",
@@ -201,29 +204,40 @@
     {
       "username": "elon",
       "password": "elon123",
-      "followings": "",
-      "followers": "",
+      "followings": [],
+      "followers": [],
       "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Elon_Musk_Royal_Society_(crop2).jpg/440px-Elon_Musk_Royal_Society_(crop2).jpg",
-      "posts": "",
+      "posts": [],
       "id": 8
     },
     {
       "username": "eric",
       "password": "eric123",
-      "followings": "",
-      "followers": "",
+      "followings": [],
+      "followers": [],
       "avatar": "https://directory.seas.upenn.edu/wp-content/uploads/2020/03/Fouh-Eric.jpg",
-      "posts": "",
+      "posts": [],
       "id": 9
     },
     {
       "username": "taylor",
       "password": "taylor123",
-      "followings": "",
-      "followers": "",
+      "followings": [],
+      "followers": [],
       "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/191125_Taylor_Swift_at_the_2019_American_Music_Awards_(cropped).png/440px-191125_Taylor_Swift_at_the_2019_American_Music_Awards_(cropped).png",
-      "posts": "",
+      "posts": [],
       "id": 10
+    },
+    {
+      "username": "zanemao",
+      "password": "mao123",
+      "followings": [],
+      "followers": [
+        "trump"
+      ],
+      "avatar": "https://img.wattpad.com/8f19b412f2223afe4288ed0904120a48b7a38ce1/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f5650722d38464e2d744a515349673d3d2d3234323931353831302e313434336539633161633764383437652e6a7067",
+      "posts": [],
+      "id": 11
     }
   ]
 }
