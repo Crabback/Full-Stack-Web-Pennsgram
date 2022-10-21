@@ -229,22 +229,18 @@
       "followers": [],
       "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/191125_Taylor_Swift_at_the_2019_American_Music_Awards_(cropped).png/440px-191125_Taylor_Swift_at_the_2019_American_Music_Awards_(cropped).png",
       "posts": [
-        [
-          {
-            "id": 1,
-            "author": "taylor",
-            "description": "So excited! Announcing new single and reveals ‘Midnights’ lyrics on New York billboard.",
-            "image": "https://www.nme.com/wp-content/uploads/2022/09/taylor-swift-mtv-vmas-2022-getty-1392x884.jpg"
-          }
-        ],
-        [
-          {
-            "id": 2,
-            "author": "taylor",
-            "description": "Check out my new album \"Midnights\" !",
-            "image": "https://www.gannett-cdn.com/presto/2022/08/29/USAT/89ccfbd6-1bcf-4d95-a526-a1dc564cbded-midnights_taylor_swift_cover_art.jpg?width=1320&height=1320&fit=crop&format=pjpg&auto=webp"
-          }
-        ]
+        {
+          "id": 1,
+          "author": "taylor",
+          "description": "So excited! Announcing new single and reveals ‘Midnights’ lyrics on New York billboard.",
+          "image": "https://www.nme.com/wp-content/uploads/2022/09/taylor-swift-mtv-vmas-2022-getty-1392x884.jpg"
+        },
+        {
+          "id": 2,
+          "author": "taylor",
+          "description": "Check out my new album \"Midnights\" !",
+          "image": "https://www.gannett-cdn.com/presto/2022/08/29/USAT/89ccfbd6-1bcf-4d95-a526-a1dc564cbded-midnights_taylor_swift_cover_art.jpg?width=1320&height=1320&fit=crop&format=pjpg&auto=webp"
+        }
       ],
       "id": 10
     },
@@ -254,20 +250,7 @@
       "followings": [],
       "followers": [],
       "avatar": "https://img.wattpad.com/8f19b412f2223afe4288ed0904120a48b7a38ce1/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f5650722d38464e2d744a515349673d3d2d3234323931353831302e313434336539633161633764383437652e6a7067",
-      "posts": [
-        {
-          "id": 1,
-          "author": "zanemao",
-          "description": "asdasda",
-          "image": "https://st4.depositphotos.com/14953852/24787/v/600/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg"
-        },
-        {
-          "id": 1,
-          "author": "zanemao",
-          "description": "test2",
-          "image": "https://st4.depositphotos.com/14953852/24787/v/600/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg"
-        }
-      ],
+      "posts": [],
       "id": 11
     }
   ]
