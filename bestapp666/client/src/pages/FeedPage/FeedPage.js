@@ -74,11 +74,11 @@ export default function FeedPage() {
       async function fetchData() {
         const userObjects = await getUsersAsList(followingsUsernames);
         //remove user who has no post
-        const userObjectsFiltered = userObjects.map((object)=>{
-          if(object.posts.length !=0){
-            return object;
-          }
-        });
+        const userObjectsFiltered = userObjects.filter((object)=>{
+            return object.posts.length !=0;
+          });
+    
+        console.log(userObjectsFiltered);
         setFollowings(userObjectsFiltered);
       }
       try{
