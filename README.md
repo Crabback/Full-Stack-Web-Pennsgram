@@ -13,21 +13,21 @@ RESTful API Documentation: https://app.swaggerhub.com/apis-docs/offersoverflow/O
 
       Step 1 -- install react packages: 
                                       0. open terminal window 1 and run following commands:
-                                      1. **"git clone <our repo url>"**
-                                      2. **"cd .../project---design-hw1-team_offersoverflow/bestapp666/client" **
-                                      3. **"npm install --force"**
+                                      1. "git clone <our repo url>"
+                                      2. "cd .../project---design-hw1-team_offersoverflow/bestapp666/client" 
+                                      3. "npm install --force"
                                        
       Step 2 -- start front end app:  
                                       0. In terminal window 1, run following commands:
-                                      1. **"npm start"**
+                                      1. "npm start"
                                       
       Step 3 -- start mocking back end:  
                                       0. open another terminal window 2 and run following commands:
-                                      1. **"cd .../project---design-hw1-team_offersoverflow/bestapp666/client/json_server" **
-                                      2. **"json-server --watch db.json --port 8080"**
+                                      1. "cd .../project---design-hw1-team_offersoverflow/bestapp666/client/json_server" 
+                                      2. "json-server --watch db.json --port 8080"
                                
       Step 4 -- testing the mini app:  
-                                      0. open the browser in step 2 with url: **"http://localhost:3000/"**
+                                      0. open the browser in step 2 with url: "http://localhost:3000/"
                                       1. Start playing around this app to your hearts content! 
                                       2. There are following **notice points** for each features.
                                                 (eg. the current registered users in our db.json file)
