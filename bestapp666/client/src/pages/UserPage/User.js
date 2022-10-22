@@ -121,6 +121,12 @@ export default function UserPage() {
               {text}
             </ToggleButton>  
           )
+      }else{
+        return (
+          <Button>
+          Login to Follow
+        </Button>
+        )
       }
     }
 
