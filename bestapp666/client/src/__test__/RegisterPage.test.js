@@ -10,6 +10,8 @@ import { Provider } from 'react-redux';
 import { configureStore } from "@reduxjs/toolkit";
 import store from '../Store/store';
 import renderer from 'react-test-renderer';
+import jestConfig from '../../jest.config';
+import {handleRegister} from '../pages/RegisterPage'
 
 
 
@@ -37,4 +39,24 @@ test('Page matches snapshot', () => {
     );
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
+  });
+
+  test("textbox displayed", async () => {
+    const { getByRole } = render(
+      <BrowserRouter>
+        <RegisterPage />
+      </BrowserRouter>
+    );
+    const firstname = screen.getByPlaceholderText("First Name");
+    const lastname = screen.getByPlaceholderText("Last Name");
+    userEvent.type(firstname, "hihi");
+    userEvent.type(lastname, "abc");
+    await userEvent.click(
+        screen.getByRole("button", {
+            name: "Submit"
+        })
+    );
+    expect(
+        await screen.findByText(/First Name/)
+    ).toBeVisible();
   });

@@ -21,3 +21,26 @@ test("render Search Bar display", () => {
     expect(element).toBeVisible();
   });
   
+
+  test("Mock search", async () => {
+
+    const { getByRole } = render(
+        <Provider store={store1}>
+      <BrowserRouter>
+        <SearchBar />
+      </BrowserRouter>
+      </Provider>
+  
+    );
+    const username = screen.getByPlaceholderText("Search");
+  
+    userEvent.type(username, "obama");
+    await userEvent.click(
+        screen.getByRole("button", {
+            name: "Search"
+        })
+    );
+    expect(
+        await screen.findByText(/Search/)
+    ).toBeVisible();
+  });

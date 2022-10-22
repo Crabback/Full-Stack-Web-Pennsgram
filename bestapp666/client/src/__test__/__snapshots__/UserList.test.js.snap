@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Page matches snapshot 1`] = `
+<div
+  className="background"
+>
+  <h2
+    style={
+      Object {
+        "paddingBottom": "1rem",
+        "paddingLeft": "2rem",
+      }
+    }
+  >
+     
+    Following
+     
+  </h2>
+  <ul
+    className="list-group"
+    onKeyDown={[Function]}
+    style={
+      Object {
+        "paddingBottom": "2rem",
+        "paddingLeft": "2rem",
+        "paddingRight": "70%",
+      }
+    }
+  />
+  <a
+    className="button_text"
+    href="/user/NOT_A_USER"
+    onClick={[Function]}
+    style={
+      Object {
+        "paddingLeft": "2rem",
+      }
+    }
+  >
+    <button
+      className="btn btn-primary"
+      disabled={false}
+      type="button"
+    >
+      Back
+    </button>
+  </a>
+  <div
+    style={
+      Object {
+        "paddingLeft": "2rem",
+        "paddingTop": "1rem",
+      }
+    }
+  >
+    <div
+      className="footer"
+    >
+      <p
+        className="footer_elements"
+      >
+        Terms And Policies
+      </p>
+      <p
+        className="footer_elements"
+      >
+        All Copy Right Reserved
+      </p>
+    </div>
+  </div>
+</div>
+`;

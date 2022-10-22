@@ -1,0 +1,480 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Page matches snapshot 1`] = `
+<div
+  className="background"
+>
+  <div
+    className="col-md-6 mx-auto vstack gap-2 minBreakpoint-xs"
+  >
+    <div
+      className="card bg-light"
+      style={
+        Object {
+          "width": "28rem",
+        }
+      }
+    >
+      <nav
+        className="navbar navbar-expand navbar-dark bg-dark"
+      >
+        <div
+          className="container"
+        >
+          <div
+            bg="dark"
+            className="justify-content-end navbar-nav"
+            onKeyDown={[Function]}
+          >
+            <div
+              className="nav-item"
+            >
+              <a
+                className=""
+                href="/user/UserFollowing 1"
+                onClick={[Function]}
+              >
+                <div
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "background": "#ffffff",
+                      "borderRadius": "20px",
+                      "boxShadow": "inherit",
+                      "display": "flex",
+                      "height": "35px",
+                      "justifyContent": "center",
+                      "transition": "all 0.5s ease",
+                      "width": "35px",
+                    }
+                  }
+                >
+                  <img
+                    style={
+                      Object {
+                        "borderRadius": "19px",
+                        "height": "33px",
+                        "width": "33px",
+                      }
+                    }
+                  />
+                </div>
+              </a>
+            </div>
+            <div
+              className="nav-item"
+            >
+              <a
+                className="headers"
+                href="/user/UserFollowing 1"
+                onClick={[Function]}
+              >
+                <strong>
+                  UserFollowing 1
+                </strong>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <img
+        className="card-img-bottom"
+        rounded="true"
+        src="https://i2-prod.dailyrecord.co.uk/incoming/article2299090.ece/ALTERNATES/s1200d/The-family-pose-for-a-picture-in-their-living-room-with-Tom-the-tiger.jpg"
+      />
+      <div
+        className="text-muted card-subtitle h6"
+        style={
+          Object {
+            "paddingTop": "1rem",
+          }
+        }
+      >
+        10/22/2022
+      </div>
+      <div
+        className="card-body"
+      >
+        <p
+          className="card-text"
+        >
+          Some description about the tiger.
+        </p>
+        <div
+          aria-label="like,comment,message"
+          className="btn-group"
+          role="group"
+        >
+          <button
+            className="btn btn-light"
+            disabled={false}
+            type="button"
+          >
+            Like
+          </button>
+          <button
+            className="btn btn-light"
+            disabled={false}
+            type="button"
+          >
+            Comment
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      className="card bg-light"
+      style={
+        Object {
+          "width": "28rem",
+        }
+      }
+    >
+      <nav
+        className="navbar navbar-expand navbar-dark bg-dark"
+      >
+        <div
+          className="container"
+        >
+          <div
+            bg="dark"
+            className="justify-content-end navbar-nav"
+            onKeyDown={[Function]}
+          >
+            <div
+              className="nav-item"
+            >
+              <a
+                className=""
+                href="/user/UserFollowing 2"
+                onClick={[Function]}
+              >
+                <div
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "background": "#ffffff",
+                      "borderRadius": "20px",
+                      "boxShadow": "inherit",
+                      "display": "flex",
+                      "height": "35px",
+                      "justifyContent": "center",
+                      "transition": "all 0.5s ease",
+                      "width": "35px",
+                    }
+                  }
+                >
+                  <img
+                    style={
+                      Object {
+                        "borderRadius": "19px",
+                        "height": "33px",
+                        "width": "33px",
+                      }
+                    }
+                  />
+                </div>
+              </a>
+            </div>
+            <div
+              className="nav-item"
+            >
+              <a
+                className="headers"
+                href="/user/UserFollowing 2"
+                onClick={[Function]}
+              >
+                <strong>
+                  UserFollowing 2
+                </strong>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <img
+        className="card-img-bottom"
+        rounded="true"
+        src="https://bestfriends.org/sites/default/files/styles/five_col_rect_960x960_/public/feature-card/SampsonJessicaJess9655_square.jpg?itok=SE0pg8sC"
+      />
+      <div
+        className="text-muted card-subtitle h6"
+        style={
+          Object {
+            "paddingTop": "1rem",
+          }
+        }
+      >
+        10/18/2022
+      </div>
+      <div
+        className="card-body"
+      >
+        <p
+          className="card-text"
+        >
+          Some description about the cat.
+        </p>
+        <div
+          aria-label="like,comment,message"
+          className="btn-group"
+          role="group"
+        >
+          <button
+            className="btn btn-light"
+            disabled={false}
+            type="button"
+          >
+            Like
+          </button>
+          <button
+            className="btn btn-light"
+            disabled={false}
+            type="button"
+          >
+            Comment
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      className="card bg-light"
+      style={
+        Object {
+          "width": "28rem",
+        }
+      }
+    >
+      <nav
+        className="navbar navbar-expand navbar-dark bg-dark"
+      >
+        <div
+          className="container"
+        >
+          <div
+            bg="dark"
+            className="justify-content-end navbar-nav"
+            onKeyDown={[Function]}
+          >
+            <div
+              className="nav-item"
+            >
+              <a
+                className=""
+                href="/user/UserFollowing 3"
+                onClick={[Function]}
+              >
+                <div
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "background": "#ffffff",
+                      "borderRadius": "20px",
+                      "boxShadow": "inherit",
+                      "display": "flex",
+                      "height": "35px",
+                      "justifyContent": "center",
+                      "transition": "all 0.5s ease",
+                      "width": "35px",
+                    }
+                  }
+                >
+                  <img
+                    style={
+                      Object {
+                        "borderRadius": "19px",
+                        "height": "33px",
+                        "width": "33px",
+                      }
+                    }
+                  />
+                </div>
+              </a>
+            </div>
+            <div
+              className="nav-item"
+            >
+              <a
+                className="headers"
+                href="/user/UserFollowing 3"
+                onClick={[Function]}
+              >
+                <strong>
+                  UserFollowing 3
+                </strong>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <img
+        className="card-img-bottom"
+        rounded="true"
+        src="https://i.pinimg.com/736x/36/cd/ab/36cdabd55c158426997719b6f2fe00ad.jpg"
+      />
+      <div
+        className="text-muted card-subtitle h6"
+        style={
+          Object {
+            "paddingTop": "1rem",
+          }
+        }
+      >
+        10/16/2022
+      </div>
+      <div
+        className="card-body"
+      >
+        <p
+          className="card-text"
+        >
+          Some description about the dog.
+        </p>
+        <div
+          aria-label="like,comment,message"
+          className="btn-group"
+          role="group"
+        >
+          <button
+            className="btn btn-light"
+            disabled={false}
+            type="button"
+          >
+            Like
+          </button>
+          <button
+            className="btn btn-light"
+            disabled={false}
+            type="button"
+          >
+            Comment
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      className="card bg-light"
+      style={
+        Object {
+          "width": "28rem",
+        }
+      }
+    >
+      <nav
+        className="navbar navbar-expand navbar-dark bg-dark"
+      >
+        <div
+          className="container"
+        >
+          <div
+            bg="dark"
+            className="justify-content-end navbar-nav"
+            onKeyDown={[Function]}
+          >
+            <div
+              className="nav-item"
+            >
+              <a
+                className=""
+                href="/user/UserFollowing 4"
+                onClick={[Function]}
+              >
+                <div
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "background": "#ffffff",
+                      "borderRadius": "20px",
+                      "boxShadow": "inherit",
+                      "display": "flex",
+                      "height": "35px",
+                      "justifyContent": "center",
+                      "transition": "all 0.5s ease",
+                      "width": "35px",
+                    }
+                  }
+                >
+                  <img
+                    style={
+                      Object {
+                        "borderRadius": "19px",
+                        "height": "33px",
+                        "width": "33px",
+                      }
+                    }
+                  />
+                </div>
+              </a>
+            </div>
+            <div
+              className="nav-item"
+            >
+              <a
+                className="headers"
+                href="/user/UserFollowing 4"
+                onClick={[Function]}
+              >
+                <strong>
+                  UserFollowing 4
+                </strong>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <img
+        className="card-img-bottom"
+        rounded="true"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSArC7oN3AWH3h8qHv5PYNoOrnKXdBMPph9JQ&usqp=CAU"
+      />
+      <div
+        className="text-muted card-subtitle h6"
+        style={
+          Object {
+            "paddingTop": "1rem",
+          }
+        }
+      >
+        10/12/2022
+      </div>
+      <div
+        className="card-body"
+      >
+        <p
+          className="card-text"
+        >
+          Some description about the pig.
+        </p>
+        <div
+          aria-label="like,comment,message"
+          className="btn-group"
+          role="group"
+        >
+          <button
+            className="btn btn-light"
+            disabled={false}
+            type="button"
+          >
+            Like
+          </button>
+          <button
+            className="btn btn-light"
+            disabled={false}
+            type="button"
+          >
+            Comment
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
