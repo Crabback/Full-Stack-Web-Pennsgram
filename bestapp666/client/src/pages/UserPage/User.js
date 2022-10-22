@@ -18,7 +18,7 @@ function CardCustomed(props){
 if (props.post.image.split(".").slice(-1) == 'mp4') {
   return(
     <Card bg = "light" style={{ width: '20rem'}}>
-      <video width='290' controls autoplay>
+      <video width='290' controls autoPlay={true}>
         <source src={props.post.image} type="video/mp4"/>
       </video>          
       <Card.Body>

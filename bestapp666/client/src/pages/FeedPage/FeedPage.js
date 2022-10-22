@@ -41,7 +41,7 @@ function CardCustomed(props){
             </Container>
           </Navbar>
 
-          <video width='446' controls autoplay>
+          <video width='446' controls autoPlay={true}>
             <source src={props.post.image} type="video/mp4"/>
           </video>  
           <Card.Subtitle className="text-muted" style={{paddingTop: "1rem"}}> 
