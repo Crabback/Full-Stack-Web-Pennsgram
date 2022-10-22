@@ -102,8 +102,8 @@ return (
         <Form.Control type="file" onChange={handleChange}/>
         <Form.Control name="imageURL" onChange={handleImageURLInput} placeholder="Enter online image url" />
       </Form.Group>
-
   </Col>
+
   <Col>
     <Form.Group className="mb-3" controlId="formBasicDescription">
       <Form.Label>Description</Form.Label>
