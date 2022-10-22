@@ -16,7 +16,7 @@ test("render user page component", () => {
   const { getByText }  = render(
      <Provider store={store1}>
          <BrowserRouter>
-            <User />
+          <Route path=":zanemao" element={<User />}/>
         </BrowserRouter>
       </Provider>
   );

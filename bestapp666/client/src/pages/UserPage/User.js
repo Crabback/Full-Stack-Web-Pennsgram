@@ -27,7 +27,7 @@ function CardCustomed(props){
         )
 }
 
-export default function UserPage() {
+export default function User() {
     const dispatch = useDispatch();
     // the logged-in user who is browsing page (self)
     const stateCurrentUser = useSelector(selectCurrentUser);
@@ -86,8 +86,6 @@ export default function UserPage() {
           }
           const updatedUser = await followUser(stateCurrentUser.username, username);
           dispatch(updateCurrentUser(updatedUser));
-          console.log(updatedUser);
-          console.log(stateCurrentUser);
         }else{
           setText("Follow");
           if(isFollowing){
@@ -123,9 +121,11 @@ export default function UserPage() {
           )
       }else{
         return (
-          <Button>
-          Login to Follow
-        </Button>
+          <NavLink to="/login"> 
+            <Button>
+            Login to Follow
+            </Button>
+          </NavLink>
         )
       }
     }
