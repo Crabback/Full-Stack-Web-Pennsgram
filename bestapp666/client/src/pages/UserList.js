@@ -46,7 +46,7 @@ function UserList(props){
       </ListGroup.Item>
     ))
     } else {
-     header =  "Following";
+    header =  "Following";
     userlist =  thisUser.followings.map((p) => (
       <ListGroup.Item as="li" >
         <NavLink to={"/user/"+p} className="button_text">

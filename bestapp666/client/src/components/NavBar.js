@@ -39,6 +39,9 @@ export function NavBar() {
             <Nav.Item as="li">
             <NavLink to="/feed" className='headers2'>FeedPage</NavLink>
             </Nav.Item>
+            <Nav.Item as="li">
+            <NavLink to="/*" className='headers2'>ErrorPage</NavLink>
+            </Nav.Item>
         </Nav>
     </Navbar>
     </div>
