@@ -15,33 +15,16 @@ import ToggleButton from 'react-bootstrap/ToggleButton';
 
 function CardCustomed(props){
     //props is a post fed from a following use
-if (props.post.image.split(".").slice(-1) == 'mp4') {
-  return(
-    <Card bg = "light" style={{ width: '20rem'}}>
-      <video width='290' controls autoPlay={true}>
-        <source src={props.post.image} type="video/mp4"/>
-      </video>          
-      <Card.Body>
-        <Card.Text>
-          {props.post.description}
-        </Card.Text>
-      </Card.Body>
-    </Card>
-    )
-}
-else{
-  return (
-    <Card bg = "light" style={{ width: '20rem'}}>
-      <Card.Img variant="bottom" rounded="true" src={props.post.image} />
-      <Card.Body>
-        <Card.Text>
-          {props.post.description}
-        </Card.Text>
-      </Card.Body>
-    </Card>
-    )
-}
-
+    return (
+        <Card bg = "light" style={{ width: '20rem'}}>
+          <Card.Img variant="bottom" rounded="true" src={props.post.image} />
+          <Card.Body>
+            <Card.Text>
+              {props.post.description}
+            </Card.Text>
+          </Card.Body>
+        </Card>
+        )
 }
 
 export default function UserPage() {

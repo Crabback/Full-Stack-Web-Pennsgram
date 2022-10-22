@@ -10,8 +10,6 @@ import { Provider } from 'react-redux';
 import { configureStore } from "@reduxjs/toolkit";
 import store from '../Store/store';
 
-const myMock = jest.fn();
-console.log(myMock());
 
 const store1 = store;
 test("render user page component", () => {
