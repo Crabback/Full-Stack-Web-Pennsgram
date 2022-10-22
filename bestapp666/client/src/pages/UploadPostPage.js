@@ -12,7 +12,7 @@ import { createNewPost } from "./../api/mock_api";
 
 function UploadPostPage() {
   const navigate = useNavigate();
-  const [media, setMedia] = useState('https://drive.google.com/uc?export=view&id=1Oqs52qe_Dp91how3nZBZFzLjLUR2ntQ4');
+  const [media, setMedia] = useState('https://drive.google.com/uc?export=view&id=1F2X0d6KkJWV26qoofFx6u9YGeUnCSfcl');
   const stateCurrentUser = useSelector(selectCurrentUser);
   const dispatch = useDispatch();
 
@@ -69,6 +69,25 @@ function UploadPostPage() {
     
   }
 
+function MediaPreview(props){
+    if (props.mediaLink.split(".").slice(-1) == 'mp4'){
+      return (
+      <Form.Group className="mb-3">
+        <video width="500" controls >
+          <source src={props.mediaLink} type="video/mp4"/>
+        </video>
+      </Form.Group>
+      ) 
+    }else{
+      return (
+      <Form.Group className="mb-3">
+          <img onError={addDefaultImgSrc} src={props.mediaLink} alt="user pic 1" width="400" height="400"></img>
+      </Form.Group>
+      )
+    }
+  
+}
+
 return (
 <div className="background">
   <Row>
@@ -77,16 +96,14 @@ return (
   <Form onSubmit={handlePostUpload}>
     <Row>
   <Col >
-      <Form.Group className="mb-3">
-          <img onError={addDefaultImgSrc} src={media} alt="user pic 1" width="400" height="400"></img>
-      </Form.Group>
+      <MediaPreview mediaLink = {media}/>
       <Form.Group controlId="formFile" className="mb-3" style={{paddingRight: "30%"}}>
         <Form.Label>Upload Media</Form.Label>
         <Form.Control type="file" onChange={handleChange}/>
         <Form.Control name="imageURL" onChange={handleImageURLInput} placeholder="Enter online image url" />
       </Form.Group>
-
   </Col>
+
   <Col>
     <Form.Group className="mb-3" controlId="formBasicDescription">
       <Form.Label>Description</Form.Label>

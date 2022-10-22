@@ -16,7 +16,53 @@ import { Nav } from 'react-bootstrap';
 //define a inside components
 function CardCustomed(props){
     //props is a post fed from a following user
-    return (
+    if(props.post.image.split(".").slice(-1) == 'mp4'){
+      return (
+        <Card bg = "light" style={{ width: '28rem'}}>
+          <Navbar bg="dark" variant="dark">
+            <Container>
+              <Nav bg="dark" className="justify-content-end" activeKey="/">
+                <Nav.Item>
+                  <NavLink to={'/user/'+props.post.author}>
+                    <ReactRoundedImage
+                      image={props.post.avatar}
+                      roundedColor="#ffffff"
+                      imageWidth="35"
+                      imageHeight="35"
+                      roundedSize="2"
+                      borderRadius="20"
+                    />
+                  </NavLink>
+                </Nav.Item>
+                <Nav.Item>
+                  <NavLink to={'/user/'+props.post.author} className='headers'><strong>{props.post.author}</strong></NavLink>
+                </Nav.Item>
+              </Nav>
+            </Container>
+          </Navbar>
+
+          <video width='446' controls autoPlay={true}>
+            <source src={props.post.image} type="video/mp4"/>
+          </video>  
+          <Card.Subtitle className="text-muted" style={{paddingTop: "1rem"}}> 
+            {props.post.date}
+          </Card.Subtitle>
+
+          <Card.Body>
+            <Card.Text>
+              {props.post.description}
+            </Card.Text>
+            <ButtonGroup aria-label="like,comment,message">
+                <Button variant="light">Like</Button>
+                <Button variant="light">Comment</Button>
+            </ButtonGroup>
+          </Card.Body>
+
+        </Card>
+        )
+    }
+    else{
+      return (
         <Card bg = "light" style={{ width: '28rem'}}>
           <Navbar bg="dark" variant="dark">
             <Container>
@@ -57,6 +103,7 @@ function CardCustomed(props){
 
         </Card>
         )
+    }
 }
 
 
