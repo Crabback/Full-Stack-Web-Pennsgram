@@ -49,7 +49,9 @@ function UploadPostPage() {
         "id": -1,
         "author": stateCurrentUser.username,
         "description": descInput,
-        "image": media
+        "image": media,
+        "likes": [],
+        "comments": []
       }
       const prePosts = stateCurrentUser.posts;
       //update the id field

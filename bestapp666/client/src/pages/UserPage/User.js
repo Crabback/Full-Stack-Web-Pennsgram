@@ -22,6 +22,18 @@ function CardCustomed(props){
             <Card.Text>
               {props.post.description}
             </Card.Text>
+            <Row>
+              <Col>
+                <Card.Text style={{ position: 'absolute', bottom: '0'}}>
+                {props.post.likes.length} likes
+                </Card.Text>
+              </Col>
+              <Col>
+                <Card.Text style={{ position: 'absolute', bottom: '0'}}>
+                {props.post.comments.length} comments
+                </Card.Text>
+              </Col>
+            </Row>
           </Card.Body>
         </Card>
         )
@@ -55,7 +67,6 @@ export default function User() {
       try{fetchData();}
       catch(err){
         console.error(err);}
-
         if (stateCurrentUser.followings.includes(username)){
           setText("Following");
           setChecked(false);
@@ -69,7 +80,7 @@ export default function User() {
         }
     }, [username]); //adding dependency making sure useEffect only run once after each render
 
-    const posts =  ( (thisUser.posts.length===0)?  [{"description": "This user has no post yet","image": ""}] : thisUser.posts).map((p) => (
+    const posts =  ( (thisUser.posts.length===0)?  [{"description": "This user has no post yet","image": "","likes":[], "comments":[]}] : thisUser.posts).map((p) => (
       <CardCustomed post={p}/>
     ))
 
@@ -79,20 +90,14 @@ export default function User() {
         setChecked(e.currentTarget.checked);
         if (text === "Follow"){
           setText("Following");
-          if(isFollowing){
-            setOffset(0);
-          }else{
-            setOffset(1);
-          }
+          if(isFollowing){setOffset(0);}
+          else{setOffset(1);}
           const updatedUser = await followUser(stateCurrentUser.username, username);
           dispatch(updateCurrentUser(updatedUser));
         }else{
           setText("Follow");
-          if(isFollowing){
-            setOffset(-1);
-          }else{
-            setOffset(0);
-          }
+          if(isFollowing){setOffset(-1);}
+          else{setOffset(0);}
           const updatedUser = await unfollowUser(stateCurrentUser.username, username);
           dispatch(updateCurrentUser(updatedUser));
         }
@@ -114,8 +119,7 @@ export default function User() {
             type="checkbox"
             variant="outline-primary"
             checked={checked}
-            onChange={handleFollow}
-            >
+            onChange={handleFollow}>
               {text}
             </ToggleButton>  
           )
@@ -123,7 +127,7 @@ export default function User() {
         return (
           <NavLink to="/login"> 
             <Button>
-            Login to Follow
+              Login to Follow
             </Button>
           </NavLink>
         )
@@ -140,8 +144,7 @@ export default function User() {
           imageWidth="150"
           imageHeight="150"
           roundedSize="10"
-          borderRadius="100"
-        />
+          borderRadius="100"/>
       </div>
       <div style={{display: 'flex', justifyContent: 'center', paddingTop: "1rem" }}>
         <p className="fw-bold" data-testid="username"> {thisUser.username} </p>
