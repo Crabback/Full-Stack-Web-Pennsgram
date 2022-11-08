@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1667945777215" clover="3.2.0">
-  <project timestamp="1667945777215" name="All files">
-    <metrics statements="219" coveredstatements="143" conditionals="54" coveredconditionals="23" methods="60" coveredmethods="37" elements="333" coveredelements="203" complexity="0" loc="219" ncloc="219" packages="6" files="15" classes="15"/>
+<coverage generated="1667945910903" clover="3.2.0">
+  <project timestamp="1667945910903" name="All files">
+    <metrics statements="220" coveredstatements="144" conditionals="54" coveredconditionals="23" methods="60" coveredmethods="37" elements="334" coveredelements="204" complexity="0" loc="220" ncloc="220" packages="6" files="15" classes="15"/>
     <package name="client">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="cssStub.js" path="/Users/yaoqideng_1/5570/project---design-hw1-team_offersoverflow/bestapp666/client/cssStub.js">
@@ -194,9 +194,9 @@
       </file>
     </package>
     <package name="client.src.pages.LoginPage">
-      <metrics statements="26" coveredstatements="24" conditionals="10" coveredconditionals="8" methods="7" coveredmethods="7"/>
+      <metrics statements="27" coveredstatements="25" conditionals="10" coveredconditionals="8" methods="7" coveredmethods="7"/>
       <file name="LoginPage.js" path="/Users/yaoqideng_1/5570/project---design-hw1-team_offersoverflow/bestapp666/client/src/pages/LoginPage/LoginPage.js">
-        <metrics statements="26" coveredstatements="24" conditionals="10" coveredconditionals="8" methods="7" coveredmethods="7"/>
+        <metrics statements="27" coveredstatements="25" conditionals="10" coveredconditionals="8" methods="7" coveredmethods="7"/>
         <line num="18" count="16" type="stmt"/>
         <line num="19" count="16" type="stmt"/>
         <line num="21" count="16" type="stmt"/>
@@ -215,6 +215,7 @@
         <line num="53" count="1" type="cond" truecount="1" falsecount="1"/>
         <line num="57" count="1" type="stmt"/>
         <line num="58" count="1" type="stmt"/>
+        <line num="60" count="1" type="stmt"/>
         <line num="61" count="1" type="stmt"/>
         <line num="62" count="1" type="stmt"/>
         <line num="64" count="0" type="stmt"/>
