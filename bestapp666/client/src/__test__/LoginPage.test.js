@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom/extend-expect';
 
 import React from "react";
-import { getByDisplayValue, render, screen } from "@testing-library/react";
+import { getByDisplayValue, render, screen, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import userEvent from "@testing-library/user-event";
 import { BrowserRouter } from "react-router-dom";
@@ -29,8 +29,7 @@ test("render login component", () => {
 });
 
 test("Mock login", async () => {
-
-  const { getByRole } = render(
+  const { getByText } = render(
       <Provider store={store1}>
     <BrowserRouter>
       <LoginPage />
@@ -40,15 +39,14 @@ test("Mock login", async () => {
   );
   const username = screen.getByPlaceholderText("Enter username (eg. dog)");
   const password = screen.getByPlaceholderText("Password");
+  const submit = screen.getByText("Login");
 
   userEvent.type(username, "obama");
   userEvent.type(password, "obama123");
-  await userEvent.click(
-      screen.getByRole("button", {
-          name: "Login"
-      })
-  );
-  expect(
-      await screen.findByText(/Login/)
-  ).toBeVisible();
+  userEvent.click(submit);
+
+  const logSpy = jest.spyOn(console, 'log');
+  await waitFor(()=>{
+    expect(logSpy).toHaveBeenCalledWith('Execute the code after clicking okay button of the alert window');
+  })
 });

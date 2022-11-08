@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">48.93% </span>
+                <span class="strong">51.11% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>23/47</span>
+                <span class='fraction'>23/45</span>
             </div>
         
             
@@ -239,7 +239,10 @@
 <a name='L174'></a><a href='#L174'>174</a>
 <a name='L175'></a><a href='#L175'>175</a>
 <a name='L176'></a><a href='#L176'>176</a>
-<a name='L177'></a><a href='#L177'>177</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L177'></a><a href='#L177'>177</a>
+<a name='L178'></a><a href='#L178'>178</a>
+<a name='L179'></a><a href='#L179'>179</a>
+<a name='L180'></a><a href='#L180'>180</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -269,6 +272,18 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
@@ -296,7 +311,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -322,18 +336,12 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -360,7 +368,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -373,7 +380,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -439,6 +445,18 @@ function CardCustomed(props){
             &lt;Card.Text&gt;
               {props.post.description}
             &lt;/Card.Text&gt;
+            &lt;Row&gt;
+              &lt;Col&gt;
+                &lt;Card.Text style={{ position: 'absolute', bottom: '0'}}&gt;
+                {props.post.likes.length} likes
+                &lt;/Card.Text&gt;
+              &lt;/Col&gt;
+              &lt;Col&gt;
+                &lt;Card.Text style={{ position: 'absolute', bottom: '0'}}&gt;
+                {props.post.comments.length} comments
+                &lt;/Card.Text&gt;
+              &lt;/Col&gt;
+            &lt;/Row&gt;
           &lt;/Card.Body&gt;
         &lt;/Card&gt;
         )
@@ -472,7 +490,6 @@ export default function User() {
       try{fetchData();}
       catch(err){
 <span class="cstat-no" title="statement not covered" >        console.error(err);}</span>
-&nbsp;
         <span class="missing-if-branch" title="if path not taken" >I</span>if (stateCurrentUser.followings.includes(username)){
 <span class="cstat-no" title="statement not covered" >          setText("Following");</span>
 <span class="cstat-no" title="statement not covered" >          setChecked(false);</span>
@@ -486,7 +503,7 @@ export default function User() {
         }
     }, [username]); //adding dependency making sure useEffect only run once after each render
 &nbsp;
-    const posts =  ( (thisUser.posts.length===0)?  [{"description": "This user has no post yet","image": ""}] : <span class="branch-1 cbranch-no" title="branch not covered" >thisUser.posts)</span>.map((p) =&gt; (
+    const posts =  ( (thisUser.posts.length===0)?  [{"description": "This user has no post yet","image": "","likes":[], "comments":[]}] : <span class="branch-1 cbranch-no" title="branch not covered" >thisUser.posts)</span>.map((p) =&gt; (
       &lt;CardCustomed post={p}/&gt;
     ))
 &nbsp;
@@ -496,20 +513,14 @@ export default function User() {
 <span class="cstat-no" title="statement not covered" >        setChecked(e.currentTarget.checked);</span>
 <span class="cstat-no" title="statement not covered" >        if (text === "Follow"){</span>
 <span class="cstat-no" title="statement not covered" >          setText("Following");</span>
-<span class="cstat-no" title="statement not covered" >          if(isFollowing){</span>
-<span class="cstat-no" title="statement not covered" >            setOffset(0);</span>
-          }else{
-<span class="cstat-no" title="statement not covered" >            setOffset(1);</span>
-          }
+<span class="cstat-no" title="statement not covered" >          if(isFollowing){<span class="cstat-no" title="statement not covered" >setOffset(0);}</span></span>
+          else{<span class="cstat-no" title="statement not covered" >setOffset(1);}</span>
           const updatedUser = <span class="cstat-no" title="statement not covered" >await followUser(stateCurrentUser.username, username);</span>
 <span class="cstat-no" title="statement not covered" >          dispatch(updateCurrentUser(updatedUser));</span>
         }else{
 <span class="cstat-no" title="statement not covered" >          setText("Follow");</span>
-<span class="cstat-no" title="statement not covered" >          if(isFollowing){</span>
-<span class="cstat-no" title="statement not covered" >            setOffset(-1);</span>
-          }else{
-<span class="cstat-no" title="statement not covered" >            setOffset(0);</span>
-          }
+<span class="cstat-no" title="statement not covered" >          if(isFollowing){<span class="cstat-no" title="statement not covered" >setOffset(-1);}</span></span>
+          else{<span class="cstat-no" title="statement not covered" >setOffset(0);}</span>
           const updatedUser = <span class="cstat-no" title="statement not covered" >await unfollowUser(stateCurrentUser.username, username);</span>
 <span class="cstat-no" title="statement not covered" >          dispatch(updateCurrentUser(updatedUser));</span>
         }
@@ -531,8 +542,7 @@ export default function User() {
             type="checkbox"
             variant="outline-primary"
             checked={checked}
-            onChange={handleFollow}
-            &gt;
+            onChange={handleFollow}&gt;
               {text}
             &lt;/ToggleButton&gt;  
           )
@@ -557,8 +567,7 @@ export default function User() {
           imageWidth="150"
           imageHeight="150"
           roundedSize="10"
-          borderRadius="100"
-        /&gt;
+          borderRadius="100"/&gt;
       &lt;/div&gt;
       &lt;div style={{display: 'flex', justifyContent: 'center', paddingTop: "1rem" }}&gt;
         &lt;p className="fw-bold" data-testid="username"&gt; {thisUser.username} &lt;/p&gt;
@@ -598,7 +607,7 @@ export default function User() {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-10-22T21:28:37.677Z
+                at 2022-11-08T22:16:17.198Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

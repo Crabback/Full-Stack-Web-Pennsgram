@@ -57,7 +57,7 @@ function LoginForm(props){
         console.log(`before dispatch: ${stateCurrentUser.username}`);
         dispatch(updateCurrentUser(user));
 
-        alert("Login Success! logged in as: \n\n" + JSON.stringify(userRoster)); 
+        //alert("Login Success! logged in as: \n\n" + JSON.stringify(userRoster)); 
         console.log("Execute the code after clicking okay button of the alert window");
         props.updateAuthen(true);
         }else{
