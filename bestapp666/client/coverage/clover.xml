@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1668042158129" clover="3.2.0">
-  <project timestamp="1668042158129" name="All files">
-    <metrics statements="220" coveredstatements="153" conditionals="54" coveredconditionals="28" methods="60" coveredmethods="38" elements="334" coveredelements="219" complexity="0" loc="220" ncloc="220" packages="6" files="15" classes="15"/>
+<coverage generated="1668051301288" clover="3.2.0">
+  <project timestamp="1668051301288" name="All files">
+    <metrics statements="220" coveredstatements="159" conditionals="54" coveredconditionals="29" methods="60" coveredmethods="42" elements="334" coveredelements="230" complexity="0" loc="220" ncloc="220" packages="6" files="15" classes="15"/>
     <package name="client">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="cssStub.js" path="/Users/yaoqideng_1/5570/project---design-hw1-team_offersoverflow/bestapp666/client/cssStub.js">
@@ -17,7 +17,7 @@
       <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="5"/>
       <file name="Footer.js" path="/Users/yaoqideng_1/5570/project---design-hw1-team_offersoverflow/bestapp666/client/src/components/Footer.js">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="5" count="28" type="stmt"/>
+        <line num="5" count="30" type="stmt"/>
       </file>
       <file name="NavBar.js" path="/Users/yaoqideng_1/5570/project---design-hw1-team_offersoverflow/bestapp666/client/src/components/NavBar.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -37,7 +37,7 @@
       </file>
     </package>
     <package name="client.src.pages">
-      <metrics statements="100" coveredstatements="61" conditionals="24" coveredconditionals="9" methods="30" coveredmethods="14"/>
+      <metrics statements="100" coveredstatements="67" conditionals="24" coveredconditionals="10" methods="30" coveredmethods="18"/>
       <file name="HomePage.js" path="/Users/yaoqideng_1/5570/project---design-hw1-team_offersoverflow/bestapp666/client/src/pages/HomePage.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="12" count="1" type="stmt"/>
@@ -135,26 +135,26 @@
         <line num="93" count="15" type="stmt"/>
       </file>
       <file name="UserList.js" path="/Users/yaoqideng_1/5570/project---design-hw1-team_offersoverflow/bestapp666/client/src/pages/UserList.js">
-        <metrics statements="19" coveredstatements="9" conditionals="4" coveredconditionals="1" methods="5" coveredmethods="1"/>
-        <line num="12" count="1" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
-        <line num="18" count="1" type="stmt"/>
-        <line num="19" count="1" type="stmt"/>
-        <line num="21" count="1" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
+        <metrics statements="19" coveredstatements="15" conditionals="4" coveredconditionals="2" methods="5" coveredmethods="5"/>
+        <line num="12" count="4" type="stmt"/>
+        <line num="15" count="4" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="19" count="3" type="stmt"/>
+        <line num="21" count="3" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
         <line num="26" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="27" count="0" type="stmt"/>
         <line num="29" count="0" type="stmt"/>
-        <line num="32" count="0" type="stmt"/>
+        <line num="32" count="2" type="stmt"/>
         <line num="34" count="0" type="stmt"/>
-        <line num="39" count="1" type="cond" truecount="1" falsecount="1"/>
-        <line num="40" count="0" type="stmt"/>
-        <line num="41" count="0" type="stmt"/>
-        <line num="42" count="0" type="stmt"/>
-        <line num="49" count="1" type="stmt"/>
-        <line num="50" count="1" type="stmt"/>
-        <line num="51" count="0" type="stmt"/>
-        <line num="60" count="1" type="stmt"/>
+        <line num="39" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="42" count="4" type="stmt"/>
+        <line num="49" count="2" type="stmt"/>
+        <line num="50" count="2" type="stmt"/>
+        <line num="51" count="8" type="stmt"/>
+        <line num="60" count="3" type="stmt"/>
       </file>
     </package>
     <package name="client.src.pages.FeedPage">
@@ -279,10 +279,10 @@
       <file name="currentUserSlice.js" path="/Users/yaoqideng_1/5570/project---design-hw1-team_offersoverflow/bestapp666/client/src/pages/UserPage/currentUserSlice.js">
         <metrics statements="5" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="2"/>
         <line num="3" count="9" type="stmt"/>
-        <line num="20" count="2" type="stmt"/>
+        <line num="20" count="3" type="stmt"/>
         <line num="23" count="0" type="stmt"/>
         <line num="36" count="9" type="stmt"/>
-        <line num="41" count="12" type="stmt"/>
+        <line num="41" count="14" type="stmt"/>
       </file>
     </package>
   </project>

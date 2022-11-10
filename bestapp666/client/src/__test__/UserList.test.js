@@ -10,8 +10,33 @@ import { Provider } from 'react-redux';
 import { configureStore } from "@reduxjs/toolkit";
 import store from '../Store/store';
 import renderer from 'react-test-renderer';
+import { getUser } from "../api/mock_api";
+import { updateCurrentUser, selectCurrentUser} from '../pages/UserPage/currentUserSlice';
+
+
 
 const store1 = store;
+
+test('render following list ', async () => {
+    const currentUser = {username: 'obama', password: 'obama123'};
+    const userRoster = await getUser(currentUser.username);
+    let user;
+    userRoster.forEach(element => {
+      user = element;
+    });
+    store1.dispatch(updateCurrentUser(user));
+    const { getByText } = render(
+        <Provider store={store1}>
+          <BrowserRouter>
+            <UserList />
+          </BrowserRouter>
+        </Provider>
+    );
+    const following = getByText(/zanemao/);
+    expect(following).toBeVisible();
+
+});
+
 test('Page matches snapshot', () => {
 
     const component = renderer.create(
@@ -25,3 +50,20 @@ test('Page matches snapshot', () => {
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+
+test('render follower list ', async () => {
+    const { getByText }  = render(
+        <Provider store={store1}>
+          <BrowserRouter>
+            <UserList list="follower"/>
+          </BrowserRouter>
+        </Provider>
+    );
+    const follower = getByText(/trump/);
+    expect(follower).toBeVisible();
+
+});
+
+
+

@@ -26,10 +26,63 @@ exports[`Page matches snapshot 1`] = `
         "paddingRight": "70%",
       }
     }
-  />
+  >
+    <li
+      className="list-group-item"
+      data-rr-ui-event-key={null}
+      onClick={[Function]}
+    >
+      <a
+        className="button_text"
+        href="/user/zanemao"
+        onClick={[Function]}
+      >
+        zanemao
+      </a>
+    </li>
+    <li
+      className="list-group-item"
+      data-rr-ui-event-key={null}
+      onClick={[Function]}
+    >
+      <a
+        className="button_text"
+        href="/user/elon"
+        onClick={[Function]}
+      >
+        elon
+      </a>
+    </li>
+    <li
+      className="list-group-item"
+      data-rr-ui-event-key={null}
+      onClick={[Function]}
+    >
+      <a
+        className="button_text"
+        href="/user/tiger"
+        onClick={[Function]}
+      >
+        tiger
+      </a>
+    </li>
+    <li
+      className="list-group-item"
+      data-rr-ui-event-key={null}
+      onClick={[Function]}
+    >
+      <a
+        className="button_text"
+        href="/user/curry"
+        onClick={[Function]}
+      >
+        curry
+      </a>
+    </li>
+  </ul>
   <a
     className="button_text"
-    href="/user/NOT_A_USER"
+    href="/user/obama"
     onClick={[Function]}
     style={
       Object {

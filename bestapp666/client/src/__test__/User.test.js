@@ -31,7 +31,7 @@ test("render user page component", () => {
 
 });
 
-test("Mock follow", async () => {
+test("Mock follow and unfollow", async () => {
 
   const currentUser = {username: 'obama', password: 'obama123'};
   const userRoster = await getUser(currentUser.username);
@@ -42,15 +42,12 @@ test("Mock follow", async () => {
   store1.dispatch(updateCurrentUser(user));
 
   const { getByText }  = render(
-        <Provider store={store1}>
-      <BrowserRouter>
-        <User />
-      </BrowserRouter>
+      <Provider store={store1}>
+        <BrowserRouter>
+          <User />
+        </BrowserRouter>
       </Provider>
-  
     );
-
-
     const followinglist = getByText(/Followers/);  
     userEvent.click(followinglist);
     const following = getByText(/curry/);
