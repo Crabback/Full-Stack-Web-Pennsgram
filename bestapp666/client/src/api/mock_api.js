@@ -104,7 +104,7 @@ export const createNewPost = async (username, postObject) =>{
     try{    
         const response = await axios.get(`${rootURL+'/Users'}?username=${username}`);
         let user = response.data[0];
-        user.posts.push(postObject);
+        user.posts.push(postObject.id);
         const responsePut = await axios.put(`${rootURL+'/Users'}/${user.id}`, user);
         const responsePut2 = await axios.post(`${rootURL+'/Posts'}`, postObject);
         console.log(`successfully ${username} creates a new post`);

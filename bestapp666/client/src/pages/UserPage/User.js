@@ -19,7 +19,6 @@ function CardCustomed(props){
       async function handleLike(e) {
       }
     }
-    console.log(props);
     if (props.post){
       if (props.post.image.split(".").slice(-1) == 'mp4') {
         return(

@@ -49,6 +49,7 @@ function UploadPostPage() {
         "id": -1,
         "author": stateCurrentUser.username,
         "description": descInput,
+        "date": "10/1/2022",
         "image": media,
         "likes": [],
         "comments": []
