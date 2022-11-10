@@ -15,6 +15,10 @@ import ToggleButton from 'react-bootstrap/ToggleButton';
 
 function CardCustomed(props){
     //props is a post fed from a following use
+    function LikeButton(){
+      async function handleLike(e) {
+      }
+    }
     return (
         <Card bg = "light" style={{ width: '20rem'}}>
           <Card.Img variant="bottom" rounded="true" src={props.post.image} />
