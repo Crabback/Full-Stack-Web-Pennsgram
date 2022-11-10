@@ -1,14 +1,17 @@
 import '@testing-library/jest-dom/extend-expect';
 
 import React from "react";
-import { getByDisplayValue, render, screen } from "@testing-library/react";
+import { getByDisplayValue, render, screen , waitFor} from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import userEvent from "@testing-library/user-event";
 import { BrowserRouter } from "react-router-dom";
 import User from "../pages/UserPage/User";
 import { Provider } from 'react-redux';
-import { configureStore } from "@reduxjs/toolkit";
 import store from '../Store/store';
+import { updateCurrentUser, selectCurrentUser} from '../pages/UserPage/currentUserSlice';
+import { useSelector, useDispatch} from 'react-redux'
+import { getUser } from "../api/mock_api";
+import { act } from 'react-dom/test-utils';
 
 
 const store1 = store;
@@ -28,11 +31,17 @@ test("render user page component", () => {
 
 });
 
-
-/** 
 test("Mock follow", async () => {
 
-    const { getByRole } = render(
+  const currentUser = {username: 'obama', password: 'obama123'};
+  const userRoster = await getUser(currentUser.username);
+  let user;
+  userRoster.forEach(element => {
+    user = element;
+  });
+  store1.dispatch(updateCurrentUser(user));
+
+  const { getByText }  = render(
         <Provider store={store1}>
       <BrowserRouter>
         <User />
@@ -40,19 +49,17 @@ test("Mock follow", async () => {
       </Provider>
   
     );
-    const username = screen.getByPlaceholderText("Enter username (eg. dog)");
-    const password = screen.getByPlaceholderText("Password");
-  
-    userEvent.type(username, "obama");
-    userEvent.type(password, "obama123");
-    await userEvent.click(
-        screen.getByRole("button", {
-            name: "Login"
-        })
-    );
-    expect(
-        await screen.findByText(/Login/)
-    ).toBeVisible();
-  });
 
-  */ 
+
+    const followinglist = getByText(/Followers/);  
+    userEvent.click(followinglist);
+    const following = getByText(/curry/);
+    userEvent.click(following);
+    const followBnt = screen.getByTestId("followingButton");
+    userEvent.click(followBnt);
+    await waitFor(()=>{
+      expect(followBnt.hasAttribute("Follow"));
+    })
+    userEvent.click(followBnt);
+
+  });
