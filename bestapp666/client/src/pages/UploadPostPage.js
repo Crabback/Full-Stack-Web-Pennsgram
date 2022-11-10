@@ -66,6 +66,7 @@ function UploadPostPage() {
       const updatedUser = await createNewPost(stateCurrentUser.username, newPost);
       //dispatch the updated user;
       dispatch(updateCurrentUser(updatedUser));
+      console.log("upload completed");
       navigate("/user/" + stateCurrentUser.username);
     }
     

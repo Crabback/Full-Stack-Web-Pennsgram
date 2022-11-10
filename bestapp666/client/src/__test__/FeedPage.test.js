@@ -10,8 +10,12 @@ import { Provider } from 'react-redux';
 import { configureStore } from "@reduxjs/toolkit";
 import store from '../Store/store';
 import renderer from 'react-test-renderer';
+import { updateCurrentUser, selectCurrentUser} from '../pages/UserPage/currentUserSlice';
+import { getUser } from "../api/mock_api";
+
 
 const store1 = store;
+
 test('Page matches snapshot', () => {
     const component = renderer.create(
         <Provider store={store1}>
@@ -24,3 +28,24 @@ test('Page matches snapshot', () => {
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+test('render feed page as logged in user list ', async () => {
+    const currentUser = {username: 'obama', password: 'obama123'};
+    const userRoster = await getUser(currentUser.username);
+    let user;
+    userRoster.forEach(element => {
+      user = element;
+    });
+    store1.dispatch(updateCurrentUser(user));
+    const { getByText } = render(
+        <Provider store={store1}>
+          <BrowserRouter>
+            <FeedPage />
+          </BrowserRouter>
+        </Provider>
+    );
+    const post = getByText(/cat/);
+    expect(post).toBeVisible();
+
+});
+
