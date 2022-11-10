@@ -8,7 +8,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import {updateCurrentUser, selectCurrentUser} from './UserPage/currentUserSlice'
 import { useSelector, useDispatch } from 'react-redux'
-import { createNewPost } from "./../api/mock_api";
+import { getPosts, createNewPost } from "./../api/mock_api";
 
 function UploadPostPage() {
   const navigate = useNavigate();
@@ -53,7 +53,7 @@ function UploadPostPage() {
         "likes": [],
         "comments": []
       }
-      const prePosts = stateCurrentUser.posts;
+      const prePosts = await getPosts();
       //update the id field
       const ids = (prePosts.length===0) ? [0,-1] : (prePosts.map(object => {
         return object.id;

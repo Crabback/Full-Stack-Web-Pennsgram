@@ -5,19 +5,27 @@ import axios from 'axios';
 //mockAPI URL 
 // const rootURL = "";
 //JSON-server URL
-const rootURL ='http://localhost:8080/Users';
+const rootURL ='http://localhost:8080';
+
 // Sends a Get request to the /Users endpoint
 // returns all the users in the DB
 export const getUsers = async () =>{
     try{
-        const response = await axios.get(`${rootURL}`);
+        const response = await axios.get(`${rootURL+'/Users'}`);
         return response.data;
-        // the data is stored in the mockData
-        // field of the response
     }
     catch(err){
         console.error(err);
+    }
+}
 
+export const getPosts = async () =>{
+    try{
+        const response = await axios.get(`${rootURL+'/Posts'}`);
+        return response.data;
+    }
+    catch(err){
+        console.error(err);
     }
 }
 
@@ -26,7 +34,7 @@ export const getUsers = async () =>{
 // returns the attributes of the user
 export const getUser = async (username) =>{
     try{    
-        const response = await axios.get(`${rootURL}?username=${username}`);
+        const response = await axios.get(`${rootURL+'/Users'}?username=${username}`);
         //get the fetched data's username
         let fetchedUsername;
         response.data.forEach(element => {
@@ -61,13 +69,28 @@ export const getUsersAsList = async (usernames) =>{
     }
 }
 
+export const getPost = async (postId) =>{
+    try{    
+        const response = await axios.get(`${rootURL+'/Posts'}?id=${postId}`);
+        //get the fetched data's username
+        let fetchedUsername;
+        response.data.forEach(element => {
+            fetchedUsername = element.username;
+        });
+        console.log(`successfully getPost by id: object with id: ${postId}`);
+        return response.data[0];
+    }
+    catch(err){
+        console.error(err);
+    }
+}
 
 // Takes a user (without the id) as input
 // and sends a POST request to the /user endpoint
 // returns the attributes of the user with the id
 export const createNewUser = async (userObject) =>{
     try{    
-        const response = await axios.post(`${rootURL}`, userObject);
+        const response = await axios.post(`${rootURL+'/Users'}`, userObject);
         console.log(`username=${userObject.username}&password=${userObject.password}&followings=${userObject.followings}&followers=${userObject.followers}&avatar=${userObject.avatar}&posts=${userObject.posts}`);
         return response.data; 
         // return the data with the id of the user
@@ -79,10 +102,11 @@ export const createNewUser = async (userObject) =>{
 
 export const createNewPost = async (username, postObject) =>{
     try{    
-        const response = await axios.get(`${rootURL}?username=${username}`);
+        const response = await axios.get(`${rootURL+'/Users'}?username=${username}`);
         let user = response.data[0];
         user.posts.push(postObject);
-        const responsePut = await axios.put(`${rootURL}/${user.id}`, user);
+        const responsePut = await axios.put(`${rootURL+'/Users'}/${user.id}`, user);
+        const responsePut2 = await axios.post(`${rootURL+'/Posts'}`, postObject);
         console.log(`successfully ${username} creates a new post`);
         return responsePut.data[0]; 
         // return the data with the id of the user
@@ -94,14 +118,14 @@ export const createNewPost = async (username, postObject) =>{
 
 export const followUser = async (username1, username2) =>{
     try{    
-        const response1 = await axios.get(`${rootURL}?username=${username1}`);
-        const response2 = await axios.get(`${rootURL}?username=${username2}`);
+        const response1 = await axios.get(`${rootURL+'/Users'}?username=${username1}`);
+        const response2 = await axios.get(`${rootURL+'/Users'}?username=${username2}`);
         let user1 = response1.data[0];
         let user2 = response2.data[0];
         user1.followings.push(username2);
         user2.followers.push(username1);
-        const responseReturn = await axios.put(`${rootURL}/${user1.id}`, user1);
-        await axios.put(`${rootURL}/${user2.id}`, user2);
+        const responseReturn = await axios.put(`${rootURL+'/Users'}/${user1.id}`, user1);
+        await axios.put(`${rootURL+'/Users'}/${user2.id}`, user2);
         //get the fetched data's username
         console.log(`successfully ${username1} follows ${username2}`);
         return responseReturn.data;
@@ -113,15 +137,14 @@ export const followUser = async (username1, username2) =>{
 
 export const unfollowUser = async (username1, username2) =>{
     try{    
-        const response1 = await axios.get(`${rootURL}?username=${username1}`);
-        const response2 = await axios.get(`${rootURL}?username=${username2}`);
+        const response1 = await axios.get(`${rootURL+'/Users'}?username=${username1}`);
+        const response2 = await axios.get(`${rootURL+'/Users'}?username=${username2}`);
         let user1 = response1.data[0]
         let user2 = response2.data[0]
         user1.followings = user1.followings.filter(n => n !== username2);
         user2.followers = user2.followers.filter(n => n !== username1);
-        const responseReturn = await axios.put(`${rootURL}/${user1.id}`, user1);
-        await axios.put(`${rootURL}/${user2.id}`, user2);
-        //get the fetched data's username
+        const responseReturn = await axios.put(`${rootURL+'/Users'}/${user1.id}`, user1);
+        await axios.put(`${rootURL+'/Users'}/${user2.id}`, user2);
         console.log(`successfully ${username1} unfollows ${username2}`);
         return responseReturn.data;
     }
@@ -130,17 +153,13 @@ export const unfollowUser = async (username1, username2) =>{
     }
 }
 
-export const likePost = async (username, post) =>{
+export const likePost = async (username, postId) =>{
     try{    
-        const response1 = await axios.get(`${rootURL}?username=${username1}`);
-        let user1 = response1.data[0]
-        user1.followings = user1.followings.filter(n => n !== username2);
-        user2.followers = user2.followers.filter(n => n !== username1);
-        const responseReturn = await axios.put(`${rootURL}/${user1.id}`, user1);
-        await axios.put(`${rootURL}/${user2.id}`, user2);
-        //get the fetched data's username
-        console.log(`successfully ${username1} unfollows ${username2}`);
-        return responseReturn.data;
+        let post = getPost(postId);
+        post.likes.push(username);
+        const response = await axios.put(`${rootURL+'/Posts'}/${post.id}`, post);
+        console.log(`successfully ${username} likes post ${postId}`);
+        return response.data;
     }
     catch(err){
         console.error(err);

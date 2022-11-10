@@ -10,7 +10,7 @@ import Button from 'react-bootstrap/Button';
 import { NavLink, useParams} from "react-router-dom";
 import {selectCurrentUser, updateCurrentUser} from './currentUserSlice'
 import { useSelector, useDispatch } from 'react-redux'
-import { getUser, followUser, unfollowUser} from "../../api/mock_api";
+import { getUser, getPost, followUser, unfollowUser} from "../../api/mock_api";
 import ToggleButton from 'react-bootstrap/ToggleButton';
 
 function CardCustomed(props){
@@ -19,28 +19,29 @@ function CardCustomed(props){
       async function handleLike(e) {
       }
     }
+    console.log(props);
     return (
-        <Card bg = "light" style={{ width: '20rem'}}>
-          <Card.Img variant="bottom" rounded="true" src={props.post.image} />
-          <Card.Body>
-            <Card.Text>
-              {props.post.description}
-            </Card.Text>
-            <Row>
-              <Col>
-                <Card.Text style={{ position: 'absolute', bottom: '0'}}>
-                {props.post.likes.length} likes
-                </Card.Text>
-              </Col>
-              <Col>
-                <Card.Text style={{ position: 'absolute', bottom: '0'}}>
-                {props.post.comments.length} comments
-                </Card.Text>
-              </Col>
-            </Row>
-          </Card.Body>
-        </Card>
-        )
+      <Card bg = "light" style={{ width: '20rem'}}>
+        <Card.Img variant="bottom" rounded="true" src={props.image} />
+        <Card.Body>
+          <Card.Text>
+            {props.description}
+          </Card.Text>
+          <Row>
+            <Col>
+              <Card.Text style={{ position: 'absolute', bottom: '0'}}>
+               likes
+              </Card.Text>
+            </Col>
+            <Col>
+              <Card.Text style={{ position: 'absolute', bottom: '0'}}>
+               comments
+              </Card.Text>
+            </Col>
+          </Row>
+        </Card.Body>
+      </Card>
+      )
 }
 
 export default function User() {
@@ -50,7 +51,8 @@ export default function User() {
   
     // the user we are browsing (other), default self
     const [thisUser, setThisUser] = useState(stateCurrentUser);
-    
+    //const [thisUserPosts, setThisUserPosts] = useState([]);
+
     const [offset, setOffset] = useState(0);
     const [checked, setChecked] = useState(true);
     const [text, setText] = useState("Follow");
@@ -84,8 +86,8 @@ export default function User() {
         }
     }, [username]); //adding dependency making sure useEffect only run once after each render
 
-    const posts =  ( (thisUser.posts.length===0)?  [{"description": "This user has no post yet","image": "","likes":[], "comments":[]}] : thisUser.posts).map((p) => (
-      <CardCustomed post={p}/>
+    const posts =  ((thisUser.posts.length===0)?  [-1] : thisUser.posts).map((p) => (
+      <CardCustomed post={getPost(p)}/>
     ))
 
     function ActionButton(){
