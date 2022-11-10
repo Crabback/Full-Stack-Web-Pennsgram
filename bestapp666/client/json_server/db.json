@@ -12,8 +12,8 @@
       "followers": [
         "pig",
         "dog",
-        "obama",
-        "trump"
+        "trump",
+        "obama"
       ],
       "avatar": "https://i.etsystatic.com/11859790/r/il/7c7ded/1275225454/il_1588xN.1275225454_ig9k.jpg",
       "posts": [
@@ -148,7 +148,6 @@
         "zanemao"
       ],
       "followers": [
-        "obama",
         "ayesha",
         "trump"
       ],
@@ -208,10 +207,9 @@
       "username": "obama",
       "password": "obama123",
       "followings": [
-        "curry",
-        "tiger",
         "zanemao",
-        "elon"
+        "elon",
+        "tiger"
       ],
       "followers": [
         "curry",

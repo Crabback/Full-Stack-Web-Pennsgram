@@ -118,6 +118,7 @@ export default function User() {
             id="toggle-check"
             type="checkbox"
             variant="outline-primary"
+            data-testid="followingButton"
             checked={checked}
             onChange={handleFollow}>
               {text}
