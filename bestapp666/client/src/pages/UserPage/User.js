@@ -19,29 +19,46 @@ function CardCustomed(props){
       async function handleLike(e) {
       }
     }
-    console.log(props.post);
-    return (
-      <Card bg = "light" style={{ width: '20rem'}}>
-        <Card.Img variant="bottom" rounded="true" src={props.post.image} />
-        <Card.Body>
-          <Card.Text>
-            {props.post.description}
-          </Card.Text>
-          <Row>
-            <Col>
-              <Card.Text style={{ position: 'absolute', bottom: '0'}}>
-               {props.post.likes.length} likes
-              </Card.Text>
-            </Col>
-            <Col>
-              <Card.Text style={{ position: 'absolute', bottom: '0'}}>
-              {props.post.comments.length} comments
-              </Card.Text>
-            </Col>
-          </Row>
-        </Card.Body>
-      </Card>
-      )
+    console.log(props);
+    if (props.post){
+      if (props.post.image.split(".").slice(-1) == 'mp4') {
+        return(
+          <Card bg = "light" style={{ width: '20rem'}}>
+            <video width='290' controls autoPlay={true}>
+              <source src={props.post.image} type="video/mp4"/>
+            </video>          
+            <Card.Body>
+                <Card.Text>{props.post.description}</Card.Text>
+                <Row>
+                  <Col>
+                    <Card.Text style={{ position: 'absolute', bottom: '0'}}> {props.post.likes.length} likes </Card.Text>
+                  </Col>
+                  <Col>
+                    <Card.Text style={{ position: 'absolute', bottom: '0'}}> {props.post.comments.length} comments </Card.Text>
+                  </Col>
+                </Row>
+            </Card.Body>
+          </Card>
+          )
+        }else{
+          return (
+            <Card bg = "light" style={{ width: '20rem'}}>
+              <Card.Img variant="bottom" rounded="true" src={props.post.image} />
+              <Card.Body>
+                <Card.Text>{props.post.description}</Card.Text>
+                <Row>
+                  <Col>
+                    <Card.Text style={{ position: 'absolute', bottom: '0'}}> {props.post.likes.length} likes </Card.Text>
+                  </Col>
+                  <Col>
+                    <Card.Text style={{ position: 'absolute', bottom: '0'}}> {props.post.comments.length} comments </Card.Text>
+                  </Col>
+                </Row>
+              </Card.Body>
+            </Card>
+            )
+        }
+    }
 }
 
 export default function User() {
