@@ -10,7 +10,7 @@ import Button from 'react-bootstrap/Button';
 import { NavLink, useParams} from "react-router-dom";
 import {selectCurrentUser, updateCurrentUser} from './currentUserSlice'
 import { useSelector, useDispatch } from 'react-redux'
-import { getUser, getPost, followUser, unfollowUser} from "../../api/mock_api";
+import { getUser, getPost, getPosts, followUser, unfollowUser} from "../../api/mock_api";
 import ToggleButton from 'react-bootstrap/ToggleButton';
 
 function CardCustomed(props){
@@ -19,23 +19,23 @@ function CardCustomed(props){
       async function handleLike(e) {
       }
     }
-    console.log(props);
+    console.log(props.post);
     return (
       <Card bg = "light" style={{ width: '20rem'}}>
-        <Card.Img variant="bottom" rounded="true" src={props.image} />
+        <Card.Img variant="bottom" rounded="true" src={props.post.image} />
         <Card.Body>
           <Card.Text>
-            {props.description}
+            {props.post.description}
           </Card.Text>
           <Row>
             <Col>
               <Card.Text style={{ position: 'absolute', bottom: '0'}}>
-               likes
+               {props.post.likes.length} likes
               </Card.Text>
             </Col>
             <Col>
               <Card.Text style={{ position: 'absolute', bottom: '0'}}>
-               comments
+              {props.post.comments.length} comments
               </Card.Text>
             </Col>
           </Row>
@@ -51,7 +51,7 @@ export default function User() {
   
     // the user we are browsing (other), default self
     const [thisUser, setThisUser] = useState(stateCurrentUser);
-    //const [thisUserPosts, setThisUserPosts] = useState([]);
+    const [allPosts, setThisUserPosts] = useState([]);
 
     const [offset, setOffset] = useState(0);
     const [checked, setChecked] = useState(true);
@@ -62,12 +62,14 @@ export default function User() {
     useEffect(() => {
       async function fetchData() {
         //verification username exist or not
-        let output = await getUser(username);
+        let output1 = await getUser(username);
+        let output2 = await getPosts();
          //get the user object
-        if(output[0] === undefined){
+        if(output1[0] === undefined){
           alert("User Not Found.")
         }else{
-          setThisUser(output[0]);
+          setThisUser(output1[0]);
+          setThisUserPosts(output2);
         }
       }
       try{fetchData();}
@@ -86,8 +88,9 @@ export default function User() {
         }
     }, [username]); //adding dependency making sure useEffect only run once after each render
 
-    const posts =  ((thisUser.posts.length===0)?  [-1] : thisUser.posts).map((p) => (
-      <CardCustomed post={getPost(p)}/>
+
+    const posts = ((thisUser.posts.length===0)?  [-1] : thisUser.posts).map((p)=>(
+      <CardCustomed post={allPosts[p]}/>
     ))
 
     function ActionButton(){
