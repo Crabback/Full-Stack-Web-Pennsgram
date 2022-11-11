@@ -12,20 +12,26 @@ import {selectCurrentUser, updateCurrentUser} from './currentUserSlice'
 import { useSelector, useDispatch } from 'react-redux'
 import { getUser, getPost, getPosts, followUser, unfollowUser} from "../../api/mock_api";
 import ToggleButton from 'react-bootstrap/ToggleButton';
+import Popup from 'reactjs-popup';
 
 function CardCustomed(props){
     //props is a post fed from a following use
-    function LikeButton(){
-      async function handleLike(e) {
-      }
-    }
     if (props.post){
       if (props.post.image.split(".").slice(-1) == 'mp4') {
         return(
+          <div>
+            <Popup trigger={<button>  </button>} position="right center">
+            <div>GeeksforGeeks</div>
+            <button>Click here</button>
+           </Popup>
+   
           <Card bg = "light" style={{ width: '20rem'}}>
-            <video width='290' controls autoPlay={true}>
-              <source src={props.post.image} type="video/mp4"/>
-            </video>          
+
+                <video width='290' controls autoPlay={true}>
+                  <source src={props.post.image} type="video/mp4"/>
+                </video>
+
+                      
             <Card.Body>
                 <Card.Text>{props.post.description}</Card.Text>
                 <Row>
@@ -38,11 +44,23 @@ function CardCustomed(props){
                 </Row>
             </Card.Body>
           </Card>
+          </div>
+          
           )
         }else{
           return (
             <Card bg = "light" style={{ width: '20rem'}}>
-              <Card.Img variant="bottom" rounded="true" src={props.post.image} />
+              <Popup 
+              trigger={
+                <button> 
+                  <Card.Img variant="bottom" rounded="true" src={props.post.image} />
+                </button>} 
+              className="popup_inner"
+              position="right center">
+                      <div>GeeksforGeeks</div>
+                      <button>Click here</button>
+              </Popup>
+              
               <Card.Body>
                 <Card.Text>{props.post.description}</Card.Text>
                 <Row>

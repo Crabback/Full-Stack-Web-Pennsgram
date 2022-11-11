@@ -159,6 +159,19 @@ export const createNewPost = async (username, postObject) =>{
     }
 }
 
+
+export const deletePost = async (postId) => {
+    try{    
+        const response = await axios.delete(`${rootURL+'/Posts'}/${postId}`);
+        console.log("deletePost response: ", response);
+        return response.data; 
+        // return the data with the id of the user
+    }
+    catch(err){
+        console.error(err);
+    }
+}
+
 export const followUser = async (username1, username2) =>{
     try{    
         const response1 = await axios.get(`${rootURL+'/Users'}?username=${username1}`);
