@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import {LikeButton} from '../../components/LikeButton';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Card from 'react-bootstrap/Card';
 import Stack from 'react-bootstrap/Stack';
@@ -9,13 +11,34 @@ import Navbar from 'react-bootstrap/Navbar';
 import ReactRoundedImage from "react-rounded-image";
 import { NavLink } from "react-router-dom";
 import { useSelector} from 'react-redux'
+import { useNavigate } from "react-router-dom";
+
 import {selectCurrentUser} from '../UserPage/currentUserSlice'
-import { getUsersAsList, getLastestPostOfAUser, getPost, getUser } from "../../api/mock_api";
+import { addComment, getUsersAsList, getLastestPostOfAUser, getPost, getUser } from "../../api/mock_api";
 import { Nav } from 'react-bootstrap';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 //define a inside components
 function CardCustomed(props){
-    //props is a post fed from a following user
+  const navigate = useNavigate();
+  const [descInput, setDescInput] = useState("");
+
+  const handleLeaveComment= async (e) => {
+    e.preventDefault();
+    if(props.username === "NOT_A_USER"){
+      alert("Please sign up/login to your account in order to make a post.");
+      navigate("/");
+    }else{
+      const newComment = {
+        "author": props.username,
+        "comment": descInput,
+      }
+      await addComment(props.post.id, newComment);
+    }
+    setDescInput('');
+  }
+
     if (props.post) {
       if(props.post.image.split(".").slice(-1) == 'mp4'){
         return (
@@ -33,16 +56,41 @@ function CardCustomed(props){
               </Container>
             </Navbar>
             <video width='446' controls autoPlay={true}> <source src={props.post.image} type="video/mp4"/> </video>  
-            <Card.Subtitle className="text-muted" style={{paddingTop: "1rem"}}> 
+            <Card.Subtitle className="text-muted" style={{paddingTop: "1rem", paddingLeft:"1rem"}}> 
               {props.post.date}
             </Card.Subtitle>
   
             <Card.Body>
-              <Card.Text> {props.post.description} </Card.Text>
+              <Card.Text>{props.post.description} </Card.Text>
+              
+              <Row>
+                <Col>
+                  <Card.Text style={{paddingBottom: '1rem'}}> {props.post.likes.length} likes </Card.Text>
+                </Col>
+                <Col>
+                  <Card.Text style={{paddingBottom: '1rem'}}> {props.post.comments.length} comments </Card.Text>
+                </Col>
+              </Row>
+
               <ButtonGroup aria-label="like,comment,message">
-                  <Button variant="light">Like</Button>
-                  <Button variant="light">Comment</Button>
+                  <LikeButton post = {props.post} username={props.username}/>
+                  <Button className="mb-2" variant="outline-primary">Comment</Button>
               </ButtonGroup>
+
+              <Form onSubmit={handleLeaveComment}>
+                <Row>
+                  <Form.Group className="mb-3" controlId="formBasicDescription">
+                    <Form.Control as="textarea" onChange={e => setDescInput(e.target.value)}
+                    placeholder="Leave a comment." 
+                    rows={2}
+                    value={descInput}/>
+                  </Form.Group>
+                  <Button variant="primary" type="submit">
+                    Comment
+                  </Button>
+                </Row>
+              </Form>
+
             </Card.Body>
   
           </Card>
@@ -65,14 +113,39 @@ function CardCustomed(props){
             </Navbar>
   
             <Card.Img variant="bottom" rounded="true" src={props.post.image} />
-            <Card.Subtitle className="text-muted" style={{paddingTop: "1rem"}}> {props.post.date} </Card.Subtitle>
+            <Card.Subtitle className="text-muted" style={{paddingTop: "1rem", paddingLeft:"1rem"}}> {props.post.date} </Card.Subtitle>
   
             <Card.Body>
               <Card.Text>{props.post.description} </Card.Text>
+              
+              <Row>
+                <Col>
+                  <Card.Text style={{paddingBottom: '1rem'}}> {props.post.likes.length} likes </Card.Text>
+                </Col>
+                <Col>
+                  <Card.Text style={{paddingBottom: '1rem'}}> {props.post.comments.length} comments </Card.Text>
+                </Col>
+              </Row>
+
               <ButtonGroup aria-label="like,comment,message">
-                  <Button variant="light">Like</Button>
-                  <Button variant="light">Comment</Button>
+                  <LikeButton post = {props.post} username={props.username}/>
+                  <Button className="mb-2" variant="outline-primary">Comment</Button>
               </ButtonGroup>
+
+              <Form onSubmit={handleLeaveComment}>
+                <Row>
+                  <Form.Group className="mb-3" controlId="formBasicDescription">
+                    <Form.Control as="textarea" onChange={e => setDescInput(e.target.value)}
+                    placeholder="Leave a comment." 
+                    rows={2}
+                    value={descInput}/>
+                  </Form.Group>
+                  <Button variant="primary" type="submit">
+                    Comment
+                  </Button>
+                </Row>
+              </Form>
+
             </Card.Body>
           </Card>
           )
@@ -130,7 +203,7 @@ export default function FeedPage() {
 
 
   const cards = ((feedPostOfUser.length===0) ? popularPostsNearby:feedPostOfUser).map((p) => (
-    <CardCustomed post={p}/>
+    <CardCustomed post={p} username={stateCurrentUser.username}/>
   ))
 
   return (

@@ -352,8 +352,15 @@
       "description": "When I was young with my bros.",
       "date": "10/16/2022",
       "image": "https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1240w,f_auto,q_auto:best/newscms/2017_04/1880656/170126-piglets-ok-1629.jpg",
-      "likes": [],
-      "comments": []
+      "likes": [
+        "zanemao"
+      ],
+      "comments": [
+        {
+          "author": "zanemao",
+          "comment": "zane leaves a comment test."
+        }
+      ]
     },
     {
       "id": 7,
@@ -451,7 +458,9 @@
       "description": "lol",
       "date": "10/16/2022",
       "image": "https://drive.google.com/uc?export=view&id=1F2X0d6KkJWV26qoofFx6u9YGeUnCSfcl",
-      "likes": [],
+      "likes": [
+        "zanemao"
+      ],
       "comments": []
     },
     {
