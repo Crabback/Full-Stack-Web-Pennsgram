@@ -186,7 +186,7 @@ export const createNewPost = async (username, postObject) =>{
         let user = response.data[0];
         user.posts.push(postObject.id);
         const responsePut = await axios.put(`${rootURL+'/Users'}/${user.id}`, user);
-        const responsePut2 = await axios.post(`${rootURL+'/Posts'}`, postObject);
+        const responsePost = await axios.post(`${rootURL+'/Posts'}`, postObject);
         console.log(`successfully ${username} creates a new post`);
         return responsePut.data[0]; 
         // return the data with the id of the user
@@ -202,6 +202,21 @@ export const deletePost = async (postId) => {
         const response = await axios.delete(`${rootURL+'/Posts'}/${postId}`);
         console.log("deletePost response: ", response);
         return response.data; 
+        // return the data with the id of the user
+    }
+    catch(err){
+        console.error(err);
+    }
+}
+
+export const updatePost = async (postId, newImage, newDescription) =>{
+    try{    
+        let post = await getPost(postId);
+        post.image = newImage;
+        post.description = newDescription;
+        const responsePut = await axios.put(`${rootURL+'/Posts'}/${postId}`, post);
+        console.log(`successfully update post ${postId}`);
+        return responsePut.data[0]; 
         // return the data with the id of the user
     }
     catch(err){

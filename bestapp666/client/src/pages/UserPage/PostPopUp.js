@@ -21,6 +21,7 @@ const CustomPopup = (props) => {
     const [image, setImage] = useState("");
     const [comments, setComments] = useState([]);
     const [description, setDescription] = useState("");
+    const [media, setMedia] = useState(props.post.image);
 
    //handle the temporary inputs in the post description 
     const [descInput, setDescInput] = useState("");
@@ -53,13 +54,47 @@ const CustomPopup = (props) => {
         setDescInput( e.target.value);
     };
     
-    async function handleDeleteComment(postId, cotent){
-        console.log(postId, cotent);
-        await deleteComment(postId, cotent);
+    async function handleDeleteComment(postId, content){
+        console.log(postId, content);
+        await deleteComment(postId, content);
     };
 
-    const handleDeletePost = async (e) =>{
-        await deletePost();
+    async function handleDeletePost(postId){
+        await deletePost(postId);
+    };
+
+    async function handleUpdate(postId){
+        //await updatePost(postId);
+    };
+
+    function addDefaultImgSrc(ev){
+        ev.target.src = "https://st4.depositphotos.com/14953852/24787/v/600/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg";
+        setMedia("https://st4.depositphotos.com/14953852/24787/v/600/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg");
+      }
+      
+    const handleImageURLInput = (e) => {
+          setMedia((state) => (e.target.value));
+        }
+
+    function MediaPreview(props){
+        console.log(props);
+        if (props[0]){
+            if (props.mediaLink.split(".").slice(-1) == 'mp4'){
+                return (
+                <Form.Group className="mb-3">
+                <video width="500" controls >
+                    <source src={props.mediaLink} type="video/mp4"/>
+                </video>
+                </Form.Group>
+                ) 
+            }else{
+                return (
+                <Form.Group className="mb-3">
+                    <img onError={addDefaultImgSrc} src={props.mediaLink} alt="user pic 1" width="400" height="400"></img>
+                </Form.Group>
+                )
+            }
+        } 
     }
 
     const commentsToast = (comments?  comments : [{author: "Void",
@@ -88,7 +123,7 @@ const CustomPopup = (props) => {
     return (
         <div style={{visibility: show ? "visible" : "hidden", opacity: show ? "1" : "0"}} className={popupStyles.overlay}>
         <div className={popupStyles.popup}>
-            <Button variant="outline-danger">Delete Post</Button>
+            <Button variant="outline-danger" onClick = {(e)=> handleDeletePost(id)}>Delete Post</Button>
 
             <span className={popupStyles.close} onClick={closeHandler}>
             <span className={popupStyles.done} onClick={doneHandler}>Done</span>
@@ -98,21 +133,21 @@ const CustomPopup = (props) => {
             <div className={popupStyles.content}>
                 {/* {props.children} */}
                 <div style = {{height: "5%", width: "95%", border: "1px solid black"}}>
-                    <Button>change image/video</Button>
+                    <Button onClick = {(e)=> handleUpdate(id)}>change image/video</Button>
                 </div>
 
                 <div style = {{height: "10%", width: "95%", border: "1px solid black"}}>
                     <Row>
                         <Col xs={6}>
                             <div style = {{height: "100%", width: "100%", border: "1px solid black"}}>
-                                <img className = {popupStyles.image} src={props.post.image} ></img>
                                 <Form>
                                     <Form.Group className="mb-3" controlId="formBasicDescription">
                                         <Form.Label>
                                             {descInput}
                                         </Form.Label>
+                                        <Form.Control name="imageURL" onChange={handleImageURLInput} placeholder="Enter online image url" />
                                         <Form.Control as="textarea" onChange={handleDescInput}
-                                        placeholder= "change to..."
+                                        placeholder= "Change the text to..."
                                         rows={3}/>
                                     </Form.Group>
                                 </Form>
