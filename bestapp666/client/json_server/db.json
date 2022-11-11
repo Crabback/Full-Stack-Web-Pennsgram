@@ -93,7 +93,10 @@
       "avatar": "https://images.wagwalkingweb.com/media/daily_wag/name_guides/cartoon-dog-names/featured_dog/snoopy.jpg?auto=compress&fit=max",
       "posts": [
         7,
-        8
+        8,
+        24,
+        25,
+        26
       ],
       "followerSuggestions": [
         "zanemao",
@@ -497,6 +500,33 @@
       "description": "test upload",
       "date": "10/16/2022",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLOZAgX4_oFdHPuRk5Yz3oS0GGg0yA7L5-pw&usqp=CAU",
+      "likes": [],
+      "comments": []
+    },
+    {
+      "id": 24,
+      "author": "dog",
+      "description": "This dog fellow is cool.",
+      "date": "10/1/2022",
+      "image": "blob:http://localhost:3000/d389e418-839f-48e1-9bd1-74bdabc14b7a",
+      "likes": [],
+      "comments": []
+    },
+    {
+      "id": 25,
+      "author": "dog",
+      "description": "cool guy video",
+      "date": "10/1/2022",
+      "image": "https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/VusrVp28x/videoblocks-portrait-of-a-happy-dog-in-nature-at-sunny-day_roq4tousi__936df1286ee316339cef6494baa53ce2__P360.mp4",
+      "likes": [],
+      "comments": []
+    },
+    {
+      "id": 26,
+      "author": "dog",
+      "description": "I am so cute!",
+      "date": "10/1/2022",
+      "image": "https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/Stw4Y28Bippgedql/videoblocks-close-up-of-female-hands-gently-petting-happy-cute-labrador-retriever-outdoors-loyal-dog-enjoying-caressing-of-her-owner-gazing-at-best-friend-with-loving-and-devoted-look-during-a-walk-in__a1132b0f42597e2627f47987b37f6406__P360.mp4",
       "likes": [],
       "comments": []
     }
