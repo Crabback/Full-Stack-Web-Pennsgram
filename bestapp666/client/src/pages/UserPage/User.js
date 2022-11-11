@@ -91,17 +91,18 @@ export default function User() {
       try{fetchData();}
       catch(err){
         console.error(err);}
-        if (stateCurrentUser.followings.includes(username)){
-          setText("Following");
-          setChecked(false);
-          setOffset(0);
-          setIsFollowing(true);
-        }else{
-          setText("Follow");
-          setChecked(true);
-          setOffset(0);
-          setIsFollowing(false);
-        }
+        
+      if (stateCurrentUser.followings.includes(username)){
+        setText("Following");
+        setChecked(false);
+        setOffset(0);
+        setIsFollowing(true);
+      }else{
+        setText("Follow");
+        setChecked(true);
+        setOffset(0);
+        setIsFollowing(false);
+      }
     }, [username]); //adding dependency making sure useEffect only run once after each render
 
 

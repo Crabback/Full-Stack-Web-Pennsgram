@@ -198,10 +198,36 @@ export const unfollowUser = async (username1, username2) =>{
 
 export const likePost = async (username, postId) =>{
     try{    
-        let post = getPost(postId);
+        let post = await getPost(postId);
         post.likes.push(username);
         const response = await axios.put(`${rootURL+'/Posts'}/${post.id}`, post);
         console.log(`successfully ${username} likes post ${postId}`);
+        return response.data;
+    }
+    catch(err){
+        console.error(err);
+    }
+}
+
+export const unlikePost = async (username, postId) =>{
+    try{    
+        let post = await getPost(postId);
+        post.likes = post.likes.filter(n => n !== username);
+        const response = await axios.put(`${rootURL+'/Posts'}/${post.id}`, post);
+        console.log(`successfully ${username} likes post ${postId}`);
+        return response.data;
+    }
+    catch(err){
+        console.error(err);
+    }
+}
+
+export const addComment = async (postId, comment) =>{
+    try{    
+        let post = await getPost(postId);
+        post.comments.push(comment);
+        const response = await axios.put(`${rootURL+'/Posts'}/${post.id}`, post);
+        console.log(`successfully comment post ${postId}`);
         return response.data;
     }
     catch(err){
