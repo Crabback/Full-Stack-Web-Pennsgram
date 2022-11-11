@@ -13,7 +13,8 @@
         "pig",
         "dog",
         "trump",
-        "obama"
+        "obama",
+        "eric"
       ],
       "avatar": "https://i.etsystatic.com/11859790/r/il/7c7ded/1275225454/il_1588xN.1275225454_ig9k.jpg",
       "posts": [
@@ -200,10 +201,14 @@
     {
       "username": "eric",
       "password": "eric123",
-      "followings": [],
+      "followings": [
+        "tiger"
+      ],
       "followers": [],
       "avatar": "https://directory.seas.upenn.edu/wp-content/uploads/2020/03/Fouh-Eric.jpg",
-      "posts": [],
+      "posts": [
+        27
+      ],
       "id": 9,
       "followerSuggestions": [
         "zanemao",
@@ -527,6 +532,15 @@
       "description": "I am so cute!",
       "date": "10/1/2022",
       "image": "https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/Stw4Y28Bippgedql/videoblocks-close-up-of-female-hands-gently-petting-happy-cute-labrador-retriever-outdoors-loyal-dog-enjoying-caressing-of-her-owner-gazing-at-best-friend-with-loving-and-devoted-look-during-a-walk-in__a1132b0f42597e2627f47987b37f6406__P360.mp4",
+      "likes": [],
+      "comments": []
+    },
+    {
+      "id": 27,
+      "author": "eric",
+      "description": "My selfie on https://ericfouh.com/",
+      "date": "10/1/2022",
+      "image": "https://ericfouh.com/assets/img/profile.jpg",
       "likes": [],
       "comments": []
     }
