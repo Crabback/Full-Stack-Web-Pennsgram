@@ -9,8 +9,9 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Image from 'react-bootstrap/Image'
-import {deletePost, getComments} from "../../api/mock_api";
+import {deletePost, getComments, deleteComment} from "../../api/mock_api";
 import { NavLink } from "react-router-dom";
+import { CommentAuthor } from "semantic-ui-react";
 
 const CustomPopup = (props) => {
     const [show, setShow] = useState(false);
@@ -52,20 +53,21 @@ const CustomPopup = (props) => {
         setDescInput( e.target.value);
     };
     
-    const handleDeleteComment = (e) =>{
+    async function handleDeleteComment(postId, cotent){
+        console.log(postId, cotent);
+        await deleteComment(postId, cotent);
     };
 
     const handleDeletePost = async (e) =>{
         await deletePost();
     }
 
-    const commentsToast = (comments?  comments : [{"author": "Void",
-                                                    "comment": "No comments",
-                                                    "mention": "@[NOT_A_USER](NOT_A_USER)"}]
+    const commentsToast = (comments?  comments : [{author: "Void",
+                                                    comment: "No comments",
+                                                    mention: "@[NOT_A_USER](NOT_A_USER)"}]
     ).map((p, idx) => {
-        console.log(p);
         return (
-        <Toast onClose={() => handleDeleteComment()} delay={3000}  className="d-inline-block m-1" bg={"light"} key={idx}>
+        <Toast onClose={(e) => handleDeleteComment(id, p.comment)} delay={1000}  className="d-inline-block m-1" bg={"light"} key={idx}>
             <Toast.Header>
                 <img src="holder.js/20x20?text=%20" className="rounded me-2" alt=""/>
                 <strong className="me-auto">{p.author}</strong>

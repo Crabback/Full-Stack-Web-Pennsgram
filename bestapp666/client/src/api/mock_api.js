@@ -251,7 +251,7 @@ export const addComment = async (postId, comment) =>{
         let post = await getPost(postId);
         post.comments.push(comment);
         const response = await axios.put(`${rootURL+'/Posts'}/${postId}`, post);
-        console.log(`successfully comment post ${postId}`);
+        console.log(`successfully comment ${comment} on post ${postId}`);
         return response.data;
     }
     catch(err){
@@ -259,12 +259,12 @@ export const addComment = async (postId, comment) =>{
     }
 }
 
-export const deleteComment = async (postId, commentAuthor) =>{
+export const deleteComment = async (postId, content) =>{
     try{    
         let post = await getPost(postId);
-        post.comments = post.comments.filter(n => n.username !== commentAuthor);
+        post.comments = post.comments.filter(n => n.comment !== content);
         const response = await axios.put(`${rootURL+'/Posts'}/${postId}`, post);
-        console.log(`successfully delete comment by ${commentAuthor} on post ${postId}`);
+        console.log(`successfully delete comment [${content}] on post ${postId}`);
         return response.data;
     }
     catch(err){

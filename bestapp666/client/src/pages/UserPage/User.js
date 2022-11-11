@@ -2,6 +2,7 @@ import "../../Styles.css";
 import React, { useState, useEffect } from "react";
 import { Footer } from "../../components/Footer";
 import ReactRoundedImage from "react-rounded-image";
+import {CardCustomedUserPage} from '../../components/CardCustomedUserPage';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
@@ -17,18 +18,17 @@ import PostPopUp from './PostPopUp.js'
 
 function CardCustomed(props){
     //props is a post fed from a following use
-    if (props.post[0]){
-      let current = props.post[0]
-      if (current.image.split(".").slice(-1) == 'mp4') {
+    if (props.post){
+      if (props.post.image.split(".").slice(-1) == 'mp4') {
         return(
           <div>
           <Card bg = "light" style={{ width: '20rem'}}>
-                <video width='290' controls> <source src={current.image} type="video/mp4"/> </video>       
+                <video width='290' controls> <source src={props.post.image} type="video/mp4"/> </video>       
             <Card.Body>
-                <Card.Text>{current.description}</Card.Text>
+                <Card.Text>{props.post.description}</Card.Text>
                 <Row>
-                  <Col> <Card.Text style={{ position: 'absolute', bottom: '0'}}> {current.likes.length} likes </Card.Text> </Col>
-                  <Col> <Card.Text style={{ position: 'absolute', bottom: '0'}}> {current.comments.length} comments </Card.Text> </Col>
+                  <Col> <Card.Text style={{ position: 'absolute', bottom: '0'}}> {props.post.likes.length} likes </Card.Text> </Col>
+                  <Col> <Card.Text style={{ position: 'absolute', bottom: '0'}}> {props.post.comments.length} comments </Card.Text> </Col>
                 </Row>
             </Card.Body>
           </Card>
@@ -38,16 +38,16 @@ function CardCustomed(props){
           return (
           <>
             <Card bg = "light" style={{ width: '20rem'}}>
-              <Card.Img variant="bottom" rounded="true" src={current.image} />
+              <Card.Img variant="bottom" rounded="true" src={props.post.image} />
               <Card.Body>
-                <Card.Text>{current.description}</Card.Text>
+                <Card.Text>{props.post.description}</Card.Text>
                 <Row>
-                  <Col> <Card.Text > {current.likes.length} likes </Card.Text> </Col>
-                  <Col> <Card.Text> {current.comments.length} comments </Card.Text> </Col>
+                  <Col> <Card.Text > {props.post.likes.length} likes </Card.Text> </Col>
+                  <Col> <Card.Text> {props.post.comments.length} comments </Card.Text> </Col>
                   <Col>
                     <Button onClick={() => {
                       props.setVisibility(true);
-                      props.setPostBeingEdited(current);
+                      props.setPostBeingEdited(props.post);
                       }}>{"edit"}</Button>
                   </Col>
                 </Row>
@@ -119,7 +119,7 @@ export default function User() {
     };
 
     const posts = ((thisUser.posts.length===0)?  [-1] : thisUser.posts).map((p)=>(
-      <CardCustomed post={allPosts.filter(n => n.id === p)} setPostBeingEdited = {setPostBeingEdited} setVisibility= {setVisibility} />
+      <CardCustomedUserPage post={allPosts.filter(n => n.id === p)[0]} setPostBeingEdited = {setPostBeingEdited} setVisibility= {setVisibility} />
     ))
 
     function ActionButton(){

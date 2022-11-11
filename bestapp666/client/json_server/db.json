@@ -59,7 +59,8 @@
       "username": "pig",
       "password": "pig123",
       "followings": [
-        "tiger"
+        "tiger",
+        "zanemao"
       ],
       "followers": [
         "tiger",
@@ -248,7 +249,8 @@
         "elon",
         "curry",
         "wwwsm",
-        "dog"
+        "dog",
+        "pig"
       ],
       "avatar": "https://img.wattpad.com/8f19b412f2223afe4288ed0904120a48b7a38ce1/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f5650722d38464e2d744a515349673d3d2d3234323931353831302e313434336539633161633764383437652e6a7067",
       "posts": [
@@ -358,23 +360,7 @@
       "likes": [
         "zanemao"
       ],
-      "comments": [
-        {
-          "author": "zanemao",
-          "comment": "zane leaves a comment test.",
-          "mention": ""
-        },
-        {
-          "author": "zanemao",
-          "comment": "look at this post, trump",
-          "mention": "@[trump](trump)"
-        },
-        {
-          "author": "zanemao",
-          "comment": "look at pigs",
-          "mention": "@[elon](elon)"
-        }
-      ]
+      "comments": []
     },
     {
       "id": 7,
@@ -535,7 +521,9 @@
       "description": "test upload",
       "date": "10/16/2022",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLOZAgX4_oFdHPuRk5Yz3oS0GGg0yA7L5-pw&usqp=CAU",
-      "likes": [],
+      "likes": [
+        "pig"
+      ],
       "comments": []
     },
     {
