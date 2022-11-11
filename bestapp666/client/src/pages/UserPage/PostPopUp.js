@@ -54,6 +54,42 @@ const CustomPopup = (props) => {
     
     const handleDeleteComment = (e) =>{
     };
+
+    const commentsToast = [
+        'Primary',
+        'Secondary',
+        'Success',
+        'Danger',
+        'Warning',
+        'Info',
+        'Light',
+        'Dark',
+    ].map((variant, idx) => {
+        
+        return (
+        <Toast
+        onClose={() => handleDeleteComment()} 
+        delay={3000} 
+        className="d-inline-block m-1"
+        bg={"light"}
+        key={idx}
+        >
+        <Toast.Header>
+            <img
+            src="holder.js/20x20?text=%20"
+            className="rounded me-2"
+            alt=""
+            />
+            <strong className="me-auto">Bootstrap</strong>
+            <small>11 mins ago</small>
+        </Toast.Header>
+        <Toast.Body >
+            {"comments? comments[0].comment : need a bug fix!!!!"} 
+        </Toast.Body>
+        </Toast>
+    )});
+
+
     return (
         <div
         style={{
@@ -94,39 +130,7 @@ const CustomPopup = (props) => {
                     <Col></Col>
                     <Col >
                         <Row>
-                            {[
-                            'Primary',
-                            'Secondary',
-                            'Success',
-                            'Danger',
-                            'Warning',
-                            'Info',
-                            'Light',
-                            'Dark',
-                        ].map((variant, idx) => {
-                            
-                            return (
-                            <Toast
-                            onClose={() => handleDeleteComment()} 
-                            delay={3000} 
-                            className="d-inline-block m-1"
-                            bg={"light"}
-                            key={idx}
-                            >
-                            <Toast.Header>
-                                <img
-                                src="holder.js/20x20?text=%20"
-                                className="rounded me-2"
-                                alt=""
-                                />
-                                <strong className="me-auto">Bootstrap</strong>
-                                <small>11 mins ago</small>
-                            </Toast.Header>
-                            <Toast.Body >
-                                {"need a bug fix!!!!"} 
-                            </Toast.Body>
-                            </Toast>
-                        )})}
+                            {commentsToast}
                         </Row>
                         
                     </Col>
