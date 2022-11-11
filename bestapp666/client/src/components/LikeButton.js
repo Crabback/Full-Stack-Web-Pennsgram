@@ -18,10 +18,10 @@ export function LikeButton(props) {
         setChecked(e.currentTarget.checked);
         if (text === "Like"){
           setText("Liked");
-          const response = await likePost(props.username, props.post.id);
+          await likePost(props.username, props.post.id);
         }else{
           setText("Like");
-          const response = await unlikePost(props.username, props.post.id);
+          await unlikePost(props.username, props.post.id);
         }
       }
 

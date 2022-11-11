@@ -83,7 +83,8 @@
       "password": "dog123",
       "followings": [
         "tiger",
-        "pig"
+        "pig",
+        "zanemao"
       ],
       "followers": [
         "tiger",
@@ -246,12 +247,12 @@
         "obama",
         "elon",
         "curry",
-        "wwwsm"
+        "wwwsm",
+        "dog"
       ],
       "avatar": "https://img.wattpad.com/8f19b412f2223afe4288ed0904120a48b7a38ce1/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f5650722d38464e2d744a515349673d3d2d3234323931353831302e313434336539633161633764383437652e6a7067",
       "posts": [
         20,
-        21,
         23
       ],
       "id": 11,
@@ -516,15 +517,6 @@
       "description": "going to watch FKJ tonight in Philly! woo",
       "date": "10/16/2022",
       "image": "https://musictech.com/wp-content/uploads/2022/07/fkj-tiny-desk@2000x1500.jpg",
-      "likes": [],
-      "comments": []
-    },
-    {
-      "id": 21,
-      "author": "zanemao",
-      "description": "try out the first video post",
-      "date": "10/16/2022",
-      "image": "https://media.w3.org/2010/05/sintel/trailer_hd.mp4",
       "likes": [],
       "comments": []
     },

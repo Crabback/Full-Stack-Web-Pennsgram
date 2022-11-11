@@ -10,64 +10,44 @@ import Button from 'react-bootstrap/Button';
 import { NavLink, useParams} from "react-router-dom";
 import {selectCurrentUser, updateCurrentUser} from './currentUserSlice'
 import { useSelector, useDispatch } from 'react-redux'
-import { getUser, getPost, getPosts, followUser, unfollowUser} from "../../api/mock_api";
+import { getUser, getPosts, followUser, unfollowUser} from "../../api/mock_api";
 import ToggleButton from 'react-bootstrap/ToggleButton';
 import PostPopUp from './PostPopUp.js'
 
 
 function CardCustomed(props){
     //props is a post fed from a following use
-    
-    
-    if (props.post){
-      if (props.post.image.split(".").slice(-1) == 'mp4') {
+    if (props.post[0]){
+      let current = props.post[0]
+      if (current.image.split(".").slice(-1) == 'mp4') {
         return(
           <div>
           <Card bg = "light" style={{ width: '20rem'}}>
-
-                <video width='290' controls autoPlay={true}>
-                  <source src={props.post.image} type="video/mp4"/>
-                </video>
-
-                      
+                <video width='290' controls> <source src={current.image} type="video/mp4"/> </video>       
             <Card.Body>
-                <Card.Text>{props.post.description}</Card.Text>
+                <Card.Text>{current.description}</Card.Text>
                 <Row>
-                  <Col>
-                    <Card.Text style={{ position: 'absolute', bottom: '0'}}> {props.post.likes.length} likes </Card.Text>
-                  </Col>
-                  <Col>
-                    <Card.Text style={{ position: 'absolute', bottom: '0'}}> {props.post.comments.length} comments </Card.Text>
-                  </Col>
+                  <Col> <Card.Text style={{ position: 'absolute', bottom: '0'}}> {current.likes.length} likes </Card.Text> </Col>
+                  <Col> <Card.Text style={{ position: 'absolute', bottom: '0'}}> {current.comments.length} comments </Card.Text> </Col>
                 </Row>
             </Card.Body>
           </Card>
-
-
           </div>
-          
-          )
+        )
         }else{
           return (
           <>
             <Card bg = "light" style={{ width: '20rem'}}>
-
-              
-              <Card.Img variant="bottom" rounded="true" src={props.post.image} />
-              
+              <Card.Img variant="bottom" rounded="true" src={current.image} />
               <Card.Body>
-                <Card.Text>{props.post.description}</Card.Text>
+                <Card.Text>{current.description}</Card.Text>
                 <Row>
-                  <Col>
-                    <Card.Text > {props.post.likes.length} likes </Card.Text>
-                  </Col>
-                  <Col>
-                    <Card.Text> {props.post.comments.length} comments </Card.Text>
-                  </Col>
+                  <Col> <Card.Text > {current.likes.length} likes </Card.Text> </Col>
+                  <Col> <Card.Text> {current.comments.length} comments </Card.Text> </Col>
                   <Col>
                     <Button onClick={() => {
                       props.setVisibility(true);
-                      props.setPostBeingEdited(props.post);
+                      props.setPostBeingEdited(current);
                       }}>{"edit"}</Button>
                   </Col>
                 </Row>
@@ -82,8 +62,7 @@ function CardCustomed(props){
                   <h2>This is my lorem ipsum text here!</h2>
                 </PostPopUp> */}
         </>
-        )
-          
+        )  
         }
     }
 }
@@ -93,11 +72,8 @@ export default function User() {
     const dispatch = useDispatch();
     // the logged-in user who is browsing page (self)
     const stateCurrentUser = useSelector(selectCurrentUser);
-  
-    // the user we are browsing (other), default self
     const [thisUser, setThisUser] = useState(stateCurrentUser);
     const [allPosts, setThisUserPosts] = useState([]);
-
     const [offset, setOffset] = useState(0);
     const [checked, setChecked] = useState(true);
     const [text, setText] = useState("Follow");
@@ -143,7 +119,7 @@ export default function User() {
     };
 
     const posts = ((thisUser.posts.length===0)?  [-1] : thisUser.posts).map((p)=>(
-      <CardCustomed post={allPosts[p]} setPostBeingEdited = {setPostBeingEdited} setVisibility= {setVisibility} />
+      <CardCustomed post={allPosts.filter(n => n.id === p)} setPostBeingEdited = {setPostBeingEdited} setVisibility= {setVisibility} />
     ))
 
     function ActionButton(){
@@ -168,30 +144,20 @@ export default function User() {
       if (username === stateCurrentUser.username){
         return(
           <NavLink to="/upload"> 
-            <Button>
-              New Post
-            </Button>
+            <Button> New Post </Button>
           </NavLink>
           )
       }else if(stateCurrentUser.username!=="NOT_A_USER"){
           return(
-            <ToggleButton
-            className="mb-2"
-            id="toggle-check"
-            type="checkbox"
-            variant="outline-primary"
-            data-testid="followingButton"
-            checked={checked}
-            onChange={handleFollow}>
+            <ToggleButton className="mb-2" id="toggle-check" type="checkbox" variant="outline-primary"
+            data-testid="followingButton" checked={checked} onChange={handleFollow}>
               {text}
             </ToggleButton>  
           )
       }else{
         return (
           <NavLink to="/login"> 
-            <Button>
-              Login to Follow
-            </Button>
+            <Button> Login to Follow </Button>
           </NavLink>
         )
       }
@@ -214,38 +180,29 @@ export default function User() {
       </div>
       <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
         <Row>
-        <Col>
-        <NavLink to={"/followinglist/"+thisUser.username} style={{ textDecoration: "none"}}> {thisUser.followings.length} Following </NavLink>
-        </Col>
-        <Col>
-        <NavLink to={"/followerlist/"+thisUser.username} style={{ textDecoration: "none"}}> {thisUser.followers.length + offset} Followers </NavLink>
-        </Col>
+          <Col> <NavLink to={"/followinglist/"+thisUser.username} style={{ textDecoration: "none"}}> {thisUser.followings.length} Following </NavLink> </Col>
+          <Col> <NavLink to={"/followerlist/"+thisUser.username} style={{ textDecoration: "none"}}> {thisUser.followers.length + offset} Followers </NavLink> </Col>
         </Row>
       </div>
+
       <Container>
-          <Col sm={{span : 4, offset: 11}} style={{
-            paddingBottom: '2rem', 
-            paddingTop: '2rem'}}>
-              <ActionButton />
+          <Col sm={{span : 4, offset: 11}} style={{paddingBottom: '2rem', paddingTop: '2rem'}}>
+            <ActionButton />
           </Col>
           <Col sm={15}>
-              <Row> {posts} </Row>
+            <Row> {posts} </Row>
           </Col>
       </Container>
       
-      <div style={{paddingLeft: "2rem"}}>
-          <Footer />
-      </div>
-
-
-      <PostPopUp
-          post = {postBeingEdited}
-          onClose={popupCloseHandler}
-          show={visibility}
-        >
+      <PostPopUp post = {postBeingEdited} onClose={popupCloseHandler} show={visibility} >
           <h1>Hello This is Popup Content Area</h1>
           <h2>This is my lorem ipsum text here!</h2>
       </PostPopUp>
+
+
+      <div style={{paddingLeft: "2rem"}}>
+          <Footer />
+      </div>
     </div>
   );
 }

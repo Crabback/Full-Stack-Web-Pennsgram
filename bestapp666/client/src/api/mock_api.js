@@ -74,10 +74,37 @@ export const createNewUser = async (userObject) =>{
     }
 }
 
-export const getPosts = async () =>{
-    try{
-        const response = await axios.get(`${rootURL+'/Posts'}`);
-        return response.data;
+export const followUser = async (username1, username2) =>{
+    try{    
+        const response1 = await axios.get(`${rootURL+'/Users'}?username=${username1}`);
+        const response2 = await axios.get(`${rootURL+'/Users'}?username=${username2}`);
+        let user1 = response1.data[0];
+        let user2 = response2.data[0];
+        user1.followings.push(username2);
+        user2.followers.push(username1);
+        const responseReturn = await axios.put(`${rootURL+'/Users'}/${user1.id}`, user1);
+        await axios.put(`${rootURL+'/Users'}/${user2.id}`, user2);
+        //get the fetched data's username
+        console.log(`successfully ${username1} follows ${username2}`);
+        return responseReturn.data;
+    }
+    catch(err){
+        console.error(err);
+    }
+}
+
+export const unfollowUser = async (username1, username2) =>{
+    try{    
+        const response1 = await axios.get(`${rootURL+'/Users'}?username=${username1}`);
+        const response2 = await axios.get(`${rootURL+'/Users'}?username=${username2}`);
+        let user1 = response1.data[0]
+        let user2 = response2.data[0]
+        user1.followings = user1.followings.filter(n => n !== username2);
+        user2.followers = user2.followers.filter(n => n !== username1);
+        const responseReturn = await axios.put(`${rootURL+'/Users'}/${user1.id}`, user1);
+        await axios.put(`${rootURL+'/Users'}/${user2.id}`, user2);
+        console.log(`successfully ${username1} unfollows ${username2}`);
+        return responseReturn.data;
     }
     catch(err){
         console.error(err);
@@ -87,6 +114,16 @@ export const getPosts = async () =>{
 
 ///////////// Posts API //////////////
 
+
+export const getPosts = async () =>{
+    try{
+        const response = await axios.get(`${rootURL+'/Posts'}`);
+        return response.data;
+    }
+    catch(err){
+        console.error(err);
+    }
+}
 
 export const getPost = async (postId) =>{
     try{    
@@ -172,43 +209,6 @@ export const deletePost = async (postId) => {
     }
 }
 
-export const followUser = async (username1, username2) =>{
-    try{    
-        const response1 = await axios.get(`${rootURL+'/Users'}?username=${username1}`);
-        const response2 = await axios.get(`${rootURL+'/Users'}?username=${username2}`);
-        let user1 = response1.data[0];
-        let user2 = response2.data[0];
-        user1.followings.push(username2);
-        user2.followers.push(username1);
-        const responseReturn = await axios.put(`${rootURL+'/Users'}/${user1.id}`, user1);
-        await axios.put(`${rootURL+'/Users'}/${user2.id}`, user2);
-        //get the fetched data's username
-        console.log(`successfully ${username1} follows ${username2}`);
-        return responseReturn.data;
-    }
-    catch(err){
-        console.error(err);
-    }
-}
-
-export const unfollowUser = async (username1, username2) =>{
-    try{    
-        const response1 = await axios.get(`${rootURL+'/Users'}?username=${username1}`);
-        const response2 = await axios.get(`${rootURL+'/Users'}?username=${username2}`);
-        let user1 = response1.data[0]
-        let user2 = response2.data[0]
-        user1.followings = user1.followings.filter(n => n !== username2);
-        user2.followers = user2.followers.filter(n => n !== username1);
-        const responseReturn = await axios.put(`${rootURL+'/Users'}/${user1.id}`, user1);
-        await axios.put(`${rootURL+'/Users'}/${user2.id}`, user2);
-        console.log(`successfully ${username1} unfollows ${username2}`);
-        return responseReturn.data;
-    }
-    catch(err){
-        console.error(err);
-    }
-}
-
 export const likePost = async (username, postId) =>{
     try{    
         let post = await getPost(postId);
@@ -235,12 +235,36 @@ export const unlikePost = async (username, postId) =>{
     }
 }
 
+export const getComments = async (postId) =>{
+    try{    
+        let post = await getPost(postId);
+        console.log(`successfully comment post ${post.comments}`);
+        return post.comments;
+    }
+    catch(err){
+        console.error(err);
+    }
+}
+
 export const addComment = async (postId, comment) =>{
     try{    
         let post = await getPost(postId);
         post.comments.push(comment);
-        const response = await axios.put(`${rootURL+'/Posts'}/${post.id}`, post);
+        const response = await axios.put(`${rootURL+'/Posts'}/${postId}`, post);
         console.log(`successfully comment post ${postId}`);
+        return response.data;
+    }
+    catch(err){
+        console.error(err);
+    }
+}
+
+export const deleteComment = async (postId, commentAuthor) =>{
+    try{    
+        let post = await getPost(postId);
+        post.comments = post.comments.filter(n => n.username !== commentAuthor);
+        const response = await axios.put(`${rootURL+'/Posts'}/${postId}`, post);
+        console.log(`successfully delete comment by ${commentAuthor} on post ${postId}`);
         return response.data;
     }
     catch(err){
