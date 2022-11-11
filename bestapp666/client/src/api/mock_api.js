@@ -19,16 +19,6 @@ export const getUsers = async () =>{
     }
 }
 
-export const getPosts = async () =>{
-    try{
-        const response = await axios.get(`${rootURL+'/Posts'}`);
-        return response.data;
-    }
-    catch(err){
-        console.error(err);
-    }
-}
-
 // Takes the username of a user as input
 // and sends a Get request to the /user:id endpoint
 // returns the attributes of the user
@@ -68,6 +58,35 @@ export const getUsersAsList = async (usernames) =>{
         console.error(err);
     }
 }
+
+// Takes a user (without the id) as input
+// and sends a POST request to the /user endpoint
+// returns the attributes of the user with the id
+export const createNewUser = async (userObject) =>{
+    try{    
+        const response = await axios.post(`${rootURL+'/Users'}`, userObject);
+        console.log(`username=${userObject.username}&password=${userObject.password}&followings=${userObject.followings}&followers=${userObject.followers}&avatar=${userObject.avatar}&posts=${userObject.posts}`);
+        return response.data; 
+        // return the data with the id of the user
+    }
+    catch(err){
+        console.error(err);
+    }
+}
+
+export const getPosts = async () =>{
+    try{
+        const response = await axios.get(`${rootURL+'/Posts'}`);
+        return response.data;
+    }
+    catch(err){
+        console.error(err);
+    }
+}
+
+
+///////////// Posts API //////////////
+
 
 export const getPost = async (postId) =>{
     try{    
@@ -122,20 +141,7 @@ export const getLastestPostOfAUser = async (username) => {
     return latestPost;
 }
 
-// Takes a user (without the id) as input
-// and sends a POST request to the /user endpoint
-// returns the attributes of the user with the id
-export const createNewUser = async (userObject) =>{
-    try{    
-        const response = await axios.post(`${rootURL+'/Users'}`, userObject);
-        console.log(`username=${userObject.username}&password=${userObject.password}&followings=${userObject.followings}&followers=${userObject.followers}&avatar=${userObject.avatar}&posts=${userObject.posts}`);
-        return response.data; 
-        // return the data with the id of the user
-    }
-    catch(err){
-        console.error(err);
-    }
-}
+
 
 export const createNewPost = async (username, postObject) =>{
     try{    
