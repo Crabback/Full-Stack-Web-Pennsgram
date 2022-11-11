@@ -53,7 +53,7 @@ export function CardCustomedUserPage(props) {
               <Card.Body>
                 <Card.Text>{props.post.description} </Card.Text>
                 
-                <Row>
+                <Row style={{paddingBottom: "1rem"}}>
                   <Col> <Card.Text > {props.post.likes.length} likes </Card.Text> </Col>
                   <Col> <Card.Text> {props.post.comments.length} comments </Card.Text> </Col>
                 </Row>
