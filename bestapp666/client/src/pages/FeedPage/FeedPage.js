@@ -10,7 +10,7 @@ import ReactRoundedImage from "react-rounded-image";
 import { NavLink } from "react-router-dom";
 import { useSelector} from 'react-redux'
 import {selectCurrentUser} from '../UserPage/currentUserSlice'
-import { getPosts, getUsersAsList } from "../../api/mock_api";
+import { getUsersAsList, getLastestPostOfAUser, getPost, getUser } from "../../api/mock_api";
 import { Nav } from 'react-bootstrap';
 
 //define a inside components
@@ -87,22 +87,36 @@ export default function FeedPage() {
   // get followings of the current user
     const stateCurrentUser = useSelector(selectCurrentUser);
     let followingsUsernames = stateCurrentUser.followings;
-    const [followingsObjects, setFollowings] = useState([]);
-    const [allPosts, setThisUserPosts] = useState([]);
+    const [feedPostOfUser, setFeedPostOfUser] = useState([]);
+    const [popularPostsNearby, setPopularPostsNearby] = useState([]);
 
     useEffect(() => {
       async function fetchData() {
         const userObjects = await getUsersAsList(followingsUsernames);
-        let output2 = await getPosts();
-        setThisUserPosts(output2);
-
+        
         //remove user who has no post
         const userObjectsFiltered = userObjects.filter((object)=>{
             return object.posts.length !==0;
           });
-    
-        console.log(userObjectsFiltered);
-        setFollowings(userObjectsFiltered);
+
+        // map the object to it's latest post
+        const followingsLatestPost = await Promise.all(userObjectsFiltered.map(async (o) => {
+          //return the largest(most recent) ID
+          let postObject = await getLastestPostOfAUser(o.username);
+          return postObject;
+        }))
+        setFeedPostOfUser(followingsLatestPost);
+
+        // fetch popular post
+        // get the popular post 
+        const popularPosts = await Promise.all([1,10,3,12].map(async (id) => {
+          const post = await getPost(id);
+          const userResponse = await getUser(post.author);
+          const author = userResponse[0];
+          post.avatar = author.avatar;
+          return post;
+        }));
+        setPopularPostsNearby(popularPosts);
       }
       try{
         fetchData();
@@ -113,23 +127,17 @@ export default function FeedPage() {
       
     }, []); //adding empty dependency making sure useEffect only run once after each render
   
-  const followingsLatestPost = followingsObjects.map((o)=>{
-    //return the largest(most recent) ID
-    const postObject = o.posts.sort(function(a, b){return b - a})[0];
-    //adding one more avatar field for this post
-    //postObject.avatar = o.avatar;
-    return postObject;
-  })
 
-  const card = ((followingsObjects.length===0) ?[1, 2, 3]:followingsLatestPost).map((p) => (
-    <CardCustomed post={allPosts[p]}/>
+
+  const cards = ((feedPostOfUser.length===0) ? popularPostsNearby:feedPostOfUser).map((p) => (
+    <CardCustomed post={p}/>
   ))
 
   return (
     <div className='background'>
     
     <Stack gap={2} className="col-md-6 mx-auto">
-        {card}
+        {cards}
     </Stack>
     
     </div>

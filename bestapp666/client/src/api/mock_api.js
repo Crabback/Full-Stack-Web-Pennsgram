@@ -73,16 +73,53 @@ export const getPost = async (postId) =>{
     try{    
         const response = await axios.get(`${rootURL+'/Posts'}?id=${postId}`);
         //get the fetched data's username
-        let fetchedUsername;
-        response.data.forEach(element => {
-            fetchedUsername = element.username;
-        });
+        // let fetchedUsername;
+        // response.data.forEach(element => {
+        //     fetchedUsername = element.username;
+        // });
         console.log(`successfully getPost by id: object with id: ${postId}`);
+        console.log("post being fetched: author = ", response.data[0].author);
         return response.data[0];
     }
     catch(err){
         console.error(err);
     }
+}
+
+/**
+ * get the latest post of a user specified by a username
+ * @param {*} username 
+ * return: the latest post of this user with an added field: the user's avatar
+ * being called by FeedPage
+ */
+export const getLastestPostOfAUser = async (username) => {
+    let user = null;
+    try{
+        // try to get a user with username
+        user = await getUser(username);
+        user = user[0];
+    }catch(err){
+        console.log("getUser() failed: username may not be valid ")
+        console.error(err);
+    }
+    if(!user) return {};
+    const userPostIdList = user.posts;
+    const latestId = Math.max(...userPostIdList);
+    // get the post with the latest id of this user
+    let latestPost = {};
+    try{
+        // try to get a post with id
+        latestPost = await getPost(latestId);
+
+        //adding one more avatar field for this post
+        latestPost.avatar = user.avatar;
+
+    }catch(err){
+        console.log("getPost() failed: wrong post id being passed in ")
+        console.error(err);
+    }
+    
+    return latestPost;
 }
 
 // Takes a user (without the id) as input

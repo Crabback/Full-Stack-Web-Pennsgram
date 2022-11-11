@@ -13,12 +13,12 @@
         "pig",
         "dog",
         "trump",
-        "obama"
+        "obama",
+        "eric"
       ],
       "avatar": "https://i.etsystatic.com/11859790/r/il/7c7ded/1275225454/il_1588xN.1275225454_ig9k.jpg",
       "posts": [
-        1,
-        2
+        1, 2
       ]
     },
     {
@@ -40,8 +40,7 @@
       ],
       "avatar": "https://thumbs.dreamstime.com/b/caricature-presidential-candidate-donald-trump-character-portrait-giving-speech-70328509.jpg",
       "posts": [
-        3,
-        4
+        3, 4
       ]
     },
     {
@@ -58,8 +57,7 @@
       ],
       "avatar": "https://cdn5.vectorstock.com/i/1000x1000/36/94/simple-cartoon-of-a-cute-pig-vector-18823694.jpg",
       "posts": [
-        5,
-        6
+        5, 6
       ]
     },
     {
@@ -78,8 +76,7 @@
       ],
       "avatar": "https://images.wagwalkingweb.com/media/daily_wag/name_guides/cartoon-dog-names/featured_dog/snoopy.jpg?auto=compress&fit=max",
       "posts": [
-        7,
-        8
+        7, 8
       ]
     },
     {
@@ -98,8 +95,7 @@
       ],
       "avatar": "https://i.pinimg.com/originals/61/25/d0/6125d09a0893c8a62f6913315da01fe4.jpg",
       "posts": [
-        9,
-        10
+        9, 10
       ]
     },
     {
@@ -115,8 +111,7 @@
       ],
       "avatar": "https://64.media.tumblr.com/f45de30a0418125d8aa69952a3e657f2/tumblr_osolosRBGm1riow3xo1_1280.png",
       "posts": [
-        11,
-        12
+        11, 12
       ]
     },
     {
@@ -137,11 +132,7 @@
       ],
       "avatar": "https://i.pinimg.com/236x/78/5e/58/785e5866f2503e3b15cde205ff0158d2--obama-art-barack-obama.jpg",
       "posts": [
-        13,
-        14,
-        15,
-        16,
-        17
+        13, 14, 15, 16, 17
       ]
     },
     {
@@ -156,16 +147,30 @@
       ],
       "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Elon_Musk_Royal_Society_(crop2).jpg/440px-Elon_Musk_Royal_Society_(crop2).jpg",
       "posts": [],
-      "id": 8
+      "id": 8,
+      "followerSuggestions": [
+        "ayesha",
+        "curry",
+        "pig"
+      ]
     },
     {
       "username": "eric",
       "password": "eric123",
-      "followings": [],
+      "followings": [
+        "tiger"
+      ],
       "followers": [],
       "avatar": "https://directory.seas.upenn.edu/wp-content/uploads/2020/03/Fouh-Eric.jpg",
-      "posts": [],
-      "id": 9
+      "posts": [
+        27
+      ],
+      "id": 9,
+      "followerSuggestions": [
+        "zanemao",
+        "curry",
+        "wwwsm"
+      ]
     },
     {
       "username": "taylor",
@@ -174,10 +179,14 @@
       "followers": [],
       "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/191125_Taylor_Swift_at_the_2019_American_Music_Awards_(cropped).png/440px-191125_Taylor_Swift_at_the_2019_American_Music_Awards_(cropped).png",
       "posts": [
-        18,
-        19
+        18, 19
       ],
-      "id": 10
+      "id": 10,
+      "followerSuggestions": [
+        "zanemao",
+        "curry",
+        "wwwsm"
+      ]
     },
     {
       "username": "zanemao",
@@ -196,11 +205,12 @@
       ],
       "avatar": "https://img.wattpad.com/8f19b412f2223afe4288ed0904120a48b7a38ce1/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f5650722d38464e2d744a515349673d3d2d3234323931353831302e313434336539633161633764383437652e6a7067",
       "posts": [
-        20,
-        21,
-        23
+        20, 21, 23
       ],
-      "id": 11
+      "id": 11,
+      "followerSuggestions": [
+        "dog"
+      ]
     },
     {
       "username": "",
@@ -209,7 +219,12 @@
       "followers": [],
       "avatar": "https://img.wattpad.com/8f19b412f2223afe4288ed0904120a48b7a38ce1/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f5650722d38464e2d744a515349673d3d2d3234323931353831302e313434336539633161633764383437652e6a7067",
       "posts": [],
-      "id": 12
+      "id": 12,
+      "followerSuggestions": [
+        "zanemao",
+        "curry",
+        "wwwsm"
+      ]
     },
     {
       "username": "wwwsm",
@@ -223,7 +238,10 @@
       "posts": [
         22
       ],
-      "id": 14
+      "id": 14,
+      "followerSuggestions": [
+        "curry"
+      ]
     }
   ],
   "Posts": [
@@ -440,6 +458,42 @@
       "description": "test upload",
       "date": "10/16/2022",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLOZAgX4_oFdHPuRk5Yz3oS0GGg0yA7L5-pw&usqp=CAU",
+      "likes": [],
+      "comments": []
+    },
+    {
+      "id": 24,
+      "author": "dog",
+      "description": "This dog fellow is cool.",
+      "date": "10/1/2022",
+      "image": "blob:http://localhost:3000/d389e418-839f-48e1-9bd1-74bdabc14b7a",
+      "likes": [],
+      "comments": []
+    },
+    {
+      "id": 25,
+      "author": "dog",
+      "description": "cool guy video",
+      "date": "10/1/2022",
+      "image": "https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/VusrVp28x/videoblocks-portrait-of-a-happy-dog-in-nature-at-sunny-day_roq4tousi__936df1286ee316339cef6494baa53ce2__P360.mp4",
+      "likes": [],
+      "comments": []
+    },
+    {
+      "id": 26,
+      "author": "dog",
+      "description": "I am so cute!",
+      "date": "10/1/2022",
+      "image": "https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/Stw4Y28Bippgedql/videoblocks-close-up-of-female-hands-gently-petting-happy-cute-labrador-retriever-outdoors-loyal-dog-enjoying-caressing-of-her-owner-gazing-at-best-friend-with-loving-and-devoted-look-during-a-walk-in__a1132b0f42597e2627f47987b37f6406__P360.mp4",
+      "likes": [],
+      "comments": []
+    },
+    {
+      "id": 27,
+      "author": "eric",
+      "description": "My selfie on https://ericfouh.com/",
+      "date": "10/1/2022",
+      "image": "https://ericfouh.com/assets/img/profile.jpg",
       "likes": [],
       "comments": []
     }
