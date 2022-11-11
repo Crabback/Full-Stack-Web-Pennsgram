@@ -391,7 +391,23 @@
       "date": "10/16/2022",
       "image": "http://images.randomhouse.com/cover/9780736431828?&alt=sir.jpg",
       "likes": [],
-      "comments": []
+      "comments": [
+        {
+          "author": "zanemao",
+          "comment": "zane leaves a comment test.",
+          "mention": ""
+        },
+        {
+          "author": "zanemao",
+          "comment": "look at this post, trump",
+          "mention": "@[trump](trump)"
+        },
+        {
+          "author": "zanemao",
+          "comment": "look at pigs",
+          "mention": "@[elon](elon)"
+        }
+      ]
     },
     {
       "id": 9,

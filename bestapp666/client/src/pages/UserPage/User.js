@@ -67,8 +67,8 @@ function CardCustomed(props){
                   <Col>
                     <Button onClick={() => {
                       props.setVisibility(true);
-                      props.setUserBeingEdited(props.post);
-                      }}>{"=>"}</Button>
+                      props.setPostBeingEdited(props.post);
+                      }}>{"edit"}</Button>
                   </Col>
                 </Row>
               </Card.Body>
@@ -137,13 +137,13 @@ export default function User() {
 
     // for post edit pop up
     const [visibility, setVisibility] = useState(false);
-    const [userBeingEdited, setUserBeingEdited] = useState({});
+    const [postBeingEdited, setPostBeingEdited] = useState({});
     const popupCloseHandler = () => {
       setVisibility(false);
     };
 
     const posts = ((thisUser.posts.length===0)?  [-1] : thisUser.posts).map((p)=>(
-      <CardCustomed post={allPosts[p]} setVisibility= {setVisibility} setUserBeingEdited = {setUserBeingEdited}/>
+      <CardCustomed post={allPosts[p]} setPostBeingEdited = {setPostBeingEdited} setVisibility= {setVisibility} />
     ))
 
     function ActionButton(){
@@ -239,9 +239,9 @@ export default function User() {
 
 
       <PostPopUp
+          post = {postBeingEdited}
           onClose={popupCloseHandler}
           show={visibility}
-          title="Hello Jeetendra"
         >
           <h1>Hello This is Popup Content Area</h1>
           <h2>This is my lorem ipsum text here!</h2>

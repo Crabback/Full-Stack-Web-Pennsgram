@@ -10,11 +10,12 @@
     transition: opacity 500ms;
   }
   .popup {
-    margin: 300px auto;
-    padding: 300px;
+    margin: 200px auto;
+    padding: 50px;
     background: #fff;
     border-radius: 5px;
-    width: 80%;
+    width: 1100px;
+    height: 1000px;
     position: relative;
     transition: all 5s ease-in-out;
   }
@@ -27,22 +28,43 @@
   .popup .close {
     position: absolute;
     top: 20px;
-    right: 30px;
-    transition: all 200ms;
+    right: 25px;
+    transition: all 20ms;
     font-size: 30px;
     font-weight: bold;
     text-decoration: none;
     color: #333;
   }
+
+  .popup .done {
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    transition: all 20ms;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: rgb(16, 120, 210);
+  }
+
   .popup .close:hover {
     cursor: pointer;
     color: #000;
   }
   .popup .content {
-    max-height: 30%;
+    height: 90%;
+    width: 100;
     overflow: auto;
   }
   
+  .popup .image {
+    display: block;
+    max-height:400px;
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+  }
+
   @media screen and (max-width: 700px) {
     .popup {
       width: 70%;
