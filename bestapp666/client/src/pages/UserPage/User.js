@@ -13,7 +13,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { getUser, getPost, getPosts, followUser, unfollowUser} from "../../api/mock_api";
 import ToggleButton from 'react-bootstrap/ToggleButton';
 import PostPopUp from './PostPopUp.js'
-import Popup from 'reactjs-popup';
+
 
 function CardCustomed(props){
     //props is a post fed from a following use
