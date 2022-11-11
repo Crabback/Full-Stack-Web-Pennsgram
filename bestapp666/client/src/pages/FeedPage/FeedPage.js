@@ -12,6 +12,8 @@ import ReactRoundedImage from "react-rounded-image";
 import { NavLink } from "react-router-dom";
 import { useSelector} from 'react-redux'
 import { useNavigate } from "react-router-dom";
+import ListGroup from 'react-bootstrap/ListGroup';
+
 
 import {selectCurrentUser} from '../UserPage/currentUserSlice'
 import { addComment, getUsersAsList, getLastestPostOfAUser, getPost, getUser } from "../../api/mock_api";
@@ -206,12 +208,30 @@ export default function FeedPage() {
     <CardCustomed post={p} username={stateCurrentUser.username}/>
   ))
 
+  let userlist =  stateCurrentUser.followerSuggestions.map((p) => (
+    <ListGroup.Item as="li" >
+      <NavLink to={"/user/"+p} className="button_text">
+        {p}
+      </NavLink>
+    </ListGroup.Item>    ))
+
   return (
     <div className='background'>
     
-    <Stack gap={2} className="col-md-6 mx-auto">
-        {cards}
-    </Stack>
+    <Row>
+      <Col style={{paddingLeft: "20%"}}>
+        <Stack gap={2} className="col-md-6 mx-auto">
+          {cards}
+        </Stack>
+      </Col>
+      <Col style={{paddingLeft: "20%", paddingRight: "10%", paddingBottom: "2rem"}}>
+        <h3 style={{paddingBottom: "2rem"}}> Recommended Users to Follow </h3>
+        <ListGroup as="ul" defaultActiveKey="#link1">
+        {userlist}
+        </ListGroup>
+      </Col>
+    </Row>
+
     
     </div>
   );
