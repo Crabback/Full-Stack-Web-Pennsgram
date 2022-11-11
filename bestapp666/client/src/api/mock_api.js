@@ -78,7 +78,7 @@ export const getPost = async (postId) =>{
         //     fetchedUsername = element.username;
         // });
         console.log(`successfully getPost by id: object with id: ${postId}`);
-        console.log(response.data[0])
+        console.log("post being fetched: author = ", response.data[0].author);
         return response.data[0];
     }
     catch(err){
@@ -89,7 +89,8 @@ export const getPost = async (postId) =>{
 /**
  * get the latest post of a user specified by a username
  * @param {*} username 
- * return: the latest post of this user
+ * return: the latest post of this user with an added field: the user's avatar
+ * being called by FeedPage
  */
 export const getLastestPostOfAUser = async (username) => {
     let user = null;
@@ -109,6 +110,10 @@ export const getLastestPostOfAUser = async (username) => {
     try{
         // try to get a post with id
         latestPost = await getPost(latestId);
+
+        //adding one more avatar field for this post
+        latestPost.avatar = user.avatar;
+
     }catch(err){
         console.log("getPost() failed: wrong post id being passed in ")
         console.error(err);

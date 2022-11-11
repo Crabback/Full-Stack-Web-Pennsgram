@@ -10,7 +10,7 @@ import ReactRoundedImage from "react-rounded-image";
 import { NavLink } from "react-router-dom";
 import { useSelector} from 'react-redux'
 import {selectCurrentUser} from '../UserPage/currentUserSlice'
-import { getUsersAsList, getLastestPostOfAUser, getPost } from "../../api/mock_api";
+import { getUsersAsList, getLastestPostOfAUser, getPost, getUser } from "../../api/mock_api";
 import { Nav } from 'react-bootstrap';
 
 //define a inside components
@@ -103,16 +103,17 @@ export default function FeedPage() {
         const followingsLatestPost = await Promise.all(userObjectsFiltered.map(async (o) => {
           //return the largest(most recent) ID
           let postObject = await getLastestPostOfAUser(o.username);
-          //adding one more avatar field for this post
-          postObject.avatar = o.avatar;
           return postObject;
         }))
         setFeedPostOfUser(followingsLatestPost);
 
         // fetch popular post
         // get the popular post 
-        const popularPosts = await Promise.all([1,2,3].map(async (id) => {
+        const popularPosts = await Promise.all([1,10,3,12].map(async (id) => {
           const post = await getPost(id);
+          const userResponse = await getUser(post.author);
+          const author = userResponse[0];
+          post.avatar = author.avatar;
           return post;
         }));
         setPopularPostsNearby(popularPosts);
