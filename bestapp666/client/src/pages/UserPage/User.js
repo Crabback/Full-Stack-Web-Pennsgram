@@ -12,19 +12,17 @@ import {selectCurrentUser, updateCurrentUser} from './currentUserSlice'
 import { useSelector, useDispatch } from 'react-redux'
 import { getUser, getPost, getPosts, followUser, unfollowUser} from "../../api/mock_api";
 import ToggleButton from 'react-bootstrap/ToggleButton';
+import PostPopUp from './PostPopUp.js'
 import Popup from 'reactjs-popup';
 
 function CardCustomed(props){
     //props is a post fed from a following use
+    
+    
     if (props.post){
       if (props.post.image.split(".").slice(-1) == 'mp4') {
         return(
           <div>
-            <Popup trigger={<button>  </button>} position="right center">
-            <div>GeeksforGeeks</div>
-            <button>Click here</button>
-           </Popup>
-   
           <Card bg = "light" style={{ width: '20rem'}}>
 
                 <video width='290' controls autoPlay={true}>
@@ -44,41 +42,54 @@ function CardCustomed(props){
                 </Row>
             </Card.Body>
           </Card>
+
+
           </div>
           
           )
         }else{
           return (
+          <>
             <Card bg = "light" style={{ width: '20rem'}}>
-              <Popup 
-              trigger={
-                <button> 
-                  <Card.Img variant="bottom" rounded="true" src={props.post.image} />
-                </button>} 
-              className="popup_inner"
-              position="right center">
-                      <div>GeeksforGeeks</div>
-                      <button>Click here</button>
-              </Popup>
+
+              
+              <Card.Img variant="bottom" rounded="true" src={props.post.image} />
               
               <Card.Body>
                 <Card.Text>{props.post.description}</Card.Text>
                 <Row>
                   <Col>
-                    <Card.Text style={{ position: 'absolute', bottom: '0'}}> {props.post.likes.length} likes </Card.Text>
+                    <Card.Text > {props.post.likes.length} likes </Card.Text>
                   </Col>
                   <Col>
-                    <Card.Text style={{ position: 'absolute', bottom: '0'}}> {props.post.comments.length} comments </Card.Text>
+                    <Card.Text> {props.post.comments.length} comments </Card.Text>
+                  </Col>
+                  <Col>
+                    <Button onClick={() => {
+                      props.setVisibility(true);
+                      props.setUserBeingEdited(props.post);
+                      }}>{"=>"}</Button>
                   </Col>
                 </Row>
               </Card.Body>
             </Card>
-            )
+            {/* <PostPopUp
+                  onClose={popupCloseHandler}
+                  show={visibility}
+                  title="Hello Jeetendra"
+                >
+                  <h1>Hello This is Popup Content Area</h1>
+                  <h2>This is my lorem ipsum text here!</h2>
+                </PostPopUp> */}
+        </>
+        )
+          
         }
     }
 }
 
 export default function User() {
+    
     const dispatch = useDispatch();
     // the logged-in user who is browsing page (self)
     const stateCurrentUser = useSelector(selectCurrentUser);
@@ -124,8 +135,15 @@ export default function User() {
     }, [username]); //adding dependency making sure useEffect only run once after each render
 
 
+    // for post edit pop up
+    const [visibility, setVisibility] = useState(false);
+    const [userBeingEdited, setUserBeingEdited] = useState({});
+    const popupCloseHandler = () => {
+      setVisibility(false);
+    };
+
     const posts = ((thisUser.posts.length===0)?  [-1] : thisUser.posts).map((p)=>(
-      <CardCustomed post={allPosts[p]}/>
+      <CardCustomed post={allPosts[p]} setVisibility= {setVisibility} setUserBeingEdited = {setUserBeingEdited}/>
     ))
 
     function ActionButton(){
@@ -219,6 +237,15 @@ export default function User() {
           <Footer />
       </div>
 
+
+      <PostPopUp
+          onClose={popupCloseHandler}
+          show={visibility}
+          title="Hello Jeetendra"
+        >
+          <h1>Hello This is Popup Content Area</h1>
+          <h2>This is my lorem ipsum text here!</h2>
+      </PostPopUp>
     </div>
   );
 }
