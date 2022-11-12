@@ -322,7 +322,9 @@
       "description": "This is my friend Pig!.",
       "date": "10/16/2022",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSArC7oN3AWH3h8qHv5PYNoOrnKXdBMPph9JQ&usqp=CAU",
-      "likes": [],
+      "likes": [
+        "dog"
+      ],
       "comments": []
     },
     {
@@ -526,15 +528,6 @@
       "likes": [
         "pig"
       ],
-      "comments": []
-    },
-    {
-      "id": 24,
-      "author": "dog",
-      "description": "This dog fellow is cool.",
-      "date": "10/1/2022",
-      "image": "blob:http://localhost:3000/d389e418-839f-48e1-9bd1-74bdabc14b7a",
-      "likes": [],
       "comments": []
     },
     {
