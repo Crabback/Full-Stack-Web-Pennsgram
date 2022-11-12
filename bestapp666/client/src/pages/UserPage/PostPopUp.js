@@ -56,15 +56,18 @@ const CustomPopup = (props) => {
     async function handleDeleteComment(postId, content){
         console.log(postId, content);
         await deleteComment(postId, content);
+        alert("Delete Successful! Please re-enter this page to see the change.")
     };
 
     async function handleDeletePost(postId){
         await deletePost(postId);
+        alert("Delete Successful! Please re-enter this page to see the change.")
     };
 
     const handleUpdate = async (e) => {
         e.preventDefault();
         await updatePost(id, media, descInput);
+        alert("Update Successful! Please re-enter this page to see the change.")
     };
 
     function addDefaultImgSrc(ev){

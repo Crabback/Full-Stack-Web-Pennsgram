@@ -62,7 +62,7 @@ function Layout(){
               <Nav.Item> <NavLink to="/register" className='headers'>Sign up</NavLink></Nav.Item>
               {/* handle login to logout */}
               <Nav.Item> <LoginLink /> </Nav.Item>
-              <Nav.Item> <NavLink to="" className='headers'>About</NavLink></Nav.Item>
+              <Nav.Item> <NavLink to="" className='headers'>Home</NavLink></Nav.Item>
               <Nav.Item> <NavLink eventKey="disabled" className='headers' disabled> Contact Us </NavLink> </Nav.Item>
             </Nav>
           </Col>

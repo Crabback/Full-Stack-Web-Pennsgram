@@ -41,9 +41,6 @@ export function CardCustomed(props) {
       setDescInput('');
       setMentionInput('');
     }
-      async function handleLikeNum(e) {
-          setOffset(1);
-      }
 
       if (props.post) {
         if(props.post.image.split(".").slice(-1) == 'mp4'){
