@@ -5,7 +5,7 @@ import { getByDisplayValue, render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import userEvent from "@testing-library/user-event";
 import { BrowserRouter } from "react-router-dom";
-import FeedPage from "../pages/FeedPage/FeedPage";
+import FeedPage from "../pages/FeedPage";
 import { Provider } from 'react-redux';
 import { configureStore } from "@reduxjs/toolkit";
 import store from '../Store/store';

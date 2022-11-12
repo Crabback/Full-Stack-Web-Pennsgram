@@ -5,7 +5,7 @@ import { getByDisplayValue, render, screen, waitFor } from "@testing-library/rea
 import "@testing-library/jest-dom/extend-expect";
 import userEvent from "@testing-library/user-event";
 import { BrowserRouter } from "react-router-dom";
-import LoginPage from "../pages/LoginPage/LoginPage";
+import LoginPage from "../pages/LoginPage";
 import { Provider } from 'react-redux';
 import { configureStore } from "@reduxjs/toolkit";
 import store from '../Store/store';

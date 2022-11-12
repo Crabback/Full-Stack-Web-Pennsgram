@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">35% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7/20</span>
+                <span class='fraction'>0/15</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">20% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/10</span>
+                <span class='fraction'>0/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.66% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/3</span>
+                <span class='fraction'>0/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">35% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7/20</span>
+                <span class='fraction'>0/15</span>
             </div>
         
             
@@ -108,27 +108,9 @@
 <a name='L43'></a><a href='#L43'>43</a>
 <a name='L44'></a><a href='#L44'>44</a>
 <a name='L45'></a><a href='#L45'>45</a>
-<a name='L46'></a><a href='#L46'>46</a>
-<a name='L47'></a><a href='#L47'>47</a>
-<a name='L48'></a><a href='#L48'>48</a>
-<a name='L49'></a><a href='#L49'>49</a>
-<a name='L50'></a><a href='#L50'>50</a>
-<a name='L51'></a><a href='#L51'>51</a>
-<a name='L52'></a><a href='#L52'>52</a>
-<a name='L53'></a><a href='#L53'>53</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L46'></a><a href='#L46'>46</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -141,20 +123,24 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -173,40 +159,33 @@ import ToggleButton from 'react-bootstrap/ToggleButton';
 import {unlikePost, likePost } from "../api/mock_api";
 &nbsp;
 &nbsp;
-export function LikeButton(props) {
-    const liked = props.post.likes.includes(props.username);
-    const [checked, setChecked] = useState(props.post.likes.includes(props.username));
-    const [text, setText] = useState(() =&gt; {
-        <span class="missing-if-branch" title="if path not taken" >I</span>if (checked) {
+export function <span class="fstat-no" title="function not covered" >LikeButton(</span>props) {
+    const liked = <span class="cstat-no" title="statement not covered" >props.post.likes.includes(props.username);</span>
+    const [checked, setChecked] = <span class="cstat-no" title="statement not covered" >useState(props.post.likes.includes(props.username));</span>
+    const [text, setText] = <span class="cstat-no" title="statement not covered" >useState(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        if (checked) {</span>
 <span class="cstat-no" title="statement not covered" >            return "Liked";</span>
         }else{
-            return "Like"
+<span class="cstat-no" title="statement not covered" >            return "Like"</span>
         }
       });
 &nbsp;
     async function <span class="fstat-no" title="function not covered" >handleLike(</span>e) {
+        // tell my grandparent to refresh the page 
+<span class="cstat-no" title="statement not covered" >        props.setEditedAndRefreshCards(!props.oldEditedAndRefreshCards);</span>
+&nbsp;
 <span class="cstat-no" title="statement not covered" >        setChecked(e.currentTarget.checked);</span>
 <span class="cstat-no" title="statement not covered" >        if (text === "Like"){</span>
 <span class="cstat-no" title="statement not covered" >          setText("Liked");</span>
-<span class="cstat-no" title="statement not covered" >          if (liked){</span>
-<span class="cstat-no" title="statement not covered" >            props.setOffset(0);</span>
-          }else{
-<span class="cstat-no" title="statement not covered" >            props.setOffset(1);</span>
-          }
 <span class="cstat-no" title="statement not covered" >          await likePost(props.username, props.post.id);</span>
         }else{
 <span class="cstat-no" title="statement not covered" >          setText("Like");</span>
-<span class="cstat-no" title="statement not covered" >          if (liked){</span>
-<span class="cstat-no" title="statement not covered" >            props.setOffset(-1);</span>
-          }else{
-<span class="cstat-no" title="statement not covered" >            props.setOffset(0);</span>
-          }
 <span class="cstat-no" title="statement not covered" >          await unlikePost(props.username, props.post.id);</span>
         }
       }
 &nbsp;
-    <span class="missing-if-branch" title="else path not taken" >E</span>if(props.username !== "NOT_A_USER"){
-        return (
+<span class="cstat-no" title="statement not covered" >    if(props.username !== "NOT_A_USER"){</span>
+<span class="cstat-no" title="statement not covered" >        return (</span>
             &lt;ToggleButton
             className="mb-2"
             id= {props.post.id}
@@ -226,7 +205,7 @@ export function LikeButton(props) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-11-12T04:31:56.600Z
+                at 2022-11-12T23:16:48.852Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

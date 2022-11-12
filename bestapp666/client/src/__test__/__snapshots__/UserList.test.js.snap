@@ -79,6 +79,19 @@ exports[`Page matches snapshot 1`] = `
         curry
       </a>
     </li>
+    <li
+      className="list-group-item"
+      data-rr-ui-event-key={null}
+      onClick={[Function]}
+    >
+      <a
+        className="button_text"
+        href="/user/pig"
+        onClick={[Function]}
+      >
+        pig
+      </a>
+    </li>
   </ul>
   <a
     className="button_text"

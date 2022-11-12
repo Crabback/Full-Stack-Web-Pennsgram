@@ -51,7 +51,7 @@ test('Page matches snapshot', async () => {
     const lastname = screen.getByPlaceholderText("Last Name");
     userEvent.type(firstname, "hihi");
     userEvent.type(lastname, "abc");
-    await userEvent.click(
+    userEvent.click(
         screen.getByRole("button", {
             name: "Submit"
         })

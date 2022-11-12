@@ -1,9 +1,9 @@
 import '@testing-library/jest-dom/extend-expect';
 
 import React from "react";
-import { getByDisplayValue, render, screen , waitFor} from "@testing-library/react";
+import { fireEvent, getByDisplayValue, getByTestId, render, screen , waitFor} from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import userEvent from "@testing-library/user-event";
+import userEvent from '@testing-library/user-event';
 import { BrowserRouter } from "react-router-dom";
 import User from "../pages/UserPage/User";
 import { Provider } from 'react-redux';
@@ -32,7 +32,6 @@ test("render user page component", async () => {
 });
 
 test("Mock follow and unfollow", async () => {
-
   const currentUser = {username: 'obama', password: 'obama123'};
   const userRoster = await getUser(currentUser.username);
   let user;
@@ -41,22 +40,15 @@ test("Mock follow and unfollow", async () => {
   });
   store1.dispatch(updateCurrentUser(user));
 
-  const { getByText }  = render(
+   const {getByText} = render(
       <Provider store={store1}>
         <BrowserRouter>
           <User />
         </BrowserRouter>
       </Provider>
     );
-    const followinglist = getByText(/Followers/);  
+    const followinglist = screen.getByText(/Followers/);  
     userEvent.click(followinglist);
-    const following = getByText(/curry/);
-    userEvent.click(following);
-    const followBnt = screen.getByTestId("followingButton");
-    userEvent.click(followBnt);
-    await waitFor(()=>{
-      expect(followBnt.hasAttribute("Follow"));
-    })
-    userEvent.click(followBnt);
-
+      const Policies = screen.getByText(/Policies/);
+      expect(Policies).toBeVisible();
   });
