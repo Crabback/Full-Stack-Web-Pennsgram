@@ -5,13 +5,10 @@ import PropTypes from "prop-types";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Toast from 'react-bootstrap/Toast';
-import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Image from 'react-bootstrap/Image'
 import {deletePost, getComments, deleteComment} from "../../api/mock_api";
 import { NavLink } from "react-router-dom";
-import { CommentAuthor } from "semantic-ui-react";
 
 const CustomPopup = (props) => {
     const [show, setShow] = useState(false);
@@ -21,7 +18,7 @@ const CustomPopup = (props) => {
     const [image, setImage] = useState("");
     const [comments, setComments] = useState([]);
     const [description, setDescription] = useState("");
-    const [media, setMedia] = useState(props.post.image);
+    const [media, setMedia] = useState("");
 
    //handle the temporary inputs in the post description 
     const [descInput, setDescInput] = useState("");
@@ -37,6 +34,7 @@ const CustomPopup = (props) => {
         setShow(false);
         props.onClose(false);
     };
+
     useEffect(() => {
         setShow(props.show);
         const post = props.post;
@@ -49,7 +47,6 @@ const CustomPopup = (props) => {
         console.log("current post: ", props.post);
         }, [props.show]);
         
-
     const handleDescInput = (e) =>{
         setDescInput( e.target.value);
     };
@@ -73,12 +70,11 @@ const CustomPopup = (props) => {
       }
       
     const handleImageURLInput = (e) => {
-          setMedia((state) => (e.target.value));
+          setMedia(e.target.value);
         }
 
     function MediaPreview(props){
-        console.log(props);
-        if (props[0]){
+        if (props.mediaLink){
             if (props.mediaLink.split(".").slice(-1) == 'mp4'){
                 return (
                 <Form.Group className="mb-3">
@@ -94,7 +90,13 @@ const CustomPopup = (props) => {
                 </Form.Group>
                 )
             }
-        } 
+        }else{
+            return (
+                <Form.Group className="mb-3">
+                    <img onError={addDefaultImgSrc} src={image} alt="user pic 1" width="400" height="400"></img>
+                </Form.Group>
+                )
+        }
     }
 
     const commentsToast = (comments?  comments : [{author: "Void",
@@ -141,6 +143,7 @@ const CustomPopup = (props) => {
                         <Col xs={6}>
                             <div style = {{height: "100%", width: "100%", border: "1px solid black"}}>
                                 <Form>
+                                    <MediaPreview mediaLink = {media}/>
                                     <Form.Group className="mb-3" controlId="formBasicDescription">
                                         <Form.Label>
                                             {descInput}
