@@ -25,11 +25,13 @@ const CustomPopup = (props) => {
 
     const closeHandler = (e) => {
         setShow(false);
+        setDescInput("");
         props.onClose(false);
     };
 
     useEffect(() => {
         setShow(props.show);
+        setMedia(props.post.image);
         setDescInput(props.post.description);
         console.log("current post: ", props.post);
         }, [props.show]);
@@ -37,6 +39,10 @@ const CustomPopup = (props) => {
     const handleDescInput = (e) =>{
         setDescInput( e.target.value);
     };
+
+    const handleImageURLInput = (e) => {
+        setMedia(e.target.value);
+      }
     
     // not finished
     async function handleDeleteComment(target, postId, content){
@@ -81,12 +87,8 @@ const CustomPopup = (props) => {
 
     function addDefaultImgSrc(ev){
         ev.target.src = "https://st4.depositphotos.com/14953852/24787/v/600/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg";
-        setMedia("https://st4.depositphotos.com/14953852/24787/v/600/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg");
+        setMedia(props.post.image);
       }
-      
-    const handleImageURLInput = (e) => {
-          setMedia(e.target.value);
-        }
 
     function MediaPreview(props){
         if (props.mediaLink){
@@ -151,15 +153,16 @@ const CustomPopup = (props) => {
                         <Col xs={6}>
                             <div style = {{height: "100%", width: "100%"}}>
                                 <Form onSubmit={handleUpdate}>
-                                    <MediaPreview mediaLink = {props.post.image}/>
+                                    <MediaPreview mediaLink = {props.post.link}/>
                                     <Form.Group className="mb-3" controlId="formBasicDescription">
                                         <Form.Label>
                                             {descInput}
                                         </Form.Label>
-                                        <Form.Control name="imageURL" onChange={handleImageURLInput} placeholder="Enter online image url" />
+                                        <Form.Control name="imageURL" onChange={handleImageURLInput} placeholder="Enter online image url" value={media}/>
                                         <Form.Control as="textarea" onChange={handleDescInput}
                                         placeholder= "Change the text to..."
-                                        rows={3}/>
+                                        rows={3}
+                                        value={descInput}/>
                                     </Form.Group>
                                     <Button variant="primary" type="submit">
                                         change image/video

@@ -68,7 +68,8 @@
       "followers": [
         "tiger",
         "trump",
-        "zanemao"
+        "zanemao",
+        "obama"
       ],
       "avatar": "https://cdn5.vectorstock.com/i/1000x1000/36/94/simple-cartoon-of-a-cute-pig-vector-18823694.jpg",
       "posts": [
@@ -87,14 +88,14 @@
       "password": "dog123",
       "followings": [
         "tiger",
-        "pig",
-        "zanemao"
+        "pig"
       ],
       "followers": [
         "tiger",
         "pig",
         "trump",
-        "ayesha"
+        "ayesha",
+        "zanemao"
       ],
       "avatar": "https://images.wagwalkingweb.com/media/daily_wag/name_guides/cartoon-dog-names/featured_dog/snoopy.jpg?auto=compress&fit=max",
       "posts": [
@@ -113,7 +114,8 @@
         37,
         38,
         39,
-        40
+        40,
+        41
       ],
       "followerSuggestions": [
         "zanemao",
@@ -176,7 +178,8 @@
         "zanemao",
         "elon",
         "tiger",
-        "curry"
+        "curry",
+        "pig"
       ],
       "followers": [
         "curry",
@@ -266,7 +269,8 @@
         "elon",
         "obama",
         "pig",
-        "trump"
+        "trump",
+        "dog"
       ],
       "followers": [
         "trump",
@@ -274,7 +278,6 @@
         "elon",
         "curry",
         "wwwsm",
-        "dog",
         "pig"
       ],
       "avatar": "https://img.wattpad.com/8f19b412f2223afe4288ed0904120a48b7a38ce1/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f5650722d38464e2d744a515349673d3d2d3234323931353831302e313434336539633161633764383437652e6a7067",
@@ -370,7 +373,9 @@
       "date": "10/16/2022",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSArC7oN3AWH3h8qHv5PYNoOrnKXdBMPph9JQ&usqp=CAU",
       "likes": [
-        "eric"
+        "eric",
+        "dog",
+        "obama"
       ],
       "comments": [
         {
@@ -400,8 +405,8 @@
         },
         {
           "author": "dog",
-          "comment": "kjhg",
-          "mention": ""
+          "comment": "forgot to mention someone",
+          "mention": "@[elon](elon)"
         }
       ]
     },
@@ -426,6 +431,11 @@
           "author": "eric",
           "comment": "I am eric 2",
           "mention": "@[zanemao](zanemao)"
+        },
+        {
+          "author": "zanemao",
+          "comment": "nice!",
+          "mention": ""
         }
       ]
     },
@@ -435,7 +445,9 @@
       "description": "This is my selfie as in cartoon.",
       "date": "10/16/2022",
       "image": "https://media.npr.org/assets/img/2019/07/31/peppa-core-landscape_custom-e35134971418876744bd213cd5eb1248012ad704-s1600-c85.webp",
-      "likes": [],
+      "likes": [
+        "zanemao"
+      ],
       "comments": [
         {
           "author": "eric",
@@ -450,9 +462,7 @@
       "description": "When I was young with my bros.",
       "date": "10/16/2022",
       "image": "https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1240w,f_auto,q_auto:best/newscms/2017_04/1880656/170126-piglets-ok-1629.jpg",
-      "likes": [
-        "zanemao"
-      ],
+      "likes": [],
       "comments": [
         {
           "author": "zanemao",
@@ -463,6 +473,16 @@
           "author": "eric",
           "comment": "This is eric leaving comment here !",
           "mention": ""
+        },
+        {
+          "author": "zanemao",
+          "comment": "now comment becomes something different",
+          "mention": ""
+        },
+        {
+          "author": "obama",
+          "comment": "I want to tag elon",
+          "mention": "@[elon](elon)"
         }
       ]
     },
@@ -523,10 +543,16 @@
       "date": "10/16/2022",
       "image": "https://cdn.nba.com/manage/2022/06/stephen-curry-pregame-dribbles.jpg",
       "likes": [
-        "obama",
-        "dog"
+        "dog",
+        "obama"
       ],
-      "comments": []
+      "comments": [
+        {
+          "author": "obama",
+          "comment": "Congra!",
+          "mention": ""
+        }
+      ]
     },
     {
       "id": 11,
@@ -562,20 +588,14 @@
       "date": "10/16/2022",
       "image": "https://cdn.britannica.com/78/133178-050-7A997FB3/Barack-Michelle-Obama-daughters-Sasha-photograph-Green-2009.jpg",
       "likes": [],
-      "comments": [
-        {
-          "author": "obama",
-          "comment": "my comment",
-          "mention": ""
-        }
-      ]
+      "comments": []
     },
     {
       "id": 15,
       "author": "obama",
-      "description": "",
+      "description": "now it has a different picture",
       "date": "10/16/2022",
-      "image": "https://drive.google.com/uc?export=view&id=1Oqs52qe_Dp91how3nZBZFzLjLUR2ntQ4",
+      "image": "http://www.dumpaday.com/wp-content/uploads/2020/06/00-57-750x280.jpg",
       "likes": [],
       "comments": []
     },
@@ -641,9 +661,9 @@
     {
       "id": 28,
       "author": "zanemao",
-      "description": "Try a mp4 upload",
+      "description": "Try a mp4 upload different",
       "date": "10/1/2022",
-      "image": "https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/VusrVp28x/videoblocks-portrait-of-a-happy-dog-in-nature-at-sunny-day_roq4tousi__936df1286ee316339cef6494baa53ce2__P360.mp4",
+      "image": "http://www.dumpaday.com/wp-content/uploads/2020/06/00-57-750x280.jpg",
       "likes": [
         "dog"
       ],
@@ -652,11 +672,6 @@
           "author": "dog",
           "comment": "That's a beautiful dog!",
           "mention": "@[pig](pig)"
-        },
-        {
-          "author": "obama",
-          "comment": "dog it looks like you! ",
-          "mention": "@[dog](dog)"
         }
       ]
     },
@@ -695,16 +710,18 @@
       "date": "10/1/2022",
       "image": "https://cdn.coverr.co/videos/coverr-skull-makeup-1191/1080p.mp4",
       "likes": [
-        "elon"
+        "elon",
+        "dog",
+        "zanemao"
       ],
       "comments": []
     },
     {
       "id": 40,
       "author": "dog",
-      "description": "hhhhhhhhhh",
+      "description": "new picture2",
       "date": "10/1/2022",
-      "image": "https://i.natgeofe.com/n/4f5aaece-3300-41a4-b2a8-ed2708a0a27c/domestic-dog_thumb_4x3.jpg",
+      "image": "http://www.dumpaday.com/wp-content/uploads/2020/06/00-57-750x280.jpg",
       "likes": [
         "eric"
       ],
@@ -720,9 +737,9 @@
           "mention": "@[trump](trump)"
         },
         {
-          "author": "eric",
-          "comment": "Hey check out my page eric. follow me!",
-          "mention": ""
+          "author": "zanemao",
+          "comment": "wow that's a nice picture",
+          "mention": "@[elon](elon)"
         }
       ]
     }
