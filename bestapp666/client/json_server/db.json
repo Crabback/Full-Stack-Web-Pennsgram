@@ -361,7 +361,9 @@
       "description": "When I was young with my bros.",
       "date": "10/16/2022",
       "image": "https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1240w,f_auto,q_auto:best/newscms/2017_04/1880656/170126-piglets-ok-1629.jpg",
-      "likes": [],
+      "likes": [
+        "zanemao"
+      ],
       "comments": [
         {
           "author": "zanemao",
@@ -488,7 +490,18 @@
         null,
         "zanemao"
       ],
-      "comments": []
+      "comments": [
+        {
+          "author": "zanemao",
+          "comment": "good luck on your election!",
+          "mention": ""
+        },
+        {
+          "author": "zanemao",
+          "comment": "test comment",
+          "mention": ""
+        }
+      ]
     },
     {
       "id": 18,

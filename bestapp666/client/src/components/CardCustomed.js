@@ -22,6 +22,7 @@ export function CardCustomed(props) {
     const [descInput, setDescInput] = useState("");
     const [mentionInput, setMentionInput] = useState("");
     const [offset, setOffset] = useState(0);
+    const [offsetComment, setOffsetComment] = useState(0);
 
     const handleLeaveComment= async (e) => {
       e.preventDefault();
@@ -35,6 +36,7 @@ export function CardCustomed(props) {
           "mention": mentionInput
         }
         await addComment(props.post.id, newComment);
+        setOffsetComment(offsetComment+1);
       }
       setDescInput('');
       setMentionInput('');
@@ -76,7 +78,7 @@ export function CardCustomed(props) {
                     <Card.Text style={{paddingBottom: '1rem'}}> {props.post.likes.length + offset} likes </Card.Text>
                   </Col>
                   <Col>
-                    <Card.Text style={{paddingBottom: '1rem'}}> {props.post.comments.length} comments </Card.Text>
+                    <Card.Text style={{paddingBottom: '1rem'}}> {props.post.comments.length + offsetComment} comments </Card.Text>
                   </Col>
                 </Row>
   
@@ -141,7 +143,7 @@ export function CardCustomed(props) {
                     <Card.Text style={{paddingBottom: '1rem'}}> {props.post.likes.length + offset} likes </Card.Text>
                   </Col>
                   <Col>
-                    <Card.Text style={{paddingBottom: '1rem'}}> {props.post.comments.length} comments </Card.Text>
+                    <Card.Text style={{paddingBottom: '1rem'}}> {props.post.comments.length + offsetComment} comments </Card.Text>
                   </Col>
                 </Row>
   
