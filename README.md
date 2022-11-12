@@ -5,10 +5,7 @@ PDF instruction: https://github.com/cis557/project---design-hw1-team_offersoverf
 
 HW3 Demo: https://drive.google.com/file/d/1CK2IBO49mhrhXFM6HybLWf3il4PG6swY/view?usp=share_link
 
-# HW2: Implementation (View) & UI Testing (Completed)
-PDF instruction: https://github.com/cis557/project---design-hw1-team_offersoverflow/blob/main/Project%20-%20HW2.pdf
-
-HW2 grading instructions:
+Grading Setup:
 
       Step 1 -- install react packages: 
                                       1. open terminal window 1 and run following commands:
@@ -30,7 +27,25 @@ HW2 grading instructions:
                                       2. Start playing around this app to your hearts content! 
                                       3. There are following **notice points** for each features.
                                                 (eg. the current registered users in our db.json file)
-      Step 5 -- Try the required features: 
+                                                
+ HW3 Features:
+
+                                      1. Like & unlike posts on both user pages and feed page
+                                          - check the changes on the like list for any action performed
+                                      2. Post & edit & delete comments on a post on both user pages and feed page
+                                          - check the changes on the comment list for any action performed
+                                      3. Edit & delete posts on the logged-in user's page
+                                          - try update and delete
+                                      4. Follower suggestions
+                                          - Two users are following the same 3 users, they will appear in follower suggestions
+                                      5. Mention another user in comments
+                                          - click the @ to direct to the user page.
+
+# HW2: Implementation (View) & UI Testing (Completed)
+PDF instruction: https://github.com/cis557/project---design-hw1-team_offersoverflow/blob/main/Project%20-%20HW2.pdf
+
+HW2 Features:
+
                                       1. User Reigstration
                                           - use an online media link for avatar
                                       2. Login/Auth
