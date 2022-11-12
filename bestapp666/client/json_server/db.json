@@ -527,13 +527,11 @@
     {
       "id": 23,
       "author": "zanemao",
-      "description": "test upload",
+      "description": "i modified my post.",
       "date": "10/16/2022",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLOZAgX4_oFdHPuRk5Yz3oS0GGg0yA7L5-pw&usqp=CAU",
+      "image": "https://miro.medium.com/max/1200/1*Lvxvq_4S5WPeCShJhFoY9Q.jpeg",
       "likes": [
-        "pig",
-        null,
-        null
+        "pig"
       ],
       "comments": [
         {
