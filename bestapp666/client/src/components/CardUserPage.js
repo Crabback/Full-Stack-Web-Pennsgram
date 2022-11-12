@@ -50,12 +50,12 @@ export function CardCustomedUserPage(props) {
             <Card bg = "light" style={{ width: '24rem'}}>
     
             {(props.post.image.split(".").slice(-1) == 'mp4') &&
-            <video width='360' controls > <source src={props.post.image} type="video/mp4"/> </video>  
+            <video style={{paddingTop: "1rem"}} width='360' controls > <source src={props.post.image} type="video/mp4"/> </video>  
             }
 
             {(props.post.image.split(".").slice(-1) != 'mp4') &&
              <>
-                <Card.Img variant="bottom" rounded="true" src={props.post.image} />
+                <Card.Img variant="bottom" rounded="true" src={props.post.image} style={{paddingTop: "1rem"}}/>
                 <Card.Subtitle className="text-muted" style={{paddingTop: "1rem", paddingLeft:"1rem"}}> {props.post.date} </Card.Subtitle>
              </>
             }
