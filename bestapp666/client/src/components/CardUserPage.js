@@ -111,6 +111,7 @@ export function CardCustomedUserPage(props) {
 
             <MyCommentsModal
             show={modalShow}
+            setEditedAndRefreshCards={props.setEditedAndRefreshCards} oldEditedAndRefreshCards={props.oldEditedAndRefreshCards}
             onHide={() => setModalShow(false)}
             post={props.post}
             username={props.username}

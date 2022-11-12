@@ -22,7 +22,7 @@ import Modal from 'react-bootstrap/Modal';
 import Stack from 'react-bootstrap/Stack';
 
 
-export function CardCustomed(props) {
+export function CardFeedPage(props) {
     const navigate = useNavigate();
     const [modalShow, setModalShow] = useState(false);
     const [likeModalShow, setlikeModalShow] = useState(false);
@@ -128,6 +128,8 @@ export function CardCustomed(props) {
         show={modalShow}
         onHide={() => setModalShow(false)}
         post={props.post} 
+        // pass the setState hook from my parent to my child
+        setEditedAndRefreshCards={props.setEditedAndRefreshCards} oldEditedAndRefreshCards={props.oldEditedAndRefreshCards}
         username={props.username}/>
 
         <MyLikesModal

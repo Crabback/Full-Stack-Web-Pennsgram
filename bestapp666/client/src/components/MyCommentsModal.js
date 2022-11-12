@@ -21,6 +21,8 @@ export function MyCommentsModal(props) {
         e.preventDefault();
         try{
             await updateComment(postId, oldComment, newComment, mention);
+            // tell my grandparent to refresh the page 
+            props.setEditedAndRefreshCards(!props.oldEditedAndRefreshCards);
             alert("update comment successful!");
         }catch(err){
             console.log("update comment failed.");
@@ -35,13 +37,13 @@ export function MyCommentsModal(props) {
     async function handleDeleteComment(target, postId, content){
       try{
           await deleteComment(postId, content);
+           // tell my grandparent to refresh the page 
+          props.setEditedAndRefreshCards(!props.oldEditedAndRefreshCards);
           alert("Delete comment successful!");
       }catch(err){
           console.log("Delete comment failed.");
           alert("Delete comment failed.");
       }
-      //setEditedAndRefreshCards to trigger rerender and data fetching
-        props.setHearFromDeleteComment(!props.oldHearFromDeleteComment); //pull the trigger 
   };
   
     const commentsList = comments.length === 0 ? []: comments.map((c)=>{

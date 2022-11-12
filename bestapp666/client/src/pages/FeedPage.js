@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {CardCustomed} from '../components/CardFeedPage';
+import {CardFeedPage} from '../components/CardFeedPage';
 import Stack from 'react-bootstrap/Stack';
 import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux'
@@ -62,7 +62,7 @@ export default function FeedPage() {
 
 
   const cards = ((feedPostOfUser.length===0) ? popularPostsNearby:feedPostOfUser).map((p) => (
-    <CardCustomed post={p} username={stateCurrentUser.username} setCommentState={setFeedPostOfUser} allDisplayedPosts={feedPostOfUser}
+    <CardFeedPage post={p} username={stateCurrentUser.username} setCommentState={setFeedPostOfUser} allDisplayedPosts={feedPostOfUser}
     setEditedAndRefreshCards = {setEditedAndRefreshCards} oldEditedAndRefreshCards={editedAndRefreshCards} 
     setPostBeingEdited = {setPostBeingEdited} setVisibility= {setVisibility}/>
   ))
