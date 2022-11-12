@@ -7,7 +7,7 @@ import Form from 'react-bootstrap/Form';
 import Toast from 'react-bootstrap/Toast';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import {deletePost, getComments, deleteComment} from "../../api/mock_api";
+import {deletePost, getComments, deleteComment, updatePost} from "../../api/mock_api";
 import { NavLink } from "react-router-dom";
 
 const CustomPopup = (props) => {
@@ -19,6 +19,7 @@ const CustomPopup = (props) => {
     const [comments, setComments] = useState([]);
     const [description, setDescription] = useState("");
     const [media, setMedia] = useState("");
+    const [editPanel, setEditPanel] = useState(false);
 
    //handle the temporary inputs in the post description 
     const [descInput, setDescInput] = useState("");
@@ -42,6 +43,7 @@ const CustomPopup = (props) => {
         setAuthor(post.author);
         setImage(post.image);
         setComments(post.comments);
+        setEditPanel(props.editPanel);
         setDescription(post.description);
         setDescInput(description);
         console.log("current post: ", props.post);
@@ -60,8 +62,9 @@ const CustomPopup = (props) => {
         await deletePost(postId);
     };
 
-    async function handleUpdate(postId){
-        //await updatePost(postId);
+    async function handleUpdate(e, postId, newImage, newDescription){
+        e.preventDefault();
+        await updatePost(postId, newImage, newDescription);
     };
 
     function addDefaultImgSrc(ev){
@@ -119,30 +122,23 @@ const CustomPopup = (props) => {
         </Toast>
     )});
 
-
-
-
     return (
         <div style={{visibility: show ? "visible" : "hidden", opacity: show ? "1" : "0"}} className={popupStyles.overlay}>
         <div className={popupStyles.popup}>
             <Button variant="outline-danger" onClick = {(e)=> handleDeletePost(id)}>Delete Post</Button>
 
             <span className={popupStyles.close} onClick={closeHandler}>
-            <span className={popupStyles.done} onClick={doneHandler}>Done</span>
             &times;
             </span>
 
             <div className={popupStyles.content}>
                 {/* {props.children} */}
-                <div style = {{height: "5%", width: "95%", border: "1px solid black"}}>
-                    <Button onClick = {(e)=> handleUpdate(id)}>change image/video</Button>
-                </div>
 
                 <div style = {{height: "10%", width: "95%", border: "1px solid black"}}>
                     <Row>
                         <Col xs={6}>
                             <div style = {{height: "100%", width: "100%", border: "1px solid black"}}>
-                                <Form>
+                                <Form onSubmit={(e)=> handleUpdate(id, media.mediaLink, descInput)}>
                                     <MediaPreview mediaLink = {media}/>
                                     <Form.Group className="mb-3" controlId="formBasicDescription">
                                         <Form.Label>
@@ -153,6 +149,9 @@ const CustomPopup = (props) => {
                                         placeholder= "Change the text to..."
                                         rows={3}/>
                                     </Form.Group>
+                                    <Button variant="primary" type="submit">
+                                        change image/video
+                                    </Button>
                                 </Form>
                             </div>
                         </Col>

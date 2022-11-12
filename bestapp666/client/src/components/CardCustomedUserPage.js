@@ -113,10 +113,15 @@ export function CardCustomedUserPage(props) {
   
                 <ButtonGroup aria-label="like,comment,message">
                     <LikeButton post = {props.post} username={props.username}/>
-                    <Button className="mb-2" variant="outline-primary">Comment</Button>
-                    <Button className="mb-2" onClick={() => {
-                      props.setVisibility(true);
+                    <Button className="mb-2" variant="outline-primary" onClick={() => {
                       props.setPostBeingEdited(props.post);
+                      props.setVisibility(true);
+                      props.setEditPanel(false);
+                      }}>Comment</Button>
+                    <Button className="mb-2" onClick={() => {
+                      props.setPostBeingEdited(props.post);
+                      props.setVisibility(true);
+                      props.setEditPanel(true);
                       }}>{"edit"}</Button>
                 </ButtonGroup>
   

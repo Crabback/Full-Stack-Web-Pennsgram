@@ -15,58 +15,6 @@ import { getUser, getPosts, followUser, unfollowUser} from "../../api/mock_api";
 import ToggleButton from 'react-bootstrap/ToggleButton';
 import PostPopUp from './PostPopUp.js'
 
-
-function CardCustomed(props){
-    //props is a post fed from a following use
-    if (props.post){
-      if (props.post.image.split(".").slice(-1) == 'mp4') {
-        return(
-          <div>
-          <Card bg = "light" style={{ width: '20rem'}}>
-                <video width='290' controls> <source src={props.post.image} type="video/mp4"/> </video>       
-            <Card.Body>
-                <Card.Text>{props.post.description}</Card.Text>
-                <Row>
-                  <Col> <Card.Text style={{ position: 'absolute', bottom: '0'}}> {props.post.likes.length} likes </Card.Text> </Col>
-                  <Col> <Card.Text style={{ position: 'absolute', bottom: '0'}}> {props.post.comments.length} comments </Card.Text> </Col>
-                </Row>
-            </Card.Body>
-          </Card>
-          </div>
-        )
-        }else{
-          return (
-          <>
-            <Card bg = "light" style={{ width: '20rem'}}>
-              <Card.Img variant="bottom" rounded="true" src={props.post.image} />
-              <Card.Body>
-                <Card.Text>{props.post.description}</Card.Text>
-                <Row>
-                  <Col> <Card.Text > {props.post.likes.length} likes </Card.Text> </Col>
-                  <Col> <Card.Text> {props.post.comments.length} comments </Card.Text> </Col>
-                  <Col>
-                    <Button onClick={() => {
-                      props.setVisibility(true);
-                      props.setPostBeingEdited(props.post);
-                      }}>{"edit"}</Button>
-                  </Col>
-                </Row>
-              </Card.Body>
-            </Card>
-            {/* <PostPopUp
-                  onClose={popupCloseHandler}
-                  show={visibility}
-                  title="Hello Jeetendra"
-                >
-                  <h1>Hello This is Popup Content Area</h1>
-                  <h2>This is my lorem ipsum text here!</h2>
-                </PostPopUp> */}
-        </>
-        )  
-        }
-    }
-}
-
 export default function User() {
     
     const dispatch = useDispatch();
@@ -113,6 +61,7 @@ export default function User() {
 
     // for post edit pop up
     const [visibility, setVisibility] = useState(false);
+    const [editPanel, setEditPanel] = useState(false);
     const [postBeingEdited, setPostBeingEdited] = useState({});
     const popupCloseHandler = () => {
       setVisibility(false);
@@ -194,7 +143,7 @@ export default function User() {
           </Col>
       </Container>
       
-      <PostPopUp post = {postBeingEdited} onClose={popupCloseHandler} show={visibility} >
+      <PostPopUp className = "popWindow" post = {postBeingEdited} onClose={popupCloseHandler} show={visibility} editPanel={editPanel}>
           <h1>Hello This is Popup Content Area</h1>
           <h2>This is my lorem ipsum text here!</h2>
       </PostPopUp>
