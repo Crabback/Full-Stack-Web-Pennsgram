@@ -99,30 +99,30 @@ return (
 
   <Form onSubmit={handlePostUpload}>
     <Row>
-  <Col >
-      <MediaPreview mediaLink = {media}/>
-      <Form.Group controlId="formFile" className="mb-3" style={{paddingRight: "30%"}}>
-        <Form.Label>Upload Media</Form.Label>
-        <Form.Control type="file" onChange={handleChange}/>
-        <Form.Control name="imageURL" onChange={handleImageURLInput} placeholder="Enter online image url" />
-      </Form.Group>
-  </Col>
+      <Col >
+          <MediaPreview mediaLink = {media}/>
+          <Form.Group controlId="formFile" className="mb-3" style={{paddingRight: "30%"}}>
+            <Form.Label>Upload Media</Form.Label>
+            <Form.Control type="file" onChange={handleChange}/>
+            <Form.Control name="imageURL" onChange={handleImageURLInput} placeholder="Enter online image url" />
+          </Form.Group>
+      </Col>
 
-  <Col>
-    <Form.Group className="mb-3" controlId="formBasicDescription">
-      <Form.Label>Description</Form.Label>
-      <Form.Control as="textarea" onChange={handleDescInput}
-      placeholder="Description about the picture/video." 
-      rows={3}/>
-    </Form.Group>
+      <Col>
+        <Form.Group className="mb-3" controlId="formBasicDescription">
+          <Form.Label>Description</Form.Label>
+          <Form.Control as="textarea" onChange={handleDescInput}
+          placeholder="Description about the picture/video." 
+          rows={3}/>
+        </Form.Group>
 
-    <Button variant="primary" type="submit">
-      Upload
-    </Button>
-
-  </Col>
-  </Row>
+        <Button variant="primary" type="submit">
+          Upload
+        </Button>
+      </Col>
+    </Row>
   </Form>
+  
   <Col sm={1}></Col>
   </Row>
   <div style={{paddingLeft: "2rem", paddingTop: "5rem"}}>

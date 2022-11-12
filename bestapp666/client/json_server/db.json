@@ -255,8 +255,7 @@
       "avatar": "https://img.wattpad.com/8f19b412f2223afe4288ed0904120a48b7a38ce1/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f5650722d38464e2d744a515349673d3d2d3234323931353831302e313434336539633161633764383437652e6a7067",
       "posts": [
         20,
-        23,
-        28
+        23
       ],
       "id": 11,
       "followerSuggestions": [
@@ -363,7 +362,13 @@
       "likes": [
         "zanemao"
       ],
-      "comments": []
+      "comments": [
+        {
+          "author": "zanemao",
+          "comment": "look at these pigs",
+          "mention": "@trump"
+        }
+      ]
     },
     {
       "id": 7,
@@ -524,13 +529,18 @@
     {
       "id": 23,
       "author": "zanemao",
-      "description": "test upload",
+      "description": "i modified my post.",
       "date": "10/16/2022",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLOZAgX4_oFdHPuRk5Yz3oS0GGg0yA7L5-pw&usqp=CAU",
+      "image": "https://miro.medium.com/max/1200/1*Lvxvq_4S5WPeCShJhFoY9Q.jpeg",
       "likes": [
         "pig"
       ],
-      "comments": []
+      "comments": [
+        {
+          "comment": "I commented myself",
+          "mention": "@zanemao"
+        }
+      ]
     },
     {
       "id": 25,
