@@ -1,4 +1,5 @@
 import "../../Styles.css";
+import { getPost } from "../../api/mock_api";
 import React, { useState, useEffect } from "react";
 import { Footer } from "../../components/Footer";
 import ReactRoundedImage from "react-rounded-image";
@@ -26,6 +27,12 @@ export default function User() {
     const [text, setText] = useState("Follow");
     const [isFollowing, setIsFollowing] = useState(true);
     let { username } = useParams();
+    // action trigger states
+    const [editedAndRefreshCards, setEditedAndRefreshCards] = useState(true); //the value of this switch doesn't matter only the change matter for triggering useEffect
+    const [hearFromDeleteComment, setHearFromDeleteComment] = useState(false); //the request for refreshing comment list from PopUp window, trigger value doesnt matter
+    // states for post edit pop up
+    const [visibility, setVisibility] = useState(false);
+    const [postBeingEdited, setPostBeingEdited] = useState({});
 
     useEffect(() => {
       async function fetchData() {
@@ -37,7 +44,7 @@ export default function User() {
           alert("User Not Found.")
         }else{
           setThisUser(output1[0]);
-          setThisUserPosts(output2);
+          setThisUserPosts(output2); //这里不科学set this user posts 为所有的post
         }
       }
       try{fetchData();}
@@ -55,12 +62,26 @@ export default function User() {
         setOffset(0);
         setIsFollowing(false);
       }
-    }, [username]); //adding dependency making sure useEffect only run once after each render
+
+      // if hearFromDeleteComment: action -> setPostBeingEdited
+      async function updatePostBeingEdited(){
+          //refresh the same post with comment deleted
+            console.log("before postBeingEdited.id", postBeingEdited.id);
+            const updatedPost = await getPost(JSON.stringify(postBeingEdited)!== '{}'? postBeingEdited.id : -1);
+            setPostBeingEdited(updatedPost);
+            console.log("after postBeingEdited.id", postBeingEdited.id);
+
+      }
+      try{
+        if(JSON.stringify(postBeingEdited)!== '{}' && postBeingEdited) {updatePostBeingEdited()};
+      }catch(err){
+        console.log(err);
+        console.log("Error: User: useEffect: updatePostBeingEdited");
+      }
+
+    }, [username, editedAndRefreshCards, hearFromDeleteComment]); //adding dependency making sure useEffect only run once after each render
 
 
-    // for post edit pop up
-    const [visibility, setVisibility] = useState(false);
-    const [postBeingEdited, setPostBeingEdited] = useState({});
     const popupCloseHandler = () => {
       setVisibility(false);
     };
@@ -141,7 +162,12 @@ export default function User() {
           </Col>
       </Container>
       
-      <PostPopUp className = "popWindow" post = {postBeingEdited} onClose={popupCloseHandler} show={visibility}>
+      <PostPopUp className = "popWindow" post = {postBeingEdited} 
+                 setEditedAndRefreshCards = {setEditedAndRefreshCards} oldEditedAndRefreshCards={editedAndRefreshCards} 
+                 setHearFromDeleteComment = {setHearFromDeleteComment} oldHearFromDeleteComment={hearFromDeleteComment}
+                 setPostBeingEdited = {setPostBeingEdited}
+                 onClose={popupCloseHandler} show={visibility}>
+
           <h1>Hello This is Popup Content Area</h1>
           <h2>This is my lorem ipsum text here!</h2>
       </PostPopUp>

@@ -38,21 +38,45 @@ const CustomPopup = (props) => {
         setDescInput( e.target.value);
     };
     
-    async function handleDeleteComment(postId, content){
-        console.log(postId, content);
-        await deleteComment(postId, content);
-        alert("Delete Successful! Please re-enter this page to see the change.")
+    // not finished
+    async function handleDeleteComment(target, postId, content){
+        try{
+            await deleteComment(postId, content);
+        }catch(err){
+            console.log("Delete comment failed.");
+            alert("Delete comment failed.");
+        }
+        //setEditedAndRefreshCards to trigger rerender and data fetching
+        props.setHearFromDeleteComment(!props.oldHearFromDeleteComment); //pull the trigger 
     };
 
     async function handleDeletePost(postId){
-        await deletePost(postId);
-        alert("Delete Successful! Please re-enter this page to see the change.")
+        try{
+            await deletePost(postId);
+            // empty the parent's postBeingEdited in the edit window or will be error when delete;
+            props.setPostBeingEdited({});
+        }catch(err){
+            console.log("delete post failed, id:", postId);
+            alert("Delete post failed.");
+        }
+        //setEditedAndRefreshCards to trigger rerender and data fetching
+        props.setEditedAndRefreshCards(!props.oldEditedAndRefreshCards);
+        setShow(false);
+        props.onClose(false);
     };
 
     const handleUpdate = async (e) => {
         e.preventDefault();
-        await updatePost(props.post.id, media, descInput);
-        alert("Update Successful! Please re-enter this page to see the change.")
+        try{
+            await updatePost(props.post.id, media, descInput);
+        }catch(err){
+            console.log("update post image/caption failed");
+            alert("update post image/caption failed");
+        }
+        //setEditedAndRefreshCards to trigger rerender and data fetching
+        props.setEditedAndRefreshCards(!props.oldEditedAndRefreshCards);
+        setShow(false);
+        props.onClose(false);
     };
 
     function addDefaultImgSrc(ev){
@@ -95,7 +119,7 @@ const CustomPopup = (props) => {
                                                     mention: "@[NOT_A_USER](NOT_A_USER)"}]
     ).map((p, idx) => {
         return (
-        <Toast onClose={(e) => handleDeleteComment(props.post.id, p.comment)} delay={1000}  className="d-inline-block m-1" bg={"light"} key={idx}>
+        <Toast show={true} onClose={(e) => handleDeleteComment(e.target, props.post.id, p.comment)} delay={1000}  className="d-inline-block m-1" bg={"light"} key={idx}>
             <Toast.Header>
                 <img src="holder.js/20x20?text=%20" className="rounded me-2" alt=""/>
                 <strong className="me-auto">{p.author}</strong>

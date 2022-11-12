@@ -18,7 +18,6 @@ import Modal from 'react-bootstrap/Modal';
 import Stack from 'react-bootstrap/Stack';
 
 function MyCommentsModal(props) {
-  console.log("props: shi : ", props.post);
   const comments = props.post.comments;
   const commentsList = comments.length === 0 ? []: comments.map((c)=>{
     return (
