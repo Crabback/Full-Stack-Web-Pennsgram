@@ -42,7 +42,8 @@
       "followers": [
         "pig",
         "dog",
-        "wwwsm"
+        "wwwsm",
+        "zanemao"
       ],
       "avatar": "https://thumbs.dreamstime.com/b/caricature-presidential-candidate-donald-trump-character-portrait-giving-speech-70328509.jpg",
       "posts": [
@@ -241,7 +242,8 @@
       "followings": [
         "elon",
         "obama",
-        "pig"
+        "pig",
+        "trump"
       ],
       "followers": [
         "trump",
@@ -359,9 +361,7 @@
       "description": "When I was young with my bros.",
       "date": "10/16/2022",
       "image": "https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1240w,f_auto,q_auto:best/newscms/2017_04/1880656/170126-piglets-ok-1629.jpg",
-      "likes": [
-        "zanemao"
-      ],
+      "likes": [],
       "comments": [
         {
           "author": "zanemao",
@@ -483,8 +483,8 @@
       "date": "10/16/2022",
       "image": "https://drive.google.com/uc?export=view&id=1F2X0d6KkJWV26qoofFx6u9YGeUnCSfcl",
       "likes": [
-        "zanemao",
-        null
+        null,
+        "zanemao"
       ],
       "comments": []
     },
