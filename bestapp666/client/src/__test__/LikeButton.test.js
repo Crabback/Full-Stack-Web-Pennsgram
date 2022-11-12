@@ -12,16 +12,7 @@ import renderer from 'react-test-renderer';
 import { getByTestId } from "@testing-library/react";
 
 
-const store1 = store;
-test("render Search Bar display", async () => {
-
-    const currentUser = {username: 'obama', password: 'obama123'};
-    const userRoster = await getUser(currentUser.username);
-    let user;
-    userRoster.forEach(element => {
-      user = element;
-    });
-    store1.dispatch(updateCurrentUser(user));
+test("handels like action", async () => {
 
     const {getByText} = render(
             <LikeButton 
