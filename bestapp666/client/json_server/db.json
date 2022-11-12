@@ -324,7 +324,18 @@
       "likes": [
         "dog"
       ],
-      "comments": []
+      "comments": [
+        {
+          "author": "obama",
+          "comment": "hi",
+          "mention": ""
+        },
+        {
+          "author": "obama",
+          "comment": "",
+          "mention": ""
+        }
+      ]
     },
     {
       "id": 3,

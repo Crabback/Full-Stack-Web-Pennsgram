@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">63.04% </span>
+                <span class="strong">64% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>29/46</span>
+                <span class='fraction'>32/50</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">26.66% </span>
+                <span class="strong">28.57% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>4/15</span>
+                <span class='fraction'>4/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">63.04% </span>
+                <span class="strong">64% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>29/46</span>
+                <span class='fraction'>32/50</span>
             </div>
         
             
@@ -238,8 +238,7 @@
 <a name='L173'></a><a href='#L173'>173</a>
 <a name='L174'></a><a href='#L174'>174</a>
 <a name='L175'></a><a href='#L175'>175</a>
-<a name='L176'></a><a href='#L176'>176</a>
-<a name='L177'></a><a href='#L177'>177</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L176'></a><a href='#L176'>176</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -260,6 +259,7 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
@@ -286,6 +286,7 @@
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
@@ -301,8 +302,9 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -360,9 +362,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -376,7 +375,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -424,7 +422,7 @@ import Form from 'react-bootstrap/Form';
 import Toast from 'react-bootstrap/Toast';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import {deletePost, getComments, deleteComment} from "../../api/mock_api";
+import {deletePost, getComments, deleteComment, updatePost} from "../../api/mock_api";
 import { NavLink } from "react-router-dom";
 &nbsp;
 const CustomPopup = (props) =&gt; {
@@ -436,6 +434,7 @@ const CustomPopup = (props) =&gt; {
     const [comments, setComments] = useState([]);
     const [description, setDescription] = useState("");
     const [media, setMedia] = useState("");
+    const [editPanel, setEditPanel] = useState(false);
 &nbsp;
    //handle the temporary inputs in the post description 
     const [descInput, setDescInput] = useState("");
@@ -459,6 +458,7 @@ const CustomPopup = (props) =&gt; {
         setAuthor(post.author);
         setImage(post.image);
         setComments(post.comments);
+        setEditPanel(props.editPanel);
         setDescription(post.description);
         setDescInput(description);
         console.log("current post: ", props.post);
@@ -477,8 +477,9 @@ const CustomPopup = (props) =&gt; {
 <span class="cstat-no" title="statement not covered" >        await deletePost(postId);</span>
     };
 &nbsp;
-    async function <span class="fstat-no" title="function not covered" >handleUpdate(</span>postId){
-        //await updatePost(postId);
+    const handleUpdate = <span class="fstat-no" title="function not covered" >as</span>ync (e) =&gt; {
+<span class="cstat-no" title="statement not covered" >        e.preventDefault();</span>
+<span class="cstat-no" title="statement not covered" >        await updatePost(id, media, descInput);</span>
     };
 &nbsp;
     function <span class="fstat-no" title="function not covered" >addDefaultImgSrc(</span>ev){
@@ -536,30 +537,23 @@ const CustomPopup = (props) =&gt; {
         &lt;/Toast&gt;
     )});
 &nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
     return (
         &lt;div style={{visibility: show ? <span class="branch-0 cbranch-no" title="branch not covered" >"visible" </span>: "hidden", opacity: show ? <span class="branch-0 cbranch-no" title="branch not covered" >"1" </span>: "0"}} className={popupStyles.overlay}&gt;
         &lt;div className={popupStyles.popup}&gt;
             &lt;Button variant="outline-danger" onClick = {<span class="fstat-no" title="function not covered" >(e</span>)=&gt; <span class="cstat-no" title="statement not covered" >handleDeletePost(id)}</span>&gt;Delete Post&lt;/Button&gt;
 &nbsp;
             &lt;span className={popupStyles.close} onClick={closeHandler}&gt;
-            &lt;span className={popupStyles.done} onClick={doneHandler}&gt;Done&lt;/span&gt;
             &amp;times;
             &lt;/span&gt;
 &nbsp;
             &lt;div className={popupStyles.content}&gt;
                 {/* {props.children} */}
-                &lt;div style = {{height: "5%", width: "95%", border: "1px solid black"}}&gt;
-                    &lt;Button onClick = {<span class="fstat-no" title="function not covered" >(e</span>)=&gt; <span class="cstat-no" title="statement not covered" >handleUpdate(id)}</span>&gt;change image/video&lt;/Button&gt;
-                &lt;/div&gt;
 &nbsp;
                 &lt;div style = {{height: "10%", width: "95%", border: "1px solid black"}}&gt;
                     &lt;Row&gt;
                         &lt;Col xs={6}&gt;
                             &lt;div style = {{height: "100%", width: "100%", border: "1px solid black"}}&gt;
-                                &lt;Form&gt;
+                                &lt;Form onSubmit={handleUpdate}&gt;
                                     &lt;MediaPreview mediaLink = {media}/&gt;
                                     &lt;Form.Group className="mb-3" controlId="formBasicDescription"&gt;
                                         &lt;Form.Label&gt;
@@ -570,6 +564,9 @@ const CustomPopup = (props) =&gt; {
                                         placeholder= "Change the text to..."
                                         rows={3}/&gt;
                                     &lt;/Form.Group&gt;
+                                    &lt;Button variant="primary" type="submit"&gt;
+                                        change image/video
+                                    &lt;/Button&gt;
                                 &lt;/Form&gt;
                             &lt;/div&gt;
                         &lt;/Col&gt;
@@ -598,7 +595,7 @@ export default CustomPopup;</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-11-12T02:27:35.774Z
+                at 2022-11-12T03:06:43.224Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>
