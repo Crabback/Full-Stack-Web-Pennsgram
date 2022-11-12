@@ -17,16 +17,6 @@ import Popover from 'react-bootstrap/Popover';
 import Modal from 'react-bootstrap/Modal';
 import Stack from 'react-bootstrap/Stack';
 
-const popover = (
-  <Popover id="popover-basic">
-    <Popover.Header as="h3">Popover right</Popover.Header>
-    <Popover.Body>
-      And here's some <strong>amazing</strong> content. It's very engaging.
-      right?
-    </Popover.Body>
-  </Popover>
-);
-
 function MyCommentsModal(props) {
   console.log("props: shi : ", props.post);
   const comments = props.post.comments;
@@ -72,8 +62,50 @@ function MyCommentsModal(props) {
   );
 }
 
+
+function MyLikesModal(props) {
+  const likes = props.post.likes;
+  const likesList = likes.length === 0 ? []: likes.map((l)=>{
+    return (
+      <>
+        <div className="bg-light border">
+          <Row>
+            <Col><h4>{l}</h4></Col>
+          </Row> 
+            </div>
+      </>
+    )
+  }) ;
+
+  return (
+    <Modal
+      {...props}
+      size="xl"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Likes
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+          <Stack gap={3}>
+              {likesList}
+          </Stack>
+        
+      </Modal.Body>
+      <Modal.Footer>
+        <Button onClick={props.onHide}>Close</Button>
+      </Modal.Footer>
+    </Modal>
+  );
+}
+
 export function CardCustomedUserPage(props) {
     const [modalShow, setModalShow] = useState(false);
+    const [likeModalShow, setlikeModalShow] = useState(false);
+
     const navigate = useNavigate();
     const [descInput, setDescInput] = useState("");
     const [mentionInput, setMentionInput] = useState("");
@@ -119,10 +151,7 @@ export function CardCustomedUserPage(props) {
                 
                 <Row style={{paddingBottom: "1rem"}}>
                   <Col> 
-                        <OverlayTrigger trigger="click" placement="right" overlay={popover}>
-                          <Button variant="light"><Card.Text > {props.post.likes.length+ offset} likes </Card.Text> </Button>
-                        </OverlayTrigger>
-                    
+                  <Button variant="light" onClick={() => setlikeModalShow(true) }><Card.Text> {props.post.likes.length + offset} likes </Card.Text></Button>
                   </Col>
                   <Col> <Button variant="light" onClick={() => setModalShow(true) }> <Card.Text> {props.post.comments.length+ offsetComment} comments </Card.Text></Button> </Col>
                 </Row>
@@ -166,6 +195,12 @@ export function CardCustomedUserPage(props) {
             <MyCommentsModal
             show={modalShow}
             onHide={() => setModalShow(false)}
+            post={props.post}
+            />
+
+            <MyLikesModal
+            show={likeModalShow}
+            onHide={() => setlikeModalShow(false)}
             post={props.post}
             />
         </>
