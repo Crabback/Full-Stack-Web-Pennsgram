@@ -27,9 +27,9 @@ export function MyCommentsModal(props) {
             alert("update comment failed.");
         }
         //setEditedAndRefreshCards to trigger rerender and data fetching
-        //props.setEditedAndRefreshCards(!props.oldEditedAndRefreshCards);
+        props.setEditedAndRefreshCards(!props.oldEditedAndRefreshCards);
         //setShow(false);
-        //props.onClose(false);
+        props.onClose(false);
     };
 
     async function handleDeleteComment(target, postId, content){
@@ -41,7 +41,7 @@ export function MyCommentsModal(props) {
           alert("Delete comment failed.");
       }
       //setEditedAndRefreshCards to trigger rerender and data fetching
-      //props.setHearFromDeleteComment(!props.oldHearFromDeleteComment); //pull the trigger 
+        props.setHearFromDeleteComment(!props.oldHearFromDeleteComment); //pull the trigger 
   };
   
     const commentsList = comments.length === 0 ? []: comments.map((c)=>{

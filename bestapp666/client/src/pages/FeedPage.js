@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {CardCustomed} from '../components/CardFeedPage';
 import Stack from 'react-bootstrap/Stack';
 import { NavLink } from "react-router-dom";
-import { useSelector} from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import ListGroup from 'react-bootstrap/ListGroup';
 import {selectCurrentUser} from './UserPage/currentUserSlice'
 import {getUsersAsList, getLastestPostOfAUser, getPost, getUser } from "../api/mock_api";
@@ -12,12 +12,17 @@ import Col from 'react-bootstrap/Col';
 
 
 export default function FeedPage() {
-  // get followings of the current user
-    const stateCurrentUser = useSelector(selectCurrentUser);
-    let followingsUsernames = stateCurrentUser.followings;
-    const [feedPostOfUser, setFeedPostOfUser] = useState([]);
-    const [popularPostsNearby, setPopularPostsNearby] = useState([]);
-
+  const dispatch = useDispatch();
+// get followings of the current user
+  const stateCurrentUser = useSelector(selectCurrentUser);
+  let followingsUsernames = stateCurrentUser.followings;
+  const [feedPostOfUser, setFeedPostOfUser] = useState([]);
+  const [popularPostsNearby, setPopularPostsNearby] = useState([]);
+  const [editedAndRefreshCards, setEditedAndRefreshCards] = useState(true); //the value of this switch doesn't matter only the change matter for triggering useEffect
+  const [hearFromDeleteComment, setHearFromDeleteComment] = useState(false); //the request for refreshing comment list from PopUp window, trigger value doesnt matter
+  const [visibility, setVisibility] = useState(false);
+  const [postBeingEdited, setPostBeingEdited] = useState({});
+  
     useEffect(() => {
       async function fetchData() {
         const userObjects = await getUsersAsList(followingsUsernames);
@@ -52,12 +57,14 @@ export default function FeedPage() {
       catch(err){
           console.error(err);
       }
-    }, []); //adding empty dependency making sure useEffect only run once after each render
+    }, [editedAndRefreshCards, hearFromDeleteComment]); //adding empty dependency making sure useEffect only run once after each render
   
 
 
   const cards = ((feedPostOfUser.length===0) ? popularPostsNearby:feedPostOfUser).map((p) => (
-    <CardCustomed post={p} username={stateCurrentUser.username} setCommentState={setFeedPostOfUser} allDisplayedPosts={feedPostOfUser}/>
+    <CardCustomed post={p} username={stateCurrentUser.username} setCommentState={setFeedPostOfUser} allDisplayedPosts={feedPostOfUser}
+    setEditedAndRefreshCards = {setEditedAndRefreshCards} oldEditedAndRefreshCards={editedAndRefreshCards} 
+    setPostBeingEdited = {setPostBeingEdited} setVisibility= {setVisibility}/>
   ))
 
   let userlist =  stateCurrentUser.followerSuggestions.map((p) => (
