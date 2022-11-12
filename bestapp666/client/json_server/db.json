@@ -397,6 +397,16 @@
           "author": "obama",
           "comment": "hi",
           "mention": ""
+        },
+        {
+          "author": "dog",
+          "comment": "kjhkj",
+          "mention": ""
+        },
+        {
+          "author": "dog",
+          "comment": "kjhg",
+          "mention": ""
         }
       ]
     },
@@ -461,7 +471,10 @@
       "description": "me and my owner.",
       "date": "10/16/2022",
       "image": "https://i.pinimg.com/736x/36/cd/ab/36cdabd55c158426997719b6f2fe00ad.jpg",
-      "likes": [],
+      "likes": [
+        "dog",
+        "eric"
+      ],
       "comments": []
     },
     {
@@ -472,7 +485,8 @@
       "image": "https://kbimages1-a.akamaihd.net/f475860b-7b73-4d78-b918-ec79befe60a0/353/569/90/False/101-dalmatians-read-along-storybook-and-cd.jpg",
       "likes": [
         "zanemao",
-        "pig"
+        "pig",
+        "eric"
       ],
       "comments": [
         {
@@ -489,6 +503,11 @@
           "author": "dog",
           "comment": "trump @",
           "mention": "@[trump](trump)"
+        },
+        {
+          "author": "eric",
+          "comment": "im eric",
+          "mention": ""
         }
       ]
     },
@@ -698,7 +717,9 @@
       "description": "hhhhhhhhhh",
       "date": "10/1/2022",
       "image": "https://i.natgeofe.com/n/4f5aaece-3300-41a4-b2a8-ed2708a0a27c/domestic-dog_thumb_4x3.jpg",
-      "likes": [],
+      "likes": [
+        "eric"
+      ],
       "comments": [
         {
           "author": "dog",
@@ -708,6 +729,11 @@
         {
           "author": "dog",
           "comment": "comment again",
+          "mention": ""
+        },
+        {
+          "author": "eric",
+          "comment": "Hey check out my page eric. follow me!",
           "mention": ""
         }
       ]

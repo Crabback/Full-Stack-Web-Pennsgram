@@ -16,22 +16,15 @@ export function LikeButton(props) {
       });
 
     async function handleLike(e) {
+        // tell my grandparent to refresh the page 
+        props.setEditedAndRefreshCards(!props.oldEditedAndRefreshCards);
+
         setChecked(e.currentTarget.checked);
         if (text === "Like"){
           setText("Liked");
-          if (liked){
-            props.setOffset(0);
-          }else{
-            props.setOffset(1);
-          }
           await likePost(props.username, props.post.id);
         }else{
           setText("Like");
-          if (liked){
-            props.setOffset(-1);
-          }else{
-            props.setOffset(0);
-          }
           await unlikePost(props.username, props.post.id);
         }
       }

@@ -108,7 +108,7 @@ export function CardCustomedUserPage(props) {
     const navigate = useNavigate();
     const [descInput, setDescInput] = useState("");
     const [mentionInput, setMentionInput] = useState("");
-    const [offset, setOffset] = useState(0);
+    // const [offset, setOffset] = useState(0);
     // const [offsetComment, setOffsetComment] = useState(0);
   
     const handleLeaveComment= async (e) => {
@@ -124,6 +124,7 @@ export function CardCustomedUserPage(props) {
         }
         await addComment(props.post.id, newComment);
         // setOffsetComment(offsetComment+1);
+        // tell my parent to refresh the page 
         props.setEditedAndRefreshCards(!props.oldEditedAndRefreshCards);
         alert("Commented Successful!");
       }
@@ -151,13 +152,16 @@ export function CardCustomedUserPage(props) {
                 
                 <Row style={{paddingBottom: "1rem"}}>
                   <Col> 
-                  <Button variant="light" onClick={() => setlikeModalShow(true) }><Card.Text> {props.post.likes.length + offset} likes </Card.Text></Button>
+                  <Button variant="light" onClick={() => setlikeModalShow(true) }><Card.Text> {props.post.likes.length} likes </Card.Text></Button>
                   </Col>
                   <Col> <Button variant="light" onClick={() => setModalShow(true) }> <Card.Text> {props.post.comments.length} comments </Card.Text></Button> </Col>
                 </Row>
   
                 <ButtonGroup aria-label="like,comment,message">
-                    <LikeButton post = {props.post} username={props.username} setOffset={setOffset}/>
+                    <LikeButton post = {props.post} username={props.username} 
+                          // pass the setState hook from my parent to my child
+                          setEditedAndRefreshCards={props.setEditedAndRefreshCards} oldEditedAndRefreshCards={props.oldEditedAndRefreshCards}
+                    />
                     {(props.post.author==props.username) && <Button className="mb-2" onClick={() => {
                       props.setPostBeingEdited(props.post);
                       props.setVisibility(true);
