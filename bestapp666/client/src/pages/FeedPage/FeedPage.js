@@ -57,7 +57,7 @@ export default function FeedPage() {
 
 
   const cards = ((feedPostOfUser.length===0) ? popularPostsNearby:feedPostOfUser).map((p) => (
-    <CardCustomed post={p} username={stateCurrentUser.username}/>
+    <CardCustomed post={p} username={stateCurrentUser.username} setCommentState={setFeedPostOfUser} allDisplayedPosts={feedPostOfUser}/>
   ))
 
   let userlist =  stateCurrentUser.followerSuggestions.map((p) => (

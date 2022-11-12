@@ -337,6 +337,11 @@
           "author": "dog",
           "comment": "Look at this pig!",
           "mention": ""
+        },
+        {
+          "author": "dog",
+          "comment": "this is dog comment",
+          "mention": ""
         }
       ]
     },
@@ -407,11 +412,6 @@
           "author": "zanemao",
           "comment": "zane leaves a comment test.",
           "mention": ""
-        },
-        {
-          "author": "zanemao",
-          "comment": "look at this post, trump",
-          "mention": "@[trump](trump)"
         },
         {
           "author": "zanemao",

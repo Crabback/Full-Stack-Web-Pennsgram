@@ -16,9 +16,99 @@ import { addComment} from "../api/mock_api";
 import { Nav } from 'react-bootstrap';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Modal from 'react-bootstrap/Modal';
+import Stack from 'react-bootstrap/Stack';
+
+
+function MyCommentsModal(props) {
+  const comments = props.post.comments;
+  const commentsList = comments.length === 0 ? []: comments.map((c)=>{
+    return (
+      <>
+        <div className="bg-light border">
+          <Row>
+            <Col><h4>{c.author}</h4></Col>
+            <Col ><p>{c.comment + " "} 
+            <NavLink to={"/user/"+c.mention.replace(')', '').split("(")[1]} className="button_text">
+                    {c.mention.split("(")[0]}
+                </NavLink>
+            </p></Col>
+          </Row>
+            </div>
+      </>
+    )
+  }) ;
+
+  return (
+    <Modal
+      {...props}
+      size="xl"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Comments
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+          <Stack gap={3}>
+              {commentsList}
+          </Stack>
+        
+      </Modal.Body>
+      <Modal.Footer>
+        <Button onClick={props.onHide}>Close</Button>
+      </Modal.Footer>
+    </Modal>
+  );
+}
+
+function MyLikesModal(props) {
+  const likes = props.post.likes;
+  const likesList = likes.length === 0 ? []: likes.map((l)=>{
+    return (
+      <>
+        <div className="bg-light border">
+          <Row>
+            <Col><h4>{l}</h4></Col>
+          </Row> 
+            </div>
+      </>
+    )
+  }) ;
+
+  return (
+    <Modal
+      {...props}
+      size="xl"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Comments
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+          <Stack gap={3}>
+              {likesList}
+          </Stack>
+        
+      </Modal.Body>
+      <Modal.Footer>
+        <Button onClick={props.onHide}>Close</Button>
+      </Modal.Footer>
+    </Modal>
+  );
+}
+
 
 export function CardCustomed(props) {
     const navigate = useNavigate();
+    const [modalShow, setModalShow] = useState(false);
+    const [likeModalShow, setlikeModalShow] = useState(false);
+
     const [descInput, setDescInput] = useState("");
     const [mentionInput, setMentionInput] = useState("");
     const [offset, setOffset] = useState(0);
@@ -37,7 +127,7 @@ export function CardCustomed(props) {
         }
         await addComment(props.post.id, newComment);
         setOffsetComment(offsetComment+1);
-        alert("commented successful!");
+        alert("commented successful! re-enter this page to see the change.");
       }
       setDescInput('');
       setMentionInput('');
@@ -45,6 +135,7 @@ export function CardCustomed(props) {
 
       if (props.post) {
           return (
+            <>
             <Card bg = "light" style={{ width: '28rem'}}>
               <Navbar bg="dark" variant="dark">
                 <Container>
@@ -75,10 +166,10 @@ export function CardCustomed(props) {
                 
                 <Row>
                   <Col>
-                    <Card.Text style={{paddingBottom: '1rem'}}> {props.post.likes.length + offset} likes </Card.Text>
+                  <Button variant="light" onClick={() => setlikeModalShow(true) }><Card.Text> {props.post.likes.length + offset} likes </Card.Text></Button>
                   </Col>
                   <Col>
-                    <Card.Text style={{paddingBottom: '1rem'}}> {props.post.comments.length + offsetComment} comments </Card.Text>
+                  <Button variant="light" onClick={() => setModalShow(true) }> <Card.Text> {props.post.comments.length + offsetComment} comments </Card.Text> </Button>
                   </Col>
                 </Row>
   
@@ -111,6 +202,19 @@ export function CardCustomed(props) {
                 </Form>
               </Card.Body>
             </Card>
+
+        <MyCommentsModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+        post={props.post} />
+
+        <MyLikesModal
+        show={likeModalShow}
+        onHide={() => setlikeModalShow(false)}
+        post={props.post}
+        />
+
+        </>
             )
         
       }
