@@ -298,3 +298,21 @@ export const deleteComment = async (postId, content) =>{
         console.error(err);
     }
 }
+
+export const updateComment = async (postId, oldcomment, newComment, newMention) =>{
+    try{    
+        let post = await getPost(postId);
+        post.comments.forEach(function(obj){
+            if(obj.comment == oldcomment){
+                obj.comment = newComment;
+                obj.mention = newMention;
+            }
+        })
+        const responsePut = await axios.put(`${rootURL+'/Posts'}/${postId}`, post);
+        console.log(`successfully update post ${postId}` );
+        //return responsePut.data[0]; 
+    }
+    catch(err){
+        console.error(err);
+    }
+}

@@ -400,11 +400,6 @@
         },
         {
           "author": "dog",
-          "comment": "kjhkj",
-          "mention": ""
-        },
-        {
-          "author": "dog",
           "comment": "kjhg",
           "mention": ""
         }
@@ -498,11 +493,6 @@
           "author": "dog",
           "comment": "comment here",
           "mention": ""
-        },
-        {
-          "author": "dog",
-          "comment": "trump @",
-          "mention": "@[trump](trump)"
         },
         {
           "author": "eric",
@@ -728,8 +718,8 @@
         },
         {
           "author": "dog",
-          "comment": "comment again",
-          "mention": ""
+          "comment": "new com",
+          "mention": "@[trump](trump)"
         },
         {
           "author": "eric",

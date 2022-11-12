@@ -1,15 +1,15 @@
 import React from 'react';
-import { Footer } from "../../components/Footer";
+import { Footer } from "../components/Footer";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { getUser } from "../../api/mock_api";
+import { getUser } from "../api/mock_api";
 import { useState } from 'react';
 import { Navigate } from "react-router-dom";
 import { useSelector, useDispatch} from 'react-redux'
-import {updateCurrentUser, selectCurrentUser} from '../UserPage/currentUserSlice'
+import {updateCurrentUser, selectCurrentUser} from './UserPage/currentUserSlice'
 
 
 //the compoent of a LoginForm which keep track of login username

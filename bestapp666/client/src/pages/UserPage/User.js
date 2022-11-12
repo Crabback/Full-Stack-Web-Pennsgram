@@ -3,7 +3,7 @@ import { getPost } from "../../api/mock_api";
 import React, { useState, useEffect } from "react";
 import { Footer } from "../../components/Footer";
 import ReactRoundedImage from "react-rounded-image";
-import {CardCustomedUserPage} from '../../components/CardCustomedUserPage';
+import {CardCustomedUserPage} from '../../components/CardUserPage';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';

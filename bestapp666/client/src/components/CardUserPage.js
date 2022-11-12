@@ -4,102 +4,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import {LikeButton} from './LikeButton';
+import {MyCommentsModal} from './MyCommentsModal';
+import {MyLikesModal} from './MyLikesModal';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Card from 'react-bootstrap/Card';
-import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { MentionsInput, Mention } from 'react-mentions'
-import { addComment} from "../api/mock_api";
+import { addComment, deleteComment} from "../api/mock_api";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
-import Popover from 'react-bootstrap/Popover';
-import Modal from 'react-bootstrap/Modal';
-import Stack from 'react-bootstrap/Stack';
-
-function MyCommentsModal(props) {
-  const comments = props.post.comments;
-  const commentsList = comments.length === 0 ? []: comments.map((c)=>{
-    return (
-      <>
-        <div className="bg-light border">
-          <Row>
-            <Col><h4>{c.author}</h4></Col>
-            <Col ><p>{c.comment + " "} 
-            <NavLink to={"/user/"+c.mention.replace(')', '').split("(")[1]} className="button_text">
-                    {c.mention.split("(")[0]}
-                </NavLink>
-            </p></Col>
-          </Row>
-            </div>
-      </>
-    )
-  }) ;
-
-  return (
-    <Modal
-      {...props}
-      size="xl"
-      aria-labelledby="contained-modal-title-vcenter"
-      centered
-    >
-      <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
-          Comments
-        </Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-          <Stack gap={3}>
-              {commentsList}
-          </Stack>
-        
-      </Modal.Body>
-      <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
-      </Modal.Footer>
-    </Modal>
-  );
-}
-
-
-function MyLikesModal(props) {
-  const likes = props.post.likes;
-  const likesList = likes.length === 0 ? []: likes.map((l)=>{
-    return (
-      <>
-        <div className="bg-light border">
-          <Row>
-            <Col><h4>{l}</h4></Col>
-          </Row> 
-            </div>
-      </>
-    )
-  }) ;
-
-  return (
-    <Modal
-      {...props}
-      size="xl"
-      aria-labelledby="contained-modal-title-vcenter"
-      centered
-    >
-      <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
-          Likes
-        </Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-          <Stack gap={3}>
-              {likesList}
-          </Stack>
-        
-      </Modal.Body>
-      <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
-      </Modal.Footer>
-    </Modal>
-  );
-}
 
 export function CardCustomedUserPage(props) {
     const [modalShow, setModalShow] = useState(false);
@@ -200,6 +113,7 @@ export function CardCustomedUserPage(props) {
             show={modalShow}
             onHide={() => setModalShow(false)}
             post={props.post}
+            username={props.username}
             />
 
             <MyLikesModal

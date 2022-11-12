@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {CardCustomed} from '../../components/CardCustomed';
+import {CardCustomed} from '../components/CardFeedPage';
 import Stack from 'react-bootstrap/Stack';
 import { NavLink } from "react-router-dom";
 import { useSelector} from 'react-redux'
 import ListGroup from 'react-bootstrap/ListGroup';
-import {selectCurrentUser} from '../UserPage/currentUserSlice'
-import {getUsersAsList, getLastestPostOfAUser, getPost, getUser } from "../../api/mock_api";
+import {selectCurrentUser} from './UserPage/currentUserSlice'
+import {getUsersAsList, getLastestPostOfAUser, getPost, getUser } from "../api/mock_api";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
@@ -73,7 +73,7 @@ export default function FeedPage() {
     
     <Row>
 
-      <Col style={{paddingLeft: "20%"}}>
+      <Col style={{paddingLeft: "10%"}}>
         <Stack gap={2} className="col-md-6 mx-auto">
           {cards}
         </Stack>

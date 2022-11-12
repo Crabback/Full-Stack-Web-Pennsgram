@@ -6,9 +6,9 @@ import RegisterPage from "./pages/RegisterPage";
 import HomePage from "./pages/HomePage";
 import User from "./pages/UserPage/User";
 import UserList from "./pages/UserList";
-import LoginPage from "./pages/LoginPage/LoginPage";
+import LoginPage from "./pages/LoginPage";
 import UploadPostPage from "./pages/UploadPostPage";
-import FeedPage from "./pages/FeedPage/FeedPage";
+import FeedPage from "./pages/FeedPage";
 import NoPage from "./pages/NoPage";
 
 export default function App() {
