@@ -1,15 +1,14 @@
-# project_design
-Photo&amp;Video-sharing Social Network APP -  UI & Frontend; 
+# Progress:
 
-User Story Point Scale: 1 point = 8 hours/person
+# HW3: Implementation (View) & Unit Testing (Completed)
+PDF instruction: https://github.com/cis557/project---design-hw1-team_offersoverflow/blob/main/Project%20-%20HW3.pdf
 
-Figma UI: https://www.figma.com/file/p2u4b7FHO5W7OtodvFqyIc/HW1-Wireframe-%26-Prototype?node-id=0%3A1
+HW3 Demo: https://drive.google.com/file/d/1CK2IBO49mhrhXFM6HybLWf3il4PG6swY/view?usp=share_link
 
-RESTful API on Swaggerhub: https://app.swaggerhub.com/apis/offersoverflow/OfferOverflow_Penngram/1.0.0
+# HW2: Implementation (View) & UI Testing (Completed)
+PDF instruction: https://github.com/cis557/project---design-hw1-team_offersoverflow/blob/main/Project%20-%20HW2.pdf
 
-RESTful API Documentation: https://app.swaggerhub.com/apis-docs/offersoverflow/OfferOverflow_Penngram/1.0.0
-
-# HW2 grading instructions with command lines:
+HW2 grading instructions:
 
       Step 1 -- install react packages: 
                                       1. open terminal window 1 and run following commands:
@@ -56,18 +55,15 @@ RESTful API Documentation: https://app.swaggerhub.com/apis-docs/offersoverflow/O
 
 **Notice:** The navbar on the top is only for grading and development purposes, and it will be removed in the final version.
 
-# Progress:
-HW1: Architecture Design (Completed)
+# HW1: Architecture Design (Completed)
+PDF instruction: https://github.com/cis557/project---design-hw1-team_offersoverflow/blob/main/Project%20-%20HW1.pdf
 
-HW2: Implementation (View) & UI Testing. 
+Photo&amp;Video-sharing Social Network APP -  UI & Frontend; 
 
-HW3: Implementation (View) & Unit Testing
+User Story Point Scale: 1 point = 8 hours/person
 
-PDF instruction: https://static.us.edusercontent.com/files/fqlqVg7lJGCYfWjdVlcz938m
-due date: Nov 11th at 11:59 pm on Gradescope
-       
-       Sprint 1: 
+Figma UI: https://www.figma.com/file/p2u4b7FHO5W7OtodvFqyIc/HW1-Wireframe-%26-Prototype?node-id=0%3A1
 
-       Sprint 2: 
+RESTful API on Swaggerhub: https://app.swaggerhub.com/apis/offersoverflow/OfferOverflow_Penngram/1.0.0
 
-       Sprint 3: 
+RESTful API Documentation: https://app.swaggerhub.com/apis-docs/offersoverflow/OfferOverflow_Penngram/1.0.0
