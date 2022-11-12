@@ -13,14 +13,8 @@ import { NavLink } from "react-router-dom";
 const CustomPopup = (props) => {
 
     const [show, setShow] = useState(false);
-    const [id, setId] = useState(-1);
-    const [image, setImage] = useState("");
-    const [description, setDescription] = useState("");
     const [media, setMedia] = useState("");
     const [descInput, setDescInput] = useState("");
-    const [post, setPost] = useState({author: "Void",
-                                    comment: "No comments",
-                                    mention: "@[NOT_A_USER](NOT_A_USER)"})
 
     const doneHandler = (e) => {
         // update the database and dispatch currentUser
@@ -36,11 +30,7 @@ const CustomPopup = (props) => {
 
     useEffect(() => {
         setShow(props.show);
-        setPost(props.post);
-        setId(post.id);
-        setImage(post.image);
-        setDescription(post.description);
-        setDescInput(description);
+        setDescInput(props.post.description);
         console.log("current post: ", props.post);
         }, [props.show]);
         
@@ -61,7 +51,7 @@ const CustomPopup = (props) => {
 
     const handleUpdate = async (e) => {
         e.preventDefault();
-        await updatePost(id, media, descInput);
+        await updatePost(props.post.id, media, descInput);
         alert("Update Successful! Please re-enter this page to see the change.")
     };
 
@@ -94,7 +84,7 @@ const CustomPopup = (props) => {
         }else{
             return (
                 <Form.Group className="mb-3">
-                    <img onError={addDefaultImgSrc} src={image} alt="user pic 1" width="400" height="400"></img>
+                    <img onError={addDefaultImgSrc} src={media} alt="user pic 1" width="400" height="400"></img>
                 </Form.Group>
                 )
         }
@@ -105,7 +95,7 @@ const CustomPopup = (props) => {
                                                     mention: "@[NOT_A_USER](NOT_A_USER)"}]
     ).map((p, idx) => {
         return (
-        <Toast onClose={(e) => handleDeleteComment(id, p.comment)} delay={1000}  className="d-inline-block m-1" bg={"light"} key={idx}>
+        <Toast onClose={(e) => handleDeleteComment(props.post.id, p.comment)} delay={1000}  className="d-inline-block m-1" bg={"light"} key={idx}>
             <Toast.Header>
                 <img src="holder.js/20x20?text=%20" className="rounded me-2" alt=""/>
                 <strong className="me-auto">{p.author}</strong>
@@ -123,7 +113,7 @@ const CustomPopup = (props) => {
     return (
         <div style={{visibility: show ? "visible" : "hidden", opacity: show ? "1" : "0"}} className={popupStyles.overlay}>
         <div className={popupStyles.popup}>
-            <Button variant="outline-danger" onClick = {(e)=> handleDeletePost(id)}>Delete Post</Button>
+            <Button variant="outline-danger" onClick = {(e)=> handleDeletePost(props.post.id)}>Delete Post</Button>
 
             <span className={popupStyles.close} onClick={closeHandler}>
             &times;
