@@ -381,6 +381,11 @@
           "author": "dog",
           "comment": "I am tiger leaving a comment here for pig",
           "mention": ""
+        },
+        {
+          "author": "obama",
+          "comment": "hi",
+          "mention": ""
         }
       ]
     },
@@ -524,7 +529,13 @@
       "date": "10/16/2022",
       "image": "https://cdn.britannica.com/78/133178-050-7A997FB3/Barack-Michelle-Obama-daughters-Sasha-photograph-Green-2009.jpg",
       "likes": [],
-      "comments": []
+      "comments": [
+        {
+          "author": "obama",
+          "comment": "my comment",
+          "mention": ""
+        }
+      ]
     },
     {
       "id": 15,
@@ -534,38 +545,6 @@
       "image": "https://drive.google.com/uc?export=view&id=1Oqs52qe_Dp91how3nZBZFzLjLUR2ntQ4",
       "likes": [],
       "comments": []
-    },
-    {
-      "id": 16,
-      "author": "obama",
-      "description": "MAGA!",
-      "date": "10/16/2022",
-      "image": "https://drive.google.com/uc?export=view&id=1Oqs52qe_Dp91how3nZBZFzLjLUR2ntQ4",
-      "likes": [],
-      "comments": []
-    },
-    {
-      "id": 17,
-      "author": "obama",
-      "description": "lol",
-      "date": "10/16/2022",
-      "image": "https://drive.google.com/uc?export=view&id=1F2X0d6KkJWV26qoofFx6u9YGeUnCSfcl",
-      "likes": [
-        null,
-        "zanemao"
-      ],
-      "comments": [
-        {
-          "author": "zanemao",
-          "comment": "good luck on your election!",
-          "mention": ""
-        },
-        {
-          "author": "zanemao",
-          "comment": "test comment",
-          "mention": ""
-        }
-      ]
     },
     {
       "id": 18,
@@ -658,6 +637,11 @@
           "author": "dog",
           "comment": "That's a beautiful dog!",
           "mention": "@[pig](pig)"
+        },
+        {
+          "author": "obama",
+          "comment": "dog it looks like you! ",
+          "mention": "@[dog](dog)"
         }
       ]
     },

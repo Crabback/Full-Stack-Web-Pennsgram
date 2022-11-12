@@ -22,7 +22,12 @@ import Stack from 'react-bootstrap/Stack';
 
 function MyCommentsModal(props) {
   const comments = props.post.comments;
+  const [editShow, setEditShow] = useState(false);
+
   const commentsList = comments.length === 0 ? []: comments.map((c)=>{
+    const handelEditShow = event => {
+      setEditShow(current => !current);
+    };
     return (
       <>
         <div className="bg-light border">
@@ -32,6 +37,12 @@ function MyCommentsModal(props) {
             <NavLink to={"/user/"+c.mention.replace(')', '').split("(")[1]} className="button_text">
                     {c.mention.split("(")[0]}
                 </NavLink>
+                {c.author === props.username && (
+                <Button onClick={handelEditShow} style={{float: 'right'}} >Edit</Button>
+                )}
+                {editShow && (
+                <Button>edit thisShit</Button>
+                )}
             </p></Col>
           </Row>
             </div>
@@ -40,6 +51,7 @@ function MyCommentsModal(props) {
   }) ;
 
   return (
+    <>
     <Modal
       {...props}
       size="xl"
@@ -61,6 +73,9 @@ function MyCommentsModal(props) {
         <Button onClick={props.onHide}>Close</Button>
       </Modal.Footer>
     </Modal>
+
+    </>
+
   );
 }
 
@@ -206,7 +221,8 @@ export function CardCustomed(props) {
         <MyCommentsModal
         show={modalShow}
         onHide={() => setModalShow(false)}
-        post={props.post} />
+        post={props.post} 
+        username={props.username}/>
 
         <MyLikesModal
         show={likeModalShow}
