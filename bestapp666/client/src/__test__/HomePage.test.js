@@ -11,13 +11,13 @@ import { configureStore } from "@reduxjs/toolkit";
 import store from '../Store/store';
 
 const store1 = store;
-test("render home page component", () => {
+test("render home page component", async () => {
   const { getByText }  = render(
-     <Provider store={store1}>
-         <BrowserRouter>
-            <HomePage />
-        </BrowserRouter>
-      </Provider>
+    <Provider store={store1}>
+      <BrowserRouter>
+        <HomePage />
+      </BrowserRouter>
+    </Provider>
   );
   const element = getByText(/Start Your Journey/);
   const element1 = getByText(/Happy Pig!/);

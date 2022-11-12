@@ -16,7 +16,7 @@ import { getUser } from "../api/mock_api";
 
 const store1 = store;
 
-test('Page matches snapshot', () => {
+test('Page matches snapshot', async () => {
     const component = renderer.create(
         <Provider store={store1}>
         <BrowserRouter>
@@ -44,7 +44,7 @@ test('render feed page as logged in user list ', async () => {
           </BrowserRouter>
         </Provider>
     );
-    const post = getByText(/cat/);
+    const post = getByText(/pig/);
     expect(post).toBeVisible();
 
 });

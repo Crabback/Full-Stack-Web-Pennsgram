@@ -9,7 +9,7 @@ import { Provider } from 'react-redux';
 
 
 const store1 = store;
-test("render Search Bar display", () => {
+test("render Search Bar display", async () => {
     const { getByText }  = render(
     <Provider store={store1}>
         <BrowserRouter>

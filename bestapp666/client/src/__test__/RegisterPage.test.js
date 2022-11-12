@@ -16,7 +16,7 @@ import {handleRegister} from '../pages/RegisterPage'
 
 
 const store1 = store;
-test("render register page component", () => {
+test("render register page component", async () => {
   const { getByText }  = render(
      <Provider store={store1}>
          <BrowserRouter>
@@ -31,7 +31,7 @@ test("render register page component", () => {
 
 });
 
-test('Page matches snapshot', () => {
+test('Page matches snapshot', async () => {
     const component = renderer.create(
         <BrowserRouter>
         <RegisterPage />
