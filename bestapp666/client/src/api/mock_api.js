@@ -227,8 +227,8 @@ export const updatePost = async (postId, newImage, newDescription) =>{
         post.image = newImage;
         post.description = newDescription;
         const responsePut = await axios.put(`${rootURL+'/Posts'}/${postId}`, post);
-        console.log(`successfully update post ${postId}`);
-        return responsePut.data[0]; 
+        console.log(`successfully update post ${postId}` );
+        //return responsePut.data[0]; 
         // return the data with the id of the user
     }
     catch(err){

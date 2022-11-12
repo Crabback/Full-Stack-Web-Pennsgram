@@ -37,7 +37,7 @@ test('render following list ', async () => {
 
 });
 
-test('Page matches snapshot', () => {
+test('Page matches snapshot', async  () => {
 
     const component = renderer.create(
         <Provider store={store1}>

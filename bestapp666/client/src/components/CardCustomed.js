@@ -21,7 +21,9 @@ export function CardCustomed(props) {
     const navigate = useNavigate();
     const [descInput, setDescInput] = useState("");
     const [mentionInput, setMentionInput] = useState("");
-  
+    const [offset, setOffset] = useState(0);
+    const [offsetComment, setOffsetComment] = useState(0);
+
     const handleLeaveComment= async (e) => {
       e.preventDefault();
       if(props.username === "NOT_A_USER"){
@@ -34,11 +36,12 @@ export function CardCustomed(props) {
           "mention": mentionInput
         }
         await addComment(props.post.id, newComment);
+        setOffsetComment(offsetComment+1);
       }
       setDescInput('');
       setMentionInput('');
     }
-  
+
       if (props.post) {
         if(props.post.image.split(".").slice(-1) == 'mp4'){
           return (
@@ -69,15 +72,15 @@ export function CardCustomed(props) {
                 
                 <Row>
                   <Col>
-                    <Card.Text style={{paddingBottom: '1rem'}}> {props.post.likes.length} likes </Card.Text>
+                    <Card.Text style={{paddingBottom: '1rem'}}> {props.post.likes.length + offset} likes </Card.Text>
                   </Col>
                   <Col>
-                    <Card.Text style={{paddingBottom: '1rem'}}> {props.post.comments.length} comments </Card.Text>
+                    <Card.Text style={{paddingBottom: '1rem'}}> {props.post.comments.length + offsetComment} comments </Card.Text>
                   </Col>
                 </Row>
   
                 <ButtonGroup aria-label="like,comment,message">
-                    <LikeButton post = {props.post} username={props.username}/>
+                    <LikeButton post = {props.post} username={props.username} setOffset={setOffset}/>
                     <Button className="mb-2" variant="outline-primary">Comment</Button>
                 </ButtonGroup>
   
@@ -134,15 +137,15 @@ export function CardCustomed(props) {
                 
                 <Row>
                   <Col>
-                    <Card.Text style={{paddingBottom: '1rem'}}> {props.post.likes.length} likes </Card.Text>
+                    <Card.Text style={{paddingBottom: '1rem'}}> {props.post.likes.length + offset} likes </Card.Text>
                   </Col>
                   <Col>
-                    <Card.Text style={{paddingBottom: '1rem'}}> {props.post.comments.length} comments </Card.Text>
+                    <Card.Text style={{paddingBottom: '1rem'}}> {props.post.comments.length + offsetComment} comments </Card.Text>
                   </Col>
                 </Row>
   
                 <ButtonGroup aria-label="like,comment,message">
-                    <LikeButton post = {props.post} username={props.username}/>
+                    <LikeButton post = {props.post} username={props.username} setOffset={setOffset}/>
                     <Button className="mb-2" variant="outline-primary">Comment</Button>
                 </ButtonGroup>
   

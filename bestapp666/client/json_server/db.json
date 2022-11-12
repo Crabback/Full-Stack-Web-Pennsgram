@@ -42,7 +42,8 @@
       "followers": [
         "pig",
         "dog",
-        "wwwsm"
+        "wwwsm",
+        "zanemao"
       ],
       "avatar": "https://thumbs.dreamstime.com/b/caricature-presidential-candidate-donald-trump-character-portrait-giving-speech-70328509.jpg",
       "posts": [
@@ -241,7 +242,8 @@
       "followings": [
         "elon",
         "obama",
-        "pig"
+        "pig",
+        "trump"
       ],
       "followers": [
         "trump",
@@ -324,7 +326,18 @@
       "likes": [
         "dog"
       ],
-      "comments": []
+      "comments": [
+        {
+          "author": "obama",
+          "comment": "hi",
+          "mention": ""
+        },
+        {
+          "author": "obama",
+          "comment": "",
+          "mention": ""
+        }
+      ]
     },
     {
       "id": 3,
@@ -365,8 +378,8 @@
       "comments": [
         {
           "author": "zanemao",
-          "comment": "look at these pigs",
-          "mention": "@trump"
+          "comment": "look pigs",
+          "mention": "@[trump](trump)"
         }
       ]
     },
@@ -419,7 +432,9 @@
       "description": "My routine practice is like this:",
       "date": "10/16/2022",
       "image": "https://cdn.nba.com/manage/2022/06/stephen-curry-pregame-dribbles.jpg",
-      "likes": [],
+      "likes": [
+        "obama"
+      ],
       "comments": []
     },
     {
@@ -483,10 +498,21 @@
       "date": "10/16/2022",
       "image": "https://drive.google.com/uc?export=view&id=1F2X0d6KkJWV26qoofFx6u9YGeUnCSfcl",
       "likes": [
-        "zanemao",
-        null
+        null,
+        "zanemao"
       ],
-      "comments": []
+      "comments": [
+        {
+          "author": "zanemao",
+          "comment": "good luck on your election!",
+          "mention": ""
+        },
+        {
+          "author": "zanemao",
+          "comment": "test comment",
+          "mention": ""
+        }
+      ]
     },
     {
       "id": 18,
@@ -527,13 +553,11 @@
     {
       "id": 23,
       "author": "zanemao",
-      "description": "test upload",
+      "description": "i modified my post.",
       "date": "10/16/2022",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLOZAgX4_oFdHPuRk5Yz3oS0GGg0yA7L5-pw&usqp=CAU",
+      "image": "https://miro.medium.com/max/1200/1*Lvxvq_4S5WPeCShJhFoY9Q.jpeg",
       "likes": [
-        "pig",
-        null,
-        null
+        "pig"
       ],
       "comments": [
         {

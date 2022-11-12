@@ -68,7 +68,7 @@ export default function User() {
     };
 
     const posts = ((thisUser.posts.length===0)?  [-1] : thisUser.posts).map((p)=>(
-      <CardCustomedUserPage post={allPosts.filter(n => n.id === p)[0]} setPostBeingEdited = {setPostBeingEdited} setVisibility= {setVisibility} />
+      <CardCustomedUserPage username={stateCurrentUser.username} post={allPosts.filter(n => n.id === p)[0]} setPostBeingEdited = {setPostBeingEdited} setVisibility= {setVisibility} />
     ))
 
     function ActionButton(){

@@ -56,15 +56,18 @@ const CustomPopup = (props) => {
     async function handleDeleteComment(postId, content){
         console.log(postId, content);
         await deleteComment(postId, content);
+        alert("Delete Successful! Please re-enter this page to see the change.")
     };
 
     async function handleDeletePost(postId){
         await deletePost(postId);
+        alert("Delete Successful! Please re-enter this page to see the change.")
     };
 
-    async function handleUpdate(e, postId, newImage, newDescription){
+    const handleUpdate = async (e) => {
         e.preventDefault();
-        await updatePost(postId, newImage, newDescription);
+        await updatePost(id, media, descInput);
+        alert("Update Successful! Please re-enter this page to see the change.")
     };
 
     function addDefaultImgSrc(ev){
@@ -138,7 +141,7 @@ const CustomPopup = (props) => {
                     <Row>
                         <Col xs={6}>
                             <div style = {{height: "100%", width: "100%", border: "1px solid black"}}>
-                                <Form onSubmit={(e)=> handleUpdate(id, media.mediaLink, descInput)}>
+                                <Form onSubmit={handleUpdate}>
                                     <MediaPreview mediaLink = {media}/>
                                     <Form.Group className="mb-3" controlId="formBasicDescription">
                                         <Form.Label>

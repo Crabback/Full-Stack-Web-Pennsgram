@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render friends component 1`] = `
+<div
+  className="fade alert alert-danger show"
+  id="noPageID"
+  role="alert"
+>
+  <div
+    className="alert-heading h4"
+  >
+    404. Page Not Found. 
+  </div>
+  <p>
+    Change this and that and try again.
+  </p>
+</div>
+`;

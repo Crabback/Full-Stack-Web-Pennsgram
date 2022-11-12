@@ -12,7 +12,7 @@ import store from '../Store/store';
 import renderer from 'react-test-renderer';
 
 const store1 = store;
-test('Page matches snapshot', () => {
+test('Page matches snapshot', async () => {
     const component = renderer.create(
         <Provider store={store1}>
         <BrowserRouter>
