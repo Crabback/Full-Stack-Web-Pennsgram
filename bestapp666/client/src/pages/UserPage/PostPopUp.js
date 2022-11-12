@@ -11,18 +11,16 @@ import {deletePost, getComments, deleteComment, updatePost} from "../../api/mock
 import { NavLink } from "react-router-dom";
 
 const CustomPopup = (props) => {
-    const [show, setShow] = useState(false);
 
+    const [show, setShow] = useState(false);
     const [id, setId] = useState(-1);
-    const [author, setAuthor] = useState("");
     const [image, setImage] = useState("");
-    const [comments, setComments] = useState([]);
     const [description, setDescription] = useState("");
     const [media, setMedia] = useState("");
-    const [editPanel, setEditPanel] = useState(false);
-
-   //handle the temporary inputs in the post description 
     const [descInput, setDescInput] = useState("");
+    const [post, setPost] = useState({author: "Void",
+                                    comment: "No comments",
+                                    mention: "@[NOT_A_USER](NOT_A_USER)"})
 
     const doneHandler = (e) => {
         // update the database and dispatch currentUser
@@ -38,12 +36,9 @@ const CustomPopup = (props) => {
 
     useEffect(() => {
         setShow(props.show);
-        const post = props.post;
+        setPost(props.post);
         setId(post.id);
-        setAuthor(post.author);
         setImage(post.image);
-        setComments(post.comments);
-        setEditPanel(props.editPanel);
         setDescription(post.description);
         setDescInput(description);
         console.log("current post: ", props.post);
@@ -105,7 +100,7 @@ const CustomPopup = (props) => {
         }
     }
 
-    const commentsToast = (comments?  comments : [{author: "Void",
+    const commentsToast = (props.post.comments?  props.post.comments : [{author: "Void",
                                                     comment: "No comments",
                                                     mention: "@[NOT_A_USER](NOT_A_USER)"}]
     ).map((p, idx) => {
@@ -137,12 +132,12 @@ const CustomPopup = (props) => {
             <div className={popupStyles.content}>
                 {/* {props.children} */}
 
-                <div style = {{height: "10%", width: "95%", border: "1px solid black"}}>
+                <div style = {{height: "10%", width: "95%"}}>
                     <Row>
                         <Col xs={6}>
-                            <div style = {{height: "100%", width: "100%", border: "1px solid black"}}>
+                            <div style = {{height: "100%", width: "100%"}}>
                                 <Form onSubmit={handleUpdate}>
-                                    <MediaPreview mediaLink = {media}/>
+                                    <MediaPreview mediaLink = {props.post.image}/>
                                     <Form.Group className="mb-3" controlId="formBasicDescription">
                                         <Form.Label>
                                             {descInput}
