@@ -257,7 +257,8 @@
       "avatar": "https://img.wattpad.com/8f19b412f2223afe4288ed0904120a48b7a38ce1/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f5650722d38464e2d744a515349673d3d2d3234323931353831302e313434336539633161633764383437652e6a7067",
       "posts": [
         20,
-        23
+        23,
+        28
       ],
       "id": 11,
       "followerSuggestions": [
@@ -331,11 +332,6 @@
           "author": "obama",
           "comment": "hi",
           "mention": ""
-        },
-        {
-          "author": "obama",
-          "comment": "",
-          "mention": ""
         }
       ]
     },
@@ -398,7 +394,9 @@
       "description": "The film I am in with my 100 friends",
       "date": "10/16/2022",
       "image": "http://images.randomhouse.com/cover/9780736431828?&alt=sir.jpg",
-      "likes": [],
+      "likes": [
+        "zanemao"
+      ],
       "comments": [
         {
           "author": "zanemao",
@@ -561,8 +559,14 @@
       ],
       "comments": [
         {
+          "author": "zanemao",
           "comment": "I commented myself",
           "mention": "@zanemao"
+        },
+        {
+          "author": "zanemao",
+          "comment": "I commented myself again",
+          "mention": ""
         }
       ]
     },
@@ -590,6 +594,15 @@
       "description": "My selfie on https://ericfouh.com/",
       "date": "10/1/2022",
       "image": "https://ericfouh.com/assets/img/profile.jpg",
+      "likes": [],
+      "comments": []
+    },
+    {
+      "id": 28,
+      "author": "zanemao",
+      "description": "Try a mp4 upload",
+      "date": "10/1/2022",
+      "image": "https://dm0qx8t0i9gc9.cloudfront.net/watermarks/video/VusrVp28x/videoblocks-portrait-of-a-happy-dog-in-nature-at-sunny-day_roq4tousi__936df1286ee316339cef6494baa53ce2__P360.mp4",
       "likes": [],
       "comments": []
     }

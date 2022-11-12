@@ -61,7 +61,6 @@ export default function User() {
 
     // for post edit pop up
     const [visibility, setVisibility] = useState(false);
-    const [editPanel, setEditPanel] = useState(false);
     const [postBeingEdited, setPostBeingEdited] = useState({});
     const popupCloseHandler = () => {
       setVisibility(false);
@@ -143,7 +142,7 @@ export default function User() {
           </Col>
       </Container>
       
-      <PostPopUp className = "popWindow" post = {postBeingEdited} onClose={popupCloseHandler} show={visibility} editPanel={editPanel}>
+      <PostPopUp className = "popWindow" post = {postBeingEdited} onClose={popupCloseHandler} show={visibility}>
           <h1>Hello This is Popup Content Area</h1>
           <h2>This is my lorem ipsum text here!</h2>
       </PostPopUp>

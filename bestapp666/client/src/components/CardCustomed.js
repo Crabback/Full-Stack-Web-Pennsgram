@@ -37,83 +37,13 @@ export function CardCustomed(props) {
         }
         await addComment(props.post.id, newComment);
         setOffsetComment(offsetComment+1);
+        alert("commented successful!");
       }
       setDescInput('');
       setMentionInput('');
     }
 
       if (props.post) {
-        if(props.post.image.split(".").slice(-1) == 'mp4'){
-          return (
-            <Card bg = "light" style={{ width: '28rem'}}>
-              <Navbar bg="dark" variant="dark">
-                <Container>
-                  <Nav bg="dark" className="justify-content-end" activeKey="/">
-                    <Nav.Item> 
-                      <NavLink to={'/user/'+props.post.author}>
-                        <ReactRoundedImage
-                        image={props.post.avatar}
-                        roundedColor="#ffffff" imageWidth="35" imageHeight="35" roundedSize="2" borderRadius="20"/>
-                      </NavLink> 
-                    </Nav.Item>
-                    <Nav.Item> <NavLink to={'/user/'+props.post.author} className='headers'><strong>{props.post.author}</strong></NavLink> </Nav.Item>
-                  </Nav>
-                </Container>
-              </Navbar>
-
-              <video width='446' controls > <source src={props.post.image} type="video/mp4"/> </video>  
-             
-              <Card.Subtitle className="text-muted" style={{paddingTop: "1rem", paddingLeft:"1rem"}}> 
-                {props.post.date}
-              </Card.Subtitle>
-    
-              <Card.Body>
-                <Card.Text>{props.post.description} </Card.Text>
-                
-                <Row>
-                  <Col>
-                    <Card.Text style={{paddingBottom: '1rem'}}> {props.post.likes.length + offset} likes </Card.Text>
-                  </Col>
-                  <Col>
-                    <Card.Text style={{paddingBottom: '1rem'}}> {props.post.comments.length + offsetComment} comments </Card.Text>
-                  </Col>
-                </Row>
-  
-                <ButtonGroup aria-label="like,comment,message">
-                    <LikeButton post = {props.post} username={props.username} setOffset={setOffset}/>
-                    <Button className="mb-2" variant="outline-primary">Comment</Button>
-                </ButtonGroup>
-  
-                <Form onSubmit={handleLeaveComment}>
-                  <Row>
-                    <Form.Group className="mb-3" controlId="formBasicDescription">
-                      <Form.Control as="textarea" onChange={e => setDescInput(e.target.value)}
-                      placeholder="Leave a comment." 
-                      rows={2}
-                      value={descInput}/>
-                    </Form.Group>
-                  </Row>
-                  <Row style={{paddingBottom: '1rem', paddingLeft: '1rem', paddingRight: '1rem'}}>
-                    <MentionsInput value={mentionInput} onChange={e => setMentionInput(e.target.value)} placeholder={"Mention people using '@'"}>
-                        <Mention
-                          trigger="@"
-                          data={(search) => [{ id: search, display: search }]}
-                        />
-                      </MentionsInput>
-                  </Row>
-                  <Row>
-                    <Button variant="primary" type="submit">
-                      Comment
-                    </Button>
-                  </Row>
-                </Form>
-  
-              </Card.Body>
-    
-            </Card>
-            )
-        }
-        else{
           return (
             <Card bg = "light" style={{ width: '28rem'}}>
               <Navbar bg="dark" variant="dark">
@@ -128,10 +58,18 @@ export function CardCustomed(props) {
                   </Nav>
                 </Container>
               </Navbar>
-    
-              <Card.Img variant="bottom" rounded="true" src={props.post.image} />
-              <Card.Subtitle className="text-muted" style={{paddingTop: "1rem", paddingLeft:"1rem"}}> {props.post.date} </Card.Subtitle>
-    
+  
+              {(props.post.image.split(".").slice(-1) == 'mp4') &&
+            <video width='446' controls > <source src={props.post.image} type="video/mp4"/> </video>  
+            }
+
+            {(props.post.image.split(".").slice(-1) != 'mp4') &&
+             <>
+                <Card.Img variant="bottom" rounded="true" src={props.post.image} />
+                <Card.Subtitle className="text-muted" style={{paddingTop: "1rem", paddingLeft:"1rem"}}> {props.post.date} </Card.Subtitle>
+             </>
+            }
+
               <Card.Body>
                 <Card.Text>{props.post.description} </Card.Text>
                 
@@ -146,7 +84,6 @@ export function CardCustomed(props) {
   
                 <ButtonGroup aria-label="like,comment,message">
                     <LikeButton post = {props.post} username={props.username} setOffset={setOffset}/>
-                    <Button className="mb-2" variant="outline-primary">Comment</Button>
                 </ButtonGroup>
   
                 <Form onSubmit={handleLeaveComment}>
@@ -175,7 +112,7 @@ export function CardCustomed(props) {
               </Card.Body>
             </Card>
             )
-        }
+        
       }
   
   }
