@@ -109,7 +109,7 @@ export function CardCustomedUserPage(props) {
     const [descInput, setDescInput] = useState("");
     const [mentionInput, setMentionInput] = useState("");
     const [offset, setOffset] = useState(0);
-    const [offsetComment, setOffsetComment] = useState(0);
+    // const [offsetComment, setOffsetComment] = useState(0);
   
     const handleLeaveComment= async (e) => {
       e.preventDefault();
@@ -123,7 +123,8 @@ export function CardCustomedUserPage(props) {
           "mention": mentionInput
         }
         await addComment(props.post.id, newComment);
-        setOffsetComment(offsetComment+1);
+        // setOffsetComment(offsetComment+1);
+        props.setEditedAndRefreshCards(!props.oldEditedAndRefreshCards);
         alert("Commented Successful!");
       }
       setDescInput('');
@@ -152,7 +153,7 @@ export function CardCustomedUserPage(props) {
                   <Col> 
                   <Button variant="light" onClick={() => setlikeModalShow(true) }><Card.Text> {props.post.likes.length + offset} likes </Card.Text></Button>
                   </Col>
-                  <Col> <Button variant="light" onClick={() => setModalShow(true) }> <Card.Text> {props.post.comments.length+ offsetComment} comments </Card.Text></Button> </Col>
+                  <Col> <Button variant="light" onClick={() => setModalShow(true) }> <Card.Text> {props.post.comments.length} comments </Card.Text></Button> </Col>
                 </Row>
   
                 <ButtonGroup aria-label="like,comment,message">

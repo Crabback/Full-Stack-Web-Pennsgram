@@ -479,6 +479,16 @@
           "author": "zanemao",
           "comment": "look at pigs",
           "mention": "@[elon](elon)"
+        },
+        {
+          "author": "dog",
+          "comment": "comment here",
+          "mention": ""
+        },
+        {
+          "author": "dog",
+          "comment": "trump @",
+          "mention": "@[trump](trump)"
         }
       ]
     },
@@ -689,7 +699,18 @@
       "date": "10/1/2022",
       "image": "https://i.natgeofe.com/n/4f5aaece-3300-41a4-b2a8-ed2708a0a27c/domestic-dog_thumb_4x3.jpg",
       "likes": [],
-      "comments": []
+      "comments": [
+        {
+          "author": "dog",
+          "comment": "I comment myself",
+          "mention": ""
+        },
+        {
+          "author": "dog",
+          "comment": "comment again",
+          "mention": ""
+        }
+      ]
     }
   ]
 }
