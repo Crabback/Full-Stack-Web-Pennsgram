@@ -38,6 +38,18 @@ export const getUser = async (username) =>{
     }
 }
 
+export const getUserAvatar= async (username) =>{
+    try{
+        // try to get a user with username
+        let user = await getUser(username);
+        user = user[0];
+        return user.avatar;
+    }catch(err){
+        console.log("getUserAvatar() failed: username may not be valid ")
+        console.error(err);
+    }
+}
+
 // Takes the list of usernames as input
 // and sends a Get request to the /user:id endpoint
 // returns a list of user objects

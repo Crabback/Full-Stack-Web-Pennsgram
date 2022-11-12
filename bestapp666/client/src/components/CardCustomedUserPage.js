@@ -16,8 +16,67 @@ import { addComment} from "../api/mock_api";
 import { Nav } from 'react-bootstrap';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Popover from 'react-bootstrap/Popover';
+import Modal from 'react-bootstrap/Modal';
+import Stack from 'react-bootstrap/Stack';
+import { getUserAvatar } from "../api/mock_api";
+
+const popover = (
+  <Popover id="popover-basic">
+    <Popover.Header as="h3">Popover right</Popover.Header>
+    <Popover.Body>
+      And here's some <strong>amazing</strong> content. It's very engaging.
+      right?
+    </Popover.Body>
+  </Popover>
+);
+
+function MyCommentsModal(props) {
+  console.log("props: shi : ", props.post);
+  const comments = props.post.comments;
+  const commentsList = comments.length === 0 ? []: comments.map((c)=>{
+    return (
+      <>
+        <div className="bg-light border">
+          <Row>
+            <Col><h4>{c.author}</h4></Col>
+            <Col ><p>{c.comment}</p></Col>
+          </Row>
+                
+              
+            </div>
+      </>
+    )
+  }) ;
+
+  return (
+    <Modal
+      {...props}
+      size="xl"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Comments
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+          <Stack gap={3}>
+              {commentsList}
+          </Stack>
+        
+      </Modal.Body>
+      <Modal.Footer>
+        <Button onClick={props.onHide}>Close</Button>
+      </Modal.Footer>
+    </Modal>
+  );
+}
 
 export function CardCustomedUserPage(props) {
+    const [modalShow, setModalShow] = useState(false);
     const navigate = useNavigate();
     const [descInput, setDescInput] = useState("");
     const [mentionInput, setMentionInput] = useState("");
@@ -42,6 +101,7 @@ export function CardCustomedUserPage(props) {
       if (props.post) {
         if(props.post.image.split(".").slice(-1) == 'mp4'){
           return (
+            <>
             <Card bg = "light" style={{ width: '24rem'}}>
 
               <video width='446' controls > <source src={props.post.image} type="video/mp4"/> </video>  
@@ -54,8 +114,13 @@ export function CardCustomedUserPage(props) {
                 <Card.Text>{props.post.description} </Card.Text>
                 
                 <Row style={{paddingBottom: "1rem"}}>
-                  <Col> <Card.Text > {props.post.likes.length} likes </Card.Text> </Col>
-                  <Col> <Card.Text> {props.post.comments.length} comments </Card.Text> </Col>
+                  <Col> 
+                        <OverlayTrigger trigger="click" placement="right" overlay={popover}>
+                          <Button variant="light"><Card.Text > {props.post.likes.length} likes </Card.Text> </Button>
+                        </OverlayTrigger>
+                    
+                  </Col>
+                  <Col> <Button variant="light" onClick={() => setModalShow(true) }> <Card.Text> {props.post.comments.length} comments </Card.Text></Button> </Col>
                 </Row>
   
                 <ButtonGroup aria-label="like,comment,message">
@@ -94,10 +159,19 @@ export function CardCustomedUserPage(props) {
               </Card.Body>
     
             </Card>
+             {/* //pop up modal */}
+
+             <MyCommentsModal
+             show={modalShow}
+             onHide={() => setModalShow(false)}
+             post={props.post}
+             />
+         </>
             )
         }
         else{
           return (
+          <>
             <Card bg = "light" style={{ width: '24rem'}}>
     
               <Card.Img variant="bottom" rounded="true" src={props.post.image} />
@@ -107,8 +181,13 @@ export function CardCustomedUserPage(props) {
                 <Card.Text>{props.post.description} </Card.Text>
                 
                 <Row style={{paddingBottom: "1rem"}}>
-                  <Col> <Card.Text > {props.post.likes.length} likes </Card.Text> </Col>
-                  <Col> <Card.Text> {props.post.comments.length} comments </Card.Text> </Col>
+                  <Col> 
+                        <OverlayTrigger trigger="click" placement="right" overlay={popover}>
+                          <Button variant="light"><Card.Text > {props.post.likes.length} likes </Card.Text> </Button>
+                        </OverlayTrigger>
+                    
+                  </Col>
+                  <Col> <Button variant="light" onClick={() => setModalShow(true) }> <Card.Text> {props.post.comments.length} comments </Card.Text></Button> </Col>
                 </Row>
   
                 <ButtonGroup aria-label="like,comment,message">
@@ -150,6 +229,15 @@ export function CardCustomedUserPage(props) {
                 </Form>
               </Card.Body>
             </Card>
+
+            {/* //pop up modal */}
+
+            <MyCommentsModal
+            show={modalShow}
+            onHide={() => setModalShow(false)}
+            post={props.post}
+            />
+        </>
             )
         }
       }
