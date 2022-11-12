@@ -43,7 +43,9 @@
         "pig",
         "dog",
         "wwwsm",
-        "zanemao"
+        "zanemao",
+        "elon",
+        "eric"
       ],
       "avatar": "https://thumbs.dreamstime.com/b/caricature-presidential-candidate-donald-trump-character-portrait-giving-speech-70328509.jpg",
       "posts": [
@@ -120,7 +122,8 @@
       "followers": [
         "ayesha",
         "trump",
-        "obama"
+        "obama",
+        "elon"
       ],
       "avatar": "https://i.pinimg.com/originals/61/25/d0/6125d09a0893c8a62f6913315da01fe4.jpg",
       "posts": [
@@ -138,7 +141,8 @@
       "password": "ayesha123",
       "followings": [
         "curry",
-        "dog"
+        "dog",
+        "elon"
       ],
       "followers": [
         "curry"
@@ -186,14 +190,21 @@
       "username": "elon",
       "password": "elon123",
       "followings": [
-        "zanemao"
+        "zanemao",
+        "curry",
+        "trump"
       ],
       "followers": [
         "obama",
-        "zanemao"
+        "zanemao",
+        "ayesha"
       ],
       "avatar": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Elon_Musk_Royal_Society_(crop2).jpg/440px-Elon_Musk_Royal_Society_(crop2).jpg",
-      "posts": [],
+      "posts": [
+        29,
+        30,
+        31
+      ],
       "id": 8,
       "followerSuggestions": [
         "ayesha",
@@ -205,7 +216,8 @@
       "username": "eric",
       "password": "eric123",
       "followings": [
-        "tiger"
+        "tiger",
+        "trump"
       ],
       "followers": [],
       "avatar": "https://directory.seas.upenn.edu/wp-content/uploads/2020/03/Fouh-Eric.jpg",
@@ -297,6 +309,26 @@
       "followerSuggestions": [
         "curry"
       ]
+    },
+    {
+      "username": "bbry",
+      "password": "bbry123",
+      "followings": [],
+      "followers": [],
+      "avatar": "https://assets.burberry.com/is/image/Burberryltd/96EB5FA4-2058-49E1-917F-5516E0EA9828?$BBY_V2_SL_1x1$&wid=1876&hei=1876",
+      "posts": [],
+      "id": 15,
+      "followerSuggestions": []
+    },
+    {
+      "username": "nike",
+      "password": "nike123",
+      "followings": [],
+      "followers": [],
+      "avatar": "https://cdn.shopify.com/s/files/1/0072/9605/7397/products/download-2020-07-03T163554.146.png?v=1593808742",
+      "posts": [],
+      "followerSuggestions": [],
+      "id": 16
     }
   ],
   "Posts": [
@@ -315,7 +347,9 @@
       "description": "This is my selfie on Oct19.",
       "date": "10/16/2022",
       "image": "https://i2-prod.dailyrecord.co.uk/incoming/article2299090.ece/ALTERNATES/s1200d/The-family-pose-for-a-picture-in-their-living-room-with-Tom-the-tiger.jpg",
-      "likes": [],
+      "likes": [
+        "eric"
+      ],
       "comments": []
     },
     {
@@ -325,7 +359,7 @@
       "date": "10/16/2022",
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSArC7oN3AWH3h8qHv5PYNoOrnKXdBMPph9JQ&usqp=CAU",
       "likes": [
-        "dog"
+        "eric"
       ],
       "comments": [
         {
@@ -341,6 +375,11 @@
         {
           "author": "dog",
           "comment": "this is dog comment",
+          "mention": ""
+        },
+        {
+          "author": "dog",
+          "comment": "I am tiger leaving a comment here for pig",
           "mention": ""
         }
       ]
@@ -370,7 +409,13 @@
       "date": "10/16/2022",
       "image": "https://media.npr.org/assets/img/2019/07/31/peppa-core-landscape_custom-e35134971418876744bd213cd5eb1248012ad704-s1600-c85.webp",
       "likes": [],
-      "comments": []
+      "comments": [
+        {
+          "author": "eric",
+          "comment": "This is eric mension ZaneMao",
+          "mention": "@[zanemap](zanemap)"
+        }
+      ]
     },
     {
       "id": 6,
@@ -386,6 +431,11 @@
           "author": "zanemao",
           "comment": "look pigs",
           "mention": "@[trump](trump)"
+        },
+        {
+          "author": "eric",
+          "comment": "This is eric leaving comment here !",
+          "mention": ""
         }
       ]
     },
@@ -610,6 +660,45 @@
           "mention": "@[pig](pig)"
         }
       ]
+    },
+    {
+      "id": 29,
+      "author": "elon",
+      "description": "I have officially dubbed myself \"Chief Twit\"",
+      "date": "10/1/2022",
+      "image": "https://mediaproxy.salon.com/width/1200/https://media.salon.com/2022/04/elon-musk-twitter-0405221.jpg",
+      "likes": [
+        "ayesha"
+      ],
+      "comments": [
+        {
+          "author": "ayesha",
+          "comment": "ayesha leaving comment. Good luck with your buy.",
+          "mention": "@curry"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "author": "elon",
+      "description": "The time I was in Upenn!!!\nAs reported:\"A romance of sorts blossomed - although, she griped, it was lacking in PDA. They were in their twenties, and she was attracted by his shy nature; he by her cascades of curly blonde hair. She was just his type. They went out for a year and, until he ran off to Palo Alto, where he attended Stanford University for two days before dropping out to shoot for the stars.\"",
+      "date": "10/1/2022",
+      "image": "https://media.tatler.com/photos/6306413b572b596a06f35dc2/master/w_1600,c_limit/ElonMusk_240822_3461923_1.jpg",
+      "likes": [
+        "ayesha"
+      ],
+      "comments": []
+    },
+    {
+      "id": 31,
+      "author": "elon",
+      "description": "This is obvious not me!",
+      "date": "10/1/2022",
+      "image": "https://cdn.coverr.co/videos/coverr-skull-makeup-1191/1080p.mp4",
+      "likes": [
+        "elon"
+      ],
+      "comments": []
     }
   ]
 }

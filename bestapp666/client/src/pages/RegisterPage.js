@@ -71,7 +71,8 @@ function RegisterPage() {
                 "followings" : [],
                 "followers" : [],
                 "avatar" : profilePic,
-                "posts" : []
+                "posts" : [],
+                "followerSuggestions": []
             };
             console.log(newUser.avatar);
             try{

@@ -39,6 +39,7 @@ function LoginForm(props){
   const handleLogin = async (e) => {
     e.preventDefault();
     // send GET request to fetch the Student by username
+    console.log("input username", newInput.username);
     const userRoster = await getUser(newInput.username);
     //get the user object
     let user;
