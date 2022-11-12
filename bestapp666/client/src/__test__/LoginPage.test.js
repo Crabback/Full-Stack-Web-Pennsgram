@@ -13,7 +13,7 @@ import renderer from 'react-test-renderer';
 
 
 const store1 = store;
-test("render login component", () => {
+test("render login component", async () => {
   const { getByText }  = render(
      <Provider store={store1}>
         <LoginPage />

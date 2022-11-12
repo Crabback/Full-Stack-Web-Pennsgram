@@ -5,6 +5,7 @@ import {unlikePost, likePost } from "../api/mock_api";
 
 
 export function LikeButton(props) {
+    
     const [checked, setChecked] = useState(props.post.likes.includes(props.username));
     const [text, setText] = useState(() => {
         if (checked) {

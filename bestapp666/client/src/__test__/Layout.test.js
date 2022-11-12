@@ -12,7 +12,7 @@ import store from '../Store/store';
 
 
 const store1 = store;
-test("render layout component", () => {
+test("render layout component", async () => {
   const { getByText }  = render(
      <Provider store={store1}>
          <BrowserRouter>

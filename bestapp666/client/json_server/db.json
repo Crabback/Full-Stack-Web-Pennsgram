@@ -414,7 +414,9 @@
       "description": "My routine practice is like this:",
       "date": "10/16/2022",
       "image": "https://cdn.nba.com/manage/2022/06/stephen-curry-pregame-dribbles.jpg",
-      "likes": [],
+      "likes": [
+        "obama"
+      ],
       "comments": []
     },
     {

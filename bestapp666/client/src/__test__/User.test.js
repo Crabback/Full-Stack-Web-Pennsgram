@@ -15,7 +15,7 @@ import { act } from 'react-dom/test-utils';
 
 
 const store1 = store;
-test("render user page component", () => {
+test("render user page component", async () => {
   const { getByText }  = render(
      <Provider store={store1}>
          <BrowserRouter>
