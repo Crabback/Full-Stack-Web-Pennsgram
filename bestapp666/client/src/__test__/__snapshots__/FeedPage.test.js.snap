@@ -17,7 +17,515 @@ exports[`Page matches snapshot 1`] = `
     >
       <div
         className="col-md-6 mx-auto vstack gap-2 minBreakpoint-xs"
-      />
+      >
+        <div
+          className="card bg-light"
+          style={
+            Object {
+              "width": "28rem",
+            }
+          }
+        >
+          <nav
+            className="navbar navbar-expand navbar-dark bg-dark"
+          >
+            <div
+              className="container"
+            >
+              <div
+                bg="dark"
+                className="justify-content-end navbar-nav"
+                onKeyDown={[Function]}
+              >
+                <div
+                  className="nav-item"
+                >
+                  <a
+                    className=""
+                    href="/user/elon"
+                    onClick={[Function]}
+                  >
+                    <div
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      style={
+                        Object {
+                          "alignItems": "center",
+                          "background": "#ffffff",
+                          "borderRadius": "20px",
+                          "boxShadow": "inherit",
+                          "display": "flex",
+                          "height": "35px",
+                          "justifyContent": "center",
+                          "transition": "all 0.5s ease",
+                          "width": "35px",
+                        }
+                      }
+                    >
+                      <img
+                        style={
+                          Object {
+                            "borderRadius": "19px",
+                            "height": "33px",
+                            "width": "33px",
+                          }
+                        }
+                      />
+                    </div>
+                  </a>
+                </div>
+                <div
+                  className="nav-item"
+                >
+                   
+                  <a
+                    className="headers"
+                    href="/user/elon"
+                    onClick={[Function]}
+                  >
+                    <strong>
+                      elon
+                    </strong>
+                  </a>
+                   
+                </div>
+              </div>
+            </div>
+          </nav>
+          <img
+            className="card-img-bottom"
+            rounded="true"
+            src="https://mediaproxy.salon.com/width/1200/https://media.salon.com/2022/04/elon-musk-twitter-0405221.jpg"
+          />
+          <div
+            className="text-muted card-subtitle h6"
+            style={
+              Object {
+                "paddingLeft": "1rem",
+                "paddingTop": "1rem",
+              }
+            }
+          >
+             
+            10/1/2022
+             
+          </div>
+          <div
+            className="card-body"
+          >
+            <p
+              className="card-text"
+            >
+              I have officially dubbed myself "Chief Twit"
+               
+            </p>
+            <div
+              className="row"
+            >
+              <div
+                className="col"
+              >
+                <button
+                  className="btn btn-light"
+                  disabled={false}
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <p
+                    className="card-text"
+                  >
+                     
+                    1
+                     likes 
+                  </p>
+                </button>
+              </div>
+              <div
+                className="col"
+              >
+                <button
+                  className="btn btn-light"
+                  disabled={false}
+                  onClick={[Function]}
+                  type="button"
+                >
+                   
+                  <p
+                    className="card-text"
+                  >
+                     
+                    1
+                     comments 
+                  </p>
+                   
+                </button>
+              </div>
+            </div>
+            <div
+              aria-label="like,comment,message"
+              className="btn-group"
+              role="group"
+            />
+            <form
+              className=""
+              onSubmit={[Function]}
+            >
+              <div
+                className="row"
+              >
+                <div
+                  className="mb-3"
+                >
+                  <textarea
+                    className="form-control"
+                    id="formBasicDescription"
+                    onChange={[Function]}
+                    placeholder="Leave a comment."
+                    rows={2}
+                    value=""
+                  />
+                </div>
+              </div>
+              <div
+                className="row"
+                style={
+                  Object {
+                    "paddingBottom": "1rem",
+                    "paddingLeft": "1rem",
+                    "paddingRight": "1rem",
+                  }
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "overflowY": "visible",
+                      "position": "relative",
+                    }
+                  }
+                >
+                  <div
+                    style={Object {}}
+                  >
+                    <div
+                      style={
+                        Object {
+                          "border": "1px solid transparent",
+                          "boxSizing": "border-box",
+                          "color": "transparent",
+                          "overflow": "hidden",
+                          "position": "relative",
+                          "textAlign": "start",
+                          "whiteSpace": "pre-wrap",
+                          "width": "100%",
+                          "wordWrap": "break-word",
+                        }
+                      }
+                    >
+                       
+                    </div>
+                    <textarea
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onCompositionEnd={[Function]}
+                      onCompositionStart={[Function]}
+                      onKeyDown={[Function]}
+                      onScroll={[Function]}
+                      onSelect={[Function]}
+                      placeholder="Mention people using '@'"
+                      style={
+                        Object {
+                          "backgroundColor": "transparent",
+                          "bottom": 0,
+                          "boxSizing": "border-box",
+                          "display": "block",
+                          "fontFamily": "inherit",
+                          "fontSize": "inherit",
+                          "height": "100%",
+                          "left": 0,
+                          "letterSpacing": "inherit",
+                          "margin": 0,
+                          "overflow": "hidden",
+                          "position": "absolute",
+                          "resize": "none",
+                          "top": 0,
+                          "width": "100%",
+                        }
+                      }
+                      value=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                className="row"
+              >
+                <button
+                  className="btn btn-primary"
+                  disabled={false}
+                  type="submit"
+                >
+                  Comment
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div
+          className="card bg-light"
+          style={
+            Object {
+              "width": "28rem",
+            }
+          }
+        >
+          <nav
+            className="navbar navbar-expand navbar-dark bg-dark"
+          >
+            <div
+              className="container"
+            >
+              <div
+                bg="dark"
+                className="justify-content-end navbar-nav"
+                onKeyDown={[Function]}
+              >
+                <div
+                  className="nav-item"
+                >
+                  <a
+                    className=""
+                    href="/user/elon"
+                    onClick={[Function]}
+                  >
+                    <div
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      style={
+                        Object {
+                          "alignItems": "center",
+                          "background": "#ffffff",
+                          "borderRadius": "20px",
+                          "boxShadow": "inherit",
+                          "display": "flex",
+                          "height": "35px",
+                          "justifyContent": "center",
+                          "transition": "all 0.5s ease",
+                          "width": "35px",
+                        }
+                      }
+                    >
+                      <img
+                        style={
+                          Object {
+                            "borderRadius": "19px",
+                            "height": "33px",
+                            "width": "33px",
+                          }
+                        }
+                      />
+                    </div>
+                  </a>
+                </div>
+                <div
+                  className="nav-item"
+                >
+                   
+                  <a
+                    className="headers"
+                    href="/user/elon"
+                    onClick={[Function]}
+                  >
+                    <strong>
+                      elon
+                    </strong>
+                  </a>
+                   
+                </div>
+              </div>
+            </div>
+          </nav>
+          <img
+            className="card-img-bottom"
+            rounded="true"
+            src="https://media.tatler.com/photos/6306413b572b596a06f35dc2/master/w_1600,c_limit/ElonMusk_240822_3461923_1.jpg"
+          />
+          <div
+            className="text-muted card-subtitle h6"
+            style={
+              Object {
+                "paddingLeft": "1rem",
+                "paddingTop": "1rem",
+              }
+            }
+          >
+             
+            10/1/2022
+             
+          </div>
+          <div
+            className="card-body"
+          >
+            <p
+              className="card-text"
+            >
+              The time I was in Upenn!!!
+As reported:"A romance of sorts blossomed - although, she griped, it was lacking in PDA. They were in their twenties, and she was attracted by his shy nature; he by her cascades of curly blonde hair. She was just his type. They went out for a year and, until he ran off to Palo Alto, where he attended Stanford University for two days before dropping out to shoot for the stars."
+               
+            </p>
+            <div
+              className="row"
+            >
+              <div
+                className="col"
+              >
+                <button
+                  className="btn btn-light"
+                  disabled={false}
+                  onClick={[Function]}
+                  type="button"
+                >
+                  <p
+                    className="card-text"
+                  >
+                     
+                    1
+                     likes 
+                  </p>
+                </button>
+              </div>
+              <div
+                className="col"
+              >
+                <button
+                  className="btn btn-light"
+                  disabled={false}
+                  onClick={[Function]}
+                  type="button"
+                >
+                   
+                  <p
+                    className="card-text"
+                  >
+                     
+                    0
+                     comments 
+                  </p>
+                   
+                </button>
+              </div>
+            </div>
+            <div
+              aria-label="like,comment,message"
+              className="btn-group"
+              role="group"
+            />
+            <form
+              className=""
+              onSubmit={[Function]}
+            >
+              <div
+                className="row"
+              >
+                <div
+                  className="mb-3"
+                >
+                  <textarea
+                    className="form-control"
+                    id="formBasicDescription"
+                    onChange={[Function]}
+                    placeholder="Leave a comment."
+                    rows={2}
+                    value=""
+                  />
+                </div>
+              </div>
+              <div
+                className="row"
+                style={
+                  Object {
+                    "paddingBottom": "1rem",
+                    "paddingLeft": "1rem",
+                    "paddingRight": "1rem",
+                  }
+                }
+              >
+                <div
+                  style={
+                    Object {
+                      "overflowY": "visible",
+                      "position": "relative",
+                    }
+                  }
+                >
+                  <div
+                    style={Object {}}
+                  >
+                    <div
+                      style={
+                        Object {
+                          "border": "1px solid transparent",
+                          "boxSizing": "border-box",
+                          "color": "transparent",
+                          "overflow": "hidden",
+                          "position": "relative",
+                          "textAlign": "start",
+                          "whiteSpace": "pre-wrap",
+                          "width": "100%",
+                          "wordWrap": "break-word",
+                        }
+                      }
+                    >
+                       
+                    </div>
+                    <textarea
+                      onBlur={[Function]}
+                      onChange={[Function]}
+                      onCompositionEnd={[Function]}
+                      onCompositionStart={[Function]}
+                      onKeyDown={[Function]}
+                      onScroll={[Function]}
+                      onSelect={[Function]}
+                      placeholder="Mention people using '@'"
+                      style={
+                        Object {
+                          "backgroundColor": "transparent",
+                          "bottom": 0,
+                          "boxSizing": "border-box",
+                          "display": "block",
+                          "fontFamily": "inherit",
+                          "fontSize": "inherit",
+                          "height": "100%",
+                          "left": 0,
+                          "letterSpacing": "inherit",
+                          "margin": 0,
+                          "overflow": "hidden",
+                          "position": "absolute",
+                          "resize": "none",
+                          "top": 0,
+                          "width": "100%",
+                        }
+                      }
+                      value=""
+                    />
+                  </div>
+                </div>
+              </div>
+              <div
+                className="row"
+              >
+                <button
+                  className="btn btn-primary"
+                  disabled={false}
+                  type="submit"
+                >
+                  Comment
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
     <div
       className="col"

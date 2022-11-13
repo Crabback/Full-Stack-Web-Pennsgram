@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">25.8% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/31</span>
+                <span class='fraction'>8/31</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>5/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">18.18% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/11</span>
+                <span class='fraction'>2/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">27.58% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/29</span>
+                <span class='fraction'>8/29</span>
             </div>
         
             
@@ -201,11 +201,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -236,8 +236,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -285,7 +285,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -325,12 +325,12 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { MentionsInput, Mention } from 'react-mentions'
 &nbsp;
-export function <span class="fstat-no" title="function not covered" >MyCommentsModal(</span>props) {
-    const comments = <span class="cstat-no" title="statement not covered" >props.post.comments;</span>
-    const [editShow, setEditShow] = <span class="cstat-no" title="statement not covered" >useState(false);</span>
-    const [editInput, setEditInput] = <span class="cstat-no" title="statement not covered" >useState("");</span>
-    const [beingEdit, setBeingEdit] = <span class="cstat-no" title="statement not covered" >useState("");</span>
-    const [mentionInput, setMentionInput] = <span class="cstat-no" title="statement not covered" >useState("");</span>
+export function MyCommentsModal(props) {
+    const comments = props.post.comments;
+    const [editShow, setEditShow] = useState(false);
+    const [editInput, setEditInput] = useState("");
+    const [beingEdit, setBeingEdit] = useState("");
+    const [mentionInput, setMentionInput] = useState("");
 &nbsp;
     async function <span class="fstat-no" title="function not covered" >handleUpdateComment(</span>e, postId, oldComment, newComment, mention){
 <span class="cstat-no" title="statement not covered" >        e.preventDefault();</span>
@@ -361,8 +361,8 @@ export function <span class="fstat-no" title="function not covered" >MyCommentsM
       }
   };
   
-    const commentsList = <span class="cstat-no" title="statement not covered" >comments.length === 0 ? []: comments.map(<span class="fstat-no" title="function not covered" >(c</span>)=&gt;{</span>
-<span class="cstat-no" title="statement not covered" >      return (</span>
+    const commentsList = comments.length === 0 ? []: comments.map((c)=&gt;{
+      return (
         &lt;&gt;
           &lt;div className="bg-light border"&gt;
             &lt;Row&gt;
@@ -374,15 +374,15 @@ export function <span class="fstat-no" title="function not covered" >MyCommentsM
                   &lt;/NavLink&gt;
   
                   {c.author === props.username &amp;&amp; (
-                  &lt;Button onClick={<span class="fstat-no" title="function not covered" >(e</span>) =&gt; {<span class="cstat-no" title="statement not covered" >setEditShow(<span class="fstat-no" title="function not covered" >cu</span>rrent =&gt; <span class="cstat-no" title="statement not covered" >!current)</span>;<span class="cstat-no" title="statement not covered" >s</span>etBeingEdit(c.comment)}</span>} style={{float: 'right'}} &gt;Edit&lt;/Button&gt;
+<span class="branch-1 cbranch-no" title="branch not covered" >                  &lt;Button onClick={<span class="fstat-no" title="function not covered" >(e</span>) =&gt; {<span class="cstat-no" title="statement not covered" >setEditShow(<span class="fstat-no" title="function not covered" >cu</span>rrent =&gt; <span class="cstat-no" title="statement not covered" >!current)</span>;<span class="cstat-no" title="statement not covered" >s</span>etBeingEdit(c.comment)}</span>} style={{float: 'right'}} &gt;Edit&lt;/Button&gt;</span>
                   )}
   
                   {c.author === props.username &amp;&amp; (
-                  &lt;Button variant="outline-danger" onClick={<span class="fstat-no" title="function not covered" >(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >handleDeleteComment(e.target, props.post.id, c.comment)}</span> style={{float: 'right'}} &gt;Delete&lt;/Button&gt;
+<span class="branch-1 cbranch-no" title="branch not covered" >                  &lt;Button variant="outline-danger" onClick={<span class="fstat-no" title="function not covered" >(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >handleDeleteComment(e.target, props.post.id, c.comment)}</span> style={{float: 'right'}} &gt;Delete&lt;/Button&gt;</span>
                   )}
   
-                  {editShow &amp;&amp; c.author === props.username &amp;&amp; c.comment == beingEdit &amp;&amp; (
-                  &lt;Form onSubmit={<span class="fstat-no" title="function not covered" >(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >handleUpdateComment(e, props.post.id, c.comment, editInput, mentionInput)}</span>&gt;
+                  {editShow &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >c.author === props.username </span>&amp;&amp; <span class="branch-2 cbranch-no" title="branch not covered" >c.comment == beingEdit </span>&amp;&amp; (
+<span class="branch-3 cbranch-no" title="branch not covered" >                  &lt;Form onSubmit={<span class="fstat-no" title="function not covered" >(e</span>) =&gt; <span class="cstat-no" title="statement not covered" >handleUpdateComment(e, props.post.id, c.comment, editInput, mentionInput)}</span>&gt;</span>
                       &lt;Form.Group className="mb-3" controlId="formBasicDescription"&gt;
                       &lt;Form.Control as="textarea" onChange={<span class="fstat-no" title="function not covered" >e </span>=&gt; <span class="cstat-no" title="statement not covered" >setEditInput(e.target.value)}</span>
                         placeholder="Edit your comment." 
@@ -410,7 +410,7 @@ export function <span class="fstat-no" title="function not covered" >MyCommentsM
       )
     }) ;
   
-<span class="cstat-no" title="statement not covered" >    return (</span>
+    return (
       &lt;&gt;
       &lt;Modal
         {...props}
@@ -445,7 +445,7 @@ export function <span class="fstat-no" title="function not covered" >MyCommentsM
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-11-12T23:16:48.852Z
+                at 2022-11-13T00:14:03.418Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

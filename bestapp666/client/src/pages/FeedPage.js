@@ -17,7 +17,36 @@ export default function FeedPage() {
   const stateCurrentUser = useSelector(selectCurrentUser);
   let followingsUsernames = stateCurrentUser.followings;
   const [feedPostOfUser, setFeedPostOfUser] = useState([]);
-  const [popularPostsNearby, setPopularPostsNearby] = useState([]);
+  const [popularPostsNearby, setPopularPostsNearby] = useState([
+    {
+      "id": 29,
+      "author": "elon",
+      "description": "I have officially dubbed myself \"Chief Twit\"",
+      "date": "10/1/2022",
+      "image": "https://mediaproxy.salon.com/width/1200/https://media.salon.com/2022/04/elon-musk-twitter-0405221.jpg",
+      "likes": [
+        "ayesha"
+      ],
+      "comments": [
+        {
+          "author": "ayesha",
+          "comment": "ayesha leaving comment. Good luck with your buy.",
+          "mention": "@curry"
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "author": "elon",
+      "description": "The time I was in Upenn!!!\nAs reported:\"A romance of sorts blossomed - although, she griped, it was lacking in PDA. They were in their twenties, and she was attracted by his shy nature; he by her cascades of curly blonde hair. She was just his type. They went out for a year and, until he ran off to Palo Alto, where he attended Stanford University for two days before dropping out to shoot for the stars.\"",
+      "date": "10/1/2022",
+      "image": "https://media.tatler.com/photos/6306413b572b596a06f35dc2/master/w_1600,c_limit/ElonMusk_240822_3461923_1.jpg",
+      "likes": [
+        "ayesha"
+      ],
+      "comments": []
+    }
+  ]);
   const [editedAndRefreshCards, setEditedAndRefreshCards] = useState(true); //the value of this switch doesn't matter only the change matter for triggering useEffect
   const [hearFromDeleteComment, setHearFromDeleteComment] = useState(false); //the request for refreshing comment list from PopUp window, trigger value doesnt matter
   const [visibility, setVisibility] = useState(false);
@@ -39,17 +68,8 @@ export default function FeedPage() {
           return postObject;
         }))
         setFeedPostOfUser(followingsLatestPost);
-
         // fetch popular post
         // get the popular post 
-        const popularPosts = await Promise.all([1,10,3,12].map(async (id) => {
-          const post = await getPost(id);
-          const userResponse = await getUser(post.author);
-          const author = userResponse[0];
-          post.avatar = author.avatar;
-          return post;
-        }));
-        setPopularPostsNearby(popularPosts);
       }
       try{
         fetchData();

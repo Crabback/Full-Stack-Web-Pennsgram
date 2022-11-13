@@ -35,7 +35,7 @@ test("render Search Bar display", async () => {
     const username = screen.getByPlaceholderText("Search");
   
     userEvent.type(username, "obama");
-    await userEvent.click(
+    userEvent.click(
         screen.getByRole("button", {
             name: "Search"
         })

@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">32% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/25</span>
+                <span class='fraction'>8/25</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>4/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">11.11% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/9</span>
+                <span class='fraction'>1/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">32% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/25</span>
+                <span class='fraction'>8/25</span>
             </div>
         
             
@@ -234,22 +234,22 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -263,8 +263,8 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -379,17 +379,17 @@ import Modal from 'react-bootstrap/Modal';
 import Stack from 'react-bootstrap/Stack';
 &nbsp;
 &nbsp;
-export function <span class="fstat-no" title="function not covered" >CardFeedPage(</span>props) {
-    const navigate = <span class="cstat-no" title="statement not covered" >useNavigate();</span>
-    const [modalShow, setModalShow] = <span class="cstat-no" title="statement not covered" >useState(false);</span>
-    const [likeModalShow, setlikeModalShow] = <span class="cstat-no" title="statement not covered" >useState(false);</span>
+export function CardFeedPage(props) {
+    const navigate = useNavigate();
+    const [modalShow, setModalShow] = useState(false);
+    const [likeModalShow, setlikeModalShow] = useState(false);
 &nbsp;
-    const [descInput, setDescInput] = <span class="cstat-no" title="statement not covered" >useState("");</span>
-    const [mentionInput, setMentionInput] = <span class="cstat-no" title="statement not covered" >useState("");</span>
+    const [descInput, setDescInput] = useState("");
+    const [mentionInput, setMentionInput] = useState("");
     //const [offset, setOffset] = useState(0);
     //const [offsetComment, setOffsetComment] = useState(0);
 &nbsp;
-    const handleLeaveComment= <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >as</span>ync (e) =&gt; {</span>
+    const handleLeaveComment= <span class="fstat-no" title="function not covered" >as</span>ync (e) =&gt; {
 <span class="cstat-no" title="statement not covered" >      e.preventDefault();</span>
 <span class="cstat-no" title="statement not covered" >      if(props.username === "NOT_A_USER"){</span>
 <span class="cstat-no" title="statement not covered" >        alert("Please sign up/login to your account in order to make a post.");</span>
@@ -409,8 +409,8 @@ export function <span class="fstat-no" title="function not covered" >CardFeedPag
 <span class="cstat-no" title="statement not covered" >      setMentionInput('');</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      if (props.post) {</span>
-<span class="cstat-no" title="statement not covered" >          return (</span>
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (props.post) {
+          return (
             &lt;&gt;
             &lt;Card bg = "light" style={{ width: '28rem'}}&gt;
               &lt;Navbar bg="dark" variant="dark"&gt;
@@ -427,7 +427,7 @@ export function <span class="fstat-no" title="function not covered" >CardFeedPag
               &lt;/Navbar&gt;
   
               {(props.post.image.split(".").slice(-1) == 'mp4') &amp;&amp;
-            &lt;video width='446' controls &gt; &lt;source src={props.post.image} type="video/mp4"/&gt; &lt;/video&gt;  
+<span class="branch-1 cbranch-no" title="branch not covered" >            &lt;video width='446' controls &gt; &lt;source src={props.post.image} type="video/mp4"/&gt; &lt;/video&gt;  </span>
             }
 &nbsp;
             {(props.post.image.split(".").slice(-1) != 'mp4') &amp;&amp;
@@ -508,7 +508,7 @@ export function <span class="fstat-no" title="function not covered" >CardFeedPag
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-11-12T23:16:48.852Z
+                at 2022-11-13T00:14:03.418Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
