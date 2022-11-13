@@ -30,6 +30,8 @@ PDF instruction: https://github.com/cis557/project---design-hw1-team_offersoverf
 
 ***HW3 Demo: https://drive.google.com/file/d/1CK2IBO49mhrhXFM6HybLWf3il4PG6swY/view?usp=share_link***
 
+<img src="TestCoverage.jpeg" width=50% height=50%>
+
 HW3 Features:
 
                                       1. Like & unlike posts on both user pages and feed page
