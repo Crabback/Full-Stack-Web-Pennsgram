@@ -12,6 +12,8 @@ import { updateCurrentUser, selectCurrentUser} from '../pages/UserPage/currentUs
 import { useSelector, useDispatch} from 'react-redux'
 import { getUser } from "../api/mock_api";
 import { act } from 'react-dom/test-utils';
+import { configureStore } from '@reduxjs/toolkit';
+import { createMockStore } from 'redux-test-utils';
 
 
 const store1 = store;
@@ -47,8 +49,8 @@ test("Mock follow and unfollow", async () => {
         </BrowserRouter>
       </Provider>
     );
-    const followinglist = screen.getByText(/Followers/);  
+    const followinglist = getByText(/4 Followers/);  
     userEvent.click(followinglist);
-      const Policies = screen.getByText(/Policies/);
-      expect(Policies).toBeVisible();
+    const Policies = screen.getByText(/Policies/);
+    expect(Policies).toBeVisible();
   });

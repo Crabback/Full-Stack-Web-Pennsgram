@@ -63,7 +63,7 @@ test('handels view likes', async () => {
         </BrowserRouter>
       </Provider>
   );
-  const likedPeople = getByText(/1 likes/);
+  const likedPeople = getByText(/2 likes/);
   userEvent.click(likedPeople);
   const liker = getByText(/ayesha/);
   expect(liker).toBeVisible();
@@ -88,4 +88,36 @@ test('handels view comment', async () => {
   userEvent.click(comments);
   const commenter = getByText(/Good luck/);
   expect(commenter).toBeVisible();
+});
+
+test('handels comment', async () => {
+  const { getByText } = render(
+      <Provider store={store1}>
+        <BrowserRouter>
+          <FeedPage />
+        </BrowserRouter>
+      </Provider>
+  );
+  const comments = screen.getByPlaceholderText(/Leave a/);
+  userEvent.type(comments, "hi");
+  const submit = getByText(/Comment/);
+  userEvent.click(submit, "hi");
+  const testSubmit = getByText(/Comment/);
+  expect(testSubmit).toBeVisible();
+});
+
+test('handels @', async () => {
+  const { getByText } = render(
+      <Provider store={store1}>
+        <BrowserRouter>
+          <FeedPage />
+        </BrowserRouter>
+      </Provider>
+  );
+  const comments = screen.getByPlaceholderText(/Mention/);
+  userEvent.type(comments, "@Elon");
+  const submit = getByText(/Comment/);
+  userEvent.click(submit);
+  const testSubmit = getByText(/Comment/);
+  expect(testSubmit).toBeVisible();
 });
