@@ -29,7 +29,7 @@ test('Page matches snapshot', async () => {
     expect(tree).toMatchSnapshot();
   });
 
-test('render feed page as logged in user list ', async () => {
+  test('render feed page as logged in user list ', async () => {
     const currentUser = {username: 'obama', password: 'obama123'};
     const userRoster = await getUser(currentUser.username);
     let user;
@@ -46,6 +46,46 @@ test('render feed page as logged in user list ', async () => {
     );
     const post = getByText(/pig/);
     expect(post).toBeVisible();
-
 });
 
+test('handels view likes', async () => {
+  const currentUser = {username: 'obama', password: 'obama123'};
+  const userRoster = await getUser(currentUser.username);
+  let user;
+  userRoster.forEach(element => {
+    user = element;
+  });
+  store1.dispatch(updateCurrentUser(user));
+  const { getByText } = render(
+      <Provider store={store1}>
+        <BrowserRouter>
+          <FeedPage />
+        </BrowserRouter>
+      </Provider>
+  );
+  const likedPeople = getByText(/1 likes/);
+  userEvent.click(likedPeople);
+  const liker = getByText(/ayesha/);
+  expect(liker).toBeVisible();
+});
+
+test('handels view comment', async () => {
+  const currentUser = {username: 'obama', password: 'obama123'};
+  const userRoster = await getUser(currentUser.username);
+  let user;
+  userRoster.forEach(element => {
+    user = element;
+  });
+  store1.dispatch(updateCurrentUser(user));
+  const { getByText } = render(
+      <Provider store={store1}>
+        <BrowserRouter>
+          <FeedPage />
+        </BrowserRouter>
+      </Provider>
+  );
+  const comments = getByText(/1 comments/);
+  userEvent.click(comments);
+  const commenter = getByText(/Good luck/);
+  expect(commenter).toBeVisible();
+});

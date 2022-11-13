@@ -25,7 +25,8 @@ export default function FeedPage() {
       "date": "10/1/2022",
       "image": "https://mediaproxy.salon.com/width/1200/https://media.salon.com/2022/04/elon-musk-twitter-0405221.jpg",
       "likes": [
-        "ayesha"
+        "ayesha",
+        "elon"
       ],
       "comments": [
         {
