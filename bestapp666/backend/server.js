@@ -30,9 +30,29 @@ webapp.listen(port, async () => {
 });
 
 
-webapp.get('/Users', async (req, res) => {
+webapp.get('/users', async (req, res) => {
     try {
         const results = await dbLib.getUsers(db);
+        res.status(200).json({ data: results });
+        return res;
+    } catch (err) {
+        res.status(404).json({ message: 'there was error' });
+    }
+});
+
+webapp.get('/user/:username', async (req, res) => {
+    try {
+        const results = await dbLib.getUser(db, req.params.username);
+        res.status(200).json({ data: results });
+        return res;
+    } catch (err) {
+        res.status(404).json({ message: 'there was error' });
+    }
+});
+
+webapp.get('/posts', async (req, res) => {
+    try {
+        const results = await dbLib.getPosts(db);
         res.status(200).json({ data: results });
         return res;
     } catch (err) {

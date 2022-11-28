@@ -19,8 +19,8 @@ const connect = async () => {
 
 const getUsers = async (db) =>{
   try{
-    const result = await db.collection('Posts').find({}).toArray();
-    console.log(`Posts: ${JSON.stringify(result)}`);
+    const result = await db.collection('Users').find({}).toArray();
+    console.log(`Users: ${JSON.stringify(result)}`);
     return result;
   }
   catch(err){
@@ -28,8 +28,44 @@ const getUsers = async (db) =>{
   }
 }
 
+const getUser = async (db, username) =>{
+  try{    
+      const result = await db.collection('Users').findOne({"username": username});
+      //const response = await axios.get(`${rootURL+'/Users'}?username=${username}`);
+      console.log(`successfully getUser by username: ${result}`);
+      return result;
+  }
+  catch(err){
+      console.error(err);
+  }
+}
+
+const getUserAvatar= async (db, username) =>{
+  try{
+      // try to get a user with username
+      const result = await db.collection('Users').findOne({"username": username});
+      return result.avatar;
+  }catch(err){
+      console.log("getUserAvatar() failed: username may not be valid ")
+      console.error(err);
+  }
+}
+
+const getPosts = async (db) =>{
+  try{
+      const result = await db.collection('Posts').find({}).toArray();
+      console.log(`Users: ${JSON.stringify(result)}`);
+      return result;
+  }
+  catch(err){
+      console.error(err);
+  }
+}
 
 module.exports = {
   connect,
-  getUsers
+  getUsers,
+  getUser,
+  getUserAvatar,
+  getPosts
 };

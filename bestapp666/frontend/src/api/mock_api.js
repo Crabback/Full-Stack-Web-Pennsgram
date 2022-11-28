@@ -140,11 +140,6 @@ export const getPosts = async () =>{
 export const getPost = async (postId) =>{
     try{    
         const response = await axios.get(`${rootURL+'/Posts'}?id=${postId}`);
-        //get the fetched data's username
-        // let fetchedUsername;
-        // response.data.forEach(element => {
-        //     fetchedUsername = element.username;
-        // });
         console.log(`successfully getPost by id: object with id: ${postId}`);
         console.log("post being fetched: author = ", response.data[0].author);
         return response.data[0];
