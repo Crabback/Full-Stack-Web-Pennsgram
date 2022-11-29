@@ -298,15 +298,13 @@ const updateComment = async (db, postId, oldComment, newComment, newMention) =>{
   }
 }
 
-/*
+
 const getLastestPostOfAUser = async (db, username) => {
   let user = null;
   try{
       // try to get a user with username
-      user = await getUser(username);
-      user = user[0];
+      user = await getUser(db, username);
   }catch(err){
-      console.log("getUser() failed: username may not be valid ")
       console.error(err);
   }
   if(!user) return {};
@@ -316,19 +314,14 @@ const getLastestPostOfAUser = async (db, username) => {
   let latestPost = {};
   try{
       // try to get a post with id
-      latestPost = await getPost(latestId);
-
+      latestPost = await getPost(db, latestId);
       //adding one more avatar field for this post
       latestPost.avatar = user.avatar;
-
   }catch(err){
-      console.log("getPost() failed: wrong post id being passed in ")
       console.error(err);
   }
-  
   return latestPost;
 }
-*/
 
 module.exports = {
   connect,
@@ -349,5 +342,6 @@ module.exports = {
   getComments,
   addComment,
   deleteComment,
-  updateComment
+  updateComment,
+  getLastestPostOfAUser
 };
