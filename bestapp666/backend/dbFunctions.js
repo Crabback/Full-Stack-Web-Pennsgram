@@ -57,6 +57,7 @@ const getUsersAsList = async (db, usernames) =>{
   }
 }
 
+// no express endpoint yet
 const getUserAvatar= async (db, username) =>{
   try{
       // try to get a user with username
@@ -242,15 +243,15 @@ const getComments = async (db, postId) =>{
   }
 }
 
-const addComment = async (db, postId, comment) =>{
+const addComment = async (db, postId, commentObject) =>{
   try{    
       let post = await getPost(db, postId);
-      post.comments.push(comment);
+      post.comments.push(commentObject);
       await db.collection('Posts').updateOne(
         {"id": postId},
         {$set: {"comments": post.comments}}
       );        
-      console.log(`successfully comment ${comment} on post ${postId}`);
+      console.log(`successfully comment ${commentObject} on post ${postId}`);
       return post;
   }
   catch(err){
@@ -259,6 +260,8 @@ const addComment = async (db, postId, comment) =>{
 }
 
 const deleteComment = async (db, postId, content) =>{
+  // comments is an array of comment object
+  // commentObject.comment is a string (ex: n.comment below)
   try{    
       let post = await getPost(db, postId);
       post.comments = post.comments.filter(n => n.comment !== content);
@@ -274,11 +277,11 @@ const deleteComment = async (db, postId, content) =>{
   }
 }
 
-const updateComment = async (db, postId, oldcomment, newComment, newMention) =>{
+const updateComment = async (db, postId, oldComment, newComment, newMention) =>{
   try{    
       let post = await getPost(db, postId);
       post.comments.forEach(function(obj){
-          if(obj.comment == oldcomment){
+          if(obj.comment == oldComment){
               obj.comment = newComment;
               obj.mention = newMention;
           }
@@ -295,6 +298,37 @@ const updateComment = async (db, postId, oldcomment, newComment, newMention) =>{
   }
 }
 
+/*
+const getLastestPostOfAUser = async (db, username) => {
+  let user = null;
+  try{
+      // try to get a user with username
+      user = await getUser(username);
+      user = user[0];
+  }catch(err){
+      console.log("getUser() failed: username may not be valid ")
+      console.error(err);
+  }
+  if(!user) return {};
+  const userPostIdList = user.posts;
+  const latestId = Math.max(...userPostIdList);
+  // get the post with the latest id of this user
+  let latestPost = {};
+  try{
+      // try to get a post with id
+      latestPost = await getPost(latestId);
+
+      //adding one more avatar field for this post
+      latestPost.avatar = user.avatar;
+
+  }catch(err){
+      console.log("getPost() failed: wrong post id being passed in ")
+      console.error(err);
+  }
+  
+  return latestPost;
+}
+*/
 
 module.exports = {
   connect,

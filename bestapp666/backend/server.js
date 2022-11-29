@@ -50,9 +50,149 @@ webapp.get('/user/:username', async (req, res) => {
     }
 });
 
+webapp.get('/user/', async (req, res) => {
+    try {
+        const results = await dbLib.getUsersAsList(db, req.body.usernames);
+        res.status(200).json({ data: results });
+        return res;
+    } catch (err) {
+        res.status(404).json({ message: 'there was error' });
+    }
+});
+
+webapp.post('/user/', async (req, res) => {
+    try {
+        const results = await dbLib.createNewUser(db, req.body.userObject);
+        res.status(200).json({ data: results });
+        return res;
+    } catch (err) {
+        res.status(404).json({ message: 'there was error' });
+    }
+});
+
+webapp.put('/user/follow', async (req, res) => {
+    try {
+        const results = await dbLib.followUser(db, req.body.username1, req.body.username2);
+        res.status(200).json({ data: results });
+        return res;
+    } catch (err) {
+        res.status(404).json({ message: 'there was error' });
+    }
+});
+
+webapp.put('/user/unfollow', async (req, res) => {
+    try {
+        const results = await dbLib.unfollowUser(db, req.body.username1, req.body.username2);
+        res.status(200).json({ data: results });
+        return res;
+    } catch (err) {
+        res.status(404).json({ message: 'there was error' });
+    }
+});
+
 webapp.get('/posts', async (req, res) => {
     try {
         const results = await dbLib.getPosts(db);
+        res.status(200).json({ data: results });
+        return res;
+    } catch (err) {
+        res.status(404).json({ message: 'there was error' });
+    }
+});
+
+webapp.get('/post/:postId', async (req, res) => {
+    try {
+        const results = await dbLib.getPost(db, req.params.postId);
+        res.status(200).json({ data: results });
+        return res;
+    } catch (err) {
+        res.status(404).json({ message: 'there was error' });
+    }
+});
+
+webapp.post('/post/', async (req, res) => {
+    try {
+        const results = await dbLib.createNewPost(db, req.body.username, req.body.postObject);
+        res.status(200).json({ data: results });
+        return res;
+    } catch (err) {
+        res.status(404).json({ message: 'there was error' });
+    }
+});
+
+webapp.delete('/post/:postId', async (req, res) => {
+    try {
+        const results = await dbLib.deletePost(db, req.params.postId);
+        res.status(200).json({ data: results });
+        return res;
+    } catch (err) {
+        res.status(404).json({ message: 'there was error' });
+    }
+});
+
+webapp.put('/post/:postId', async (req, res) => {
+    try {
+        const results = await dbLib.updatePost(db, req.params.postId, req.body.newImage, req.body.newDescription);
+        res.status(200).json({ data: results });
+        return res;
+    } catch (err) {
+        res.status(404).json({ message: 'there was error' });
+    }
+});
+
+webapp.put('/post/:postId/like', async (req, res) => {
+    try {
+        const results = await dbLib.likePost(db, req.body.username, req.params.postId);
+        res.status(200).json({ data: results });
+        return res;
+    } catch (err) {
+        res.status(404).json({ message: 'there was error' });
+    }
+});
+
+webapp.put('/post/:postId/unlike', async (req, res) => {
+    try {
+        const results = await dbLib.unlikePost(db, req.body.username, req.params.postId);
+        res.status(200).json({ data: results });
+        return res;
+    } catch (err) {
+        res.status(404).json({ message: 'there was error' });
+    }
+});
+
+webapp.get('/post/:postId/comments', async (req, res) => {
+    try {
+        const results = await dbLib.getComments(db, req.params.postId);
+        res.status(200).json({ data: results });
+        return res;
+    } catch (err) {
+        res.status(404).json({ message: 'there was error' });
+    }
+});
+
+webapp.put('/post/:postId/comments', async (req, res) => {
+    try {
+        const results = await dbLib.addComment(db, req.params.postId, req.body.commentObject);
+        res.status(200).json({ data: results });
+        return res;
+    } catch (err) {
+        res.status(404).json({ message: 'there was error' });
+    }
+});
+
+webapp.delete('/post/:postId/comments', async (req, res) => {
+    try {
+        const results = await dbLib.deleteComment(db, req.params.postId, req.body.commentObject);
+        res.status(200).json({ data: results });
+        return res;
+    } catch (err) {
+        res.status(404).json({ message: 'there was error' });
+    }
+});
+
+webapp.put('/post/:postId/comments', async (req, res) => {
+    try {
+        const results = await dbLib.updateComment(db, req.params.postId, req.body.oldComment, req.body.newComment, req.body.newMention);
         res.status(200).json({ data: results });
         return res;
     } catch (err) {
