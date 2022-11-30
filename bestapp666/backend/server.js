@@ -61,6 +61,16 @@ webapp.get('/user/:username', async (req, res) => {
     }
 });
 
+webapp.get('/user/:username/latest', async (req, res) => {
+    try {
+        const results = await dbLib.getLastestPostOfAUser(db, req.params.username);
+        res.status(200).json({ data: results });
+        return res;
+    } catch (err) {
+        res.status(404).json({ message: 'there was error' });
+    }
+});
+
 webapp.post('/user/', async (req, res) => {
     try {
         const results = await dbLib.createNewUser(db, req.body.userObject);
