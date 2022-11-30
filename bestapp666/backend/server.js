@@ -41,9 +41,9 @@ webapp.get('/users', async (req, res) => {
     }
 });
 
-webapp.get('/user/:username', async (req, res) => {
+webapp.get('/userlist', async (req, res) => {
     try {
-        const results = await dbLib.getUser(db, req.params.username);
+        const results = await dbLib.getUsersAsList(db, req.body.usernames);
         res.status(200).json({ data: results });
         return res;
     } catch (err) {
@@ -51,9 +51,9 @@ webapp.get('/user/:username', async (req, res) => {
     }
 });
 
-webapp.get('/user/', async (req, res) => {
+webapp.get('/user/:username', async (req, res) => {
     try {
-        const results = await dbLib.getUsersAsList(db, req.body.usernames);
+        const results = await dbLib.getUser(db, req.params.username);
         res.status(200).json({ data: results });
         return res;
     } catch (err) {

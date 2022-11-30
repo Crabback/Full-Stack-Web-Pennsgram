@@ -1,49 +1,44 @@
+import axios from 'axios';
 
 const getUsers = async () => {
-    var res = await fetch(`localhost:8080/users`, {
-        method: 'GET',
-    })
-    return res.json()
+    var res = await axios.get(`http://localhost:8080/users`);
+    console.log(res.status + " " + res.statusText);
+    return res.data.data;
 }
 
-
 const getUser = async (username) => {
-    var res = await fetch(`localhost:8080/user/${username}`, {
-        method: 'GET',
-    })
-    return res.json()
+    var res = await axios.get(`http://localhost:8080/user/${username}`);
+    console.log(res.status + " " + res.statusText);
+    return res.data.data;
 }
 
 const creatNewUser = async (userObject) => {
-    var res = await fetch(`localhost:8080/user/`, {
-        method: 'POST',
-        body: JSON.stringify(userObject)
-        //body: userObject
-    })
-    return res.json()
+    var res = await axios.post(`http://localhost:8080/user/`, {
+        "userObject": userObject
+    });
+    console.log(res.status + " " + res.statusText);
+    return res.data.data;
 }
 
 const followUser = async (username1, username2) => {
-    var res = await fetch(`localhost:8080/follow`, {
-        method: 'PUT',
-        body: JSON.stringify({"username1": username1, "username2": username2})
-    })
-    return res.json()
+    var res = await axios.put(`http://localhost:8080/follow`, {
+        "username1": username1, 
+        "username2": username2
+    });
+    return res.data.data;
 }
 
 const unfollowUser = async (username1, username2) => {
-    var res = await fetch(`localhost:8080/unfollow`, {
-        method: 'PUT',
-        body: JSON.stringify({"username1": username1, "username2": username2})
-    })
-    return res.json()
+    var res = await axios.put(`http://localhost:8080/unfollow`, {
+        "username1": username1, 
+        "username2": username2
+    });
+    return res.data.data;
 }
 
 const getPosts = async () => {
-    var res = await fetch(`localhost:8080/posts`, {
-        method: 'GET',
-    })
-    return res.json()
+    var res = await axios.get(`http://localhost:8080/posts`);
+    return res.data.data;
 }
 
 export {

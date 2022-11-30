@@ -86,16 +86,18 @@ const followUser = async (db, username1, username2) =>{
       let response1 = await getUser(db, username1);
       let response2 = await getUser(db, username2);
 
-      response1.followings.push(username2);
-      response2.followers.push(username1);
+      let followinglist = Array.from(response1.followings);
+      let followerlist = Array.from(response2.followers);
+      followinglist.push(username2);
+      followerlist.push(username1);
 
       await db.collection('Users').updateOne(
         {"username": username1},
-        {$set: {"followings": response1.followings}}
+        {$set: {"followings": followinglist}}
       );
       await db.collection('Users').updateOne(
         {"username": username2},
-        {$set: {"followers": response2.followers}}
+        {$set: {"followers": followerlist}}
       );
 
       console.log(`successfully ${username1} follows ${username2}`);
@@ -111,8 +113,8 @@ const unfollowUser = async (db, username1, username2) =>{
     let response1 = await getUser(db, username1);
     let response2 = await getUser(db, username2);
 
-    response1.followings = user1.followings.filter(n => n !== username2);
-    response2.followers = user2.followers.filter(n => n !== username1);
+    response1.followings = response1.followings.filter(n => n !== username2);
+    response2.followers = response2.followers.filter(n => n !== username1);
    
     await db.collection('Users').updateOne(
       {"username": username1},

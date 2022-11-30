@@ -24,14 +24,16 @@ export const getUsers = async () =>{
 // returns the attributes of the user
 export const getUser = async (username) =>{
     try{    
-        const response = await axios.get(`${rootURL+'/Users'}?username=${username}`);
+        console.log(`localhost:8080/user/${username}`);
+        const response = await axios.get(`http://localhost:8080/user/${username}`);
         //get the fetched data's username
+        /*
         let fetchedUsername;
         response.data.forEach(element => {
             fetchedUsername = element.username;
-        });
-        console.log(`successfully getUser by username: object with username: ${fetchedUsername}`);
-        return response.data;
+        });        */
+        console.log(`successfully getUser by username: object with username: ${username}`);
+        return response;
     }
     catch(err){
         console.error(err);

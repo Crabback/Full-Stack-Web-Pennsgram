@@ -6,17 +6,16 @@ import { NavLink, useParams} from "react-router-dom";
 import {Footer} from "../components/Footer";
 import { useSelector } from 'react-redux'
 import {selectCurrentUser} from './UserPage/currentUserSlice'
-import { getUser } from "../api/mock_api";
+import { getUser } from "../fetcher";
 
 function UserList(props){
     var header = "";
-
+    let { username } = useParams();
     // the logged-in user who is browsing page (self)
     const stateCurrentUser = useSelector(selectCurrentUser);
-
     // the user we are browsing (other), default self
     const [thisUser, setThisUser] = useState(stateCurrentUser);
-    let { username } = useParams();
+
 
     useEffect(() => {
       async function fetchData() {
@@ -26,7 +25,7 @@ function UserList(props){
         if(response === undefined){
           alert("User Not Found.")
         }else{
-          setThisUser(response[0]);}
+          setThisUser(response);}
       }
 
       try{fetchData();}
