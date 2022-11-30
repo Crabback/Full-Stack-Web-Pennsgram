@@ -16,6 +16,7 @@ const port = 8080;
 
 // (6) configure express to parse bodies
 webapp.use(express.urlencoded({ extended: true }));
+webapp.use(express.json());
 
 // (7) import the db interactions module
 const dbLib = require('./dbFunctions');
@@ -170,7 +171,7 @@ webapp.get('/post/:postId/comments', async (req, res) => {
     }
 });
 
-webapp.put('/post/:postId/comments', async (req, res) => {
+webapp.post('/post/:postId/comments', async (req, res) => {
     try {
         const results = await dbLib.addComment(db, req.params.postId, req.body.commentObject);
         res.status(200).json({ data: results });
@@ -182,7 +183,7 @@ webapp.put('/post/:postId/comments', async (req, res) => {
 
 webapp.delete('/post/:postId/comments', async (req, res) => {
     try {
-        const results = await dbLib.deleteComment(db, req.params.postId, req.body.commentObject);
+        const results = await dbLib.deleteComment(db, req.params.postId, req.body.author, req.body.content);
         res.status(200).json({ data: results });
         return res;
     } catch (err) {
@@ -192,7 +193,7 @@ webapp.delete('/post/:postId/comments', async (req, res) => {
 
 webapp.put('/post/:postId/comments', async (req, res) => {
     try {
-        const results = await dbLib.updateComment(db, req.params.postId, req.body.oldComment, req.body.newComment, req.body.newMention);
+        const results = await dbLib.updateComment(db, req.params.postId, req.body.author, req.body.oldContent, req.body.newContent, req.body.newMention);
         res.status(200).json({ data: results });
         return res;
     } catch (err) {

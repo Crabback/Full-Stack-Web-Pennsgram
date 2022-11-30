@@ -31,8 +31,7 @@ const getUsers = async (db) =>{
 const getUser = async (db, username) =>{
   try{    
       const result = await db.collection('Users').findOne({"username": username});
-      //const response = await axios.get(`${rootURL+'/Users'}?username=${username}`);
-      console.log(`successfully getUser by username: ${result}`);
+      console.log(`successfully getUser by username: ${username}`);
       return result;
   }
   catch(err){
@@ -147,7 +146,7 @@ const getPosts = async (db) =>{
 
 const getPost = async (db, postId) =>{
   try{    
-      const response = await db.collection('Posts').findOne({"id": postId});
+      const response = await db.collection('Posts').findOne({"id": Number(postId)});
       console.log(`successfully getPost by id: object with id: ${postId}`);
       return response;
   }
@@ -175,8 +174,8 @@ const createNewPost = async (db, username, postObject) =>{
 
 const deletePost = async (db, postId) => {
   try{    
-      const response = await db.collection('Posts').deleteMany({"id": postId});
-      console.log("deletePost response: ", response);
+      const response = await db.collection('Posts').deleteMany({"id": Number(postId)});
+      console.log("successfully deletes post ", postId);
       return response; 
   }
   catch(err){
@@ -187,7 +186,7 @@ const deletePost = async (db, postId) => {
 const updatePost = async (db, postId, newImage, newDescription) =>{
   try{    
       const response = await db.collection('Posts').updateOne(
-        {"id": postId},
+        {"id": Number(postId)},
         {$set: {"image": newImage, "description": newDescription}}
       );  
       console.log(`successfully update post ${postId}` );
@@ -203,7 +202,7 @@ const likePost = async (db, username, postId) =>{
       let response = await getPost(db, postId);
       response.likes.push(username);
       await db.collection('Posts').updateOne(
-        {"id": postId},
+        {"id": Number(postId)},
         {$set: {"likes": response.likes}}
       );
       console.log(`successfully ${username} likes post ${postId}`);
@@ -216,10 +215,10 @@ const likePost = async (db, username, postId) =>{
 
 const unlikePost = async (db, username, postId) =>{
   try{    
-      let response = await getPost(postId);
+      let response = await getPost(db, postId);
       response.likes = response.likes.filter(n => n !== username);
       await db.collection('Posts').updateOne(
-        {"id": postId},
+        {"id": Number(postId)},
         {$set: {"likes": response.likes}}
       );      
       console.log(`successfully ${username} unlikes post ${postId}`);
@@ -248,7 +247,7 @@ const addComment = async (db, postId, commentObject) =>{
       let post = await getPost(db, postId);
       post.comments.push(commentObject);
       await db.collection('Posts').updateOne(
-        {"id": postId},
+        {"id": Number(postId)},
         {$set: {"comments": post.comments}}
       );        
       console.log(`successfully comment ${commentObject} on post ${postId}`);
@@ -259,14 +258,18 @@ const addComment = async (db, postId, commentObject) =>{
   }
 }
 
-const deleteComment = async (db, postId, content) =>{
+const deleteComment = async (db, postId, author, content) =>{
   // comments is an array of comment object
   // commentObject.comment is a string (ex: n.comment below)
   try{    
       let post = await getPost(db, postId);
-      post.comments = post.comments.filter(n => n.comment !== content);
+      post.comments = post.comments.filter(function(item) {
+        if (item.author === author && item.comment === content)
+          return false;
+        return true;
+      });
       await db.collection('Posts').updateOne(
-        {"id": postId},
+        {"id": Number(postId)},
         {$set: {"comments": post.comments}}
       );       
       console.log(`successfully delete comment [${content}] on post ${postId}`);
@@ -277,17 +280,17 @@ const deleteComment = async (db, postId, content) =>{
   }
 }
 
-const updateComment = async (db, postId, oldComment, newComment, newMention) =>{
+const updateComment = async (db, postId, author, oldContent, newContent, newMention) =>{
   try{    
       let post = await getPost(db, postId);
       post.comments.forEach(function(obj){
-          if(obj.comment == oldComment){
-              obj.comment = newComment;
+          if(obj.comment === oldContent && obj.author === author){
+              obj.comment = newContent;
               obj.mention = newMention;
           }
       })
       await db.collection('Posts').updateOne(
-        {"id": postId},
+        {"id": Number(postId)},
         {$set: {"comments": post.comments}}
       );        
       console.log(`successfully update post ${postId}` );
