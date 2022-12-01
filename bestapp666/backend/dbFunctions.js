@@ -138,7 +138,7 @@ const unfollowUser = async (db, username1, username2) =>{
 const getPosts = async (db) =>{
   try{
       const result = await db.collection('Posts').find({}).toArray();
-      console.log(`Users: ${JSON.stringify(result)}`);
+      //console.log(`Users: ${JSON.stringify(result)}`);
       return result;
   }
   catch(err){

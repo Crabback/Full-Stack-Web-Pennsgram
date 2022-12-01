@@ -40,10 +40,10 @@ export default function User() {
         let output1 = await getUser(username);
         let output2 = await getPosts();
          //get the user object
-        if(output1[0] === undefined){
+        if(output1 === undefined){
           alert("User Not Found.")
         }else{
-          setThisUser(output1[0]);
+          setThisUser(output1);
           setThisUserPosts(output2); //这里不科学set this user posts 为所有的post
         }
       }

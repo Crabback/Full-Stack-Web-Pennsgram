@@ -54,7 +54,6 @@ function LoginForm(props){
         dispatch(updateCurrentUser(user));
 
         alert("Login Success! logged in as: \n\n" + JSON.stringify(user)); 
-        console.log("Execute the code after clicking okay button of the alert window");
         props.updateAuthen(true);
         }else{
           alert("password incorrect!")
