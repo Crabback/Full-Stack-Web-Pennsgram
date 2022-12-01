@@ -25,7 +25,7 @@ const dbLib = require('./dbFunctions');
 let db;
 
 // start the server and connect to the DB
-webapp.listen(port, async () => {
+var server = webapp.listen(port, async () => {
   db = await dbLib.connect();
   console.log(`Server running on port: ${port}`);
 });
@@ -215,3 +215,8 @@ webapp.put('/post/:postId/comments', async (req, res) => {
 webapp.use((req, resp) => {
     resp.status(404).json({ error: 'invalid endpoint' });
 });
+
+module.exports = {
+    webapp,
+    server
+};

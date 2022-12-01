@@ -4,14 +4,15 @@
   "description": "backend part",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --detectOpenHandles"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^8.28.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.26.0"
+    "eslint-plugin-import": "^2.26.0",
+    "supertest": "^6.3.1"
   },
   "dependencies": {
     "body-parser": "^1.20.1",
