@@ -74,7 +74,7 @@ const updatePost = async (postId, newImage, newDescription) => {
     return res.data.data;
 }
 
-const likePost = async (postId, username) => {
+const likePost = async (username, postId) => {
     var res = await axios.put(`http://localhost:8080/post/${postId}/like`,
     {
         "username": username,
@@ -84,7 +84,7 @@ const likePost = async (postId, username) => {
     return res.data.data;
 }
 
-const unlikePost = async (postId, username) => {
+const unlikePost = async (username,  postId) => {
     var res = await axios.put(`http://localhost:8080/post/${postId}/unlike`,
     {
         "username": username,
@@ -139,7 +139,6 @@ const getUsersAsList = async (usernames) =>{
     {
         usernames: usernames
     });
-    console.log(res);
     return res.data.data;
 }
 

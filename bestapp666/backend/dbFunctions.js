@@ -210,6 +210,7 @@ const updatePost = async (db, postId, newImage, newDescription) =>{
 
 const likePost = async (db, username, postId) =>{
   try{    
+      console.log(postId);
       let response = await getPost(db, postId);
       response.likes.push(username);
       await db.collection('Posts').updateOne(
