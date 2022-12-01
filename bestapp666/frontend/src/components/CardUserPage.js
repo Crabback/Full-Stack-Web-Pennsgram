@@ -10,7 +10,7 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Card from 'react-bootstrap/Card';
 import { useNavigate } from "react-router-dom";
 import { MentionsInput, Mention } from 'react-mentions'
-import { addComment, deleteComment} from "../api/mock_api";
+import { addComment, deleteComment} from "../fetcher";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 

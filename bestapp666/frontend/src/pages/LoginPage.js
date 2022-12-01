@@ -40,12 +40,7 @@ function LoginForm(props){
     e.preventDefault();
     // send GET request to fetch the Student by username
     console.log("input username", newInput.username);
-    const userRoster = await getUser(newInput.username);
-    //get the user object
-    let user;
-    userRoster.forEach(element => {
-      user = element;
-    });
+    let user = await getUser(newInput.username);
 
     if(user === undefined){
       //login failed, due to wrong username cannot fetch data
@@ -58,7 +53,7 @@ function LoginForm(props){
         console.log(`before dispatch: ${stateCurrentUser.username}`);
         dispatch(updateCurrentUser(user));
 
-        alert("Login Success! logged in as: \n\n" + JSON.stringify(userRoster)); 
+        alert("Login Success! logged in as: \n\n" + JSON.stringify(user)); 
         console.log("Execute the code after clicking okay button of the alert window");
         props.updateAuthen(true);
         }else{

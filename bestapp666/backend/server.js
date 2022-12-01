@@ -41,8 +41,9 @@ webapp.get('/users', async (req, res) => {
     }
 });
 
-webapp.get('/userlist', async (req, res) => {
+webapp.put('/userlist', async (req, res) => {
     try {
+        console.log(req.body);
         const results = await dbLib.getUsersAsList(db, req.body.usernames);
         res.status(200).json({ data: results });
         return res;

@@ -14,7 +14,7 @@ import ReactRoundedImage from "react-rounded-image";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { MentionsInput, Mention } from 'react-mentions'
-import { addComment, deletePost, deleteComment} from "../api/mock_api";
+import { addComment, deletePost, deleteComment} from "../fetcher";
 import { Nav } from 'react-bootstrap';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';

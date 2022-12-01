@@ -20,7 +20,7 @@ const connect = async () => {
 const getUsers = async (db) =>{
   try{
     const result = await db.collection('Users').find({}).toArray();
-    console.log(`Users: ${JSON.stringify(result)}`);
+    //console.log(`Users: ${JSON.stringify(result)}`);
     return result;
   }
   catch(err){

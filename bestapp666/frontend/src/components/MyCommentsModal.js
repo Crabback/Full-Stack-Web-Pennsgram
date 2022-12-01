@@ -1,6 +1,6 @@
 import "../Styles.css";
 import React, { useState } from 'react';
-import { addComment, deletePost, deleteComment, updateComment} from "../api/mock_api";
+import { addComment, deletePost, deleteComment, updateComment} from "../fetcher";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Modal from 'react-bootstrap/Modal';

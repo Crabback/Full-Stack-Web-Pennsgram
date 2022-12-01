@@ -5,7 +5,7 @@ import Form from 'react-bootstrap/Form';
 import {Footer} from "../components/Footer";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { createNewUser } from "./../api/mock_api";
+import { createNewUser } from "../fetcher";
 import { useNavigate } from "react-router-dom";
 
 function RegisterPage() {

@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux'
 import ListGroup from 'react-bootstrap/ListGroup';
 import {selectCurrentUser} from './UserPage/currentUserSlice'
-import {getUsersAsList, getLastestPostOfAUser, getPost, getUser } from "../api/mock_api";
+import {getUsersAsList, getLastestPostOfAUser, getPost, getUser } from "../fetcher";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 

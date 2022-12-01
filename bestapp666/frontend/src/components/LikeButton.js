@@ -1,7 +1,7 @@
 import "../Styles.css";
 import React, { useState, useEffect } from 'react';
 import ToggleButton from 'react-bootstrap/ToggleButton';
-import {unlikePost, likePost } from "../api/mock_api";
+import {unlikePost, likePost } from "../fetcher";
 
 
 export function LikeButton(props) {

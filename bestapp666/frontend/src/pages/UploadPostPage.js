@@ -8,7 +8,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import {updateCurrentUser, selectCurrentUser} from './UserPage/currentUserSlice'
 import { useSelector, useDispatch } from 'react-redux'
-import { getPosts, createNewPost } from "./../api/mock_api";
+import { getPosts, createNewPost } from "../fetcher";
 
 function UploadPostPage() {
   const navigate = useNavigate();

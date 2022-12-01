@@ -11,7 +11,7 @@ import Button from 'react-bootstrap/Button';
 import { NavLink, useParams} from "react-router-dom";
 import {selectCurrentUser, updateCurrentUser} from './currentUserSlice'
 import { useSelector, useDispatch } from 'react-redux'
-import { getUser, getPosts, followUser, unfollowUser} from "../../api/mock_api";
+import { getUser, getPosts, followUser, unfollowUser} from "../../fetcher";
 import ToggleButton from 'react-bootstrap/ToggleButton';
 import PostPopUp from './PostPopUp.js'
 

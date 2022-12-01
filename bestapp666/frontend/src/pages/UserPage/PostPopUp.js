@@ -7,7 +7,7 @@ import Form from 'react-bootstrap/Form';
 import Toast from 'react-bootstrap/Toast';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import {deletePost, getComments, deleteComment, updatePost} from "../../api/mock_api";
+import {deletePost, getComments, deleteComment, updatePost} from "../../fetcher";
 import { NavLink } from "react-router-dom";
 
 const CustomPopup = (props) => {
