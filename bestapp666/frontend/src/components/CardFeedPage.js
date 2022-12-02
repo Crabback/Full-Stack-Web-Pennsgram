@@ -14,12 +14,10 @@ import ReactRoundedImage from "react-rounded-image";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { MentionsInput, Mention } from 'react-mentions'
-import { addComment, deletePost, deleteComment} from "../fetcher";
+import { addComment} from "../fetcher";
 import { Nav } from 'react-bootstrap';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Modal from 'react-bootstrap/Modal';
-import Stack from 'react-bootstrap/Stack';
 
 
 export function CardFeedPage(props) {

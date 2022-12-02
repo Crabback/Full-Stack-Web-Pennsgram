@@ -72,8 +72,8 @@ export default function FeedPage() {
 
 
   const cards = ((feedPostOfUser.length===0) ? popularPostsNearby:feedPostOfUser).map((p) => (
-    <CardFeedPage post={p} username={stateCurrentUser.username} setCommentState={setFeedPostOfUser} allDisplayedPosts={feedPostOfUser}
-    setEditedAndRefreshCards = {setEditedAndRefreshCards} oldEditedAndRefreshCards={editedAndRefreshCards} 
+    <CardFeedPage post={p} username={stateCurrentUser.username} oldEditedAndRefreshCards={editedAndRefreshCards} allDisplayedPosts={feedPostOfUser}
+    setEditedAndRefreshCards = {setEditedAndRefreshCards} setCommentState={setFeedPostOfUser} 
     setPostBeingEdited = {setPostBeingEdited} setVisibility= {setVisibility}/>
   ))
 
