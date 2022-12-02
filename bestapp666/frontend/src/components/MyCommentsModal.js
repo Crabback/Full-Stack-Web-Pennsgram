@@ -17,21 +17,24 @@ export function MyCommentsModal(props) {
     const [beingEdit, setBeingEdit] = useState("");
     const [mentionInput, setMentionInput] = useState("");
 
-    async function handleUpdateComment(e, postId, oldComment, newComment, mention){
+    async function handleUpdateComment(e, postId, author, oldComment, newComment, mention){
         e.preventDefault();
         try{
-            await updateComment(postId, oldComment, newComment, mention);
+            await updateComment(postId, author, oldComment, newComment, mention);
             // tell my grandparent to refresh the page 
             props.setEditedAndRefreshCards(!props.oldEditedAndRefreshCards);
             alert("update comment successful!");
+
+          //setEditedAndRefreshCards to trigger rerender and data fetching
+          props.setEditedAndRefreshCards(!props.oldEditedAndRefreshCards);
+          //setShow(false);
+          setEditShow(current => !current);
+          props.onHide();
         }catch(err){
             console.log("update comment failed.");
             alert("update comment failed.");
         }
-        //setEditedAndRefreshCards to trigger rerender and data fetching
-        props.setEditedAndRefreshCards(!props.oldEditedAndRefreshCards);
-        //setShow(false);
-        props.onClose(false);
+        
     };
 
     async function handleDeleteComment(postId, author, content){
@@ -69,7 +72,7 @@ export function MyCommentsModal(props) {
                   )}
   
                   {editShow && c.author === props.username && c.comment == beingEdit && (
-                  <Form onSubmit={(e) => handleUpdateComment(e, props.post.id, c.comment, editInput, mentionInput)}>
+                  <Form onSubmit={(e) => handleUpdateComment(e, props.post.id, c.author, c.comment, editInput, mentionInput)}>
                       <Form.Group className="mb-3" controlId="formBasicDescription">
                       <Form.Control as="textarea" onChange={e => setEditInput(e.target.value)}
                         placeholder="Edit your comment." 

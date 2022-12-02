@@ -1,5 +1,5 @@
 import "../../Styles.css";
-import { getPost } from "../../api/mock_api";
+//import { getPost } from "../../api/mock_api";
 import React, { useState, useEffect } from "react";
 import { Footer } from "../../components/Footer";
 import ReactRoundedImage from "react-rounded-image";
@@ -11,7 +11,7 @@ import Button from 'react-bootstrap/Button';
 import { NavLink, useParams} from "react-router-dom";
 import {selectCurrentUser, updateCurrentUser} from './currentUserSlice'
 import { useSelector, useDispatch } from 'react-redux'
-import { getUser, getPosts, followUser, unfollowUser} from "../../fetcher";
+import { getUser, getPost, getPosts, followUser, unfollowUser} from "../../fetcher";
 import ToggleButton from 'react-bootstrap/ToggleButton';
 import PostEditPopUp from './PostEditPopUp.js'
 

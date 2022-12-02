@@ -111,6 +111,7 @@ const addComment = async (postId, commentObject) => {
 }
 
 const updateComment = async (postId, author, oldContent, newContent, newMention) => {
+    console.log("(postId, author, oldContent, newContent, newMention) = ", `'${postId}' '${author}' '${oldContent}' '${newContent}' '${newMention}'`);
     var res = await axios.put(`http://localhost:8080/post/${postId}/comments`,
     {
         "author": author,
