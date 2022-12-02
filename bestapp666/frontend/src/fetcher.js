@@ -124,6 +124,8 @@ const updateComment = async (postId, author, oldContent, newContent, newMention)
 }
 
 const deleteComment = async (postId, author, content) => {
+    console.log(`fetcher.js: '${postId}', '${author}', '${content}'`);
+
     var res = await axios.delete(`http://localhost:8080/post/${postId}/comments`,
     {
         "author": author,

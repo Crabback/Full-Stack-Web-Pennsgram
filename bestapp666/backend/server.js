@@ -193,6 +193,7 @@ webapp.post('/post/:postId/comments', async (req, res) => {
 
 webapp.delete('/post/:postId/comments', async (req, res) => {
     try {
+        console.log("server.js: ", req.params.postId, req.body.author, req.body.content);
         const results = await dbLib.deleteComment(db, req.params.postId, req.body.author, req.body.content);
         res.status(200).json({ data: results });
         return res;

@@ -34,9 +34,11 @@ export function MyCommentsModal(props) {
         props.onClose(false);
     };
 
-    async function handleDeleteComment(target, postId, content){
+    async function handleDeleteComment(postId, author, content){
       try{
-          await deleteComment(postId, content);
+          console.log(`'${postId}', '${author}', '${content}'`);
+          let res = await deleteComment(postId,author,content);
+          console.log("response: ", res);
            // tell my grandparent to refresh the page 
           props.setEditedAndRefreshCards(!props.oldEditedAndRefreshCards);
           alert("Delete comment successful!");
@@ -63,7 +65,7 @@ export function MyCommentsModal(props) {
                   )}
   
                   {c.author === props.username && (
-                  <Button variant="outline-danger" onClick={(e) => handleDeleteComment(e.target, props.post.id, c.comment)} style={{float: 'right'}} >Delete</Button>
+                  <Button variant="outline-danger" onClick={(e) => handleDeleteComment(props.post.id, c.author, c.comment)} style={{float: 'right'}} >Delete</Button>
                   )}
   
                   {editShow && c.author === props.username && c.comment == beingEdit && (
