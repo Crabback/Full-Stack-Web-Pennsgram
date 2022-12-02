@@ -165,7 +165,7 @@ const PostEditPopUp = (props) => {
                                         value={descInput}/>
                                     </Form.Group>
                                     <Button variant="primary" type="submit">
-                                        change image/video
+                                        Done
                                     </Button>
                                 </Form>
                             </div>

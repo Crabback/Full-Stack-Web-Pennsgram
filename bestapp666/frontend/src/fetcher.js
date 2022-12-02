@@ -21,7 +21,7 @@ const createNewUser = async (userObject) => {
 }
 
 const followUser = async (username1, username2) => {
-    var res = await axios.put(`http://localhost:8080/follow`, {
+    var res = await axios.put(`http://localhost:8080/user/follow`, {
         "username1": username1, 
         "username2": username2
     });
@@ -29,7 +29,7 @@ const followUser = async (username1, username2) => {
 }
 
 const unfollowUser = async (username1, username2) => {
-    var res = await axios.put(`http://localhost:8080/unfollow`, {
+    var res = await axios.put(`http://localhost:8080/user/unfollow`, {
         "username1": username1, 
         "username2": username2
     });

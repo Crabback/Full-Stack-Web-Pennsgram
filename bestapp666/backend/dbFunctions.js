@@ -84,11 +84,12 @@ const createNewUser = async (db, userObject) =>{
 
 const followUser = async (db, username1, username2) =>{
   try{    
+      console.log(username1, username1);
       let response1 = await getUser(db, username1);
       let response2 = await getUser(db, username2);
 
-      let followinglist = Array.from(response1.followings);
-      let followerlist = Array.from(response2.followers);
+      let followinglist = response1.followings;
+      let followerlist = response2.followers;
       followinglist.push(username2);
       followerlist.push(username1);
 
