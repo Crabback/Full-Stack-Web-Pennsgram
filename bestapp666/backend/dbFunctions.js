@@ -180,7 +180,7 @@ const deletePost = async (db, postId) => {
       const postToDelete = await getPost(db, postId);
       let user = await getUser(db, postToDelete.author);
       console.log(postToDelete);
-      user.posts = user.posts.filter(n => n !== postId);
+      user.posts = user.posts.filter(n => n !== Number(postId));
       await db.collection('Users').updateOne(
         {"username": postToDelete.author},
         {$set: {"posts": user.posts}}
