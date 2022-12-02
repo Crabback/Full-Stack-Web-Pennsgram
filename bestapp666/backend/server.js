@@ -25,10 +25,14 @@ const dbLib = require('./dbFunctions');
 let db;
 
 // start the server and connect to the DB
-var server = webapp.listen(port, async () => {
-  db = await dbLib.connect();
-  console.log(`Server running on port: ${port}`);
-});
+if (process.env.NODE_ENV !== 'test') {
+    // start the server and connect to the DB
+        webapp.listen(port, async () => {
+            db = await dbLib.connect();
+            console.log(`Server running on port: ${port}`);
+        });
+}
+    
 
 
 webapp.get('/users', async (req, res) => {
@@ -218,5 +222,4 @@ webapp.use((req, resp) => {
 
 module.exports = {
     webapp,
-    server
 };
