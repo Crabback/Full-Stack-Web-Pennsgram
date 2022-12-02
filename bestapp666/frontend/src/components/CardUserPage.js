@@ -78,7 +78,7 @@ export function CardCustomedUserPage(props) {
                     {(props.post.author==props.username) && <Button className="mb-2" onClick={() => {
                       props.setPostBeingEdited(props.post);
                       props.setVisibility(true);
-                      }}>{"edit"}</Button>}
+                      }}>{"Edit"}</Button>}
                 </ButtonGroup>
   
                 <Form onSubmit={handleLeaveComment}>

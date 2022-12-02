@@ -10,7 +10,7 @@ import Col from 'react-bootstrap/Col';
 import {deletePost, getComments, deleteComment, updatePost} from "../../fetcher";
 import { NavLink } from "react-router-dom";
 
-const CustomPopup = (props) => {
+const PostEditPopUp = (props) => {
 
     const [show, setShow] = useState(false);
     const [media, setMedia] = useState("");
@@ -182,10 +182,10 @@ const CustomPopup = (props) => {
     );
 };
 
-CustomPopup.propTypes = {
+PostEditPopUp.propTypes = {
   title: PropTypes.string.isRequired,
   show: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired
 };
 
-export default CustomPopup;
+export default PostEditPopUp;
