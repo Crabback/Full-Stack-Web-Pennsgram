@@ -25,10 +25,14 @@ const dbLib = require('./dbFunctions');
 let db;
 
 // start the server and connect to the DB
-var server = webapp.listen(port, async () => {
-  db = await dbLib.connect();
-  console.log(`Server running on port: ${port}`);
-});
+if (process.env.NODE_ENV !== 'test') {
+    // start the server and connect to the DB
+        webapp.listen(port, async () => {
+            db = await dbLib.connect();
+            console.log(`Server running on port: ${port}`);
+        });
+}
+    
 
 
 webapp.get('/users', async (req, res) => {
@@ -193,6 +197,7 @@ webapp.post('/post/:postId/comments', async (req, res) => {
 
 webapp.delete('/post/:postId/comments', async (req, res) => {
     try {
+        console.log("server.js line 196: ", req.params.postId, req.body.author, req.body.content);
         const results = await dbLib.deleteComment(db, req.params.postId, req.body.author, req.body.content);
         res.status(200).json({ data: results });
         return res;
@@ -217,5 +222,4 @@ webapp.use((req, resp) => {
 
 module.exports = {
     webapp,
-    server
 };

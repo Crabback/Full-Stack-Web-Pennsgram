@@ -10,7 +10,7 @@ import Col from 'react-bootstrap/Col';
 import {deletePost, getComments, deleteComment, updatePost} from "../../fetcher";
 import { NavLink } from "react-router-dom";
 
-const CustomPopup = (props) => {
+const PostEditPopUp = (props) => {
 
     const [show, setShow] = useState(false);
     const [media, setMedia] = useState("");
@@ -45,9 +45,9 @@ const CustomPopup = (props) => {
       }
     
     // not finished
-    async function handleDeleteComment(target, postId, content){
+    async function handleDeleteComment(postId, author, content){
         try{
-            await deleteComment(postId, content);
+            await deleteComment(postId, author, content);
         }catch(err){
             console.log("Delete comment failed.");
             alert("Delete comment failed.");
@@ -121,7 +121,7 @@ const CustomPopup = (props) => {
                                                     mention: "@[NOT_A_USER](NOT_A_USER)"}]
     ).map((p, idx) => {
         return (
-        <Toast show={true} onClose={(e) => handleDeleteComment(e.target, props.post.id, p.comment)} delay={1000}  className="d-inline-block m-1" bg={"light"} key={idx}>
+        <Toast show={true} onClose={(e) => handleDeleteComment(props.post.id, p.author, p.comment)} delay={1000}  className="d-inline-block m-1" bg={"light"} key={idx}>
             <Toast.Header>
                 <img src="holder.js/20x20?text=%20" className="rounded me-2" alt=""/>
                 <strong className="me-auto">{p.author}</strong>
@@ -182,10 +182,10 @@ const CustomPopup = (props) => {
     );
 };
 
-CustomPopup.propTypes = {
+PostEditPopUp.propTypes = {
   title: PropTypes.string.isRequired,
   show: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired
 };
 
-export default CustomPopup;
+export default PostEditPopUp;

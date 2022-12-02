@@ -1,5 +1,6 @@
 /* istanbul ignore file */
 
+import { ManOutlined } from '@mui/icons-material';
 import axios from 'axios';
 
 //mockAPI URL 
@@ -187,6 +188,56 @@ export const getLastestPostOfAUser = async (username) => {
     return latestPost;
 }
 
+export const getUserFollowingSuggestion = async (username) => {
+    let user = null;
+    let followings = null;
+    try{
+        // try to get a user with username
+        user = await getUser(username);
+        user = user[0];
+    }catch(err){
+        console.log("getUser() failed: username may not be valid ")
+        console.error(err);
+    }
+    if(!user) return {};
+    followings = user.followings;
+    let suggestions = [];
+    let map = new Map();
+    followings.forEach( async (username) => {
+        let secondaryFollowings = {};
+        let primaryFollowing = null;
+        try{
+            // try to get a user with username
+            primaryFollowing = await getUser(username);
+            primaryFollowing = user[0];
+        }catch(err){
+            console.log("getUser() failed: username may not be valid ")
+            console.error(err);
+        }
+        if(primaryFollowing) {
+            secondaryFollowings = primaryFollowing.followings;
+            if (secondaryFollowings) {
+                secondaryFollowings.forEach((username) => {
+                    if (map.has(username)) {
+                        const count = map.get(username);
+                        map.delete(username);
+                        map.set(username, count + 1);
+                    } else {
+                        map.set(username, 1);
+                    }
+                })
+            }
+        }
+    });
+    function pushIntoMap(value, key, map) {
+        if (value > 1 && !followings.includes(key)) {
+            suggestions.push(key);
+        }
+    }
+    map.forEach(pushIntoMap);
+    console.log(suggestions);
+    return suggestions;
+}
 
 
 export const createNewPost = async (username, postObject) =>{

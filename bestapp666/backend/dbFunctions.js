@@ -276,8 +276,7 @@ const deleteComment = async (db, postId, author, content) =>{
   try{    
       let post = await getPost(db, postId);
       post.comments = post.comments.filter(function(item) {
-        if (item.author === author && item.comment === content)
-          return false;
+        if (item.author === author && item.comment === content) return false;
         return true;
       });
       await db.collection('Posts').updateOne(

@@ -1,5 +1,5 @@
 import "../../Styles.css";
-import { getPost } from "../../api/mock_api";
+//import { getPost } from "../../api/mock_api";
 import React, { useState, useEffect } from "react";
 import { Footer } from "../../components/Footer";
 import ReactRoundedImage from "react-rounded-image";
@@ -11,9 +11,9 @@ import Button from 'react-bootstrap/Button';
 import { NavLink, useParams} from "react-router-dom";
 import {selectCurrentUser, updateCurrentUser} from './currentUserSlice'
 import { useSelector, useDispatch } from 'react-redux'
-import { getUser, getPosts, followUser, unfollowUser} from "../../fetcher";
+import { getUser, getPost, getPosts, followUser, unfollowUser} from "../../fetcher";
 import ToggleButton from 'react-bootstrap/ToggleButton';
-import PostPopUp from './PostPopUp.js'
+import PostEditPopUp from './PostEditPopUp.js'
 
 export default function User() {
     
@@ -164,7 +164,7 @@ export default function User() {
           </Col>
       </Container>
       
-      <PostPopUp className = "popWindow" post = {postBeingEdited} 
+      <PostEditPopUp className = "popWindow" post = {postBeingEdited} 
                  setEditedAndRefreshCards = {setEditedAndRefreshCards} oldEditedAndRefreshCards={editedAndRefreshCards} 
                  setHearFromDeleteComment = {setHearFromDeleteComment} oldHearFromDeleteComment={hearFromDeleteComment}
                  setPostBeingEdited = {setPostBeingEdited}
@@ -172,7 +172,7 @@ export default function User() {
 
           <h1>Hello This is Popup Content Area</h1>
           <h2>This is my lorem ipsum text here!</h2>
-      </PostPopUp>
+      </PostEditPopUp>
 
 
       <div style={{paddingLeft: "2rem"}}>
