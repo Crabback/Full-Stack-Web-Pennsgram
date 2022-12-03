@@ -24,11 +24,14 @@ const dbLib = require('./dbFunctions');
 // (8) declare a db reference variable
 let db;
 
+// (9) specifid our mongo db url to connect
+const url = "mongodb+srv://dbUser:BestApp666@bestapp666.cn6zpfi.mongodb.net/Pennsgram?retryWrites=true&w=majority";
+
 // start the server and connect to the DB
 if (process.env.NODE_ENV !== 'test') {
     // start the server and connect to the DB
         webapp.listen(port, async () => {
-            db = await dbLib.connect();
+            db = await dbLib.connect(url);
             console.log(`Server running on port: ${port}`);
         });
 }
@@ -221,5 +224,6 @@ webapp.use((req, resp) => {
 });
 
 module.exports = {
+    url,
     webapp,
 };

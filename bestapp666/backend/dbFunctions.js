@@ -1,9 +1,8 @@
 const { MongoClient, ServerApiVersion, ObjectId} = require('mongodb');
-const url = "mongodb+srv://dbUser:BestApp666@bestapp666.cn6zpfi.mongodb.net/Pennsgram?retryWrites=true&w=majority";
 
 let con;
 // connection to the db
-const connect = async () => {
+const connect = async (url) => {
   // always use try/catch to handle any exception
   try {
     con = (await MongoClient.connect(
@@ -76,7 +75,7 @@ const createNewUser = async (db, userObject) =>{
         if(err){
           console.log(`error: ${err.message}`);
         }
-        console.log(`New user created: ${result}`);
+        console.log(`New user created: ${JSON.stringify(result)}`);
         return result;
       },
     );    
@@ -338,7 +337,6 @@ const getLastestPostOfAUser = async (db, username) => {
 }
 
 module.exports = {
-  url,
   connect,
   getUsers,
   getUser,
