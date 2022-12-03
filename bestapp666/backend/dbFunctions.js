@@ -338,6 +338,7 @@ const getLastestPostOfAUser = async (db, username) => {
 }
 
 module.exports = {
+  url,
   connect,
   getUsers,
   getUser,
