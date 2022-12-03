@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux'
 import ListGroup from 'react-bootstrap/ListGroup';
 import {selectCurrentUser} from './UserPage/currentUserSlice'
-import {getUsersAsList, getLastestPostOfAUser, getPost, getUser } from "../fetcher";
+import {getUsersAsList, getLastestPostOfAUser, getPost, getUser, getUserFollowingSuggestion } from "../fetcher";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
@@ -22,7 +22,15 @@ export default function FeedPage() {
   const [hearFromDeleteComment, setHearFromDeleteComment] = useState(false); //the request for refreshing comment list from PopUp window, trigger value doesnt matter
   const [visibility, setVisibility] = useState(false);
   const [postBeingEdited, setPostBeingEdited] = useState({});
+  const [suggestions, setSuggestions] = useState([]);
   
+    useEffect(() => {
+      getUserFollowingSuggestion(stateCurrentUser.username)
+      .then( value => {
+        setSuggestions(value);
+        console.log(suggestions)
+      });
+    }, []);
     useEffect(() => {
       async function fetchData() {
         const userObjects = await getUsersAsList(followingsUsernames);
@@ -58,7 +66,7 @@ export default function FeedPage() {
     setPostBeingEdited = {setPostBeingEdited} setVisibility= {setVisibility}/>
   ))
 
-  let userlist =  stateCurrentUser.followerSuggestions.map((p) => (
+  let userlist =  suggestions.map((p) => (
     <ListGroup.Item as="li" >
       <NavLink to={"/user/"+p} className="button_text">
         {p}

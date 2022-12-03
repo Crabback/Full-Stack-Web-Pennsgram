@@ -154,6 +154,29 @@ const getLastestPostOfAUser = async (username) =>{
     return res.data.data;
 }
 
+const getUserFollowingSuggestion = async (username) => {
+    let user = null;
+    let followings = null;
+    user = await getUser(username);
+    if(!user) return [];
+    followings = user.followings;
+    let suggestions = [];
+    if(!followings) {
+        return [];
+    };
+    followings.forEach ( async (followingUsername) => {
+        const following = await getUser(followingUsername);
+        const secondaryFollowings = following.followings;
+        secondaryFollowings.forEach((secondayUsername) => {
+            if(!suggestions.includes(secondayUsername) && secondayUsername != username && !followings.includes(secondayUsername)) {
+                suggestions.push(secondayUsername);
+            }
+        })
+    });
+    console.log(suggestions);
+    return suggestions;
+}
+
 export {
     getUsers,
     getUser,
@@ -172,5 +195,6 @@ export {
     deleteComment,
     getUsersAsList,
     createNewPost,
-    getLastestPostOfAUser
+    getLastestPostOfAUser,
+    getUserFollowingSuggestion
 }
