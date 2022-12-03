@@ -5,7 +5,6 @@ import {unlikePost, likePost } from "../fetcher";
 
 
 export function LikeButton(props) {
-    console.log(props.post, props.username, props.post.likes.includes(props.username));
     const [checked, setChecked] = useState(props.post.likes.includes(props.username));
     const [text, setText] = useState(() => {
         if (checked) {

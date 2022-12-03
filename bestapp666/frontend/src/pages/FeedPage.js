@@ -17,26 +17,7 @@ export default function FeedPage() {
   const stateCurrentUser = useSelector(selectCurrentUser);
   let followingsUsernames = stateCurrentUser.followings;
   const [feedPostOfUser, setFeedPostOfUser] = useState([]);
-  const [popularPostsNearby, setPopularPostsNearby] = useState([
-    {
-      "id": 29,
-      "author": "elon",
-      "description": "I have officially dubbed myself \"Chief Twit\"",
-      "date": "10/1/2022",
-      "image": "https://mediaproxy.salon.com/width/1200/https://media.salon.com/2022/04/elon-musk-twitter-0405221.jpg",
-      "likes": [
-        "ayesha",
-        "elon"
-      ],
-      "comments": [
-        {
-          "author": "ayesha",
-          "comment": "ayesha leaving comment. Good luck with your buy.",
-          "mention": "@curry"
-        }
-      ]
-    }
-  ]);
+  const [popularPostsNearby, setPopularPostsNearby] = useState([]);
   const [editedAndRefreshCards, setEditedAndRefreshCards] = useState(true); //the value of this switch doesn't matter only the change matter for triggering useEffect
   const [hearFromDeleteComment, setHearFromDeleteComment] = useState(false); //the request for refreshing comment list from PopUp window, trigger value doesnt matter
   const [visibility, setVisibility] = useState(false);
@@ -69,8 +50,8 @@ export default function FeedPage() {
       }
     }, [editedAndRefreshCards, hearFromDeleteComment]); //adding empty dependency making sure useEffect only run once after each render
   
-
-
+  
+  
   const cards = ((feedPostOfUser.length===0) ? popularPostsNearby:feedPostOfUser).map((p) => (
     <CardFeedPage post={p} username={stateCurrentUser.username} oldEditedAndRefreshCards={editedAndRefreshCards} allDisplayedPosts={feedPostOfUser}
     setEditedAndRefreshCards = {setEditedAndRefreshCards} setCommentState={setFeedPostOfUser} 
@@ -89,15 +70,15 @@ export default function FeedPage() {
     <div className='background'>
     
     <Row>
-
       <Col style={{paddingLeft: "10%"}}>
+        {stateCurrentUser.username==="NOT_A_USER" && <>Please log in to see the activity feed.</>}
         <Stack gap={2} className="col-md-6 mx-auto">
           {cards}
         </Stack>
       </Col>
 
       <Col style={{paddingLeft: "20%", paddingRight: "10%", paddingBottom: "2rem"}}>
-        <h3 style={{paddingBottom: "2rem"}}> Recommended Users to Follow </h3>
+        <h4 style={{paddingBottom: "2rem"}}> Recommended Users to Follow </h4>
         <ListGroup as="ul" defaultActiveKey="#link1">
           {userlist}
         </ListGroup>
