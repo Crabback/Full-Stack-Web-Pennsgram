@@ -330,6 +330,7 @@ const getLastestPostOfAUser = async (db, username) => {
   try{
       // try to get a post with id
       latestPost = await getPost(db, latestId);
+      latestPost.avatar = user.avatar;
   }catch(err){
       console.error(err);
   }
