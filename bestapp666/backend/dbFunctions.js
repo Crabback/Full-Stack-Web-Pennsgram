@@ -57,7 +57,7 @@ const getUsersAsList = async (db, usernames) =>{
 }
 
 // no express endpoint yet
-const getUserAvatar= async (db, username) =>{
+const getUserAvatar = async (db, username) =>{
   try{
       // try to get a user with username
       const result = await db.collection('Users').findOne({"username": username});
@@ -69,16 +69,14 @@ const getUserAvatar= async (db, username) =>{
 }
 
 const createNewUser = async (db, userObject) =>{
-    await db.collection('Users').insertOne(
-      userObject,
-      (err, result) => {
-        if(err){
-          console.log(`error: ${err.message}`);
-        }
-        console.log(`New user created: ${JSON.stringify(result)}`);
-        return result;
-      },
-    );    
+  try {
+    const result = await db.collection('Users').insertOne(userObject);
+    console.log(`Created User with id: ${result.insertedId}`);
+    return result.insertedId;
+  } catch (err) {
+    console.log(`error: ${err.message}`);
+    throw new Error('Error executing the query');
+  }
 }
 
 const followUser = async (db, username1, username2) =>{
