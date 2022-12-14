@@ -1,6 +1,6 @@
-GitHub Repo: https://github.com/cis557/project---design-hw1-team_offersoverflow
+GitHub Team Repo: https://github.com/cis557/project---design-hw1-team_offersoverflow
 
-Grading Setup:
+Setup:
 
       Step 1 -- install react packages: 
                                       1. open terminal window 1 and run following commands:
@@ -25,14 +25,13 @@ Grading Setup:
                                                 
 # Progress:
 
-# HW3: Implementation (View) & Unit Testing (Completed)
-PDF instruction: https://github.com/cis557/project---design-hw1-team_offersoverflow/blob/main/Project%20-%20HW3.pdf
+# Checkpoint: Implementation (View) & Unit Testing (Completed)
 
-***HW3 Demo: https://drive.google.com/file/d/1CK2IBO49mhrhXFM6HybLWf3il4PG6swY/view?usp=share_link***
+***Checkpoint Demo: https://drive.google.com/file/d/1CK2IBO49mhrhXFM6HybLWf3il4PG6swY/view?usp=share_link***
 
 <img src="TestCoverage.png" width=50% height=50%>
 
-HW3 Features:
+Checkpoint Features:
 
                                       1. Like & unlike posts on both user pages and feed page
                                           - check the changes on the like list for any action performed
@@ -45,10 +44,9 @@ HW3 Features:
                                       5. Mention another user in comments
                                           - click the @ to direct to the user page.
 
-# HW2: Implementation (View) & UI Testing (Completed)
-PDF instruction: https://github.com/cis557/project---design-hw1-team_offersoverflow/blob/main/Project%20-%20HW2.pdf
+# Checkpoint: Implementation (View) & UI Testing (Completed)
 
-HW2 Features:
+Checkpoint Features:
 
                                       1. User Reigstration
                                           - use an online media link for avatar
@@ -74,10 +72,7 @@ HW2 Features:
 
 **Notice:** The navbar on the top is only for grading and development purposes, and it will be removed in the final version.
 
-# HW1: Architecture Design (Completed)
-PDF instruction: https://github.com/cis557/project---design-hw1-team_offersoverflow/blob/main/Project%20-%20HW1.pdf
-
-Photo&amp;Video-sharing Social Network APP -  UI & Frontend; 
+# Checkpoint: Architecture Design (Completed)
 
 User Story Point Scale: 1 point = 8 hours/person
 
