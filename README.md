@@ -1,5 +1,9 @@
 GitHub Team Repo: https://github.com/cis557/project---design-hw1-team_offersoverflow
 
+
+Most updated: https://pennsgram.herokuapp.com
+
+
 Setup:
 
       Step 1 -- install react packages: 
@@ -23,57 +27,6 @@ Setup:
                                       3. There are following **notice points** for each features.
                                                 (eg. the current registered users in our db.json file)
                                                 
-# Progress:
-
-# Checkpoint: Implementation (View) & Unit Testing (Completed)
-
-***Checkpoint Demo: https://drive.google.com/file/d/1CK2IBO49mhrhXFM6HybLWf3il4PG6swY/view?usp=share_link***
-
-<img src="TestCoverage.png" width=50% height=50%>
-
-Checkpoint Features:
-
-                                      1. Like & unlike posts on both user pages and feed page
-                                          - check the changes on the like list for any action performed
-                                      2. Post & edit & delete comments on a post on both user pages and feed page
-                                          - check the changes on the comment list for any action performed
-                                      3. Edit & delete posts on the logged-in user's page
-                                          - try update and delete
-                                      4. Follower suggestions
-                                          - Two users are following the same 3 users, they will appear in follower suggestions
-                                      5. Mention another user in comments
-                                          - click the @ to direct to the user page.
-
-# Checkpoint: Implementation (View) & UI Testing (Completed)
-
-Checkpoint Features:
-
-                                      1. User Reigstration
-                                          - use an online media link for avatar
-                                      2. Login/Auth
-                                          - use your registered account (username/password)
-                                          - or use one of those: curry, obama, elon (find the usernames and passwords from the db.json file)
-                                          - try non-existing usernames or wrong password
-                                      4. User Profile Page
-                                          - view your followers/followings 
-                                          - view your posts
-                                          - upload a post
-                                      5. Create a Post
-                                          - click profile picture or username on the top right dark nav bar.
-                                          - upload a local file or use an online media link, add description
-                                      6. Activity Feed
-                                          - see the most recent posts from each of your followings
-                                          - change your followings and see the updates in feed page
-                                          - click their profile pictures to visit their profile pages
-                                      7. Search/Follow/Unfollow Users
-                                          - try to search one of these usernames: dog, pig, curry, obama, elon, trump
-                                          - try to search non-existing usernames
-                                          - follow/unfollow users and see the updates
-
-**Notice:** The navbar on the top is only for grading and development purposes, and it will be removed in the final version.
-
-# Checkpoint: Architecture Design (Completed)
-
 User Story Point Scale: 1 point = 8 hours/person
 
 Figma UI: https://www.figma.com/file/p2u4b7FHO5W7OtodvFqyIc/HW1-Wireframe-%26-Prototype?node-id=0%3A1
