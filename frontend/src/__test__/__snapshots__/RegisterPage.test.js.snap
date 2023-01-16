@@ -1,0 +1,254 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Page matches snapshot 1`] = `
+<div
+  className="background"
+>
+  <div
+    className="row"
+  >
+    <div
+      className="col-sm-1"
+    />
+    <div
+      className="col-sm-5"
+    >
+      <form
+        className=""
+        onSubmit={[Function]}
+      >
+        <div
+          className="mb-3"
+        >
+          <label
+            className="form-label"
+            htmlFor="formBasicFirstName"
+          >
+            First Name
+          </label>
+          <input
+            className="form-control"
+            id="formBasicFirstName"
+            name="firstname"
+            onChange={[Function]}
+            placeholder="First Name"
+          />
+        </div>
+        <div
+          className="mb-3"
+        >
+          <label
+            className="form-label"
+            htmlFor="formBasicLastName"
+          >
+            Last Name
+          </label>
+          <input
+            className="form-control"
+            id="formBasicLastName"
+            name="lastname"
+            onChange={[Function]}
+            placeholder="Last Name"
+          />
+        </div>
+        <div
+          className="mb-3"
+        >
+          <label
+            className="form-label"
+            htmlFor="formBasicGender"
+          >
+            Gender
+          </label>
+          <select
+            className="form-select"
+            id="formBasicGender"
+          >
+            <option>
+              Male
+            </option>
+            <option>
+              Female
+            </option>
+            <option>
+              Other
+            </option>
+          </select>
+        </div>
+        <div
+          className="mb-3"
+        >
+          <label
+            className="form-label"
+            htmlFor="formBasicDOB"
+          >
+            Date of Birth
+          </label>
+          <input
+            className="form-control"
+            id="formBasicDOB"
+            name="birth"
+            onChange={[Function]}
+            placeholder="Date of Birth"
+          />
+        </div>
+        <div
+          className="mb-3"
+        >
+          <label
+            className="form-label"
+            htmlFor="formBasicEmail"
+          >
+            Email address
+          </label>
+          <input
+            className="form-control"
+            id="formBasicEmail"
+            name="email"
+            onChange={[Function]}
+            placeholder="Enter email"
+          />
+        </div>
+        <div
+          className="mb-3"
+        >
+          <label
+            className="form-label"
+            htmlFor="formBasicUsername"
+          >
+            Username
+          </label>
+          <input
+            className="form-control"
+            id="formBasicUsername"
+            name="username"
+            onChange={[Function]}
+            placeholder="Username"
+          />
+        </div>
+        <div
+          className="mb-3"
+        >
+          <label
+            className="form-label"
+            htmlFor="formBasicPassword"
+          >
+            Password
+          </label>
+          <input
+            className="form-control"
+            id="formBasicPassword"
+            name="password"
+            onChange={[Function]}
+            placeholder="Password"
+          />
+        </div>
+        <div
+          className="mb-3"
+        >
+          <label
+            className="form-label"
+            htmlFor="formBasicConfirmPassword"
+          >
+            Confirm Password
+          </label>
+          <input
+            className="form-control"
+            id="formBasicConfirmPassword"
+            name="passwordConfirm"
+            onChange={[Function]}
+            placeholder="Confirm Password"
+          />
+        </div>
+        <button
+          className="btn btn-primary"
+          disabled={false}
+          type="submit"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+    <div
+      className="col-sm-1"
+    />
+    <div
+      className="col-sm-5"
+    >
+      <form
+        className=""
+        onSubmit={[Function]}
+      >
+        <div
+          className="mb-3"
+        >
+          <img
+            alt="user pic 1"
+            height="250"
+            onError={[Function]}
+            src="https://img.wattpad.com/8f19b412f2223afe4288ed0904120a48b7a38ce1/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f5650722d38464e2d744a515349673d3d2d3234323931353831302e313434336539633161633764383437652e6a7067"
+            width="250"
+          />
+        </div>
+        <div
+          className="mb-3"
+          style={
+            Object {
+              "paddingRight": "50%",
+            }
+          }
+        >
+          <label
+            className="form-label"
+            htmlFor="formFile"
+          >
+            Upload Profile Picture
+          </label>
+          <input
+            className="form-control"
+            id="formFile"
+            onChange={[Function]}
+            type="file"
+          />
+          <input
+            className="form-control"
+            id="formFile"
+            name="imageURL"
+            onChange={[Function]}
+            placeholder="Enter online image url"
+          />
+        </div>
+        <button
+          className="btn btn-primary"
+          disabled={false}
+          type="submit"
+        >
+          Upload avatar
+        </button>
+      </form>
+    </div>
+  </div>
+  <div
+    style={
+      Object {
+        "paddingLeft": "2rem",
+      }
+    }
+  >
+    <div
+      className="footer"
+    >
+      <p
+        className="footer_elements"
+      >
+        Terms And Policies
+      </p>
+      <p
+        className="footer_elements"
+      >
+        All Copy Right Reserved
+      </p>
+    </div>
+  </div>
+</div>
+`;

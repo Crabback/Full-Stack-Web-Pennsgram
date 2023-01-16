@@ -1,0 +1,144 @@
+/* If you want the content centered horizontally and vertically */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.header_elements {
+  margin-left: 8px;
+  font-size: 10px;
+}
+
+.footer {
+  display:flex;
+  justify-content: left;
+	padding:2px;
+  padding-top:40px;
+  font-size: 15px;
+}
+
+.search {
+  width: 20%;
+  margin-bottom: 10px;
+  padding: 5px;
+  border: none;
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+.footer_elements {
+  margin-right: 2rem;
+}
+
+.headers{
+  text-decoration: none;
+  color: #ffffff;
+  padding-left: 0.8rem;
+  vertical-align: sub;
+}
+
+.headers2{
+  text-decoration: none;
+  padding-left: 1rem;
+}
+
+.background {
+  font-family: sans-serif;
+  background: #faf5d9;
+}
+
+.home_img {
+  width: 18rem;
+  height: 18rem;
+  position: relative;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.logos {
+  font-family: sans-serif;
+  padding-top: 0.5rem;
+}
+
+.bot_half_page {
+  font-family: sans-serif;
+  padding-top: 3rem;
+}
+
+style.css
+
+/* Popup style */
+.popup-box {
+  position: fixed;
+  background: #00000050;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+
+.box {
+  position: relative;
+  width: 70%;
+  margin: 0 auto;
+  height: auto;
+  max-height: 70vh;
+  margin-top: calc(100vh - 85vh - 20px);
+  background: #fff;
+  border-radius: 4px;
+  padding: 20px;
+  border: 1px solid #999;
+  overflow: auto;
+}
+
+.close-icon {
+  content: 'x';
+  cursor: pointer;
+  position: fixed;
+  right: calc(15% - 30px);
+  top: calc(100vh - 85vh - 33px);
+  background: #ededed;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  line-height: 20px;
+  text-align: center;
+  border: 1px solid #999;
+  font-size: 20px;
+}
+
+ 
+.close-icon {
+  content: 'x';
+  cursor: pointer;
+  position: fixed;
+  right: calc(15% - 30px);
+  top: calc(100vh - 85vh - 33px);
+  background: #ededed;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  line-height: 20px;
+  text-align: center;
+  border: 1px solid #999;
+  font-size: 20px;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
